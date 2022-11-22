@@ -83,8 +83,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         rb.velocity = new Vector2(speed, rb.velocity.y);
-        anim.SetFloat("speed", rb.velocity.magnitude);
-        anim.SetFloat("verticalSpeed", rb.velocity.y);
+        //anim.SetFloat("speed", rb.velocity.magnitude);
+        //anim.SetFloat("verticalSpeed", rb.velocity.y);
 
         //when run, play particles and increase animation speed
         if(rb.velocity.magnitude > 0.5f)
@@ -131,7 +131,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Flipsprite(bool flip)
     {
-        anim.SetBool("Flipped", flip);
+        //anim.SetBool("Flipped", flip);
         if (flip)
         {
             var pshape = ps.shape;
