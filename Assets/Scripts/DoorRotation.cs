@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DoorRotation : MonoBehaviour
 {
-
     public GameObject rotatorKnob = GameObject.FindGameObjectWithTag("Rotator");
-    public Vector3 knobPosition;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
