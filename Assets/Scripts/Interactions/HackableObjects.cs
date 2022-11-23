@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class HackableObjects : MonoBehaviour
 {
+    public bool isHacked = false;
+
     public UnityEvent onHackEvent, onHackRevealEvent, onHackHideEvent;
+
+    [SerializeField] private TextMeshProUGUI hackingPowerText;
     private GameObject originalState;
     public enum ObjectState
     {
@@ -13,7 +18,19 @@ public class HackableObjects : MonoBehaviour
     }
     public ObjectState objectState;
 
-    public int hackingStrength = 0;
+    private int _hackingStrength = 0;
+    public int hackingStrength 
+    { 
+        get { return _hackingStrength; } 
+        set 
+        { 
+            _hackingStrength = value;
+            if (value > 0)
+                hackingPowerText.text = _hackingStrength.ToString();
+            else
+                hackingPowerText.text = null;
+        } 
+    }
 
 
     private void Start()
@@ -35,28 +52,64 @@ public class HackableObjects : MonoBehaviour
     public void OnHackingModeHide()
     {
         onHackHideEvent.Invoke();
+        //if (!isHacked)
+          //  ResetHackPower();
     }
     public void CommitHack()
     {
-        onHackEvent.Invoke();
+        if (!isHacked&&hackingStrength>0)
+        {
+            onHackEvent.Invoke();
+            DrainHackingStrength();
+            isHacked = true;
+        }
     }
     public void AddHackingPower(int amount)
     {
-        hackingStrength += amount;
+        if (!isHacked)
+        {
+            if(amount > 0)
+            {
+                if(GameManager.instance.player.GetComponent<PlayerHack>().batteryCharges > 0)
+                {
+                    hackingStrength += amount;
+                    GameManager.instance.player.GetComponent<PlayerHack>().DrainCharge(amount);
+                }
+                else
+                {
+                    //show error msg
+                }
+            }
+            else
+            {
+                if (hackingStrength>0 && GameManager.instance.player.GetComponent<PlayerHack>().batteryCharges < 10)
+                {
+                    hackingStrength += amount;
+                    GameManager.instance.player.GetComponent<PlayerHack>().DrainCharge(amount);
+                }
+            }
+        }
+    }
+    public void ResetHackPower()
+    {
+        GameManager.instance.player.GetComponent<PlayerHack>().batteryCharges += hackingStrength;
+        hackingStrength = 0;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("HackingModeOverlay"))
-    //    {
-    //        OnHackingModeReveal();
-    //    }
-    //}
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("HackingModeOverlay"))
-    //    {
-    //        OnHackingModeHide();
-    //    }
-    //}
+    //drain strength every second until 0
+    private void DrainHackingStrength()
+    {
+        if(hackingStrength > 0)
+        {
+            hackingStrength--;
+            Invoke(nameof(DrainHackingStrength), 1);
+        }
+        else
+        {
+            //stop hack
+            isHacked = false;
+        }
+    }
+
+
 }

@@ -19,6 +19,9 @@ public class GuardMove : MonoBehaviour
     public bool rayCastLeft;
     public bool rayCastRight;
     private bool facingRight;
+    public bool canMove = true;
+
+    public GuardBehaviour behaviourScript;
 
     private Rigidbody2D rb2d;
 
@@ -55,11 +58,11 @@ public class GuardMove : MonoBehaviour
     }
     private void Move()
     {
-        if (facingRight)
+        if (facingRight && canMove)
         {
             rb2d.velocity = new Vector2(Mathf.Clamp(moveSpeed + acceleration * Time.deltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
-        else
+        else if (!facingRight && canMove)
         {
             rb2d.velocity = new Vector2(-Mathf.Clamp(moveSpeed + acceleration * Time.deltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
@@ -104,6 +107,10 @@ public class GuardMove : MonoBehaviour
         {
             TurnAround();
             rayCastBuffer = 3f;
+        }
+        else if (rayCastBuffer > 0)
+        {
+            rayCastBuffer -= 1 * Time.deltaTime;
         }
     }
 }
