@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour
 
     public void RevealHackables(float delay)
     {
-        Invoke("RevealHackablesDelayed", delay);
+        Invoke(nameof(RevealHackablesDelayed), delay);
     }
     public void HideHackables(float delay)
     {
-        Invoke("HideHackablesDelayed", delay);
+        Invoke(nameof(HideHackablesDelayed), delay);
     }
     private void RevealHackablesDelayed()
     {
@@ -48,5 +48,6 @@ public class GameManager : MonoBehaviour
             hackable.OnHackingModeHide();
         }
     }
+
 
 }
