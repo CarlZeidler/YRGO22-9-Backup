@@ -10,7 +10,7 @@ public class DoorRotation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("CubeTest"))
         {
             rotatorKnob.transform.rotation = Quaternion.Euler(0, 0, -90);
             Debug.Log("collision");

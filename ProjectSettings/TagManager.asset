@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HackingModeOverlay
+  - Rotator
+  - CubeTest
   layers:
   - Default
   - TransparentFX
