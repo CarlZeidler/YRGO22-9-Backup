@@ -1,0 +1,39 @@
+turretspine.png
+size:2027,756
+filter:Linear,Linear
+pma:true
+Layer 10
+bounds:1109,351,916,403
+offsets:1,2,918,406
+Layer 11
+bounds:412,11,366,131
+offsets:1,1,368,133
+Layer 2
+bounds:2,144,610,465
+offsets:1,1,612,467
+rotate:90
+Layer 3
+bounds:2,2,408,140
+offsets:1,1,410,142
+Layer 4
+bounds:1532,118,231,225
+offsets:1,1,233,227
+rotate:90
+Layer 5
+bounds:668,181,573,439
+offsets:1,1,575,441
+rotate:90
+Layer 6
+bounds:1759,149,224,200
+offsets:1,1,226,202
+Layer 7
+bounds:1109,32,421,317
+offsets:1,1,423,319
+Layer 8
+bounds:780,12,167,327
+offsets:1,1,169,329
+rotate:90
+Layer 9
+bounds:469,180,574,197
+offsets:1,1,576,199
+rotate:90
