@@ -28,10 +28,14 @@ public class GameManager : MonoBehaviour
 
     public void RevealHackables(float delay)
     {
+        CancelInvoke(nameof(HideHackablesDelayed));
+        CancelInvoke(nameof(RevealHackablesDelayed));
         Invoke(nameof(RevealHackablesDelayed), delay);
     }
     public void HideHackables(float delay)
     {
+        CancelInvoke(nameof(HideHackablesDelayed));
+        CancelInvoke(nameof(RevealHackablesDelayed));
         Invoke(nameof(HideHackablesDelayed), delay);
     }
     private void RevealHackablesDelayed()

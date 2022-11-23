@@ -52,8 +52,8 @@ public class HackableObjects : MonoBehaviour
     public void OnHackingModeHide()
     {
         onHackHideEvent.Invoke();
-        if (!isHacked)
-            ResetHackPower();
+        //if (!isHacked)
+          //  ResetHackPower();
     }
     public void CommitHack()
     {
