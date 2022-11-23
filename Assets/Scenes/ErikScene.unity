@@ -495,7 +495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatorKnob: {fileID: 2017104856}
-  knobPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &1019860921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -877,7 +876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatorKnob: {fileID: 2017104856}
-  knobPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &2017104858
 Transform:
   m_ObjectHideFlags: 0
