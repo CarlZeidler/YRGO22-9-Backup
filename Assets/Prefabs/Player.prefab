@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 288183189056483967}
   - component: {fileID: 270851794984326190}
-  - component: {fileID: 3538244062634019152}
   m_Layer: 0
   m_Name: BatteryCharge
   m_TagString: Untagged
@@ -90,21 +89,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3538244062634019152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165669394514472007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314e1fe463f44be4fbbe128e6f25aca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fill: {fileID: 4286350062826667434}
-  outline: {fileID: 4261844113714962634}
-  background: {fileID: 483637988420668368}
 --- !u!1 &331450532398455488
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +176,7 @@ GameObject:
   - component: {fileID: 7068237007843883170}
   - component: {fileID: 7474744223499536415}
   - component: {fileID: 8680799577249464020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InteractionCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +278,7 @@ GameObject:
   - component: {fileID: 2292857639173056001}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -563,12 +547,6 @@ MonoBehaviour:
   maxBatteryCharges: 10
   hackingUIAnim: {fileID: 8919775926512616149}
   batteryChargeSlider: {fileID: 270851794984326190}
-  onHackingModeEnable:
-    m_PersistentCalls:
-      m_Calls: []
-  onHackingModeDisable:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!198 &2292857639173056014
 ParticleSystem:
   m_ObjectHideFlags: 0

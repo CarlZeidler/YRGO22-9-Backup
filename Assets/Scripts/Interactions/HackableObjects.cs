@@ -8,7 +8,7 @@ public class HackableObjects : MonoBehaviour
 {
     public bool isHacked = false;
 
-    public UnityEvent onHackEvent, onHackRevealEvent, onHackHideEvent;
+    public UnityEvent onHackEvent,onHackStoppedEvent, onHackRevealEvent, onHackHideEvent;
 
     [SerializeField] private TextMeshProUGUI hackingPowerText;
     private GameObject originalState;
@@ -108,6 +108,7 @@ public class HackableObjects : MonoBehaviour
         {
             //stop hack
             isHacked = false;
+            onHackStoppedEvent.Invoke();
         }
     }
 
