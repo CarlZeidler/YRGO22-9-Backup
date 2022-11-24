@@ -23,8 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     //running fx
     private ParticleSystem ps;
-    private Animator anim;
-    private SpriteRenderer sr;
+    [SerializeField]private Animator anim;
+    [SerializeField] private Transform playerModel;
+    [SerializeField]private SpriteRenderer sr;
 
     //for running noises
     private AudioSource aud;
@@ -43,7 +44,7 @@ public class PlayerMove : MonoBehaviour
         ps = GetComponent<ParticleSystem>();
         aud = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponentInChildren<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -83,7 +84,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         rb.velocity = new Vector2(speed, rb.velocity.y);
-        //anim.SetFloat("speed", rb.velocity.magnitude);
+        anim.SetFloat("Speed", rb.velocity.magnitude);
+        //anim.speed = rb.velocity.magnitude;
         //anim.SetFloat("verticalSpeed", rb.velocity.y);
 
         //when run, play particles and increase animation speed
@@ -94,7 +96,7 @@ public class PlayerMove : MonoBehaviour
             else if (!Grounded())
                 ps.Stop();
             if (!animspeedLocked)
-                anim.speed = Mathf.Clamp(rb.velocity.magnitude, 0.5f, 4.5f);
+                anim.speed = Mathf.Clamp(rb.velocity.magnitude, 0.25f, 2.5f);
         }
         else
         {
@@ -134,15 +136,18 @@ public class PlayerMove : MonoBehaviour
         //anim.SetBool("Flipped", flip);
         if (flip)
         {
+            //sprite flipX is still used for checking flipstate
             var pshape = ps.shape;
             pshape.rotation = new Vector3(pshape.rotation.x, -45, pshape.rotation.z);
             sr.flipX = false;
+            playerModel.eulerAngles = Vector3.zero;
         }
         else
         {
             var pshape = ps.shape;
             pshape.rotation = new Vector3(pshape.rotation.x, 135, pshape.rotation.z);
             sr.flipX = true;
+            playerModel.eulerAngles = new Vector3(0, 180, 0);
         }
     }
     private bool Grounded()
