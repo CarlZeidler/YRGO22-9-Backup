@@ -11,7 +11,7 @@ public class HackableObjects : MonoBehaviour
     public UnityEvent onHackEvent,onHackStoppedEvent, onHackRevealEvent, onHackHideEvent;
 
     [SerializeField] private TextMeshProUGUI hackingPowerText;
-    private GameObject originalState;
+    protected GameObject originalState;
     public enum ObjectState
     {
         bluePersistent, redUnPersistent
