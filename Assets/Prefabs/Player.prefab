@@ -270,9 +270,10 @@ GameObject:
   - component: {fileID: 2292857639173056003}
   - component: {fileID: 2292857639173056002}
   - component: {fileID: 2292857639173056005}
-  - component: {fileID: 2292857639173056007}
   - component: {fileID: 2292857639173056006}
   - component: {fileID: 3147997415736238188}
+  - component: {fileID: 8176833397558412260}
+  - component: {fileID: 2292857639173056007}
   - component: {fileID: 2292857639173056014}
   - component: {fileID: 2292857639173056001}
   m_Layer: 0
@@ -391,6 +392,70 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2292857639173056006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292857639173056025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b482b21d9fc238a4192637ccd7c8366e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  maxSpeed: 15
+  Acceleration: 25
+  Deceleration: 30
+  jumpforce: 10
+  jumpDurationLeft: 0.25
+  anim: {fileID: 7880465968826435611}
+  playerModel: {fileID: 2813728735723943310}
+  sr: {fileID: 2292857639173056003}
+  walk: {fileID: 0}
+  jump: {fileID: 0}
+  feet: {fileID: 2292857638782902152}
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &3147997415736238188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292857639173056025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2460d981266f6774292f346f938fc7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inHackingMode: 0
+  maxBatteryCharges: 10
+  hackingUIAnim: {fileID: 8919775926512616149}
+  batteryChargeSlider: {fileID: 270851794984326190}
+--- !u!114 &8176833397558412260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292857639173056025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503f8f29c1427184fbb2e5717345bdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTime: 1.5
+  spawnPoint: {x: 0, y: 0, z: 0}
+  travelParticles: {fileID: 0}
+  interactionCollider: {fileID: 8680799577249464020}
+  physicsCollider: {fileID: 2292857639173056002}
+  playerVisuals: {fileID: 8585773368015882545}
+  pMove: {fileID: 2292857639173056006}
+  pHack: {fileID: 3147997415736238188}
+  rb: {fileID: 2292857639173056005}
 --- !u!82 &2292857639173056007
 AudioSource:
   m_ObjectHideFlags: 0
@@ -487,49 +552,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2292857639173056006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2292857639173056025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b482b21d9fc238a4192637ccd7c8366e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  maxSpeed: 15
-  Acceleration: 25
-  Deceleration: 30
-  jumpforce: 10
-  jumpDurationLeft: 0.25
-  anim: {fileID: 7880465968826435611}
-  playerModel: {fileID: 2813728735723943310}
-  sr: {fileID: 2292857639173056003}
-  walk: {fileID: 0}
-  jump: {fileID: 0}
-  feet: {fileID: 2292857638782902152}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &3147997415736238188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2292857639173056025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2460d981266f6774292f346f938fc7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inHackingMode: 0
-  maxBatteryCharges: 10
-  hackingUIAnim: {fileID: 8919775926512616149}
-  batteryChargeSlider: {fileID: 270851794984326190}
 --- !u!198 &2292857639173056014
 ParticleSystem:
   m_ObjectHideFlags: 0

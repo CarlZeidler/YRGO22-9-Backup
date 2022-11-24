@@ -7,11 +7,14 @@ public class EventTrigger : MonoBehaviour
 {
     public UnityEvent linkedEvent;
     public UnityEvent linkedEventOnExit;
+    [Space]
     public string colliderTag;
+    [Space]
     public LayerMask colliderLayer;
     public LayerMask ignoreLayer;
 
     public Collider2D TriggerCollider;
+    [Space]
     public bool disableColliderOnTrigger;
     public bool disableColliderOnTriggerExit;
 

@@ -5,11 +5,15 @@ using UnityEngine;
 public class Lift : HackableObjects
 {
     [Space(30)]
-    [SerializeField] private float speed, platFormSpacing;
+    [SerializeField] private float speed;
+    [SerializeField] private float platFormSpacing;
+
     [SerializeField] private Transform startPointTransform, endPointTransform;
     private Vector3 startPoint, endPoint;
     [SerializeField] private GameObject liftPlatform;
+
     private List<LiftPlatform> platforms =  new List<LiftPlatform>();
+
 
     private float timer = 1;
 
@@ -18,8 +22,6 @@ public class Lift : HackableObjects
         //sets references from inspector so they can be changed easier
         startPoint = startPointTransform.position;
         endPoint = endPointTransform.position;
-
-
 
         //HackableObject.Start();
         //save own state if red spawn this on player respawn

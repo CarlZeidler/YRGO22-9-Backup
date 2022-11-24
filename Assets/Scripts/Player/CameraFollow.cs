@@ -8,16 +8,16 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform player;
     public float lerpSpeed = 1;
 
-
     void Start()
     {
-        player = FindObjectOfType<PlayerMove>().transform;
+        player = GameManager.instance.player.transform;
     }
 
     void Update()
     {
         bool panning;
         float maxScreenPoint = 0.9f;
+        //some magic numbers that set position towards mouseposition
         Vector3 mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
         Vector3 targetPosition;
 
@@ -31,6 +31,7 @@ public class CameraFollow : MonoBehaviour
             targetPosition = player.position;
             panning = false;
         }
+        //position to move to
         Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
         position = new Vector3(position.x, position.y, -10);
 

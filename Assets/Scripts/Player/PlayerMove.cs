@@ -75,6 +75,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            //deccelerate on no input
             if (speed > Deceleration * Time.deltaTime)
                 speed = speed - Deceleration * Time.deltaTime;
             else if (speed < -Deceleration * Time.deltaTime)
@@ -108,9 +109,12 @@ public class PlayerMove : MonoBehaviour
     private void Jump()
     {
         if (Grounded() & !Input.GetButton("Jump"))
+        {
             _jumpDurationLeft = jumpDurationLeft;
+        }
         if (Input.GetButtonDown("Jump") && Grounded())
         {
+            //play sound on jump btn
             aud.Stop();
             aud.clip = jump;
             aud.Play();
@@ -118,6 +122,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
         {
+            //increase height on hold
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
         }
 

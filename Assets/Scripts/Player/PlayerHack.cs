@@ -14,6 +14,7 @@ public class PlayerHack : MonoBehaviour
         get { return _batteryCharges; } 
         set 
         {
+            //update UI slider on value change
             Mathf.Clamp(value, 0, maxBatteryCharges);
             _batteryCharges = value;
             batteryChargeSlider.value = value;
@@ -25,6 +26,7 @@ public class PlayerHack : MonoBehaviour
 
     private void Start()
     {
+        //default values on slider
         batteryChargeSlider.maxValue = batteryCharges;
         batteryChargeSlider.value = batteryCharges;
     }

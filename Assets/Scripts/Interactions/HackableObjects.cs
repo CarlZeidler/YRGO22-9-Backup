@@ -31,8 +31,6 @@ public class HackableObjects : MonoBehaviour
                 hackingPowerText.text = null;
         } 
     }
-
-
     private void Start()
     {
         //save own state if red spawn this on player respawn
@@ -43,8 +41,6 @@ public class HackableObjects : MonoBehaviour
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
     }
-
-
     public void OnHackingModeReveal()
     {
         onHackRevealEvent.Invoke();

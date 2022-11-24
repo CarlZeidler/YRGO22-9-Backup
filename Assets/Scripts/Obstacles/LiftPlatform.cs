@@ -8,7 +8,7 @@ public class LiftPlatform : MonoBehaviour
     [HideInInspector]public Vector3 target;
 
 
-
+    //moves towards target
     private void Update()
     {
         if((transform.position - target).magnitude > 0.1f)
