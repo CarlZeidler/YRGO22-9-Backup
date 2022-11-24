@@ -1,0 +1,34 @@
+spine robot.png
+size:565,311
+filter:Linear,Linear
+pma:true
+Core body
+bounds:2,71,238,330
+rotate:90
+Left arm
+bounds:334,111,114,198
+Left foot
+bounds:2,2,90,67
+offsets:0,0,94,67
+Left hand
+bounds:343,8,99,101
+Left lower leg
+bounds:270,9,27,66
+offsets:2,3,31,69
+rotate:90
+Left upper leg
+bounds:189,6,30,79
+rotate:90
+Right arm
+bounds:450,113,113,196
+Right foot
+bounds:94,5,93,64
+Right hand
+bounds:444,12,97,96
+rotate:90
+Right lower leg
+bounds:270,38,31,71
+rotate:90
+Right upper leg
+bounds:189,38,31,79
+rotate:90
