@@ -16,6 +16,15 @@
       },
       "hash": "8fb3876396d52d0535905b18d57f1c89e6845f46"
     },
+    "com.esotericsoftware.spine.urp-shaders": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Modules/com.esotericsoftware.spine.urp-shaders#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "7.1.5"
+      },
+      "hash": "8c3533835a4e007f651068c7b8bc0db7f7416369"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.8",
       "depth": 1,
