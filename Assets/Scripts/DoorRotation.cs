@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorRotation : MonoBehaviour
+public class DoorRotation : HackableObjects
 {
-    public GameObject rotatorKnob = GameObject.FindGameObjectWithTag("Rotator");
+    [SerializeField] private float speed = 1;
+    [SerializeField] private Animator anim;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void OpenDoor(bool open) 
     {
-        if (collision.CompareTag("CubeTest"))
+        anim.speed = speed;
+        if (open)
         {
-            rotatorKnob.transform.rotation = Quaternion.Euler(0, 0, -90);
-            Debug.Log("collision");
+            anim.SetTrigger("Open");
+        }
+        else
+        {
+            anim.SetTrigger("Close");
         }
     }
-
 }
 
