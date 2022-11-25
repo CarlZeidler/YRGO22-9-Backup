@@ -14,23 +14,23 @@ public class GuardBehaviour : HackableObjects
     }
 
     //The below functions can be interacted with through the hacking interface.
-    public void Shutdown(float hackingTime)
+    public void Shutdown()
     {
         moveScript.canMove = false;
         visionScript.canSee = false;
-        Invoke(nameof(ReActivated), hackingTime);
+        Invoke(nameof(ReActivated), hackingStrength);
     }
 
-    public void Rooted(float hackingTime)
+    public void Rooted()
     {
         moveScript.canMove = false;
-        Invoke(nameof(ReActivated), hackingTime);
+        Invoke(nameof(ReActivated), hackingStrength);
     }
 
-    public void Blinded(float hackingTime)
+    public void Blinded()
     {
         visionScript.canSee = false;
-        Invoke(nameof(ReActivated), hackingTime);
+        Invoke(nameof(ReActivated), hackingStrength);
     }
 
     private void ReActivated()
