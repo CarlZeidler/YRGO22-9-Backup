@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 6040874764633233435}
   - component: {fileID: 3800880870135975380}
   m_Layer: 2
-  m_Name: PatrollingGuard
+  m_Name: DONOTUSE_PatrollingGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,6 +287,7 @@ MonoBehaviour:
   rayCastRight: 0
   canMove: 1
   behaviourScript: {fileID: 3800880870135975380}
+  visuals: {fileID: 0}
 --- !u!114 &3800880870135975380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,9 +300,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1423bd4eecf5e478b3e78831ce31aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHacked: 0
+  onHackEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onHackStoppedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onHackRevealEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onHackHideEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hackingPowerText: {fileID: 0}
+  objectState: 0
   moveScript: {fileID: 6040874764633233435}
   visionScript: {fileID: 8910784410815508767}
-  canSee: 1
 --- !u!1 &7310709447984764700
 GameObject:
   m_ObjectHideFlags: 0

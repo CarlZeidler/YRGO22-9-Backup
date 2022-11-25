@@ -2,22 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardBehaviour : MonoBehaviour
+public class GuardBehaviour : HackableObjects
 {
     public GuardMove moveScript;
-    public GuardVisionScript visionScript;
-    public bool canSee = true;
-    private bool canMove = true;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    public GuardVision visionScript;
 
     public void SpottedPlayer()
     {

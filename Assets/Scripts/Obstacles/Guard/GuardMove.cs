@@ -12,7 +12,6 @@ public class GuardMove : MonoBehaviour
     public float initialPatrolTime;
     public float maxSpeed;
 
-    private float movement;
     float rayCastBuffer = 0f;
 
     public bool startDirectionRight;
@@ -22,6 +21,7 @@ public class GuardMove : MonoBehaviour
     public bool canMove = true;
 
     public GuardBehaviour behaviourScript;
+    public GameObject visuals;
 
     private Rigidbody2D rb2d;
 
@@ -54,7 +54,6 @@ public class GuardMove : MonoBehaviour
     {
             facingRight = !facingRight;
             patrolTime = initialPatrolTime;
-            movement = 0;
     }
     private void Move()
     {
@@ -69,31 +68,16 @@ public class GuardMove : MonoBehaviour
 
     }
 
-    //TODO: Smoother movement, WIP.
-    //private void Move()
-    //{
-    //    if (facingRight)
-    //    {
-    //        movement = Mathf.Clamp(movement + (moveSpeed + acceleration) * Time.deltaTime, 0, maxSpeed);
-    //    }
-    //    else
-    //    {
-    //        movement = Mathf.Clamp(movement - (moveSpeed - acceleration) * Time.deltaTime, 0, -maxSpeed);
-    //    }
-
-    //    rb2d.velocity = new Vector2(movement, rb2d.velocity.y);
-    //}
-
     private void FlipSprite()
     {
         //Flips sprite depending on facing direction.
         if (facingRight)
         {   
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, base.transform.localScale.z);
+            visuals.transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, base.transform.localScale.z);
         }
         if (!facingRight)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            visuals.transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
 
