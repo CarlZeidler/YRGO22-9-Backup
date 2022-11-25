@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class HackablePlatform : HackableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    private Renderer setColor;
+    public bool solid;
+
+    private void Start()
     {
-        
+        setColor = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Toggle()
     {
-        
+        solid = !solid;
+
+        if (solid)
+        {
+            GetComponent<Collider2D>().enabled = true;
+            setColor.material.color = new Color(0, 255, 0);
+        }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+            setColor.material.color = new Color(255, 0, 0);
+        }
     }
+
 }
