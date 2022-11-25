@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float Deceleration = 5;
 
     private bool animspeedLocked = false;
+    [HideInInspector] public bool canMove = true;
 
     [Space]
 
@@ -57,21 +58,35 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
-        if ((Input.GetAxisRaw("Horizontal") > 0) && (speed < maxSpeed))
+        if (canMove)
         {
-            if (speed < 0)
-                accelerationScale = 3;
-            speed = Mathf.Clamp(speed + Acceleration * Time.deltaTime * accelerationScale, -maxSpeed , maxSpeed);
-            if(sr.flipX == true)
-                Flipsprite(true);
-        }
-        else if ((Input.GetAxisRaw("Horizontal") < 0) && (speed > -maxSpeed))
-        {
-            if (speed > 0)
-                accelerationScale = 3;
-            speed = Mathf.Clamp(speed - Acceleration * Time.deltaTime*accelerationScale,-maxSpeed, maxSpeed);
-            if(sr.flipX == false)
-                Flipsprite(false);
+            if ((Input.GetAxisRaw("Horizontal") > 0) && (speed < maxSpeed))
+            {
+                if (speed < 0)
+                    accelerationScale = 3;
+                speed = Mathf.Clamp(speed + Acceleration * Time.deltaTime * accelerationScale, -maxSpeed , maxSpeed);
+                if(sr.flipX == true)
+                    Flipsprite(true);
+            }
+            else if ((Input.GetAxisRaw("Horizontal") < 0) && (speed > -maxSpeed))
+            {
+                if (speed > 0)
+                    accelerationScale = 3;
+                speed = Mathf.Clamp(speed - Acceleration * Time.deltaTime*accelerationScale,-maxSpeed, maxSpeed);
+                if(sr.flipX == false)
+                    Flipsprite(false);
+            }
+            else
+            {
+                //deccelerate on no input
+                if (speed > Deceleration * Time.deltaTime)
+                    speed = speed - Deceleration * Time.deltaTime;
+                else if (speed < -Deceleration * Time.deltaTime)
+                    speed = speed + Deceleration * Time.deltaTime;
+                else
+                    speed = 0;
+            }
+
         }
         else
         {
@@ -92,17 +107,17 @@ public class PlayerMove : MonoBehaviour
         //when run, play particles and increase animation speed
         if(rb.velocity.magnitude > 0.5f)
         {
-            if (!ps.isPlaying && Grounded())
-                ps.Play();
-            else if (!Grounded())
-                ps.Stop();
+            //if (!ps.isPlaying && Grounded())
+            //    ps.Play();
+            //else if (!Grounded())
+            //    ps.Stop();
             if (!animspeedLocked)
                 anim.speed = Mathf.Clamp(rb.velocity.magnitude, 0.25f, 2.5f);
         }
         else
         {
-            if(ps.isPlaying)
-                ps.Stop();
+            //if(ps.isPlaying)
+            //    ps.Stop();
             anim.speed = 1;
         }
     }
@@ -112,23 +127,26 @@ public class PlayerMove : MonoBehaviour
         {
             _jumpDurationLeft = jumpDurationLeft;
         }
-        if (Input.GetButtonDown("Jump") && Grounded())
+        if (canMove)
         {
-            //play sound on jump btn
-            aud.Stop();
-            aud.clip = jump;
-            aud.Play();
-        }
+            if (Input.GetButtonDown("Jump") && Grounded())
+            {
+                //play sound on jump btn
+                aud.Stop();
+                aud.clip = jump;
+                aud.Play();
+            }
 
-        if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
-        {
-            //increase height on hold
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-        }
+            if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
+            {
+                //increase height on hold
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            }
 
-        if (!Grounded() && Input.GetButton("Jump"))
-        {
-            _jumpDurationLeft -= Time.deltaTime;
+            if (!Grounded() && Input.GetButton("Jump"))
+            {
+                _jumpDurationLeft -= Time.deltaTime;
+            }
         }
 
         if (Input.GetButtonUp("Jump"))

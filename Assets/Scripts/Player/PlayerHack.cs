@@ -43,7 +43,7 @@ public class PlayerHack : MonoBehaviour
                 hackableObject.CommitHack();
             }             
     }
-    private void ToggleHackingMode()
+    public void ToggleHackingMode()
     {
         if (!inHackingMode)
         {

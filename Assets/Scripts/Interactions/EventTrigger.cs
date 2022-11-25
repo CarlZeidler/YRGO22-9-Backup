@@ -101,11 +101,13 @@ public class EventTrigger : MonoBehaviour
     }
     private bool CheckIgnore(Collider2D other)
     {
-        if (other.gameObject.layer != ignoreLayer)
+        if (other.gameObject.layer != ignoreLayer.value)
         {
             return true;
         }
         else
+        {
             return false;
+        }
     }
 }

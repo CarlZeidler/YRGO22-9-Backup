@@ -495,6 +495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret(Red)
       objectReference: {fileID: 0}
+    - target: {fileID: 3249169450781006574, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
 --- !u!1001 &2130856822171171126
@@ -599,11 +603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2292857639173056000, guid: 58761939a10b1f64b8e4b124d746d982, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2292857639173056000, guid: 58761939a10b1f64b8e4b124d746d982, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2292857639173056000, guid: 58761939a10b1f64b8e4b124d746d982, type: 3}
       propertyPath: m_LocalPosition.z
