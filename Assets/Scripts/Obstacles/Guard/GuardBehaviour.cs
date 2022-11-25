@@ -11,6 +11,7 @@ public class GuardBehaviour : HackableObjects
     {
         //This function is called from GuardVisionScript when the player is spotted (vision cone triggered)
         //TODO: Add event for when player is spotted.
+        Debug.Log("spotted");
     }
 
     //The below functions can be interacted with through the hacking interface.
