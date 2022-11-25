@@ -52,6 +52,15 @@ public class GameManager : MonoBehaviour
             hackable.OnHackingModeHide();
         }
     }
+    public void ResetHackables()
+    {
+        foreach (var hackable in hackableObjects)
+        {
+            hackable.ResetHackPower();
+            if (hackable.isHacked)
+                hackable.onHackStoppedEvent.Invoke();
+        }
+    }
 
 
 }

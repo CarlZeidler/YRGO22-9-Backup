@@ -16,14 +16,31 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Respawn();
+        }
+    }
     public void Respawn()
     {
         //disable all relevant scripts
         EnableScripts(false);
         //play particles
-       // travelParticles.Play();
+        //travelParticles.startLifetime = spawnTime;
+        var particles = travelParticles.main;
+        particles.simulationSpeed = Mathf.Pow(spawnTime, -1);
+        travelParticles.Play();
         //lerp pos to spawnpoint then enable scripts
         StartCoroutine(TravelToSpawnPoint(spawnTime));
+
+        //TODO
+        //DISABLE HACKINGMODE
+        if (pHack.inHackingMode)
+            pHack.ToggleHackingMode();
+        //RESETHACKSTATES
+        GameManager.instance.ResetHackables();
     }
     private void EnableScripts(bool enable)
     {
@@ -31,7 +48,8 @@ public class PlayerRespawn : MonoBehaviour
         {
             interactionCollider.enabled = false;
             physicsCollider.enabled = false;
-            pMove.enabled = false;
+            //pMove.enabled = false;
+            pMove.canMove = false;
             pHack.enabled = false;
             playerVisuals.SetActive(false);
             rb.isKinematic = true;
@@ -40,7 +58,8 @@ public class PlayerRespawn : MonoBehaviour
         {
             interactionCollider.enabled = true;
             physicsCollider.enabled = true;
-            pMove.enabled = true;
+            //pMove.enabled = true;
+            pMove.canMove = true;
             pHack.enabled = true;
             playerVisuals.SetActive(true);
             rb.isKinematic = false;
@@ -52,7 +71,8 @@ public class PlayerRespawn : MonoBehaviour
         EnableScripts(true);
 
         //stop particles
-       // travelParticles.Stop();
+        travelParticles.Stop();
+        //travelParticles.enableEmission = false;
     }
     private IEnumerator TravelToSpawnPoint(float duration)
     {

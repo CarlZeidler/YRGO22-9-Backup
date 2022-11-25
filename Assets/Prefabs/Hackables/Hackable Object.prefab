@@ -407,6 +407,9 @@ MonoBehaviour:
   onHackEvent:
     m_PersistentCalls:
       m_Calls: []
+  onHackStoppedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   onHackRevealEvent:
     m_PersistentCalls:
       m_Calls:
