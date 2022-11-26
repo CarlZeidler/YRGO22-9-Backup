@@ -43,11 +43,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 411
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,9 +138,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 411
-        y: 822.6666
-        width: 411.33334
-        height: 411.33334
+        y: 823
+        width: 411
+        height: 411
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: TileExport_2
       rect:
         serializedVersion: 2
-        x: 822
-        y: 822.6666
-        width: 411.33334
-        height: 411.33334
+        x: 823
+        y: 823
+        width: 411
+        height: 411
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,7 +220,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -205.66669, y: -205.66666}
+        - {x: -205.66669, y: 205.66669}
+        - {x: 205.66669, y: 205.66669}
+        - {x: 205.66669, y: -205.66666}
       tessellationDetail: 0
       bones: []
       spriteID: 3f94a1dec06a7b540b00c4eca1424f10
