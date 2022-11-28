@@ -13,12 +13,12 @@ public class HackablePlatform : HackableObjects
         if (solid)
         {
             GetComponent<Collider2D>().enabled = true;
-            //GetComponent<Renderer>().material.color = new Color(255, 0, 0);
+            GetComponent<SpriteRenderer>().material.color = Color.white;
         }
         else
         {
             GetComponent<Collider2D>().enabled = false;
-            //GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+            GetComponent<SpriteRenderer>().material.color = Color.black;
         }
     }
 

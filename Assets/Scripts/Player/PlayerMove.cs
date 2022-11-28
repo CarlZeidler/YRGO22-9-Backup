@@ -143,7 +143,7 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             }
 
-            if (!Grounded() && Input.GetButton("Jump"))
+            if (Input.GetButton("Jump"))
             {
                 _jumpDurationLeft -= Time.deltaTime;
             }
