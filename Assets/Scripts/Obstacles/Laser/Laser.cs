@@ -7,7 +7,6 @@ public class Laser : HackableObjects
 {
     public GameObject StartPointRef;
     public GameObject EndPointRef;
-    public GameObject LaserBeamPrefab;
     private Animator thisAnimator;
     private EdgeCollider2D laserCollider;
 
@@ -16,10 +15,16 @@ public class Laser : HackableObjects
     private Vector2 startPoint;
     private Vector2 endPoint;
 
-    public bool laserEnabled = true;
-
     void Start()
     {
+        //save own state if red spawn this on player respawn
+        if (objectState == ObjectState.redUnPersistent)
+        {
+            originalState = gameObject;
+        }
+        //add to manager list
+        GameManager.instance.hackableObjects.Add(this);
+
         startPoint = StartPointRef.transform.localPosition;
         endPoint = EndPointRef.transform.localPosition;
 
@@ -29,6 +34,7 @@ public class Laser : HackableObjects
         
         StartLaser();
     }
+
 
     void Update()
     {
@@ -48,15 +54,18 @@ public class Laser : HackableObjects
 
         laserCollider.SetPoints(edges);
 
-    }
+        StartPointRef.transform.up = EndPointRef.transform.position - StartPointRef.transform.position;
+        EndPointRef.transform.up = StartPointRef.transform.position - EndPointRef.transform.position;
 
+    }
+    
     private void LaserStatus()
     {
-        if (laserEnabled)
+        if (!isHacked)
         {
             thisAnimator.SetBool("Active", true);
         }
-        else if (!laserEnabled)
+        else if (isHacked)
         {
             thisAnimator.SetBool("Active", false);
         }
@@ -64,17 +73,20 @@ public class Laser : HackableObjects
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Do something when triggered.
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerRespawn>().Respawn();
+        }
     }
 
     public void DisableBeam()
     {
-        laserEnabled = false;
+        isHacked = true;
         Invoke(nameof(Reactivated), hackingStrength);
     }
 
-    private void Reactivated()
+    public void Reactivated()
     {
-        laserEnabled = true;
+        isHacked = false;
     }
 }
