@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class HackablePlatform : HackableObjects
 {
-    private Renderer setColor;
     public bool solid;
-
-    private void Start()
-    {
-        setColor = GetComponent<Renderer>();
-    }
 
     public void Toggle()
     {
@@ -19,12 +13,12 @@ public class HackablePlatform : HackableObjects
         if (solid)
         {
             GetComponent<Collider2D>().enabled = true;
-            setColor.material.color = new Color(0, 255, 0);
+            //GetComponent<Renderer>().material.color = new Color(255, 0, 0);
         }
         else
         {
             GetComponent<Collider2D>().enabled = false;
-            setColor.material.color = new Color(255, 0, 0);
+            //GetComponent<Renderer>().material.color = new Color(0, 255, 0);
         }
     }
 
