@@ -12,7 +12,7 @@ public class Switch : HackableObjects
     private void Start()
     {
         UpdateHackableLinks();
-
+        ToggleVisualConnections();
 
 
         //hackable Start();
@@ -37,7 +37,7 @@ public class Switch : HackableObjects
         foreach (var hackable in linkedHackables)
         {
             hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
-            hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform, hackable.transform);
+            hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
         }
     }
     public void Toggle()
@@ -51,7 +51,8 @@ public class Switch : HackableObjects
     {
         foreach (var line in hackerLines)
         {
-            line.enabled = !line.enabled;
+            //line.enabled = !line.enabled;
+            line.GetComponent<Renderer>().enabled = !line.GetComponent<Renderer>().enabled;
         }
     }
 }

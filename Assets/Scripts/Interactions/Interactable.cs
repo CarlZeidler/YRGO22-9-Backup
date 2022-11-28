@@ -13,10 +13,10 @@ public class Interactable : MonoBehaviour
         if (Input.GetButtonDown("Interact") && isInteractable)
         {
             linkedEvent.Invoke();
-            isInteractable = false;
+            //isInteractable = false;
 
             //replace with something else later
-            GetComponent<Collider2D>().enabled = false;
+           // GetComponent<Collider2D>().enabled = false;
         }
     }
 }

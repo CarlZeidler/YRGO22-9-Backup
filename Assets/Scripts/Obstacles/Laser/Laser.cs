@@ -35,12 +35,6 @@ public class Laser : HackableObjects
         StartLaser();
     }
 
-
-    void Update()
-    {
-        LaserStatus();
-    }
-
     private void StartLaser()
     {
         Vector2 laserPos = new Vector2(startPoint.x + (endPoint.x - startPoint.x) / 2, startPoint.y + (endPoint.y - startPoint.y) / 2);
@@ -81,12 +75,13 @@ public class Laser : HackableObjects
 
     public void DisableBeam()
     {
-        isHacked = true;
-        Invoke(nameof(Reactivated), hackingStrength);
+        //isHacked = true;
+        thisAnimator.SetTrigger("Deactive");
     }
 
     public void Reactivated()
     {
-        isHacked = false;
+        //isHacked = false;
+        thisAnimator.SetTrigger("Active");
     }
 }
