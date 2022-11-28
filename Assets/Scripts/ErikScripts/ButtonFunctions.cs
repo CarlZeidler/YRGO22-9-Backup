@@ -25,8 +25,12 @@ public class ButtonFunctions : MonoBehaviour
 
     public void CreditsMenu()
     {
-        //Placeholder scene assigned
-        SceneManager.LoadScene("ErikScene");
+        SceneManager.LoadScene("CreditsMenu");
+    }
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGame()
