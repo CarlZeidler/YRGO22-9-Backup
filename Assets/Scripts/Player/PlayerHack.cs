@@ -61,4 +61,8 @@ public class PlayerHack : MonoBehaviour
     {
         batteryCharges -= amount;
     }
+    public void ResetCharges()
+    {
+        batteryCharges = maxBatteryCharges;
+    }
 }

@@ -100,7 +100,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         rb.velocity = new Vector2(speed, rb.velocity.y);
-        anim.SetFloat("Speed", rb.velocity.magnitude);
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         //anim.speed = rb.velocity.magnitude;
         //anim.SetFloat("verticalSpeed", rb.velocity.y);
 

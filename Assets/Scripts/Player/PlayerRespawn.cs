@@ -35,12 +35,13 @@ public class PlayerRespawn : MonoBehaviour
         //lerp pos to spawnpoint then enable scripts
         StartCoroutine(TravelToSpawnPoint(spawnTime));
 
-        //TODO
         //DISABLE HACKINGMODE
         if (pHack.inHackingMode)
             pHack.ToggleHackingMode();
         //RESETHACKSTATES
         GameManager.instance.ResetHackables();
+        //energy
+        pHack.ResetCharges();
     }
     private void EnableScripts(bool enable)
     {

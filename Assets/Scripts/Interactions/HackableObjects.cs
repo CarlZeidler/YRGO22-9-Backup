@@ -107,6 +107,21 @@ public class HackableObjects : MonoBehaviour
             onHackStoppedEvent.Invoke();
         }
     }
+    public void ToggleHackState()
+    {
+        if (isHacked)
+        {
+            onHackStoppedEvent.Invoke();
+        }
+        else
+        {
+            onHackEvent.Invoke();
+        }
+
+        UnityEvent holder = onHackEvent;
+        onHackEvent = onHackStoppedEvent;
+        onHackStoppedEvent = holder;
+    }
 
 
 }
