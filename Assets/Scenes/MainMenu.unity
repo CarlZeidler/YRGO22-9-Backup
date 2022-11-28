@@ -901,6 +901,7 @@ GameObject:
   - component: {fileID: 943634113}
   - component: {fileID: 943634112}
   - component: {fileID: 943634111}
+  - component: {fileID: 943634114}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -1023,6 +1024,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943634109}
   m_CullTransparentMesh: 1
+--- !u!95 &943634114
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943634109}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1071c457c466edf44be674ee55c1f07f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1025911083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7400000, guid: 38596d688c9a37949a953420fc1808e2, type: 2}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
