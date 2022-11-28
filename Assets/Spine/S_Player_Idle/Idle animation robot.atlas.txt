@@ -1,0 +1,30 @@
+Idle animation robot.png
+size:604,310
+filter:Linear,Linear
+pma:true
+Core body
+bounds:2,84,224,337
+rotate:90
+Layer 1
+bounds:2,10,112,72
+offsets:0,64,112,136
+Left arm
+bounds:341,111,113,197
+Left foot
+bounds:116,16,94,66
+Left hand
+bounds:341,9,103,100
+Left lower leg
+bounds:570,155,32,70
+Left upper leg
+bounds:570,227,32,81
+Right arm
+bounds:456,111,112,197
+Right foot
+bounds:212,17,94,65
+Right hand
+bounds:446,6,103,103
+Right lower leg
+bounds:551,39,32,70
+Right upper leg
+bounds:308,2,31,80
