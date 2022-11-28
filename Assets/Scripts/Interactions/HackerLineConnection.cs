@@ -12,10 +12,10 @@ public class HackerLineConnection : MonoBehaviour
         line = GetComponent<LineRenderer>();
     }
 
-    public void UpdateLine(Transform point1, Transform point2)
+    public void UpdateLine(Vector3 point1, Vector3 point2, Vector3 point3)
     {
-        Vector3[] positions = new Vector3[] { point1.position, point2.position };
-        line.SetPositions(positions);
+        Vector3[] positions = new Vector3[] { point3,point2,point1};
+        GetComponent<LineRenderer>().SetPositions(positions);
     }
     private void Update()
     {

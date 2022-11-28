@@ -11,7 +11,7 @@ public class LiftPlatform : MonoBehaviour
     //moves towards target
     private void Update()
     {
-        if((transform.position - target).magnitude > 0.1f)
+        if((transform.position - target).magnitude > 0.05f)
         {
             transform.position += (target-transform.position).normalized*speed*Time.deltaTime;
         }
