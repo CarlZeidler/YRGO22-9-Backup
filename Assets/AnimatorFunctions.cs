@@ -9,6 +9,12 @@ public class AnimatorFunctions : MonoBehaviour
 
     public void PlaySound()
     {
-        source.Play();
+        if(!source.isPlaying)
+            source.Play();
+        else
+        {
+            source.Stop();
+            source.Play();
+        }
     }
 }
