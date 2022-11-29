@@ -63,5 +63,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lift (Blue)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415872983252158770, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415872983252158770, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415872983252158770, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20392159
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403903156036381818, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104862614219451136, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104862614219451136, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104862614219451136, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20392159
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99bfa358fae70b545875219367918ec3, type: 3}

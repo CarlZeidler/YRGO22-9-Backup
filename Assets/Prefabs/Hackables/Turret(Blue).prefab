@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2644961487730230250, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644961487730230250, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.76030993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644961487730230250, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3249169450781006568, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -64,6 +76,10 @@ PrefabInstance:
       value: Turret(Blue)
       objectReference: {fileID: 0}
     - target: {fileID: 7262668604487961517, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477755256203670170, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
