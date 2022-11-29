@@ -7,17 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1078251109020710511, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: objectState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078251109020710511, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 81899310d290aa34085e30c189df4221, type: 2}
     - target: {fileID: 2408883344697041460, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Color.b
-      value: 0.5849056
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041460, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Color.g
-      value: 0.08497684
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041460, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Color.r
-      value: 0.10472295
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041461, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_RootOrder
