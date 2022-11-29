@@ -10,6 +10,7 @@ public class Switch : HackableObjects
     public List<HackerLineConnection> hackerLines;
     [SerializeField] private GameObject hackerLinePrefab;
     [SerializeField] private Sprite active, inactive;
+    [SerializeField] private Material lineBlue, lineRed;
 
     private bool toggled;
 
@@ -42,6 +43,10 @@ public class Switch : HackableObjects
         {
             hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
             hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
+            if (hackable.objectState == ObjectState.bluePersistent)
+                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
+            else
+                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
         }
     }
     public void Toggle()
@@ -77,7 +82,8 @@ public class Switch : HackableObjects
             if (toggled)
             {
                 toggled = false;
-                GetComponent<Interactable>().linkedEvent.Invoke();
+                if (GetComponent<Interactable>())
+                    GetComponent<Interactable>().linkedEvent.Invoke();
             }
         }
     }

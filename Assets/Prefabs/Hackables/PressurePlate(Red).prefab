@@ -9,6 +9,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: triggerOnExit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.010321554
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720390379669064689, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8957765946230433984, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
