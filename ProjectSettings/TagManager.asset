@@ -45,12 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 4178372883
+  - name: Tiles
+    uniqueID: 931343847
     locked: 0
   - name: Obstacles
     uniqueID: 966882689
     locked: 0
-  - name: Tiles
-    uniqueID: 931343847
+  - name: Player
+    uniqueID: 4178372883
     locked: 0

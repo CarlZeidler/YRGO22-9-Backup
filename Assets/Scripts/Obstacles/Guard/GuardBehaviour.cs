@@ -12,19 +12,16 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         visionScript.canSee = false;
-        Invoke(nameof(ReActivated), hackingStrength);
     }
 
     public void Rooted()
     {
         moveScript.canMove = false;
-        Invoke(nameof(ReActivated), hackingStrength);
     }
 
     public void Blinded()
     {
         visionScript.canSee = false;
-        Invoke(nameof(ReActivated), hackingStrength);
     }
 
     public void ReActivated()
