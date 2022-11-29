@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 2;
+    private float speed
+    {
+        get
+        {
+            return _speed;
+        }
+        set
+        {
+            _speed = value;
+        }
+    }
+    public float _speed = 2;
     public float maxSpeed = 20;
     public float Acceleration = 5;
     public float Deceleration = 5;
@@ -27,6 +38,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]private Animator anim;
     [SerializeField] private Transform playerModel;
     [SerializeField]private SpriteRenderer sr;
+    [SerializeField] private GameObject IdleAnim, moveAnim;
 
     //for running noises
     private AudioSource aud;
@@ -58,12 +70,19 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
+        IdleAnim.SetActive(false);
+        moveAnim.SetActive(true);
         if (canMove)
         {
             if ((Input.GetAxisRaw("Horizontal") > 0) && (speed < maxSpeed))
             {
                 if (speed < 0)
                     accelerationScale = 3;
+                if (!Grounded())
+                {
+                    accelerationScale /= 2;
+                }
+
                 speed = Mathf.Clamp(speed + Acceleration * Time.deltaTime * accelerationScale, -maxSpeed , maxSpeed);
                 if(sr.flipX == true)
                     Flipsprite(true);
@@ -72,6 +91,11 @@ public class PlayerMove : MonoBehaviour
             {
                 if (speed > 0)
                     accelerationScale = 3;
+                if (!Grounded())
+                {
+                    accelerationScale /= 2;
+                }
+
                 speed = Mathf.Clamp(speed - Acceleration * Time.deltaTime*accelerationScale,-maxSpeed, maxSpeed);
                 if(sr.flipX == false)
                     Flipsprite(false);
@@ -84,7 +108,15 @@ public class PlayerMove : MonoBehaviour
                 else if (speed < -Deceleration * Time.deltaTime)
                     speed = speed + Deceleration * Time.deltaTime;
                 else
+                {
                     speed = 0;
+                    //sepaerate anim model on idle
+                    if (!IdleAnim.activeSelf && Mathf.Abs(speed) < 1f && Mathf.Abs(rb.velocity.y) == 0)
+                    {
+                        IdleAnim.SetActive(true);
+                        moveAnim.SetActive(false);
+                    }
+                }
             }
 
         }
@@ -96,13 +128,22 @@ public class PlayerMove : MonoBehaviour
             else if (speed < -Deceleration * Time.deltaTime)
                 speed = speed + Deceleration * Time.deltaTime;
             else
+            {
                 speed = 0;
+                //sepaerate anim model on idle
+                if (!IdleAnim.activeSelf&& Mathf.Abs(speed) < 1f&&Mathf.Abs(rb.velocity.y)==0)
+                {
+                    IdleAnim.SetActive(true);
+                    moveAnim.SetActive(false);
+                }
+            }
+
         }
 
         rb.velocity = new Vector2(speed, rb.velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         //anim.speed = rb.velocity.magnitude;
-        //anim.SetFloat("verticalSpeed", rb.velocity.y);
+        anim.SetFloat("VerticalSpeed", Mathf.Abs(rb.velocity.y));
 
         //when run, play particles and increase animation speed
         if(rb.velocity.magnitude > 0.5f)
@@ -111,7 +152,7 @@ public class PlayerMove : MonoBehaviour
             //    ps.Play();
             //else if (!Grounded())
             //    ps.Stop();
-            if (!animspeedLocked)
+            if (!animspeedLocked&&Grounded())
                 anim.speed = Mathf.Clamp(rb.velocity.magnitude, 0.25f, 2.5f);
         }
         else
@@ -164,6 +205,7 @@ public class PlayerMove : MonoBehaviour
             pshape.rotation = new Vector3(pshape.rotation.x, -45, pshape.rotation.z);
             sr.flipX = false;
             playerModel.eulerAngles = Vector3.zero;
+            IdleAnim.transform.eulerAngles = Vector3.zero;
         }
         else
         {
@@ -171,6 +213,7 @@ public class PlayerMove : MonoBehaviour
             pshape.rotation = new Vector3(pshape.rotation.x, 135, pshape.rotation.z);
             sr.flipX = true;
             playerModel.eulerAngles = new Vector3(0, 180, 0);
+            IdleAnim.transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
     private bool Grounded()
