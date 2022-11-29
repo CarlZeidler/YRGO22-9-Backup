@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1761686526533904061, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_InstanceId
+      value: -1337984
+      objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: objectState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -66,6 +70,18 @@ PrefabInstance:
     - target: {fileID: 5649618440597560720, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_Name
       value: Door (Blue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653279112757221875, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653279112757221875, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.77467656
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653279112757221875, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7124825868210804435, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_RootOrder
