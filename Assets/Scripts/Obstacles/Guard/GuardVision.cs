@@ -7,6 +7,8 @@ public class GuardVision : MonoBehaviour
 {
     public GuardBehaviour behaviourScript;
     public bool canSee = true;
+    private PlayerRespawn respawnScript;
+    public float killtime;
 
     public void Update()
     {
@@ -31,7 +33,8 @@ public class GuardVision : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Invoke(nameof(PlayerSpotted), 1f);
+            respawnScript = other.GetComponent<PlayerRespawn>();
+            Invoke(nameof(PlayerSpotted), killtime);
         }
     }
 
@@ -42,7 +45,7 @@ public class GuardVision : MonoBehaviour
 
     private void PlayerSpotted()
     {
-        behaviourScript.SpottedPlayer();
+        respawnScript.Respawn();
     }
 
 }

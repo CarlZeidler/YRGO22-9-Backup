@@ -35,7 +35,6 @@ public class Laser : HackableObjects
         StartLaser();
     }
 
-
     void Update()
     {
         LaserStatus();
@@ -43,6 +42,8 @@ public class Laser : HackableObjects
 
     private void StartLaser()
     {
+        //Create laser with Line Render and adjust collider to span length of rendered line.
+
         Vector2 laserPos = new Vector2(startPoint.x + (endPoint.x - startPoint.x) / 2, startPoint.y + (endPoint.y - startPoint.y) / 2);
 
         lineRenderer.SetPosition(0, startPoint);
