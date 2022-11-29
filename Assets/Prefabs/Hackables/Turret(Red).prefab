@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 41483301009141250}
   - component: {fileID: 2668313537402728211}
   - component: {fileID: 4358768823868577407}
-  m_Layer: 0
+  - component: {fileID: 3521518045334230658}
+  m_Layer: 8
   m_Name: DetectionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +121,27 @@ MonoBehaviour:
   disableColliderOnTriggerExit: 0
   triggerOnExit: 1
   separateEventOnTriggerExit: 1
+--- !u!50 &3521518045334230658
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675802007308747874}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2899549349824104306
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2240151110997501963}
   - component: {fileID: 2644961487730230250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3249169450781006571}
   - component: {fileID: 3249169450781006568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret(Red)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,18 +383,6 @@ MonoBehaviour:
   onHackRevealEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: e103dfe041d18a849b9dc7daec18bc9e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3249169452347817282}
         m_TargetAssemblyTypeName: ClickableObject, Assembly-CSharp
         m_MethodName: SetClickable
@@ -400,18 +410,6 @@ MonoBehaviour:
   onHackHideEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 94e28cf9001905649983cf72c5b2eea4, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3249169452347817282}
         m_TargetAssemblyTypeName: ClickableObject, Assembly-CSharp
         m_MethodName: SetClickable
@@ -439,6 +437,7 @@ MonoBehaviour:
   hackingPowerText: {fileID: 3249169450834346198}
   objectState: 1
   killTime: 0.2
+  pInRange: 0
   animator: {fileID: 7150230740728993446}
   audS: {fileID: 9213924687027309726}
   shoot: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
@@ -457,7 +456,7 @@ GameObject:
   - component: {fileID: 3249169450834346201}
   - component: {fileID: 3249169450834346199}
   - component: {fileID: 3249169450834346198}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HackingPowerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +592,7 @@ GameObject:
   - component: {fileID: 3249169451912266747}
   - component: {fileID: 3249169451912266746}
   - component: {fileID: 3249169451912266749}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +694,7 @@ GameObject:
   - component: {fileID: 3249169452347817283}
   - component: {fileID: 3249169452347817285}
   - component: {fileID: 3249169452347817282}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2810022502836672677}
   - component: {fileID: 5664090205231688805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194730462862308447}
   - component: {fileID: 9213924687027309726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1028,7 @@ GameObject:
   - component: {fileID: 7150230740728993446}
   - component: {fileID: 5297984552819995936}
   - component: {fileID: 4683909549844778980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spine Mecanim GameObject (turretspine2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 435380028017109314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
