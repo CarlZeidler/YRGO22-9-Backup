@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turret : HackableObjects
 {
     [SerializeField] private float killTime = 1f;
+    [SerializeField] private bool pInRange = false;
 
     [SerializeField]private Animator animator;
     [SerializeField] private AudioSource audS;
@@ -21,12 +22,33 @@ public class Turret : HackableObjects
     }
     public void OnPlayerEnter()
     {
-        detectionAreaSprite.color = detectionColor;
-        Invoke(nameof(Death), killTime);
-        Invoke(nameof(Shoot), killTime - killTime / 8);
+        pInRange = true;
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position-transform.position), Mathf.Infinity, ~gameObject.layer);
+        if(ray.collider.gameObject.layer-1 == GameManager.instance.player.layer&&pInRange)
+        {
+            detectionAreaSprite.color = detectionColor;
+            Invoke(nameof(Death), killTime);
+            Invoke(nameof(Shoot), killTime - killTime / 8);
+
+        }
+    }
+    //when obstacles are moved out of area, check for player
+    public void TriggerExit()
+    {
+        Debug.Log("Trigger");
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~gameObject.layer);
+        Debug.Log(GameManager.instance.player.layer);
+        if (ray.collider.gameObject.layer - 1 == GameManager.instance.player.layer && pInRange)
+        {
+            detectionAreaSprite.color = detectionColor;
+            Invoke(nameof(Death), killTime);
+            Invoke(nameof(Shoot), killTime - killTime / 8);
+
+        }
     }
     public void OnPlayerExit()
     {
+        pInRange = false;
         detectionAreaSprite.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
