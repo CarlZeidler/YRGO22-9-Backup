@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 244819628}
   - component: {fileID: 244819627}
   - component: {fileID: 244819630}
+  - component: {fileID: 244819631}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -336,6 +337,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &244819631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244819625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649023524}
+          m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+          m_MethodName: DropAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &245564316
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +486,7 @@ GameObject:
   - component: {fileID: 344107040}
   - component: {fileID: 344107042}
   - component: {fileID: 344107043}
+  - component: {fileID: 344107044}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -656,6 +687,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &344107044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344107038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649023524}
+          m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+          m_MethodName: DropAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &722871076
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +729,7 @@ GameObject:
   - component: {fileID: 722871078}
   - component: {fileID: 722871080}
   - component: {fileID: 722871081}
+  - component: {fileID: 722871082}
   m_Layer: 5
   m_Name: Exitbutton
   m_TagString: Untagged
@@ -869,6 +930,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &722871082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722871076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649023524}
+          m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+          m_MethodName: DropAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1065223755
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +972,7 @@ GameObject:
   - component: {fileID: 1065223757}
   - component: {fileID: 1065223759}
   - component: {fileID: 1065223760}
+  - component: {fileID: 1065223761}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -1082,6 +1173,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1065223761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065223755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649023524}
+          m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+          m_MethodName: DropAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1091876206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1359,7 @@ GameObject:
   - component: {fileID: 1649023519}
   - component: {fileID: 1649023522}
   - component: {fileID: 1649023523}
+  - component: {fileID: 1649023524}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1357,6 +1478,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0698250423456fc4d9ba6ade6aec66c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1649023524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649023518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4559ff845a92f31469545ba85db0bd8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioObject: {fileID: 4908099837779689956, guid: 63ea539c46749e647847dc873caae285, type: 3}
 --- !u!1 &1651893864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1639,7 @@ GameObject:
   - component: {fileID: 1889103965}
   - component: {fileID: 1889103967}
   - component: {fileID: 1889103968}
+  - component: {fileID: 1889103969}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -1705,3 +1840,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1889103969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889103963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649023524}
+          m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+          m_MethodName: DropAudio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
