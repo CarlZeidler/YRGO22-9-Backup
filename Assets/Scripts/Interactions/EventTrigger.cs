@@ -8,9 +8,9 @@ public class EventTrigger : MonoBehaviour
     public UnityEvent linkedEvent;
     public UnityEvent linkedEventOnExit;
     [Space]
-    public string colliderTag;
+    public string colliderTag, colliderTag2;
     [Space]
-    public LayerMask colliderLayer;
+    public LayerMask colliderLayer, colliderLayer2;
     public LayerMask ignoreLayer;
 
     public Collider2D TriggerCollider;
@@ -23,6 +23,7 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(colliderLayer.value);
         if (CheckIgnore(other))
         {
             if (other.tag == colliderTag)
@@ -31,7 +32,20 @@ public class EventTrigger : MonoBehaviour
                 if(disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
+            else if (other.tag == colliderTag2)
+            {
+                linkedEvent.Invoke();
+                if (disableColliderOnTrigger)
+                    TriggerCollider.enabled = false;
+            }
             else if(other.gameObject.layer == colliderLayer.value)
+            {
+                
+                linkedEvent.Invoke();
+                if (disableColliderOnTrigger)
+                    TriggerCollider.enabled = false;
+            }
+            else if (other.gameObject.layer == colliderLayer2.value)
             {
                 linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
@@ -61,7 +75,19 @@ public class EventTrigger : MonoBehaviour
                             if (disableColliderOnTriggerExit)
                                 TriggerCollider.enabled = false;
                         }
+                        else if (other.tag == colliderTag2)
+                        {
+                            linkedEvent.Invoke();
+                            if (disableColliderOnTrigger)
+                                TriggerCollider.enabled = false;
+                        }
                         else if (other.gameObject.layer == colliderLayer.value)
+                        {
+                            linkedEventOnExit.Invoke();
+                            if (disableColliderOnTriggerExit)
+                                TriggerCollider.enabled = false;
+                        }
+                        else if (other.gameObject.layer == colliderLayer2.value)
                         {
                             linkedEventOnExit.Invoke();
                             if (disableColliderOnTriggerExit)
@@ -83,7 +109,19 @@ public class EventTrigger : MonoBehaviour
                         if (disableColliderOnTriggerExit)
                             TriggerCollider.enabled = false;
                     }
+                    else if (other.tag == colliderTag2)
+                    {
+                        linkedEvent.Invoke();
+                        if (disableColliderOnTrigger)
+                            TriggerCollider.enabled = false;
+                    }
                     else if (other.gameObject.layer == colliderLayer.value)
+                    {
+                        linkedEventOnExit.Invoke();
+                        if (disableColliderOnTriggerExit)
+                            TriggerCollider.enabled = false;
+                    }
+                    else if (other.gameObject.layer == colliderLayer2.value)
                     {
                         linkedEventOnExit.Invoke();
                         if (disableColliderOnTriggerExit)

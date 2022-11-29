@@ -35,11 +35,6 @@ public class Laser : HackableObjects
         StartLaser();
     }
 
-    void Update()
-    {
-        LaserStatus();
-    }
-
     private void StartLaser()
     {
         //Create laser with Line Render and adjust collider to span length of rendered line.
@@ -82,12 +77,13 @@ public class Laser : HackableObjects
 
     public void DisableBeam()
     {
-        isHacked = true;
-        Invoke(nameof(Reactivated), hackingStrength);
+        //isHacked = true;
+        thisAnimator.SetTrigger("Deactive");
     }
 
     public void Reactivated()
     {
-        isHacked = false;
+        //isHacked = false;
+        thisAnimator.SetTrigger("Active");
     }
 }

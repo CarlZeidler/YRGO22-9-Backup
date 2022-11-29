@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Switch : HackableObjects
 {
@@ -8,11 +9,14 @@ public class Switch : HackableObjects
     public List<HackableObjects> linkedHackables;
     public List<HackerLineConnection> hackerLines;
     [SerializeField] private GameObject hackerLinePrefab;
+    [SerializeField] private Sprite active, inactive;
+
+    private bool toggled;
 
     private void Start()
     {
         UpdateHackableLinks();
-
+        ToggleVisualConnections();
 
 
         //hackable Start();
@@ -37,11 +41,22 @@ public class Switch : HackableObjects
         foreach (var hackable in linkedHackables)
         {
             hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
-            hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform, hackable.transform);
+            hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
         }
     }
     public void Toggle()
     {
+        if (toggled)
+        {
+            GetComponent<SpriteRenderer>().sprite = active;
+            GetComponentInChildren<Image>().sprite = active;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = inactive;
+            GetComponentInChildren<Image>().sprite = inactive;
+        }
+        toggled = !toggled;
         foreach (var hackable in linkedHackables)
         {
             hackable.ToggleHackState();
@@ -51,7 +66,19 @@ public class Switch : HackableObjects
     {
         foreach (var line in hackerLines)
         {
-            line.enabled = !line.enabled;
+            //line.enabled = !line.enabled;
+            line.GetComponent<Renderer>().enabled = !line.GetComponent<Renderer>().enabled;
+        }
+    }
+    public void ResetToggle()
+    {
+        if(objectState == ObjectState.redUnPersistent)
+        {
+            if (toggled)
+            {
+                toggled = false;
+                GetComponent<Interactable>().linkedEvent.Invoke();
+            }
         }
     }
 }

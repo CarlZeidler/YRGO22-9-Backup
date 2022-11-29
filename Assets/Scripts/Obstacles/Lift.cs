@@ -55,6 +55,7 @@ public class Lift : HackableObjects
         Vector3 holder = endPoint;
         endPoint = startPoint;
         startPoint = holder;
+        timer = 1 - timer;
 
         foreach (var platform in platforms)
         {
