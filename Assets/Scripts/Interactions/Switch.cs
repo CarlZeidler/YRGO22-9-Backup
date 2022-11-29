@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Switch : HackableObjects
 {
@@ -8,6 +9,7 @@ public class Switch : HackableObjects
     public List<HackableObjects> linkedHackables;
     public List<HackerLineConnection> hackerLines;
     [SerializeField] private GameObject hackerLinePrefab;
+    [SerializeField] private Sprite active, inactive;
 
     private bool toggled;
 
@@ -44,6 +46,16 @@ public class Switch : HackableObjects
     }
     public void Toggle()
     {
+        if (toggled)
+        {
+            GetComponent<SpriteRenderer>().sprite = active;
+            GetComponentInChildren<Image>().sprite = active;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = inactive;
+            GetComponentInChildren<Image>().sprite = inactive;
+        }
         toggled = !toggled;
         foreach (var hackable in linkedHackables)
         {

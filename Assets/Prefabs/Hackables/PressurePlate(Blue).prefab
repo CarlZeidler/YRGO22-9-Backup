@@ -93,7 +93,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 18219014483173826, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: m_Name
-      value: PressurePlate
+      value: PressurePlate(Blue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 18219014483173828, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: m_RootOrder
@@ -163,12 +179,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4824976417489865861, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8875429109209385495, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 755877623185534823, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+    - {fileID: 8875429109209385495, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
 --- !u!61 &5851719571202382270 stripped
 BoxCollider2D:
