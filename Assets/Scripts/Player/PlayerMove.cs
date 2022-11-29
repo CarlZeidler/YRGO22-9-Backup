@@ -94,7 +94,7 @@ public class PlayerMove : MonoBehaviour
                 if (!Grounded())
                 {
                     accelerationScale /= 2;
-                }
+                }   
 
                 speed = Mathf.Clamp(speed - Acceleration * Time.deltaTime*accelerationScale,-maxSpeed, maxSpeed);
                 if(sr.flipX == false)

@@ -9,6 +9,8 @@ public class Switch : HackableObjects
     public List<HackerLineConnection> hackerLines;
     [SerializeField] private GameObject hackerLinePrefab;
 
+    private bool toggled;
+
     private void Start()
     {
         UpdateHackableLinks();
@@ -42,6 +44,7 @@ public class Switch : HackableObjects
     }
     public void Toggle()
     {
+        toggled = !toggled;
         foreach (var hackable in linkedHackables)
         {
             hackable.ToggleHackState();
@@ -53,6 +56,17 @@ public class Switch : HackableObjects
         {
             //line.enabled = !line.enabled;
             line.GetComponent<Renderer>().enabled = !line.GetComponent<Renderer>().enabled;
+        }
+    }
+    public void ResetToggle()
+    {
+        if(objectState == ObjectState.redUnPersistent)
+        {
+            if (toggled)
+            {
+                toggled = false;
+                GetComponent<Interactable>().linkedEvent.Invoke();
+            }
         }
     }
 }

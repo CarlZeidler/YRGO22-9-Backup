@@ -57,8 +57,11 @@ public class GameManager : MonoBehaviour
         foreach (var hackable in hackableObjects)
         {
             hackable.ResetHackPower();
-            if (hackable.isHacked)
-                hackable.onHackStoppedEvent.Invoke();
+            hackable.ResetOnRespawn();
+            if (hackable.GetComponent<Switch>())
+            {
+                hackable.GetComponent<Switch>().ResetToggle();
+            }
         }
     }
 

@@ -19,4 +19,5 @@ public class Interactable : MonoBehaviour
            // GetComponent<Collider2D>().enabled = false;
         }
     }
+
 }

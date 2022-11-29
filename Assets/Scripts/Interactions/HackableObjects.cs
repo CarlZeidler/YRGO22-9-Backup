@@ -122,6 +122,16 @@ public class HackableObjects : MonoBehaviour
         onHackEvent = onHackStoppedEvent;
         onHackStoppedEvent = holder;
     }
-
+    public void ResetOnRespawn()
+    {
+        if(objectState == ObjectState.redUnPersistent)
+        {
+            if (isHacked)
+            {
+                hackingStrength = 0;
+                //onHackStoppedEvent.Invoke();
+            }
+        }
+    }
 
 }
