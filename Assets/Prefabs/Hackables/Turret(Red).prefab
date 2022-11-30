@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4358768823868577407}
   - component: {fileID: 3521518045334230658}
   - component: {fileID: 1116828125215323125}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: DetectionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,6 +506,9 @@ MonoBehaviour:
   detectionColor: {r: 1, g: 0.027406208, b: 0, a: 0.5803922}
   activeColor: {r: 1, g: 0.6766883, b: 0, a: 0.6039216}
   inactiveColor: {r: 1, g: 0.6784314, b: 0, a: 0.27058825}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 268
 --- !u!1 &3249169450834346200
 GameObject:
   m_ObjectHideFlags: 0

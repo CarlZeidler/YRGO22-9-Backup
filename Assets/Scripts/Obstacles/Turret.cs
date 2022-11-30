@@ -12,7 +12,28 @@ public class Turret : HackableObjects
     [SerializeField] private AudioClip shoot;
     [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor,activeColor,inactiveColor;
+    [SerializeField] LayerMask ignoreLayer;
 
+
+    private void Update()
+    {
+        if (pInRange)
+        {
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
+            if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
+            {
+                detectionAreaSprite.color = detectionColor;
+                Invoke(nameof(Death), killTime);
+                Invoke(nameof(Shoot), killTime - killTime / 8);
+
+            }
+        }
+        else
+        {
+            CancelInvoke(nameof(Death));
+            CancelInvoke(nameof(Shoot));
+        }
+    }
     public void Active(bool active)
     {
         if (active)
@@ -23,8 +44,8 @@ public class Turret : HackableObjects
     public void OnPlayerEnter()
     {
         pInRange = true;
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position-transform.position), Mathf.Infinity, ~gameObject.layer);
-        if(ray.collider.gameObject.layer-1 == GameManager.instance.player.layer&&pInRange)
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
+        if(ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             detectionAreaSprite.color = detectionColor;
             Invoke(nameof(Death), killTime);
@@ -35,9 +56,9 @@ public class Turret : HackableObjects
     //when obstacles are moved out of area, check for player
     public void TriggerExit()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~gameObject.layer);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         Debug.Log(GameManager.instance.player.layer);
-        if (ray.collider.gameObject.layer - 1 == GameManager.instance.player.layer && pInRange)
+        if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             detectionAreaSprite.color = detectionColor;
             Invoke(nameof(Death), killTime);
@@ -51,6 +72,7 @@ public class Turret : HackableObjects
         detectionAreaSprite.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
+
     }
     private void Shoot()
     {
@@ -59,8 +81,8 @@ public class Turret : HackableObjects
     }
     private void Death()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~gameObject.layer);
-        if (ray.collider.gameObject.layer - 1 == GameManager.instance.player.layer && pInRange)
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
+        if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
 
