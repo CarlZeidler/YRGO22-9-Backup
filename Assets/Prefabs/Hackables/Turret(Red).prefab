@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 0
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   TriggerCollider: {fileID: 2668313537402728211}
   useTag1: 1
   useTag2: 0
