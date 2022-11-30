@@ -7,16 +7,21 @@ public class CameraFollow : MonoBehaviour
     //TODO move to gamemanager
     [SerializeField] private Transform player;
     public float lerpSpeed = 1;
+    public float maxScreenPoint = 0.9f;
+    private float size;
+
+    [SerializeField] private float hackermodeZoomMultiplier = 1;
+    [SerializeField] private float hackermodeZoomSpeed = 1;
 
     void Start()
     {
         player = GameManager.instance.player.transform;
+        size = GetComponent<Camera>().orthographicSize;
     }
 
     void Update()
     {
         bool panning;
-        float maxScreenPoint = 0.9f;
         //some magic numbers that set position towards mouseposition
         Vector3 mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
         Vector3 targetPosition;
@@ -29,6 +34,8 @@ public class CameraFollow : MonoBehaviour
         else
         {
             targetPosition = player.position;
+            targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
+            
             panning = false;
         }
         //position to move to
@@ -40,5 +47,13 @@ public class CameraFollow : MonoBehaviour
             transform.position = position;
         else
             transform.position = position;
+
+    }
+    void LerpOrthSize()
+    {
+        if (GameManager.instance.player.GetComponent<PlayerHack>().inHackingMode)
+            GetComponent<Camera>().orthographicSize = Mathf.Lerp(size, size * hackermodeZoomMultiplier, hackermodeZoomSpeed*Time.deltaTime);
+        else
+            GetComponent<Camera>().orthographicSize = Mathf.Lerp(size*hackermodeZoomMultiplier, size, hackermodeZoomSpeed*Time.deltaTime);
     }
 }
