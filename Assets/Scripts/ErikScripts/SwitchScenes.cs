@@ -15,4 +15,9 @@ public class SwitchScenes : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartTime()
+    {
+        Time.timeScale = 1f;
+    }
 }
