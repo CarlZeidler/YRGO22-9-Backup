@@ -6,9 +6,26 @@ public class HackablePlatform : HackableObjects
 {
     public bool solid;
 
+    private void Start()
+    {
+        if (!solid)
+        {
+            Toggle();
+        }
+
+
+
+        //hackable
+        //save own state if red spawn this on player respawn
+        if (objectState == ObjectState.redUnPersistent)
+        {
+            originalState = gameObject;
+        }
+        //add to manager list
+        GameManager.instance.hackableObjects.Add(this);
+    }
     public void Toggle()
     {
-        solid = !solid;
 
         if (solid)
         {
@@ -20,6 +37,7 @@ public class HackablePlatform : HackableObjects
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().material.color = Color.black;
         }
+        solid = !solid;
     }
 
 }
