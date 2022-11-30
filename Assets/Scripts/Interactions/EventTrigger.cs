@@ -16,6 +16,10 @@ public class EventTrigger : MonoBehaviour
     public Collider2D TriggerCollider;
     public bool useTag1, useTag2, useLayer1, useLayer2;
     [Space]
+    public bool useTimer;
+    public bool useTimerOnExit;
+    public float timer;
+    [Space]
     public bool disableColliderOnTrigger;
     public bool disableColliderOnTriggerExit;
 
@@ -28,25 +32,38 @@ public class EventTrigger : MonoBehaviour
         {
             if (other.tag == colliderTag&&useTag1)
             {
-                linkedEvent.Invoke();
+                if (useTimer)
+                    StartCoroutine(InvokeTimer(linkedEvent, timer));
+                else
+                    linkedEvent.Invoke();
+
                 if(disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
             else if (other.tag == colliderTag2 && useTag2)
             {
-                linkedEvent.Invoke();
+                if (useTimer)
+                    StartCoroutine(InvokeTimer(linkedEvent, timer));
+                else
+                    linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
             else if(other.gameObject.layer == colliderLayer.value && useLayer1)
             {
-                linkedEvent.Invoke();
+                if (useTimer)
+                    StartCoroutine(InvokeTimer(linkedEvent, timer));
+                else
+                    linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
             else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
             {
-                linkedEvent.Invoke();
+                if (useTimer)
+                    StartCoroutine(InvokeTimer(linkedEvent, timer));
+                else
+                    linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
@@ -64,25 +81,37 @@ public class EventTrigger : MonoBehaviour
                     {
                         if (other.tag == colliderTag && useTag1)
                         {
-                            linkedEventOnExit.Invoke();
+                            if (useTimerOnExit)
+                                StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
+                            else
+                                linkedEventOnExit.Invoke();
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
                         else if (other.tag == colliderTag2 && useTag2)
                         {
-                            linkedEventOnExit.Invoke();
+                            if (useTimerOnExit)
+                                StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
+                            else
+                                linkedEventOnExit.Invoke();
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
                         else if (other.gameObject.layer == colliderLayer.value && useLayer1)
                         {
-                            linkedEventOnExit.Invoke();
+                            if (useTimerOnExit)
+                                StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
+                            else
+                                linkedEventOnExit.Invoke();
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
                         else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
                         {
-                            linkedEventOnExit.Invoke();
+                            if (useTimerOnExit)
+                                StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
+                            else
+                                linkedEventOnExit.Invoke();
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
@@ -92,25 +121,37 @@ public class EventTrigger : MonoBehaviour
                 {
                     if (other.tag == colliderTag && useTag1)
                     {
-                        linkedEvent.Invoke();
+                        if (useTimerOnExit)
+                            StartCoroutine(InvokeTimer(linkedEvent, timer));
+                        else
+                            linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
                     else if (other.tag == colliderTag2 && useTag2)
                     {
-                        linkedEvent.Invoke();
+                        if (useTimerOnExit)
+                            StartCoroutine(InvokeTimer(linkedEvent, timer));
+                        else
+                            linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
                     else if (other.gameObject.layer == colliderLayer.value && useLayer1)
                     {
-                        linkedEvent.Invoke();
+                        if (useTimerOnExit)
+                            StartCoroutine(InvokeTimer(linkedEvent, timer));
+                        else
+                            linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
                     else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
                     {
-                        linkedEvent.Invoke();
+                        if (useTimerOnExit)
+                            StartCoroutine(InvokeTimer(linkedEvent, timer));
+                        else
+                            linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
@@ -129,5 +170,10 @@ public class EventTrigger : MonoBehaviour
         {
             return false;
         }
+    }
+    private IEnumerator InvokeTimer(UnityEvent uEvent, float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        uEvent.Invoke();
     }
 }
