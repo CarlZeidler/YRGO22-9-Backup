@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret(Blue)
       objectReference: {fileID: 0}
+    - target: {fileID: 4358768823868577407, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
+      propertyPath: colliderTag2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7262668604487961517, guid: 8c7234e139815884baece2f49acb10cf, type: 3}
       propertyPath: m_Mesh
       value: 

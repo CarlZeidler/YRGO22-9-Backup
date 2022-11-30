@@ -41,12 +41,19 @@ public class Switch : HackableObjects
         //spawn new hacker line and set connection points to linked hackable
         foreach (var hackable in linkedHackables)
         {
-            hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
-            hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
-            if (hackable.objectState == ObjectState.bluePersistent)
-                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
-            else
-                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
+            try
+            {
+                hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
+                hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
+                if (hackable.objectState == ObjectState.bluePersistent)
+                    hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
+                else
+                    hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
+            }
+            catch
+            {
+                Debug.Log("Missing hackable links");
+            }
         }
     }
     public void Toggle()
@@ -64,7 +71,14 @@ public class Switch : HackableObjects
         toggled = !toggled;
         foreach (var hackable in linkedHackables)
         {
-            hackable.ToggleHackState();
+            try
+            {
+                hackable.ToggleHackState();
+            }
+            catch
+            {
+                Debug.Log("Missing hackable links");
+            }
         }
     }
     public void ToggleVisualConnections()
