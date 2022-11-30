@@ -35,7 +35,6 @@ public class Turret : HackableObjects
     //when obstacles are moved out of area, check for player
     public void TriggerExit()
     {
-        Debug.Log("Trigger");
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~gameObject.layer);
         Debug.Log(GameManager.instance.player.layer);
         if (ray.collider.gameObject.layer - 1 == GameManager.instance.player.layer && pInRange)
@@ -60,7 +59,12 @@ public class Turret : HackableObjects
     }
     private void Death()
     {
-        GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~gameObject.layer);
+        if (ray.collider.gameObject.layer - 1 == GameManager.instance.player.layer && pInRange)
+        {
+            GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
+
+        }
     }
     public void SetEnable(bool enable)
     {

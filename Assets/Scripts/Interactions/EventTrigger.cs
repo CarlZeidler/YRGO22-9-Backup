@@ -14,6 +14,7 @@ public class EventTrigger : MonoBehaviour
     public LayerMask ignoreLayer;
 
     public Collider2D TriggerCollider;
+    public bool useTag1, useTag2, useLayer1, useLayer2;
     [Space]
     public bool disableColliderOnTrigger;
     public bool disableColliderOnTriggerExit;
@@ -25,31 +26,25 @@ public class EventTrigger : MonoBehaviour
     {
         if (CheckIgnore(other))
         {
-            if (other.tag == colliderTag)
+            if (other.tag == colliderTag&&useTag1)
             {
                 linkedEvent.Invoke();
                 if(disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
-            else if (other.tag == colliderTag2)
+            else if (other.tag == colliderTag2 && useTag2)
             {
                 linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
-            else if(other.gameObject.layer == colliderLayer.value)
+            else if(other.gameObject.layer == colliderLayer.value && useLayer1)
             {
                 linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
-            else if (other.gameObject.layer == colliderLayer2.value)
-            {
-                linkedEvent.Invoke();
-                if (disableColliderOnTrigger)
-                    TriggerCollider.enabled = false;
-            }
-            else if (colliderTag == null)
+            else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
             {
                 linkedEvent.Invoke();
                 if (disableColliderOnTrigger)
@@ -59,7 +54,6 @@ public class EventTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("2");
         if (CheckIgnore(other))
         {
             if (triggerOnExit)
@@ -68,32 +62,25 @@ public class EventTrigger : MonoBehaviour
                 {
                     if (linkedEventOnExit!=null)
                     {
-                        if (other.tag == colliderTag)
+                        if (other.tag == colliderTag && useTag1)
                         {
-                            Debug.Log("1");
                             linkedEventOnExit.Invoke();
-                            if (disableColliderOnTriggerExit)
-                                TriggerCollider.enabled = false;
-                        }
-                        else if (other.tag == colliderTag2)
-                        {
-                            linkedEvent.Invoke();
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
-                        else if (other.gameObject.layer == colliderLayer.value)
+                        else if (other.tag == colliderTag2 && useTag2)
                         {
                             linkedEventOnExit.Invoke();
-                            if (disableColliderOnTriggerExit)
+                            if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
-                        else if (other.gameObject.layer == colliderLayer2.value)
+                        else if (other.gameObject.layer == colliderLayer.value && useLayer1)
                         {
                             linkedEventOnExit.Invoke();
-                            if (disableColliderOnTriggerExit)
+                            if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
-                        else if (colliderTag == null)
+                        else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
                         {
                             linkedEventOnExit.Invoke();
                             if (disableColliderOnTrigger)
@@ -103,36 +90,31 @@ public class EventTrigger : MonoBehaviour
                 }
                 else
                 {
-                    if (other.tag == colliderTag)
-                    {
-                        linkedEventOnExit.Invoke();
-                        if (disableColliderOnTriggerExit)
-                            TriggerCollider.enabled = false;
-                    }
-                    else if (other.tag == colliderTag2)
+                    if (other.tag == colliderTag && useTag1)
                     {
                         linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
-                    else if (other.gameObject.layer == colliderLayer.value)
+                    else if (other.tag == colliderTag2 && useTag2)
                     {
-                        linkedEventOnExit.Invoke();
-                        if (disableColliderOnTriggerExit)
-                            TriggerCollider.enabled = false;
-                    }
-                    else if (other.gameObject.layer == colliderLayer2.value)
-                    {
-                        linkedEventOnExit.Invoke();
-                        if (disableColliderOnTriggerExit)
-                            TriggerCollider.enabled = false;
-                    }
-                    else if (colliderTag == null)
-                    {
-                        linkedEventOnExit.Invoke();
+                        linkedEvent.Invoke();
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
+                    else if (other.gameObject.layer == colliderLayer.value && useLayer1)
+                    {
+                        linkedEvent.Invoke();
+                        if (disableColliderOnTrigger)
+                            TriggerCollider.enabled = false;
+                    }
+                    else if (other.gameObject.layer == colliderLayer2.value && useLayer2)
+                    {
+                        linkedEvent.Invoke();
+                        if (disableColliderOnTrigger)
+                            TriggerCollider.enabled = false;
+                    }
+                    
                 }
             }
         }
