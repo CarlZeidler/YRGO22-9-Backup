@@ -17,6 +17,7 @@ public class LiftPlatform : MonoBehaviour
         }
         else
         {
+            GetComponentInChildren<PlatformPlayerFollow>().OnDespawn();
             //depsawn anim
             Destroy(gameObject);
         }

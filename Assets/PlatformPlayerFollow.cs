@@ -18,9 +18,10 @@ public class PlatformPlayerFollow : MonoBehaviour
             GameManager.instance.player.transform.parent = null;
         }
     }
-    private void OnDestroy()
+    public void OnDespawn()
     {
         if(GameManager.instance.player.transform.parent == transform)
             GameManager.instance.player.transform.parent = null;
+
     }
 }

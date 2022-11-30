@@ -47,7 +47,7 @@ public class PlayerHack : MonoBehaviour
     {
         if (!inHackingMode)
         {
-            GameManager.instance.RevealHackables(0.25f);
+            GameManager.instance.RevealHackables(0.1f);
             hackingUIAnim.SetBool("HackingMode",true);
         }
         else

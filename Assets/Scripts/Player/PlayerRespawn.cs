@@ -81,11 +81,11 @@ public class PlayerRespawn : MonoBehaviour
         Vector3 startPosition = transform.position;
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, spawnPoint, time / duration);
+            transform.position = Vector3.Slerp(startPosition, spawnPoint, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
         transform.position = spawnPoint;
-        Spawn();
+        Invoke(nameof(Spawn),spawnTime/5);
     }
 }
