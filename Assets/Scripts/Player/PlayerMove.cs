@@ -70,7 +70,7 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
-        IdleAnim.SetActive(false);
+        IdleAnim.GetComponent<Renderer>().enabled = false;
         moveAnim.SetActive(true);
         if (canMove)
         {
@@ -111,9 +111,9 @@ public class PlayerMove : MonoBehaviour
                 {
                     speed = 0;
                     //sepaerate anim model on idle
-                    if (!IdleAnim.activeSelf && Mathf.Abs(speed) < 1f && Mathf.Abs(rb.velocity.y) == 0)
+                    if (!IdleAnim.GetComponent<Renderer>().enabled && Mathf.Abs(speed) < 1f && Mathf.Abs(rb.velocity.y) == 0)
                     {
-                        IdleAnim.SetActive(true);
+                        IdleAnim.GetComponent<Renderer>().enabled = true;
                         moveAnim.SetActive(false);
                     }
                 }
@@ -131,9 +131,9 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 0;
                 //sepaerate anim model on idle
-                if (!IdleAnim.activeSelf&& Mathf.Abs(speed) < 1f&&Mathf.Abs(rb.velocity.y)==0)
+                if (!IdleAnim.GetComponent<Renderer>().enabled && Mathf.Abs(speed) < 1f&&Mathf.Abs(rb.velocity.y)==0)
                 {
-                    IdleAnim.SetActive(true);
+                    IdleAnim.GetComponent<Renderer>().enabled = true;
                     moveAnim.SetActive(false);
                 }
             }

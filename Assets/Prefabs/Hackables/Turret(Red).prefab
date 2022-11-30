@@ -122,6 +122,9 @@ MonoBehaviour:
   useTag2: 0
   useLayer1: 0
   useLayer2: 0
+  useTimer: 0
+  useTimerOnExit: 0
+  timer: 0
   disableColliderOnTrigger: 0
   disableColliderOnTriggerExit: 0
   triggerOnExit: 1
@@ -193,6 +196,9 @@ MonoBehaviour:
   useTag2: 0
   useLayer1: 1
   useLayer2: 0
+  useTimer: 0
+  useTimerOnExit: 0
+  timer: 0
   disableColliderOnTrigger: 0
   disableColliderOnTriggerExit: 0
   triggerOnExit: 1
@@ -1099,7 +1105,7 @@ Transform:
   m_GameObject: {fileID: 7281139810369151617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: -0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 435380028017109314}
