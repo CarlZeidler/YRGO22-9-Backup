@@ -1,0 +1,9 @@
+Standard measurment
+Legend: tile, unit, unity meter; they're all the same 
+
+Corridors should be 6 tiles high, this is the space inbetween the ceiling tile and floor tile. 
+The player is currently 3 tiles high and can jump about 6 tiles. 
+
+Verticle/falling corridors should also be 6 tiles wide. 
+Doors should also be 6 tiles high. This will allow them to cover both verticle and horizontal corridors. 
+
