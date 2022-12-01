@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2408883344228909426}
   - component: {fileID: 2408883344228909427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 860684579593098872}
   - component: {fileID: 5038748933815125989}
   - component: {fileID: 6192350913753616665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laser(Red)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHacked: 0
+  objectState: 1
   onHackEvent:
     m_PersistentCalls:
       m_Calls:
@@ -244,9 +245,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   hackingPowerText: {fileID: 3787264894214718789}
-  objectState: 1
   StartPointRef: {fileID: 2408883345811171421}
   EndPointRef: {fileID: 2408883344228909429}
+  ignorLayers:
+    serializedVersion: 2
+    m_Bits: 556
 --- !u!120 &860684579593098872
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -398,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2408883345811171418}
   - component: {fileID: 2408883345811171419}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2408883346006625409}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +520,7 @@ GameObject:
   - component: {fileID: 7844155836917834014}
   - component: {fileID: 3322177459462271260}
   - component: {fileID: 3787264894214718789}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HackingPowerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +656,7 @@ GameObject:
   - component: {fileID: 6189858811592422492}
   - component: {fileID: 8728602102534730519}
   - component: {fileID: 6382813599463140156}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +758,7 @@ GameObject:
   - component: {fileID: 1477862342405086775}
   - component: {fileID: 5964512134844426675}
   - component: {fileID: 7508294554459255754}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7621789675671630098}
   - component: {fileID: 5769909818920418741}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569323127300016844}
   - component: {fileID: 2779156304654675518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
