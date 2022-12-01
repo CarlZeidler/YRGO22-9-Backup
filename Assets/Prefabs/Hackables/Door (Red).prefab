@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHacked: 0
+  objectState: 1
   onHackEvent:
     m_PersistentCalls:
       m_Calls:
@@ -318,7 +319,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   hackingPowerText: {fileID: 8728958731473639403}
-  objectState: 1
   speed: 1
   anim: {fileID: 3763584925073076753}
 --- !u!1 &2073103300575813311

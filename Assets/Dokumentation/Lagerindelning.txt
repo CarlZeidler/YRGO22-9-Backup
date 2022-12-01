@@ -1,0 +1,20 @@
+!! LAYERS AND TAGS ARE CASE SENSITIVE !!
+
+
+Objekt				Layer			Tag
+
+Player				Player			Player
+
+Ground (tilemap)	Ground			Ground
+
+Enemies(guards)		Enemy			Enemy
+
+Platforms			Obstacle		Obstacle
+
+Laser				Obstacle		Obstacle
+
+Door				Obstacle		Obstacle
+
+Switch				Interactable	Ground
+
+Pressure Plate		Interactable	Ground
