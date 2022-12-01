@@ -19,6 +19,8 @@ public class Laser : HackableObjects
     private RaycastHit2D ray;
     private Vector2 rayPointRef;
 
+    [SerializeField] bool isActive;
+
     void Start()
     {
         //save own state if red spawn this on player respawn
@@ -94,7 +96,7 @@ public class Laser : HackableObjects
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player")&&isActive)
         {
             collision.GetComponent<PlayerRespawn>().Respawn();
         }
@@ -104,11 +106,13 @@ public class Laser : HackableObjects
     {
         //isHacked = true;
         thisAnimator.SetTrigger("Deactive");
+        isActive = false;
     }
 
     public void Reactivated()
     {
         //isHacked = false;
         thisAnimator.SetTrigger("Active");
+        isActive = true;
     }
 }
