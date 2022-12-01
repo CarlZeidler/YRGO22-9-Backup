@@ -18,3 +18,5 @@ Door				Obstacle		Obstacle
 Switch				Interactable	Ground
 
 Pressure Plate		Interactable	Ground
+
+Lift				Obstacle	Obstacle

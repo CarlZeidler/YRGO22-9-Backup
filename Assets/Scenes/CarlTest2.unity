@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8114511208693651515, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
+      propertyPath: startDirectionRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8114511208693651517, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
       propertyPath: m_Name
       value: NewGuard
