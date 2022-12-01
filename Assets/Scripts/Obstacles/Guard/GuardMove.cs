@@ -256,10 +256,13 @@ public class GuardMove : MonoBehaviour
         //            Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0.5f, 0f), 0.5f) ||
         //                Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(-0.5f, 0f), 0.5f))
 
-        if (!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f) ||
-                !Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f) ||
-                    Physics2D.Raycast(raycastRightSide.position, new Vector2(0.5f, 0f), 0.5f) ||
-                        Physics2D.Raycast(raycastLeftSide.position, new Vector2(-0.5f, 0f), 0.5f))
+        LayerMask groundMask = LayerMask.GetMask("Ground");
+        LayerMask generalMask = LayerMask.GetMask("Ground", "Obstacle");
+
+        if (!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, groundMask) ||
+                !Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f, groundMask) ||
+                    Physics2D.Raycast(raycastRightSide.position, new Vector2(0.5f, 0f), 1f, generalMask) ||
+                        Physics2D.Raycast(raycastLeftSide.position, new Vector2(-0.5f, 0f), 1f, generalMask))
         {
             rayCastHit = true;
         }
