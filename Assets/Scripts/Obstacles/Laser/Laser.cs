@@ -15,6 +15,10 @@ public class Laser : HackableObjects
     private Vector2 startPoint;
     private Vector2 endPoint;
 
+    [SerializeField] private LayerMask ignorLayers;
+    private RaycastHit2D ray;
+    private Vector2 rayPointRef;
+
     void Start()
     {
         //save own state if red spawn this on player respawn
@@ -25,34 +29,55 @@ public class Laser : HackableObjects
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
 
-        startPoint = StartPointRef.transform.localPosition;
-        endPoint = EndPointRef.transform.localPosition;
 
         lineRenderer = GetComponent<LineRenderer>();
         thisAnimator = GetComponentInChildren<Animator>();
         laserCollider = GetComponent<EdgeCollider2D>();
         
-        StartLaser();
     }
-
-    private void StartLaser()
+    private void Update()
     {
-        //Create laser with Line Render and adjust collider to span length of rendered line.
+        startPoint = StartPointRef.transform.position;
+        endPoint = EndPointRef.transform.position;
+        LaserCheck();
+    }
+    private void LaserCheck()
+    {
 
-        Vector2 laserPos = new Vector2(startPoint.x + (endPoint.x - startPoint.x) / 2, startPoint.y + (endPoint.y - startPoint.y) / 2);
+        //ray from start to direction of end
+        ray = Physics2D.Raycast(startPoint, endPoint - startPoint, 100, ~ignorLayers);
 
-        lineRenderer.SetPosition(0, startPoint);
-        lineRenderer.SetPosition(1, endPoint);
+        //check if point moved
+        if(ray && ray.point != rayPointRef)
+        {
+            rayPointRef = ray.point;
+            DrawLaserLine();
+        }
+        else if(!ray)
+        {
+            Vector2 pos = ((endPoint - startPoint)) * 100;
+            if (rayPointRef != pos)
+            {
+                rayPointRef = pos;
+                DrawLaserLine();
+            }
+        }
+    }
+    private void DrawLaserLine()
+    {
+        //ray origin is in worldspace, linerenderer positions are not
+        //line pos0 != startpoint worldpos
+        lineRenderer.SetPosition(0, StartPointRef.transform.localPosition);
+        //ray point - endpoint worldposition+worldpoint refrence,magic numbers
+        lineRenderer.SetPosition(1, rayPointRef-endPoint+ (Vector2)EndPointRef.transform.localPosition);
 
-        List<Vector2> edges = new List<Vector2>();
-        edges.Add(startPoint);
-        edges.Add(endPoint);
-
-        laserCollider.SetPoints(edges);
-
-        StartPointRef.transform.up = EndPointRef.transform.position - StartPointRef.transform.position;
-        EndPointRef.transform.up = StartPointRef.transform.position - EndPointRef.transform.position;
-
+        //List<Vector2> edges = new List<Vector2>();
+        //edges.Add(startPoint);
+        //edges.Add(rayPointRef);
+        //laserCollider.SetPoints(edges);
+        if(ray)
+            if (ray.collider.CompareTag("Player"))
+                ray.collider.GetComponent<PlayerRespawn>().Respawn();
     }
     
     private void LaserStatus()

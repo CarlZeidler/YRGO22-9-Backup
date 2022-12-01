@@ -10,8 +10,7 @@ public class EventTrigger : MonoBehaviour
     [Space]
     public string colliderTag, colliderTag2;
     [Space]
-    public LayerMask colliderLayer, colliderLayer2;
-    public LayerMask ignoreLayer;
+    public string colliderLayer, colliderLayer2;
 
     public Collider2D TriggerCollider;
     public bool useTag1, useTag2, useLayer1, useLayer2;
@@ -28,7 +27,6 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CheckIgnore(other))
         {
             if (other.tag == colliderTag&&useTag1)
             {
@@ -49,7 +47,7 @@ public class EventTrigger : MonoBehaviour
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
-            else if(gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer.value) && useLayer1)
+            else if(LayerMask.LayerToName(other.gameObject.layer) == colliderLayer && useLayer1)
             {
                 if (useTimer)
                     StartCoroutine(InvokeTimer(linkedEvent, timer));
@@ -58,7 +56,7 @@ public class EventTrigger : MonoBehaviour
                 if (disableColliderOnTrigger)
                     TriggerCollider.enabled = false;
             }
-            else if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer2.value) && useLayer2)
+            else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer2 && useLayer2)
             {
                 if (useTimer)
                     StartCoroutine(InvokeTimer(linkedEvent, timer));
@@ -71,7 +69,6 @@ public class EventTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (CheckIgnore(other))
         {
             if (triggerOnExit)
             {
@@ -97,7 +94,7 @@ public class EventTrigger : MonoBehaviour
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
-                        else if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer.value) && useLayer1)
+                        else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer && useLayer1)
                         {
                             if (useTimerOnExit)
                                 StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
@@ -106,7 +103,7 @@ public class EventTrigger : MonoBehaviour
                             if (disableColliderOnTrigger)
                                 TriggerCollider.enabled = false;
                         }
-                        else if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer2.value) && useLayer2)
+                        else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer2 && useLayer2)
                         {
                             if (useTimerOnExit)
                                 StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
@@ -137,7 +134,7 @@ public class EventTrigger : MonoBehaviour
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
-                    else if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer.value) && useLayer1)
+                    else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer && useLayer1)
                     {
                         if (useTimerOnExit)
                             StartCoroutine(InvokeTimer(linkedEvent, timer));
@@ -146,7 +143,7 @@ public class EventTrigger : MonoBehaviour
                         if (disableColliderOnTrigger)
                             TriggerCollider.enabled = false;
                     }
-                    else if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(colliderLayer2.value) && useLayer2)
+                    else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer2 && useLayer2)
                     {
                         if (useTimerOnExit)
                             StartCoroutine(InvokeTimer(linkedEvent, timer));
@@ -158,17 +155,6 @@ public class EventTrigger : MonoBehaviour
                     
                 }
             }
-        }
-    }
-    private bool CheckIgnore(Collider2D other)
-    {
-        if (!gameObject.GetComponent<Collider2D>().IsTouchingLayers(ignoreLayer))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
     private IEnumerator InvokeTimer(UnityEvent uEvent, float timer)
