@@ -256,13 +256,12 @@ public class GuardMove : MonoBehaviour
         //            Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0.5f, 0f), 0.5f) ||
         //                Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(-0.5f, 0f), 0.5f))
 
-        LayerMask groundMask = LayerMask.GetMask("Ground");
-        LayerMask generalMask = LayerMask.GetMask("Ground", "Obstacle");
+        Debug.DrawRay(raycastFeetLeftReference.position, new Vector2(0f, -1f), Color.red);
 
-        if (!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, groundMask) ||
-                !Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f, groundMask) ||
-                    Physics2D.Raycast(raycastRightSide.position, new Vector2(0.5f, 0f), 1f, generalMask) ||
-                        Physics2D.Raycast(raycastLeftSide.position, new Vector2(-0.5f, 0f), 1f, generalMask))
+        if (!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) ||
+                !Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) ||
+                    Physics2D.Raycast(raycastRightSide.position, new Vector2(0.5f, 0f), 1f, LayerMask.GetMask("Ground", "Obstacle")) ||
+                        Physics2D.Raycast(raycastLeftSide.position, new Vector2(-0.5f, 0f), 1f, LayerMask.GetMask("Ground", "Obstacle")))
         {
             rayCastHit = true;
         }
@@ -270,7 +269,7 @@ public class GuardMove : MonoBehaviour
         if (rayCastHit && rayCastBuffer <= 0)
         {
             TurnAround();
-            rayCastBuffer = 3f;
+            rayCastBuffer = 1f;
         }
         else if (rayCastBuffer > 0)
         {
