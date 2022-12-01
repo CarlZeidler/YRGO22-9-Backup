@@ -40,7 +40,8 @@ public class GuardVision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CancelInvoke(nameof(PlayerSpotted));
+        if(collision.CompareTag("Player"))
+            CancelInvoke(nameof(PlayerSpotted));
     }
 
     private void PlayerSpotted()

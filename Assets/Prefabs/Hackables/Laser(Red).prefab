@@ -250,6 +250,7 @@ MonoBehaviour:
   ignorLayers:
     serializedVersion: 2
     m_Bits: 556
+  isActive: 1
 --- !u!120 &860684579593098872
 LineRenderer:
   m_ObjectHideFlags: 0
