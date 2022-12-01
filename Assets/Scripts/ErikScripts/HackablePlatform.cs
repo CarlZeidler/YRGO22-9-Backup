@@ -5,15 +5,13 @@ using UnityEngine;
 public class HackablePlatform : HackableObjects
 {
     public bool solid;
-
+    
     private void Start()
     {
         if (!solid)
         {
             Toggle();
         }
-
-
 
         //hackable
         //save own state if red spawn this on player respawn
@@ -24,9 +22,9 @@ public class HackablePlatform : HackableObjects
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
     }
+
     public void Toggle()
     {
-
         if (solid)
         {
             GetComponent<Collider2D>().enabled = true;
@@ -39,5 +37,4 @@ public class HackablePlatform : HackableObjects
         }
         solid = !solid;
     }
-
 }
