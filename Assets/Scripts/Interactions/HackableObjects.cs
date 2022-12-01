@@ -26,9 +26,15 @@ public class HackableObjects : MonoBehaviour
         { 
             _hackingStrength = value;
             if (value > 0)
+            {
                 hackingPowerText.text = _hackingStrength.ToString();
+            }
             else
+            {
                 hackingPowerText.text = null;
+                hackingPowerText.transform.parent.gameObject.SetActive(false);
+
+            }
         } 
     }
     private void Start()
