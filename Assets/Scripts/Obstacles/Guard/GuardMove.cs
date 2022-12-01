@@ -28,9 +28,6 @@ public class GuardMove : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    private bool rayCastLeft;
-    private bool rayCastRight;
-
     private bool facingRight;
     private float realPatrolTime;
     private float realHoldTimeLeft;
@@ -61,9 +58,9 @@ public class GuardMove : MonoBehaviour
     {
         CheckPatrolTime();
         Move();
+        EdgeCheck();
         FlipSprite();
         Holding();
-        EdgeCheck();
     }
 
     private void CheckPatrolTime()
@@ -104,7 +101,6 @@ public class GuardMove : MonoBehaviour
 
                 currentAngle = new Vector3(0f, 0f, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
                 eyes.transform.eulerAngles = currentAngle;
-                
             }
             else if (counter > pivotTimeRight*0.25 && counter <= pivotTimeRight*0.5)
             {
@@ -219,11 +215,18 @@ public class GuardMove : MonoBehaviour
 
     private void EdgeCheck()
     {
-        //Raycasts down to the sides to check if the floor is gone.
-        rayCastLeft = Physics2D.Raycast(transform.position, new Vector2(-0.6f, -1f), 2f);
-        rayCastRight = Physics2D.Raycast(transform.position, new Vector2(0.6f, -1f), 2f);
+        bool rayCastHit = false;
+        
+        //Raycasts to the sides to check if the floor is gone.
+        if (!Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(0f, -1f), 2f) || 
+                !Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0f, -1f), 2f) ||
+                    Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0.5f, 0f), 0.5f) ||
+                        Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(-0.5f, 0f), 0.5f))
+        {
+            rayCastHit = true;
+        }
 
-        if (!rayCastLeft || !rayCastRight && rayCastBuffer <= 0)
+        if (rayCastHit && rayCastBuffer <= 0)
         {
             TurnAround();
             rayCastBuffer = 3f;

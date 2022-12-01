@@ -13,10 +13,17 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float hackermodeZoomMultiplier = 1;
     [SerializeField] private float hackermodeZoomSpeed = 1;
 
+    private Camera camRef;
+    private PlayerHack pHack;
+    private IEnumerator ienHolder;
+
     void Start()
     {
         player = GameManager.instance.player.transform;
         size = GetComponent<Camera>().orthographicSize;
+        pHack = player.GetComponent<PlayerHack>();
+        camRef = GetComponent<Camera>();
+        ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, hackermodeZoomSpeed);
     }
 
     void Update()
@@ -48,12 +55,38 @@ public class CameraFollow : MonoBehaviour
         else
             transform.position = position;
 
+
+        if (Input.GetButtonDown("ToggleHackingMode"))
+        {
+            ToggleCamZoom();
+        }
     }
-    void LerpOrthSize()
+    public void ToggleCamZoom()
     {
-        if (GameManager.instance.player.GetComponent<PlayerHack>().inHackingMode)
-            GetComponent<Camera>().orthographicSize = Mathf.Lerp(size, size * hackermodeZoomMultiplier, hackermodeZoomSpeed*Time.deltaTime);
+        if (pHack.inHackingMode)
+        {
+            StopCoroutine(ienHolder);
+            ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, hackermodeZoomSpeed);
+            StartCoroutine(ienHolder);
+        }
         else
-            GetComponent<Camera>().orthographicSize = Mathf.Lerp(size*hackermodeZoomMultiplier, size, hackermodeZoomSpeed*Time.deltaTime);
+        {
+            StopCoroutine(ienHolder);
+            ienHolder = LerpOrthSize(size, hackermodeZoomSpeed);
+            StartCoroutine(ienHolder);
+        }
+    }
+    IEnumerator LerpOrthSize(float endSize, float duration)
+    {
+        float time = 0;
+        float startSize = camRef.orthographicSize;
+
+        while (time < duration)
+        {
+            camRef.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        camRef.orthographicSize = endSize;
     }
 }

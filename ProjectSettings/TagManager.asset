@@ -8,6 +8,7 @@ TagManager:
   - Rotator
   - CubeTest
   - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX

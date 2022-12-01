@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 570988822933708163}
   - component: {fileID: 8717077578606546968}
   - component: {fileID: 840199143329053400}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HackingPowerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 740587984261896169}
   - component: {fileID: 8088504582706310118}
   - component: {fileID: 209273234416076367}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6645712866487142801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,9 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dd00944b7f61b4d9f6fa054cb16106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
   maxSpeed: 2
-  patrolTime: 3
+  patrolTime: 10
   HoldTimeLeft: 1
   HoldTimeRight: 1
   eyesPivotUpRight: 0
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645712866716852779}
   - component: {fileID: 6645712866716852780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GuardSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 6645712866931534868}
   - component: {fileID: 6645712866931534870}
   - component: {fileID: 6645712866931534869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VisionCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645712867072838638}
   - component: {fileID: 6645712867072838639}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EyesSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645712867384949722}
   - component: {fileID: 6645712867384949723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6645712867472537682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6645712867587701664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 4498557156435883851}
   - component: {fileID: 8820700361709503521}
   - component: {fileID: 9211328920492772039}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
