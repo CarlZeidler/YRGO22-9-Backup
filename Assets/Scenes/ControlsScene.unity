@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 59040855}
   - component: {fileID: 59040854}
   m_Layer: 5
-  m_Name: SelfExploseText
+  m_Name: ReassembleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 303.7, y: 235}
+  m_AnchoredPosition: {x: 269, y: 235}
   m_SizeDelta: {x: 423, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59040854
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Self Explode
+  m_text: Reassemble
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e32e3acea9329141924026f656ae888, type: 2}
   m_sharedMaterial: {fileID: -3090492448142414598, guid: 9e32e3acea9329141924026f656ae888, type: 2}
@@ -483,7 +483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 31, y: -0.4999962}
+  m_AnchoredPosition: {x: 101, y: -0.4999962}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130496408
@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hold F\u200B"
+  m_text: "F\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e32e3acea9329141924026f656ae888, type: 2}
   m_sharedMaterial: {fileID: -3090492448142414598, guid: 9e32e3acea9329141924026f656ae888, type: 2}
@@ -4188,7 +4188,7 @@ GameObject:
   - component: {fileID: 1186630111}
   - component: {fileID: 1186630110}
   m_Layer: 5
-  m_Name: SelfExplodeControl
+  m_Name: ReassembleControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4212,7 +4212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422.6, y: -0.000015258789}
+  m_AnchoredPosition: {x: 457.30002, y: 0}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186630110
@@ -4301,7 +4301,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: Hold F
+  m_Text: F
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
