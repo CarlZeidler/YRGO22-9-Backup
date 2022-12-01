@@ -70,16 +70,12 @@ public class EventTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         {
-            Debug.Log("noig");
             if (triggerOnExit)
             {
-                Debug.Log("exittrig");
                 if (separateEventOnTriggerExit)
                 {
-                    Debug.Log("nonull");
                     if (linkedEventOnExit!=null)
                     {
-                        Debug.Log("nonull2");
                         if (other.tag == colliderTag && useTag1)
                         {
                             if (useTimerOnExit)
@@ -100,7 +96,6 @@ public class EventTrigger : MonoBehaviour
                         }
                         else if (LayerMask.LayerToName(other.gameObject.layer) == colliderLayer && useLayer1)
                         {
-                            Debug.Log("layer1");
                             if (useTimerOnExit)
                                 StartCoroutine(InvokeTimer(linkedEventOnExit, timer));
                             else

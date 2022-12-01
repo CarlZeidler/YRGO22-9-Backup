@@ -57,7 +57,6 @@ public class Turret : HackableObjects
     public void TriggerExit()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
-        Debug.Log(GameManager.instance.player.layer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             detectionAreaSprite.color = detectionColor;
