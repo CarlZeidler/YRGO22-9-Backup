@@ -77,7 +77,7 @@ public class Laser : HackableObjects
         //edges.Add(startPoint);
         //edges.Add(rayPointRef);
         //laserCollider.SetPoints(edges);
-        if(ray)
+        if(ray&&isActive)
             if (ray.collider.CompareTag("Player"))
                 ray.collider.GetComponent<PlayerRespawn>().Respawn();
     }

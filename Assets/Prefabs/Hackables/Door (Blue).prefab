@@ -13,20 +13,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761686526533904061, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_InstanceId
-      value: -490820
+      value: -768190
       objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: objectState
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
-      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
-      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 2100000, guid: 81899310d290aa34085e30c189df4221, type: 2}
     - target: {fileID: 5494843545008154703, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_RootOrder
       value: 0
