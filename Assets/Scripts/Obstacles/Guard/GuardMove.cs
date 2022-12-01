@@ -269,7 +269,7 @@ public class GuardMove : MonoBehaviour
         if (rayCastHit && rayCastBuffer <= 0)
         {
             TurnAround();
-            rayCastBuffer = 1f;
+            rayCastBuffer = 0.6f;
         }
         else if (rayCastBuffer > 0)
         {

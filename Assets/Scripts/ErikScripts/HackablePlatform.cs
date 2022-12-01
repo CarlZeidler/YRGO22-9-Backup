@@ -31,11 +31,13 @@ public class HackablePlatform : HackableObjects
         {
             GetComponent<Collider2D>().enabled = true;
             GetComponent<SpriteRenderer>().material.color = Color.white;
+            gameObject.layer = 6;
         }
         else
         {
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().material.color = Color.black;
+            gameObject.layer = 9;
         }
         solid = !solid;
     }
