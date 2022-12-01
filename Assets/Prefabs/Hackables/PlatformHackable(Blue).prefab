@@ -19,9 +19,25 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1187594567284471020, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187594568188143441, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1187594568936306036, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_Name
       value: PlatformHackable(Blue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187594568936306036, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187594568936306036, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 1187594568936306041, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_RootOrder
@@ -66,6 +82,14 @@ PrefabInstance:
     - target: {fileID: 1187594568936306041, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187594569104117704, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927134899305807241, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3927134899305807241, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_IsActive

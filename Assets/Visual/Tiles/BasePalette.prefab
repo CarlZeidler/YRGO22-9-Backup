@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2336614986723762389}
   - component: {fileID: 2268301802593145596}
   - component: {fileID: 8665335369751094222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,9 +1446,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5874835850389706345}
   - component: {fileID: 1013100072567699906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasePalette
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

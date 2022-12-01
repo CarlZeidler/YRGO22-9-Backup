@@ -9,6 +9,8 @@ TagManager:
   - CubeTest
   - Obstacle
   - Enemy
+  - Ground
+  - Interactable
   layers:
   - Default
   - TransparentFX

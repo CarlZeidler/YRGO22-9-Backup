@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser(Blue)
       objectReference: {fileID: 0}
+    - target: {fileID: 2408883344697041463, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 2408883346006625408, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_IsActive
       value: 1
