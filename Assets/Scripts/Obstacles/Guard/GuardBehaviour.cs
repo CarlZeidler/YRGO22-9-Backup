@@ -6,22 +6,12 @@ public class GuardBehaviour : HackableObjects
 {
     public GuardMove moveScript;
     public GuardVision visionScript;
-
-    //The below functions can be interacted with through the hacking interface.
+    
     public void Shutdown()
     {
         moveScript.canMove = false;
         visionScript.canSee = false;
-    }
-
-    public void Rooted()
-    {
-        moveScript.canMove = false;
-    }
-
-    public void Blinded()
-    {
-        visionScript.canSee = false;
+        moveScript.SetCharacterState("shutdown");
     }
 
     public void ReActivated()
