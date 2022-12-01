@@ -386,12 +386,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2292857639173056006
 MonoBehaviour:
@@ -6368,7 +6368,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: -1197073402
   m_Mesh: {fileID: 0}
-  m_InstanceId: 65346
+  m_InstanceId: 70778
 --- !u!1 &8585773368015882545
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class PlayerRespawn : MonoBehaviour
             pMove.canMove = false;
             pHack.enabled = false;
             playerVisuals.SetActive(false);
+            rb.velocity = Vector2.zero;
             rb.isKinematic = true;
         }
         else
@@ -63,6 +64,7 @@ public class PlayerRespawn : MonoBehaviour
             pMove.canMove = true;
             pHack.enabled = true;
             playerVisuals.SetActive(true);
+            rb.velocity = Vector2.zero;
             rb.isKinematic = false;
         }
     }

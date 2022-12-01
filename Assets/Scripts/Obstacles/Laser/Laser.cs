@@ -71,10 +71,13 @@ public class Laser : HackableObjects
         //ray point - endpoint worldposition+worldpoint refrence,magic numbers
         lineRenderer.SetPosition(1, rayPointRef-endPoint+ (Vector2)EndPointRef.transform.localPosition);
 
-        List<Vector2> edges = new List<Vector2>();
-        edges.Add(startPoint);
-        edges.Add(rayPointRef);
-        laserCollider.SetPoints(edges);
+        //List<Vector2> edges = new List<Vector2>();
+        //edges.Add(startPoint);
+        //edges.Add(rayPointRef);
+        //laserCollider.SetPoints(edges);
+        if(ray)
+            if (ray.collider.CompareTag("Player"))
+                ray.collider.GetComponent<PlayerRespawn>().Respawn();
     }
     
     private void LaserStatus()
