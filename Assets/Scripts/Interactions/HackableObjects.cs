@@ -7,6 +7,7 @@ using TMPro;
 public class HackableObjects : MonoBehaviour
 {
     public bool isHacked = false;
+    public ObjectState objectState;
 
     public UnityEvent onHackEvent,onHackStoppedEvent, onHackRevealEvent, onHackHideEvent;
 
@@ -16,7 +17,6 @@ public class HackableObjects : MonoBehaviour
     {
         bluePersistent, redUnPersistent
     }
-    public ObjectState objectState;
 
     private int _hackingStrength = 0;
     public int hackingStrength 
