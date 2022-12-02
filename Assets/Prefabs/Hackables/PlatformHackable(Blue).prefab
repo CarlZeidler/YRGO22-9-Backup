@@ -39,34 +39,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306038, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8a698257c3082fb448bfc9726fda3db1, type: 3}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_Size.x
-      value: 11.506415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_Size.y
-      value: 1.7490634
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.04122591
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.62147385
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 12.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306040, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.47
-      objectReference: {fileID: 0}
     - target: {fileID: 1187594568936306041, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -114,10 +86,6 @@ PrefabInstance:
     - target: {fileID: 1187594568936306042, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: solid
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1187594568936306042, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
-      propertyPath: objectState
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1187594569104117704, guid: 1eb14b5112d0d0940bad27ebe81c2a1c, type: 3}
       propertyPath: m_Layer
