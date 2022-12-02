@@ -19,41 +19,32 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        Invoke(nameof(OnStart),.1f);
-    }
-    void OnStart()
-    {
         player = GameManager.instance.player.transform;
         size = GetComponent<Camera>().orthographicSize;
         pHack = player.GetComponent<PlayerHack>();
         camRef = GetComponent<Camera>();
         ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, hackermodeZoomSpeed);
-
     }
 
     void Update()
     {
-        bool panning = false;
+        bool panning;
         //some magic numbers that set position towards mouseposition
         Vector3 mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
-        Vector3 targetPosition = Vector3.zero;
+        Vector3 targetPosition;
 
-        try
+        if (Input.GetButton("CameraPan"))
         {
-            if (Input.GetButton("CameraPan"))
-            {
-                targetPosition = (Camera.main.ScreenToWorldPoint(mousePos)/2)+player.position/2;
-                panning = true;
-            }
-            else
-            {
-                targetPosition = player.position;
-                targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
-            
-                panning = false;
-            }
+            targetPosition = (Camera.main.ScreenToWorldPoint(mousePos)/2)+player.position/2;
+            panning = true;
         }
-        catch { }
+        else
+        {
+            targetPosition = player.position;
+            targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
+            
+            panning = false;
+        }
         //position to move to
         Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
         position = new Vector3(position.x, position.y, -10);
