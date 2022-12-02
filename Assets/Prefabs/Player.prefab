@@ -77,7 +77,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 5124569560416042356}
   m_HandleRect: {fileID: 0}
@@ -6368,7 +6368,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: -1197073402
   m_Mesh: {fileID: 0}
-  m_InstanceId: 70778
+  m_InstanceId: 52208
 --- !u!1 &8585773368015882545
 GameObject:
   m_ObjectHideFlags: 0
