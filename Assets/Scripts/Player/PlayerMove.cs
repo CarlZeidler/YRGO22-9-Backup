@@ -167,7 +167,6 @@ public class PlayerMove : MonoBehaviour
         if (Grounded() & !Input.GetButton("Jump"))
         {
             _jumpDurationLeft = jumpDurationLeft;
-            animspeedLocked = false;
         }
         if (canMove)
         {
@@ -177,7 +176,6 @@ public class PlayerMove : MonoBehaviour
                 aud.Stop();
                 aud.clip = jump;
                 aud.Play();
-                animspeedLocked = true;
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)

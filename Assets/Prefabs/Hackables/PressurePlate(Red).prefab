@@ -7,18 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Size.x
-      value: 2.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Size.y
-      value: 2.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: triggerOnExit
       value: 1
@@ -34,22 +22,6 @@ PrefabInstance:
     - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5851719571202382270, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Size.x
-      value: 2.1807327
-      objectReference: {fileID: 0}
-    - target: {fileID: 5851719571202382270, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5216553
-      objectReference: {fileID: 0}
-    - target: {fileID: 5851719571202382270, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.04941368
-      objectReference: {fileID: 0}
-    - target: {fileID: 5851719571202382270, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0032260418
       objectReference: {fileID: 0}
     - target: {fileID: 7720390379669064689, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_IsActive
