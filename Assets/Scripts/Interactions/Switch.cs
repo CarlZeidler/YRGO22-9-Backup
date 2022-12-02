@@ -13,6 +13,7 @@ public class Switch : HackableObjects
     [SerializeField] private Material lineBlue, lineRed;
 
     private bool toggled;
+    [SerializeField] private bool useDiagonalLines;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class Switch : HackableObjects
             try
             {
                 hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
+                hackerLines[linkedHackables.IndexOf(hackable)].diagonal = useDiagonalLines;
                 hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
                 if (hackable.objectState == ObjectState.bluePersistent)
                     hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
