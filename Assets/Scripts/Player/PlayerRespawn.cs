@@ -16,6 +16,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
