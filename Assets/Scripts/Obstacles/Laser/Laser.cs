@@ -7,6 +7,7 @@ public class Laser : HackableObjects
 {
     public GameObject StartPointRef;
     public GameObject EndPointRef;
+    public GameObject laserSpark;
     private Animator thisAnimator;
     private EdgeCollider2D laserCollider;
 
@@ -35,7 +36,7 @@ public class Laser : HackableObjects
         lineRenderer = GetComponent<LineRenderer>();
         thisAnimator = GetComponentInChildren<Animator>();
         laserCollider = GetComponent<EdgeCollider2D>();
-        
+
     }
     private void Update()
     {
@@ -72,6 +73,8 @@ public class Laser : HackableObjects
         lineRenderer.SetPosition(0, StartPointRef.transform.localPosition);
         //ray point - endpoint worldposition+worldpoint refrence,magic numbers
         lineRenderer.SetPosition(1, rayPointRef-endPoint+ (Vector2)EndPointRef.transform.localPosition);
+        //Places laserSpark on raypoint position
+        laserSpark.transform.position = new Vector2(rayPointRef.x, rayPointRef.y);
 
         //List<Vector2> edges = new List<Vector2>();
         //edges.Add(startPoint);
@@ -83,7 +86,7 @@ public class Laser : HackableObjects
             else if (ray.collider.CompareTag("Enemy"))
                 ray.collider.GetComponent<GuardRespawn>().Respawn();
     }
-    
+
     private void LaserStatus()
     {
         if (!isHacked)
