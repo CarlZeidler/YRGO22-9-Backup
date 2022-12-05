@@ -12,6 +12,14 @@ PrefabInstance:
       value: PressurePlate(Blue)
       objectReference: {fileID: 0}
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: active
+      value: 
+      objectReference: {fileID: -346474400, guid: c226e19091c852648a942792c3528c7e, type: 3}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: inactive
+      value: 
+      objectReference: {fileID: 1231988918, guid: c226e19091c852648a942792c3528c7e, type: 3}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
