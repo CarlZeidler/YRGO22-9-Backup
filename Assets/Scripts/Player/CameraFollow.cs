@@ -59,7 +59,7 @@ public class CameraFollow : MonoBehaviour
         mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
 
         //position to move to
-        Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
+        Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.unscaledDeltaTime);
         position = new Vector3(position.x, position.y, -10);
 
         //smoother follow when not panning camera
