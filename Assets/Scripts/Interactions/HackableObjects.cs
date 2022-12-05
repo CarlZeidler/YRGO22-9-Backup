@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using TMPro;
 
 public class HackableObjects : MonoBehaviour
@@ -13,6 +14,7 @@ public class HackableObjects : MonoBehaviour
     private UnityEvent holder;
 
     [SerializeField] private TextMeshProUGUI hackingPowerText;
+    [SerializeField] private Slider hackingChargeSlider;
     protected GameObject originalState;
     public enum ObjectState
     {
@@ -140,7 +142,7 @@ public class HackableObjects : MonoBehaviour
             if (isHacked)
             {
                 hackingStrength = 0;
-                onHackStoppedEvent.Invoke();
+                //onHackStoppedEvent.Invoke();
             }
         } //toggle state if different from start
         else if(objectState == ObjectState.greenSemiPersistent)
