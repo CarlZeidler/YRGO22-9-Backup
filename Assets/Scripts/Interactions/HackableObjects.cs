@@ -31,12 +31,22 @@ public class HackableObjects : MonoBehaviour
             if (value > 0)
             {
                 hackingPowerText.text = _hackingStrength.ToString();
+                try
+                {
+                    hackingChargeSlider.value = value;
+                }
+                catch { }
             }
             else
             {
+                //TODO write 0 and invoke setactive
                 hackingPowerText.text = null;
                 hackingPowerText.transform.parent.gameObject.SetActive(false);
-
+                try
+                {
+                    hackingChargeSlider.value = value;
+                }
+                catch { }
             }
         } 
     }
@@ -147,7 +157,7 @@ public class HackableObjects : MonoBehaviour
         } //toggle state if different from start
         else if(objectState == ObjectState.greenSemiPersistent)
         {
-            if(holder != onHackEvent)
+            if(holder != onHackEvent&&holder!=null)
             {
                 ToggleHackState();
             }
