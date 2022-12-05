@@ -10,12 +10,13 @@ public class HackableObjects : MonoBehaviour
     public ObjectState objectState;
 
     public UnityEvent onHackEvent,onHackStoppedEvent, onHackRevealEvent, onHackHideEvent;
+    private UnityEvent holder;
 
     [SerializeField] private TextMeshProUGUI hackingPowerText;
     protected GameObject originalState;
     public enum ObjectState
     {
-        bluePersistent, redUnPersistent
+        bluePersistent, redUnPersistent, greenSemiPersistent
     }
 
     private int _hackingStrength = 0;
@@ -115,6 +116,10 @@ public class HackableObjects : MonoBehaviour
     }
     public void ToggleHackState()
     {
+        //create reference for greenobject
+        if(this.holder == null)
+            this.holder = onHackEvent;
+
         if (isHacked)
         {
             onHackStoppedEvent.Invoke();
@@ -135,7 +140,14 @@ public class HackableObjects : MonoBehaviour
             if (isHacked)
             {
                 hackingStrength = 0;
-                //onHackStoppedEvent.Invoke();
+                onHackStoppedEvent.Invoke();
+            }
+        } //toggle state if different from start
+        else if(objectState == ObjectState.greenSemiPersistent)
+        {
+            if(holder != onHackEvent)
+            {
+                ToggleHackState();
             }
         }
     }

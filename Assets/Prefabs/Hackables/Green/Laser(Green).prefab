@@ -57,6 +57,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1078251109020710511, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: objectState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078251109020710511, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1078251109020710511, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
@@ -121,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041463, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Name
-      value: Laser(Blue)
+      value: Laser(Green)
       objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041463, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_TagString
