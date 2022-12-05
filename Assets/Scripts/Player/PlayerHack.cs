@@ -38,22 +38,30 @@ public class PlayerHack : MonoBehaviour
             ToggleHackingMode();
         }
         if (Input.GetButtonDown("CommitHack"))
+        {
             foreach (var hackableObject in GameManager.instance.hackableObjects)
             {
                 hackableObject.CommitHack();
-            }             
+            }
+            if (inHackingMode)
+                ToggleHackingMode();
+        }    
+
     }
     public void ToggleHackingMode()
     {
         if (!inHackingMode)
         {
             GameManager.instance.RevealHackables(0.1f);
-            hackingUIAnim.SetBool("HackingMode",true);
+            hackingUIAnim.SetBool("HackingMode", true);
+            Time.timeScale = 0.1f;
+            Time.fixedDeltaTime = Time.timeScale * .02f;
         }
         else
         {
             GameManager.instance.HideHackables(0.1f);
             hackingUIAnim.SetBool("HackingMode", false);
+            Time.timeScale = 1f;
         }
         inHackingMode = !inHackingMode;
     }
