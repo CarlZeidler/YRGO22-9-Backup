@@ -7,15 +7,14 @@ public class Lift : HackableObjects
     [Space(30)]
     [SerializeField] private float speed;
     [SerializeField] private float platFormSpacing;
+    private bool reversed = false;
 
     [SerializeField] private Transform startPointTransform, endPointTransform;
     private Vector3 startPoint, endPoint;
     [SerializeField] private GameObject liftPlatform;
 
     private List<LiftPlatform> platforms =  new List<LiftPlatform>();
-
-
-    private float timer = 1;
+    [SerializeField]private float timer = 1;
 
     private void Start()
     {
@@ -35,12 +34,24 @@ public class Lift : HackableObjects
     private void Update()
     {
         //spawn on timer
-        if(timer <= 0)
+        if (!reversed)
         {
-            SpawnPlatform();
-            timer = platFormSpacing;
+            if(timer <= 0)
+            {
+                SpawnPlatform();
+                timer = platFormSpacing;
+            }
+            timer -= Time.deltaTime;
         }
-        timer -= Time.deltaTime;
+        else
+        {
+            if (timer >= 1)
+            {
+                SpawnPlatform();
+                timer = 0;
+            }
+            timer += Time.deltaTime;
+        }
     }
     public void SpawnPlatform()
     {
@@ -52,10 +63,10 @@ public class Lift : HackableObjects
     }
     public void Reverse()
     {
+        reversed = !reversed;
         Vector3 holder = endPoint;
         endPoint = startPoint;
         startPoint = holder;
-        timer = 1 - timer;
 
         foreach (var platform in platforms)
         {
