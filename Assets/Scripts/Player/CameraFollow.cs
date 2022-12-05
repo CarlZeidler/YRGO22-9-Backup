@@ -9,10 +9,13 @@ public class CameraFollow : MonoBehaviour
     public float lerpSpeed = 1;
     public float maxScreenPoint = 0.9f;
     private float size;
+    bool panning;
 
     [SerializeField] private float hackermodeZoomMultiplier = 1;
     [SerializeField] private float hackermodeZoomSpeed = 1;
 
+    Vector3 targetPosition;
+    Vector3 mousePos;
     private Camera camRef;
     private PlayerHack pHack;
     private IEnumerator ienHolder;
@@ -28,10 +31,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        bool panning;
-        //some magic numbers that set position towards mouseposition
-        Vector3 mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
-        Vector3 targetPosition;
+       
 
         if (Input.GetButton("CameraPan"))
         {
@@ -45,21 +45,29 @@ public class CameraFollow : MonoBehaviour
             
             panning = false;
         }
-        //position to move to
-        Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
-        position = new Vector3(position.x, position.y, -10);
-
-        //smoother follow when not panning camera
-        if((transform.position-targetPosition).magnitude > 30&!panning)
-            transform.position = position;
-        else
-            transform.position = position;
+       
 
 
         if (Input.GetButtonDown("ToggleHackingMode"))
         {
             ToggleCamZoom();
         }
+    }
+    private void FixedUpdate()
+    {
+        //some magic numbers that set position towards mouseposition
+        mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
+
+        //position to move to
+        Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
+        position = new Vector3(position.x, position.y, -10);
+
+        //smoother follow when not panning camera
+        if ((transform.position - targetPosition).magnitude > 30 & !panning)
+            transform.position = position;
+        else
+            transform.position = position;
+
     }
     public void ToggleCamZoom()
     {

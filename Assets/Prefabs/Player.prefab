@@ -385,7 +385,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.5
   m_AngularDrag: 0
   m_GravityScale: 4
   m_Material: {fileID: 0}
@@ -409,6 +409,7 @@ MonoBehaviour:
   maxSpeed: 15
   Acceleration: 25
   Deceleration: 30
+  terminalVelocity: 10
   canMove: 1
   jumpforce: 10
   jumpDurationLeft: 0.25
