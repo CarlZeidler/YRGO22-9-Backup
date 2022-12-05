@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: objectState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
