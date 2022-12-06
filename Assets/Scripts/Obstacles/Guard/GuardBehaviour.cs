@@ -24,7 +24,6 @@ public class GuardBehaviour : HackableObjects
                 detectionAreaSprite.color = detectionColor;
                 Invoke(nameof(Death), killTime);
                 Invoke(nameof(Shoot), killTime - killTime / 8);
-
             }
         }
         else
@@ -38,7 +37,8 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         visionScript.canSee = false;
-        moveScript.SetCharacterState("shutdown");
+        animator.SetTrigger("Shutdown");
+        //moveScript.SetCharacterState("shutdown");
     }
 
     public void ReActivated()
@@ -46,6 +46,7 @@ public class GuardBehaviour : HackableObjects
         //Restore functionality when the hacking time is over.
         visionScript.canSee = true;
         moveScript.canMove = true;
+        animator.SetTrigger("Startup");
     }
 
     public void OnPlayerEnter()

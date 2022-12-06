@@ -47,16 +47,13 @@ public class GuardMove : MonoBehaviour
 
     private Rigidbody2D rb2d;
 
-    public Transform raycastFeetLeftReference;
-    public Transform raycastFeetRightReference;
-    public Transform raycastLeftSide;
-    public Transform raycastRightSide;
+    [SerializeField] private Transform raycastFeetLeftReference;
+    [SerializeField] private Transform raycastFeetRightReference;
+    [SerializeField] private Transform raycastLeftSide;
+    [SerializeField] private Transform raycastRightSide;
 
-    public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walk, shutdown, startup, shooting;
-    public string currentState;
-    public string currentAnimation;
-    private float animationTimeScale;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SkeletonAnimation skeletonAnimation;
 
     void Start()
     {
@@ -65,16 +62,15 @@ public class GuardMove : MonoBehaviour
 
     void Update()
     {
-            CheckPatrolTime();
-            Move();
-            EdgeCheck();
-            FlipSprite();
-            Holding();
+        CheckPatrolTime();
+        Move();
+        EdgeCheck();
+        FlipSprite();
+        Holding();
     }
 
     private void Setup()
     {
-
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         facingRight = startDirectionRight;
         realPatrolTime = patrolTime;
@@ -82,13 +78,7 @@ public class GuardMove : MonoBehaviour
         realHoldTimeRight = HoldTimeRight;
         pivotTimeLeft = HoldTimeLeft;
         pivotTimeRight = HoldTimeRight;
-        animationTimeScale = moveSpeed * 0.1f;
         startAngle = eyes.transform.localRotation.eulerAngles;
-
-        Debug.Log("Start angle " + startAngle);
-        
-        currentState = "idle";
-        SetCharacterState(currentState);
     }
 
     private void CheckPatrolTime()
@@ -120,7 +110,8 @@ public class GuardMove : MonoBehaviour
         if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0)
         {
             canMove = false;
-            SetCharacterState("idle");
+            animator.SetBool("Walking", false);
+            animator.SetBool("Idle", true);
 
             //Steps through the selected angles to pivot the vision cone when the guard is at the right patrol apex.
             if (counter <= pivotTimeRight*0.25)
@@ -167,7 +158,8 @@ public class GuardMove : MonoBehaviour
         else if (!facingRight && realPatrolTime <= 0 && realHoldTimeLeft > 0)
         {
             canMove = false;
-            SetCharacterState("idle");
+            animator.SetBool("Walking", false);
+            animator.SetBool("Idle", true);
 
             //Steps through the selected angles to pivot the vision cone when the guard is at the left patrol apex.
             if (counter <= pivotTimeLeft * 0.25)
@@ -216,13 +208,15 @@ public class GuardMove : MonoBehaviour
     {
         if (facingRight && canMove)
         {
-            SetCharacterState("walking");
-            rb2d.velocity = new Vector2(Mathf.Clamp(moveSpeed + acceleration * Time.deltaTime, 0, maxSpeed), rb2d.velocity.y);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Walking", true);
+            rb2d.velocity = new Vector2(Mathf.Clamp(moveSpeed + acceleration * Time.unscaledDeltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
         else if (!facingRight && canMove)
         {
-            SetCharacterState("walking");
-            rb2d.velocity = new Vector2(-Mathf.Clamp(moveSpeed + acceleration * Time.deltaTime, 0, maxSpeed), rb2d.velocity.y);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Walking", true);
+            rb2d.velocity = new Vector2(-Mathf.Clamp(moveSpeed + acceleration * Time.unscaledDeltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
 
         //Resets vision cone if it didn't have time to reset during the hold period.
@@ -250,12 +244,6 @@ public class GuardMove : MonoBehaviour
     {
         bool rayCastHit = false;
 
-        //Raycasts to the sides to check if the floor is gone.
-        //if (!Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(0f, -1f), 2f) ||
-        //        !Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0f, -1f), 2f) ||
-        //            Physics2D.Raycast(new Vector2(transform.position.x + (transform.localScale.x / 1.8f), transform.position.y), new Vector2(0.5f, 0f), 0.5f) ||
-        //                Physics2D.Raycast(new Vector2(transform.position.x + -(transform.localScale.x / 1.8f), transform.position.y), new Vector2(-0.5f, 0f), 0.5f))
-
         Debug.DrawRay(raycastFeetLeftReference.position, new Vector2(0f, -1f), Color.red);
 
         if ((!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) && !facingRight) ||
@@ -274,32 +262,6 @@ public class GuardMove : MonoBehaviour
         else if (rayCastBuffer > 0)
         {
             rayCastBuffer -= 1 * Time.deltaTime;
-        }
-    }
-
-    public void SetAnimation(AnimationReferenceAsset animation, bool loop, float timescale)
-    {
-        if (animation.name.Equals(currentAnimation))
-        {
-            return;
-        }
-        skeletonAnimation.state.SetAnimation(0, animation, loop).TimeScale = timescale;
-        currentAnimation = animation.name;
-    }
-
-    public void SetCharacterState(string state)
-    {
-         if (state.Equals("idle"))
-         {
-            SetAnimation(idle, true, 1f);
-         }
-         else if (state.Equals("walking"))
-        {
-            SetAnimation(walk, true, animationTimeScale);
-        }
-         if (state.Equals("shutdown"))
-        {
-            SetAnimation(shutdown, false, animationTimeScale);
         }
     }
 }
