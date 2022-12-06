@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlowingOutline
+  m_Name: NEUTRAL_Glow_Outline
   m_Shader: {fileID: -6465566751694194690, guid: 3c302cd5a509de44ebc575474d77236a, type: 3}
   m_ValidKeywords:
   - _SAMPLECORNER
@@ -91,13 +91,13 @@ Material:
     - _SAMPLECORNER: 1
     - _SPECULAR_IOR: 1.5
     - _SPECULAR_ROUGHNESS: 0
-    - _Thickness: 7.38
+    - _Thickness: 11.54
     m_Colors:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineGlow: {r: 450.98138, g: 0, b: 0, a: 1}
+    - _OutlineGlow: {r: 1432.8004, g: 0, b: 0, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
