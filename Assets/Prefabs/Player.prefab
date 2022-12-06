@@ -5272,6 +5272,7 @@ MonoBehaviour:
   pMove: {fileID: 2292857639173056006}
   pHack: {fileID: 3147997415736238188}
   rb: {fileID: 2292857639173056005}
+  shadowCaster: {fileID: 287972897115019603}
 --- !u!82 &2292857639173056007
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerMove pMove;
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private ShadowCaster2D shadowCaster;
 
 
     private void Update()
@@ -27,6 +29,16 @@ public class PlayerRespawn : MonoBehaviour
     }
     public void Respawn()
     {
+        //if die not triggered
+        if (!textObjectOnDeath.activeSelf)
+        {
+            //disable all relevant scripts
+            EnableScripts(false);
+
+            //deathParticles.Play();
+
+            textObjectOnDeath.SetActive(true);
+        }
         textObjectOnDeath.SetActive(false);
         textObjectOnDeath.GetComponent<Animator>().SetTrigger(0);
 
@@ -57,28 +69,14 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void EnableScripts(bool enable)
     {
-        if (!enable)
-        {
-            interactionCollider.enabled = false;
-            physicsCollider.enabled = false;
-            //pMove.enabled = false;
-            pMove.canMove = false;
-            pHack.enabled = false;
-            playerVisuals.SetActive(false);
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = true;
-        }
-        else
-        {
-            interactionCollider.enabled = true;
-            physicsCollider.enabled = true;
-            //pMove.enabled = true;
-            pMove.canMove = true;
-            pHack.enabled = true;
-            playerVisuals.SetActive(true);
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = false;
-        }
+        shadowCaster.enabled = enable;
+        interactionCollider.enabled = enable;
+        physicsCollider.enabled = enable;
+        pMove.canMove = enable;
+        pHack.enabled = enable;
+        playerVisuals.SetActive(enable);
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = !enable;
     }
     public void Spawn()
     {
