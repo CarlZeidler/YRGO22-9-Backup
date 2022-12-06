@@ -694,6 +694,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8114511208459897492}
   - component: {fileID: 8114511208459897491}
+  - component: {fileID: 2552992476459634495}
+  - component: {fileID: 9184095295781561986}
   m_Layer: 8
   m_Name: EyesSprite
   m_TagString: Untagged
@@ -769,6 +771,110 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2552992476459634495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114511208459897493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5211e852bb46a45a0a3b1c7426585a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8114511208693651516}
+        m_TargetAssemblyTypeName: GuardBehaviour, Assembly-CSharp
+        m_MethodName: OnPlayerEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  linkedEventOnExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8114511208693651516}
+        m_TargetAssemblyTypeName: GuardBehaviour, Assembly-CSharp
+        m_MethodName: OnPlayerExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  colliderTag: Player
+  colliderTag2: Enemy
+  colliderLayer: Player
+  colliderLayer2: Enemy
+  TriggerCollider: {fileID: 8114511209672870075}
+  useTag1: 1
+  useTag2: 0
+  useLayer1: 1
+  useLayer2: 0
+  useTimer: 1
+  useTimerOnExit: 0
+  timer: 1
+  disableColliderOnTrigger: 0
+  disableColliderOnTriggerExit: 0
+  triggerOnExit: 0
+  separateEventOnTriggerExit: 0
+--- !u!114 &9184095295781561986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114511208459897493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5211e852bb46a45a0a3b1c7426585a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  linkedEventOnExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8114511208693651516}
+        m_TargetAssemblyTypeName: GuardBehaviour, Assembly-CSharp
+        m_MethodName: TriggerExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  colliderTag: Obstacle
+  colliderTag2: 
+  colliderLayer: 
+  colliderLayer2: 
+  TriggerCollider: {fileID: 8114511209672870075}
+  useTag1: 1
+  useTag2: 0
+  useLayer1: 1
+  useLayer2: 0
+  useTimer: 0
+  useTimerOnExit: 0
+  timer: 0
+  disableColliderOnTrigger: 0
+  disableColliderOnTriggerExit: 0
+  triggerOnExit: 1
+  separateEventOnTriggerExit: 1
 --- !u!1 &8114511208503013442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1273,16 @@ MonoBehaviour:
   hackingChargeSlider: {fileID: 0}
   moveScript: {fileID: 8114511208693651515}
   visionScript: {fileID: 8114511209672870076}
+  killTime: 1
+  pInRange: 0
+  animator: {fileID: 0}
+  detectionAreaSprite: {fileID: 8114511209672870074}
+  detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0}
+  activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0}
+  inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 268
 --- !u!114 &8693678680312765049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6376,6 +6492,7 @@ GameObject:
   - component: {fileID: 8114511209833196343}
   - component: {fileID: 8114511209833196488}
   - component: {fileID: 8114511209833196489}
+  - component: {fileID: 6328565545260765026}
   m_Layer: 8
   m_Name: NewGuard
   m_TagString: Untagged
@@ -6488,6 +6605,26 @@ MonoBehaviour:
   _animationName: 
   loop: 1
   timeScale: 1
+--- !u!95 &6328565545260765026
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114511209833196490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7276b9e7444165740a4bbb1ad67b02c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8114511210066865607
 GameObject:
   m_ObjectHideFlags: 0
