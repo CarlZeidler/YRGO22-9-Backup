@@ -52,7 +52,7 @@ public class PlayerHack : MonoBehaviour
     {
         if (!inHackingMode)
         {
-            GameManager.instance.RevealHackables(0.1f);
+            GameManager.instance.RevealHackables(.03f);
             hackingUIAnim.SetBool("HackingMode", true);
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = Time.timeScale * .02f;

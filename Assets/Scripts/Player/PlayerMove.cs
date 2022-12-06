@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb;
 
     //running fx
-    private ParticleSystem ps;
+    //private ParticleSystem ps;
     [SerializeField]private Animator anim;
     [SerializeField] private Transform playerModel;
     [SerializeField]private SpriteRenderer sr;
@@ -54,7 +54,7 @@ public class PlayerMove : MonoBehaviour
     
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
+       // ps = GetComponent<ParticleSystem>();
         aud = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         //anim = GetComponentInChildren<Animator>();
@@ -200,16 +200,16 @@ public class PlayerMove : MonoBehaviour
         if (flip)
         {
             //sprite flipX is still used for checking flipstate
-            var pshape = ps.shape;
-            pshape.rotation = new Vector3(pshape.rotation.x, -45, pshape.rotation.z);
+            //var pshape = ps.shape;
+            //pshape.rotation = new Vector3(pshape.rotation.x, -45, pshape.rotation.z);
             sr.flipX = false;
             playerModel.eulerAngles = Vector3.zero;
             IdleAnim.transform.eulerAngles = Vector3.zero;
         }
         else
         {
-            var pshape = ps.shape;
-            pshape.rotation = new Vector3(pshape.rotation.x, 135, pshape.rotation.z);
+            //var pshape = ps.shape;
+            //pshape.rotation = new Vector3(pshape.rotation.x, 135, pshape.rotation.z);
             sr.flipX = true;
             playerModel.eulerAngles = new Vector3(0, 180, 0);
             IdleAnim.transform.eulerAngles = new Vector3(0, 180, 0);

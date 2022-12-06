@@ -1,0 +1,9 @@
+circle - kopia.png
+size:340,189
+filter:Linear,Linear
+pma:true
+Layer 1
+bounds:2,2,186,185
+circle
+bounds:190,38,149,148
+rotate:90

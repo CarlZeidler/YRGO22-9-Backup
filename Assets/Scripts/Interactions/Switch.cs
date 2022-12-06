@@ -14,6 +14,7 @@ public class Switch : HackableObjects
 
     private bool toggled;
     [SerializeField] private bool useDiagonalLines;
+    [SerializeField] private Transform[] customConnectionMiddleLinks;
 
     private void Start()
     {
@@ -42,20 +43,37 @@ public class Switch : HackableObjects
         //spawn new hacker line and set connection points to linked hackable
         foreach (var hackable in linkedHackables)
         {
-            try
+            hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
+            if(customConnectionMiddleLinks.Length > 0)
             {
-                hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
+                //extra space for start and endpoints
+                Vector3[] positions = new Vector3[customConnectionMiddleLinks.Length + 2];
+
+                //start and end should always be connections to objects
+                positions[0] = transform.position;
+                positions[positions.Length-1] = hackable.transform.position;
+
+                //set positions in line exapt for first and last    
+                for (int i = 1; i < positions.Length-1; i++)
+                {
+                    positions[i] = customConnectionMiddleLinks[i-1].position;
+                }
+                hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(positions);
+            }
+            else
+            {
+                //startpoint, 90 degree midpoint, endpoint
+                Vector3[] positions = new Vector3[] { transform.position, new Vector3(transform.position.x, hackable.transform.position.y, 0), hackable.transform.position };
+
                 hackerLines[linkedHackables.IndexOf(hackable)].diagonal = useDiagonalLines;
-                hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(transform.position, new Vector3(transform.position.x,hackable.transform.position.y, 0) ,hackable.transform.position);
-                if (hackable.objectState == ObjectState.bluePersistent)
-                    hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
-                else
-                    hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
+                hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(positions);
             }
-            catch
-            {
-                Debug.Log("Missing hackable links");
-            }
+
+            if (hackable.objectState == ObjectState.bluePersistent)
+                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
+            else if(hackable.objectState == ObjectState.redUnPersistent)
+                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
+            //TODO else green
         }
     }
     public void Toggle()
