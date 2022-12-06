@@ -13,20 +13,14 @@ public class HackerLineConnection : MonoBehaviour
         line = GetComponent<LineRenderer>();
     }
 
-    public void UpdateLine(Vector3 point1, Vector3 point2, Vector3 point3)
+    public void UpdateLine(Vector3[] positions)
     {
-        Vector3[] positions;
-        if (!diagonal)
-        {
-            // line.positionCount = 3;
-            GetComponent<LineRenderer>().positionCount = 3;
-            positions = new Vector3[] { point3,point2,point1};
-        }
-        else
+        GetComponent<LineRenderer>().positionCount = positions.Length;
+        if (diagonal)
         {
             //line.positionCount = 2;
             GetComponent<LineRenderer>().positionCount = 2;
-            positions = new Vector3[] { point3, point1 };
+            positions = new Vector3[] { positions[positions.Length], positions[0] };
         }
         GetComponent<LineRenderer>().SetPositions(positions);
     }

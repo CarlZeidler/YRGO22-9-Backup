@@ -540,7 +540,7 @@ MonoBehaviour:
   - {x: 0.017763734, y: -0.4906122, z: 0}
   m_ShapePathHash: -806228763
   m_Mesh: {fileID: 0}
-  m_InstanceId: 97810
+  m_InstanceId: 30516
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1046,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
+          m_IntArgument: -2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

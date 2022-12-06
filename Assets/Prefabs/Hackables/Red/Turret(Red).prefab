@@ -987,7 +987,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
+          m_IntArgument: -2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1263,7 +1263,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.449
   m_Pitch: 1
   Loop: 0
   Mute: 0

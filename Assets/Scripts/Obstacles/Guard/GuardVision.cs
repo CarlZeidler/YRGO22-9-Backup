@@ -46,7 +46,7 @@ public class GuardVision : MonoBehaviour
 
     private void PlayerSpotted()
     {
-        respawnScript.Respawn();
+        respawnScript.Die();
     }
 
 }

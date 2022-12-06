@@ -40,8 +40,7 @@ public class HackableObjects : MonoBehaviour
             else
             {
                 //TODO write 0 and invoke setactive
-                hackingPowerText.text = null;
-                hackingPowerText.transform.parent.gameObject.SetActive(false);
+                hackingPowerText.text = _hackingStrength.ToString();
                 try
                 {
                     hackingChargeSlider.value = value;
@@ -124,6 +123,7 @@ public class HackableObjects : MonoBehaviour
             //stop hack
             isHacked = false;
             onHackStoppedEvent.Invoke();
+            hackingPowerText.transform.parent.gameObject.SetActive(false);
         }
     }
     public void ToggleHackState()
