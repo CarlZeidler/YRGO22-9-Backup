@@ -82,7 +82,7 @@ public class Laser : HackableObjects
         //laserCollider.SetPoints(edges);
         if (ray && isActive)
             if (ray.collider.CompareTag("Player"))
-                ray.collider.GetComponent<PlayerRespawn>().Respawn();
+                ray.collider.GetComponent<PlayerRespawn>().Die();
             else if (ray.collider.CompareTag("Enemy"))
                 ray.collider.GetComponent<GuardRespawn>().Respawn();
     }
@@ -103,7 +103,7 @@ public class Laser : HackableObjects
     {
         if (collision.CompareTag("Player")&&isActive)
         {
-            collision.GetComponent<PlayerRespawn>().Respawn();
+            collision.GetComponent<PlayerRespawn>().Die();
         }
     }
 

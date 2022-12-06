@@ -6,7 +6,8 @@ public class PlayerRespawn : MonoBehaviour
 {
     public float spawnTime = 2f;
     public Vector3 spawnPoint;
-    [SerializeField] private ParticleSystem travelParticles;
+    [SerializeField] private ParticleSystem travelParticles, deathParticles;
+    [SerializeField] private GameObject textObjectOnDeath;
 
     [Space(20)]
     //scripts to disable
@@ -26,8 +27,9 @@ public class PlayerRespawn : MonoBehaviour
     }
     public void Respawn()
     {
-        //disable all relevant scripts
-        EnableScripts(false);
+        textObjectOnDeath.SetActive(false);
+        textObjectOnDeath.GetComponent<Animator>().SetTrigger(0);
+
         //play particles
         //travelParticles.startLifetime = spawnTime;
         var particles = travelParticles.main;
@@ -43,6 +45,15 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.ResetHackables();
         //energy
         pHack.ResetCharges();
+    }
+    public void Die()
+    {        
+        //disable all relevant scripts
+        EnableScripts(false);
+
+        deathParticles.Play();
+
+        textObjectOnDeath.SetActive(true);
     }
     private void EnableScripts(bool enable)
     {
