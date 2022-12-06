@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8875429109209385495}
   - component: {fileID: 755877623185534823}
   - component: {fileID: 3253183602480025788}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Switch(Blue)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   lineBlue: {fileID: 2100000, guid: 36e5b5e697249e74c9bd856eb3a2bc44, type: 2}
   lineRed: {fileID: 2100000, guid: 57c751cf708f2ac4c9a8e00ccbd11df2, type: 2}
   useDiagonalLines: 0
+  customConnectionMiddleLinks: []
 --- !u!212 &8875429109209385495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ GameObject:
   - component: {fileID: 5805007106596656966}
   - component: {fileID: 311680680455024829}
   - component: {fileID: 6756850369730784901}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5630442214865134362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +357,7 @@ GameObject:
   - component: {fileID: 3854050426858423089}
   - component: {fileID: 1121159825435574396}
   - component: {fileID: 2026277487543639898}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: HackingPowerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8816915786683211753}
   - component: {fileID: 6866129883620464967}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427557900486574726}
   - component: {fileID: 1493322024866582859}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BatteryCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +693,7 @@ GameObject:
   - component: {fileID: 7880649878725291009}
   - component: {fileID: 4824976417489865861}
   - component: {fileID: 7406678387853063036}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +812,7 @@ GameObject:
   - component: {fileID: 1098664612126901939}
   - component: {fileID: 7414218991176559952}
   - component: {fileID: 2174253355548216000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +889,7 @@ GameObject:
   - component: {fileID: 7935086182966166698}
   - component: {fileID: 1897743536222679777}
   - component: {fileID: 1290199323859487153}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +990,7 @@ GameObject:
   - component: {fileID: 6232938957795649629}
   - component: {fileID: 8081543888311872611}
   - component: {fileID: 1413606465133078841}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1066,7 @@ GameObject:
   - component: {fileID: 859834417174180364}
   - component: {fileID: 2086504227865752478}
   - component: {fileID: 2463362006266628842}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1142,7 @@ GameObject:
   - component: {fileID: 3397710920910337594}
   - component: {fileID: 6930973724783893512}
   - component: {fileID: 7655851145216939478}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OutLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

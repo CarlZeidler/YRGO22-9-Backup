@@ -6401,7 +6401,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: fe217660149440641bb489a7790682aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.578
-  m_Pitch: 0.5
+  m_Pitch: 0.1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -6437,8 +6437,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.36264732
-      value: 0.25
+      time: 0.3582833
+      value: 0.15994263
       inSlope: -0.6896517
       outSlope: -0.6896517
       tangentMode: 0
@@ -6447,7 +6447,7 @@ AudioSource:
       outWeight: 0
     - serializedVersion: 3
       time: 0.72192246
-      value: 0.08517456
+      value: 0.059448242
       inSlope: -0.17241293
       outSlope: -0.17241293
       tangentMode: 0

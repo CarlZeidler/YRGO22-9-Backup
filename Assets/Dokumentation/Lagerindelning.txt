@@ -15,8 +15,8 @@ Laser				Obstacle		Obstacle
 
 Door				Obstacle		Obstacle
 
-Switch				Interactable	Ground
+Switch				Interactable	Interactable
 
-Pressure Plate		Interactable	Ground
+Pressure Plate		Interactable	Interactable
 
 Lift				Obstacle	Obstacle
