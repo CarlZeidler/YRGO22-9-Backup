@@ -1,22 +1,33 @@
 !! LAYERS AND TAGS ARE CASE SENSITIVE !!
 
 
-Objekt				Layer			Tag
+Objekt				Layer			Tag				Sorting Layer for visuals
 
-Player				Player			Player
+Player				Player			Player			Player
 
-Ground (tilemap)	Ground			Ground
+Ground (tilemap)	Ground			Ground			Tiles
 
-Enemies(guards)		Enemy			Enemy
+Enemies(guards)		Enemy			Enemy			Obstacles
 
-Platforms			Obstacle		Obstacle
+Platforms			Obstacle		Obstacle		Obstacles
 
-Laser				Obstacle		Obstacle
+Laser				Obstacle		Obstacle		Obstacles
 
-Door				Obstacle		Obstacle
+Door				Obstacle		Obstacle		Obstacles
 
-Switch				Interactable	Interactable
+Switch				Interactable	Interactable	Obstacles
 
-Pressure Plate		Interactable	Interactable
+Pressure Plate		Interactable	Interactable	Obstacles
 
-Lift				Obstacle	Obstacle
+Lift				Obstacle	Obstacle			Obstacles
+
+
+!! SORTING LAYERS ORDER !!
+
+ID/ordering number		Layer name
+0						Background
+1						Default
+2						Tiles
+3						Obstacles
+4						Player
+5						UI
