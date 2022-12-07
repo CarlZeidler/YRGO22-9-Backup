@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class GuardBehaviour : HackableObjects
 {
-    public GuardMove moveScript;
-    public GuardVision visionScript;
-
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
+    [SerializeField] private Light2D visionCone;
+    [SerializeField] private PolygonCollider2D visionCollider;
 
+    public GuardMove moveScript;
+    public GuardVision visionScript;
+
+    private bool canSee;
     private void Update()
     {
         if (pInRange)
@@ -21,7 +25,7 @@ public class GuardBehaviour : HackableObjects
             RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
             if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
             {
-                detectionAreaSprite.color = detectionColor;
+                visionCone.color = detectionColor;
                 Invoke(nameof(Death), killTime);
                 Invoke(nameof(Shoot), killTime - killTime / 8);
             }
@@ -36,7 +40,7 @@ public class GuardBehaviour : HackableObjects
     public void Shutdown()
     {
         moveScript.canMove = false;
-        visionScript.canSee = false;
+        canSee = false;
         animator.SetTrigger("Shutdown");
         //moveScript.SetCharacterState("shutdown");
     }
@@ -44,7 +48,7 @@ public class GuardBehaviour : HackableObjects
     public void ReActivated()
     {
         //Restore functionality when the hacking time is over.
-        visionScript.canSee = true;
+        canSee = true;
         moveScript.canMove = true;
         animator.SetTrigger("Startup");
     }
@@ -55,7 +59,7 @@ public class GuardBehaviour : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
-            detectionAreaSprite.color = detectionColor;
+            visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Shoot();
             moveScript.canMove = false;
@@ -65,7 +69,7 @@ public class GuardBehaviour : HackableObjects
     public void OnPlayerExit()
     {
         pInRange = false;
-        detectionAreaSprite.color = activeColor;
+        visionCone.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
         moveScript.canMove = true;
@@ -98,5 +102,19 @@ public class GuardBehaviour : HackableObjects
         moveScript.canMove = false;
         animator.SetTrigger("Shoot");
         
+    }
+
+    private void VisionConeVisibility()
+    {
+        if (!canSee)
+        {
+            visionCone.color = inactiveColor;
+            visionCollider.enabled = false;
+        }
+        else
+        {
+            visionCone.color = activeColor;
+            visionCollider.enabled = true;
+        }
     }
 }
