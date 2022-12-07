@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624193004735065653}
   m_LocalRotation: {x: -0, y: -0, z: -0.29454082, w: 0.9556389}
-  m_LocalPosition: {x: 0.6849942, y: 1.3964264, z: -0.46500257}
+  m_LocalPosition: {x: 0.68499374, y: 1.3964264, z: -0.46500257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -897,7 +897,8 @@ GameObject:
   - component: {fileID: 8114511208459897491}
   - component: {fileID: 2552992476459634495}
   - component: {fileID: 9184095295781561986}
-  m_Layer: 8
+  - component: {fileID: 8632228703063946176}
+  m_Layer: 2
   m_Name: EyesSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,13 +1016,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   colliderTag: Player
-  colliderTag2: Enemy
-  colliderLayer: Player
-  colliderLayer2: Enemy
-  TriggerCollider: {fileID: 8114511209672870075}
+  colliderTag2: 
+  colliderLayer: 
+  colliderLayer2: 
+  TriggerCollider: {fileID: 0}
   useTag1: 1
   useTag2: 0
-  useLayer1: 1
+  useLayer1: 0
   useLayer2: 0
   useTimer: 0
   useTimerOnExit: 0
@@ -1064,10 +1065,10 @@ MonoBehaviour:
   colliderTag2: 
   colliderLayer: 
   colliderLayer2: 
-  TriggerCollider: {fileID: 8114511209672870075}
+  TriggerCollider: {fileID: 0}
   useTag1: 1
   useTag2: 0
-  useLayer1: 1
+  useLayer1: 0
   useLayer2: 0
   useTimer: 0
   useTimerOnExit: 0
@@ -1076,6 +1077,34 @@ MonoBehaviour:
   disableColliderOnTriggerExit: 0
   triggerOnExit: 1
   separateEventOnTriggerExit: 1
+--- !u!60 &8632228703063946176
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114511208459897493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 52.056053, y: 16.444794}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 51.980274, y: -16.402304}
 --- !u!1 &8114511208503013442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,11 +1396,6 @@ MonoBehaviour:
   raycastRightSide: {fileID: 8114511209500090115}
   animator: {fileID: 4269434050367926628}
   skeletonAnimation: {fileID: 8114511209833196489}
-  idle: {fileID: 11400000, guid: 6487b73250f203d4685ffef5ee71c1c7, type: 2}
-  walk: {fileID: 11400000, guid: ebccbdfe1ca85d545be1f854976af0f2, type: 2}
-  shutdown: {fileID: 11400000, guid: 5d73334e8473d044094d0efde524cea0, type: 2}
-  startup: {fileID: 11400000, guid: 47d2be51a898e5848bb917ee3423b35d, type: 2}
-  shooting: {fileID: 11400000, guid: 1423069dc3e3cef48b59b55e27d8b0cd, type: 2}
 --- !u!114 &8114511208693651516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,16 +1495,16 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   hackingPowerText: {fileID: 8114511209271081632}
-  hackingChargeSlider: {fileID: 0}
+  hackingChargeSlider: {fileID: 2314607564791738676}
   moveScript: {fileID: 8114511208693651515}
   visionScript: {fileID: 8114511209672870076}
   killTime: 1
   pInRange: 0
   animator: {fileID: 4269434050367926628}
   detectionAreaSprite: {fileID: 8114511209672870074}
-  detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0}
-  activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0}
-  inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0}
+  detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0.48235294}
+  activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0.53333336}
+  inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.5254902}
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 268
@@ -6562,9 +6586,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8114511209672870073}
   - component: {fileID: 8114511209672870074}
-  - component: {fileID: 8114511209672870075}
   - component: {fileID: 8114511209672870076}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VisionCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6638,34 +6661,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!60 &8114511209672870075
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8114511209672870077}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
 --- !u!114 &8114511209672870076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6680,7 +6675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviourScript: {fileID: 8114511208693651516}
   canSee: 1
-  killtime: 1
+  spriteRenderer: {fileID: 8114511209672870074}
+  thisCollider: {fileID: 8632228703063946176}
 --- !u!1 &8114511209833196490
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class GuardVision : MonoBehaviour
     public GuardBehaviour behaviourScript;
     public bool canSee = true;
     private PlayerRespawn respawnScript;
-    public float killtime;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] PolygonCollider2D thisCollider;
 
     public void Update()
     {
@@ -19,15 +20,16 @@ public class GuardVision : MonoBehaviour
     {
         if (!canSee)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            spriteRenderer.enabled = false;
+            thisCollider.enabled = false;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            spriteRenderer.enabled = true;
+            thisCollider.enabled = true;
         }
     }
+
 
     //private void OnTriggerEnter2D(Collider2D other)
     //{

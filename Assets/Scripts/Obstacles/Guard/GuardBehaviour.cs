@@ -57,8 +57,8 @@ public class GuardBehaviour : HackableObjects
         {
             detectionAreaSprite.color = detectionColor;
             Invoke(nameof(Death), killTime);
-            Invoke(nameof(Shoot), killTime - killTime / 8);
-
+            Shoot();
+            moveScript.canMove = false;
         }
     }
 
@@ -68,6 +68,7 @@ public class GuardBehaviour : HackableObjects
         detectionAreaSprite.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
+        moveScript.canMove = true;
     }
 
     public void TriggerExit()
@@ -94,7 +95,8 @@ public class GuardBehaviour : HackableObjects
 
     private void Shoot()
     {
-        animator.speed = 2;
+        moveScript.canMove = false;
         animator.SetTrigger("Shoot");
+        
     }
 }
