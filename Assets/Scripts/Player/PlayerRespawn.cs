@@ -55,6 +55,7 @@ public class PlayerRespawn : MonoBehaviour
             pHack.ToggleHackingMode();
         //RESETHACKSTATES
         GameManager.instance.ResetHackables();
+        GameManager.instance.ResetPickups();
         //energy
         pHack.ResetCharges();
     }
