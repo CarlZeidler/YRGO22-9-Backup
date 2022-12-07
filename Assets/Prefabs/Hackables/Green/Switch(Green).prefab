@@ -112,6 +112,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   hackingPowerText: {fileID: 2026277487543639898}
+  hackingChargeSlider: {fileID: 0}
   linkedHackables: []
   hackerLines: []
   hackerLinePrefab: {fileID: 1435477427416221182, guid: edd2ceeb63a4c27428bf08b8e79ace83, type: 3}
@@ -120,6 +121,7 @@ MonoBehaviour:
   lineBlue: {fileID: 2100000, guid: 36e5b5e697249e74c9bd856eb3a2bc44, type: 2}
   lineRed: {fileID: 2100000, guid: 57c751cf708f2ac4c9a8e00ccbd11df2, type: 2}
   useDiagonalLines: 0
+  customConnectionMiddleLinks: []
 --- !u!212 &8875429109209385495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -158,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 966882689
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1111221173, guid: 5e3a2462afe1360448aaf525c5b15112, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -729,7 +731,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1627433545
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1897743536222679777

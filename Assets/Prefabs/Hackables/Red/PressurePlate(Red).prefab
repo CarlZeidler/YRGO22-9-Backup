@@ -7,9 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 966882689
+      objectReference: {fileID: 0}
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: triggerOnExit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301483552663506344, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1627433545
       objectReference: {fileID: 0}
     - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_Color.b
