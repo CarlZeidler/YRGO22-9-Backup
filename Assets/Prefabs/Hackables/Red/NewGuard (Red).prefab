@@ -1509,7 +1509,7 @@ MonoBehaviour:
   visionCone: {fileID: 3642397064148397510}
   visionCollider: {fileID: 8632228703063946176}
   moveScript: {fileID: 8114511208693651515}
-  visionScript: {fileID: 8114511209672870076}
+  visionScript: {fileID: 0}
 --- !u!114 &8693678680312765049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   physicsCollider: {fileID: 8114511208693651514}
   guardMove: {fileID: 8114511208693651515}
   guardBehaviour: {fileID: 8114511208693651516}
-  guardVision: {fileID: 8114511209672870076}
+  guardVision: {fileID: 0}
   rb: {fileID: 8114511208693651513}
   visuals: {fileID: 8114511208503013442}
 --- !u!198 &1701714110674681820
@@ -6587,7 +6587,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8114511209672870073}
-  - component: {fileID: 8114511209672870076}
   - component: {fileID: 3642397064148397510}
   m_Layer: 2
   m_Name: VisionCone
@@ -6611,22 +6610,6 @@ Transform:
   m_Father: {fileID: 8114511208459897492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.016}
---- !u!114 &8114511209672870076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8114511209672870077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8411668b1887aec489a8043d776f2d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourScript: {fileID: 8114511208693651516}
-  canSee: 1
-  spriteRenderer: {fileID: 0}
-  thisCollider: {fileID: 8632228703063946176}
 --- !u!114 &3642397064148397510
 MonoBehaviour:
   m_ObjectHideFlags: 0
