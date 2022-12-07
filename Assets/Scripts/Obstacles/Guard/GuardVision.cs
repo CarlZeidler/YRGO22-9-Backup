@@ -30,25 +30,4 @@ public class GuardVision : MonoBehaviour
         }
     }
 
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        respawnScript = other.GetComponent<PlayerRespawn>();
-    //        Invoke(nameof(PlayerSpotted), killtime);
-    //    }
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if(collision.CompareTag("Player"))
-    //        CancelInvoke(nameof(PlayerSpotted));
-    //}
-
-    //private void PlayerSpotted()
-    //{
-    //    respawnScript.Die();
-    //}
-
 }
