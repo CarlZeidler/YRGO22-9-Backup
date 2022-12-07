@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
+    public List<BatteryPickup> batteries = new List<BatteryPickup>();
 
     private void Awake()
     {
@@ -66,6 +67,13 @@ public class GameManager : MonoBehaviour
             {
                 hackable.GetComponent<GuardRespawn>().Respawn();
             }
+        }
+    }
+    public void ResetPickups()
+    {
+        foreach (var battery in batteries)
+        {
+            battery.Respawn();
         }
     }
 
