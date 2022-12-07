@@ -20,7 +20,7 @@ public class HackerLineConnection : MonoBehaviour
         {
             //line.positionCount = 2;
             GetComponent<LineRenderer>().positionCount = 2;
-            positions = new Vector3[] { positions[positions.Length], positions[0] };
+            positions = new Vector3[] { positions[positions.Length-1], positions[0] };
         }
         GetComponent<LineRenderer>().SetPositions(positions);
     }

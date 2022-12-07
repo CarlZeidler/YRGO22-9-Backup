@@ -46,7 +46,6 @@ public class Laser : HackableObjects
     }
     private void LaserCheck()
     {
-
         //ray from start to direction of end
         ray = Physics2D.Raycast(startPoint, endPoint - startPoint, 100, ~ignorLayers);
 

@@ -66,12 +66,4 @@ public class Conductor : MonoBehaviour
             nextOffBeat++;
         }
     }
-    //guard vision distance
-    //amount of hackables
-    //hackervision
-    //commit
-    //battery spent
-
-    //record scartch and fade out rewind on death & respawn
-    //trigger progression on reassemble
 }
