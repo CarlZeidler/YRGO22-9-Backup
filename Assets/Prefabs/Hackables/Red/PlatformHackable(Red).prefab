@@ -227,8 +227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0178833, y: 0.030090332}
-  m_SizeDelta: {x: 1.9682, y: 0}
+  m_AnchoredPosition: {x: -0.037700057, y: -0.28400004}
+  m_SizeDelta: {x: 3.6235, y: 5.511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1187594567284470928
 CanvasRenderer:
@@ -515,7 +515,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -535,8 +535,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 5981ea54abb58fa4d9b67ce4774dc205, type: 3}
+  m_SortingOrder: -20
+  m_Sprite: {fileID: -2132928950, guid: b29e325aa24ba0440a6f3e994cd468ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -576,6 +576,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1187594568936306042}
+        m_TargetAssemblyTypeName: HackablePlatform, Assembly-CSharp
+        m_MethodName: ActivatePlatform
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -583,6 +595,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HackablePlatform, Assembly-CSharp
         m_MethodName: Toggle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1187594568936306042}
+        m_TargetAssemblyTypeName: HackablePlatform, Assembly-CSharp
+        m_MethodName: ActivatePlatform
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -648,6 +672,8 @@ MonoBehaviour:
   hackingPowerText: {fileID: 1187594568188143443}
   hackingChargeSlider: {fileID: 5599674603917440603}
   solid: 1
+  speed: 2
+  animator: {fileID: 0}
 --- !u!251 &1187594568936306043
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -680,18 +706,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09446764, y: -0.020013154}
+  m_Offset: {x: -0.042881012, y: 1.8333071}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.08, y: 5.31}
+    oldSize: {x: 8.88, y: 9.105469}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.528867, y: 1.6813642}
+  m_Size: {x: 8.041506, y: 1.6344445}
   m_EdgeRadius: 0
 --- !u!1 &1187594569104117704
 GameObject:
@@ -882,7 +908,7 @@ GameObject:
   - component: {fileID: 622003809963518141}
   - component: {fileID: 1267732669043913019}
   - component: {fileID: 6254205298722384305}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8674054722018758635
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1095,7 @@ GameObject:
   - component: {fileID: 6011508282631019513}
   - component: {fileID: 7940044795833369068}
   - component: {fileID: 5680780560475615330}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3.58}
+  m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7940044795833369068
@@ -1147,7 +1173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3512705149043361245}
   - component: {fileID: 5599674603917440603}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BatteryCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

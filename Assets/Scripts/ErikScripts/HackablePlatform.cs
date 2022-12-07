@@ -5,7 +5,10 @@ using UnityEngine;
 public class HackablePlatform : HackableObjects
 {
     public bool solid;
-    
+
+    [SerializeField] private float speed = 1;
+    [SerializeField] private Animator animator;
+
     private void Start()
     {
         if (!solid)
@@ -28,15 +31,26 @@ public class HackablePlatform : HackableObjects
         if (solid)
         {
             GetComponent<Collider2D>().enabled = true;
-            GetComponent<SpriteRenderer>().material.color = Color.white;
             gameObject.layer = 6;
         }
         else
         {
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().material.color = Color.black;
             gameObject.layer = 9;
         }
         solid = !solid;
+    }
+
+    public void ActivatePlatform(bool activate)
+    {
+        animator.speed = speed;
+        if (activate)
+        {
+            animator.SetTrigger("Activate");
+        }
+        else
+        {
+            animator.SetTrigger("Deactivate");
+        }
     }
 }
