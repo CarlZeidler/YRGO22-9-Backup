@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 namespace Cyan {
+
 	[CustomPropertyDrawer(typeof(Blit.BlitSettings))]
 	public class BlitEditor : PropertyDrawer {
 
@@ -80,3 +82,4 @@ namespace Cyan {
 		}
 	}
 }
+#endif
