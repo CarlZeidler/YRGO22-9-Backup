@@ -52,7 +52,7 @@ public class GuardMove : MonoBehaviour
     [SerializeField] private Transform raycastLeftSide;
     [SerializeField] private Transform raycastRightSide;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator[] animators = new Animator[2];
     [SerializeField] private SkeletonAnimation skeletonAnimation;
 
     void Start()
@@ -110,8 +110,11 @@ public class GuardMove : MonoBehaviour
         if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0)
         {
             canMove = false;
-            animator.SetBool("Walking", false);
-            animator.SetBool("Idle", true);
+            foreach(var animator in animators)
+            {
+                animator.SetBool("Walking", false);
+                animator.SetBool("Idle", true);
+            }
 
             //Steps through the selected angles to pivot the vision cone when the guard is at the right patrol apex.
             if (counter <= pivotTimeRight*0.25)
@@ -158,8 +161,11 @@ public class GuardMove : MonoBehaviour
         else if (!facingRight && realPatrolTime <= 0 && realHoldTimeLeft > 0)
         {
             canMove = false;
-            animator.SetBool("Walking", false);
-            animator.SetBool("Idle", true);
+            foreach(var animator in animators)
+            {
+                animator.SetBool("Walking", false);
+                animator.SetBool("Idle", true);
+            }
 
             //Steps through the selected angles to pivot the vision cone when the guard is at the left patrol apex.
             if (counter <= pivotTimeLeft * 0.25)
@@ -208,14 +214,20 @@ public class GuardMove : MonoBehaviour
     {
         if (facingRight && canMove)
         {
-            animator.SetBool("Idle", false);
-            animator.SetBool("Walking", true);
+            foreach(var animator in animators)
+            {
+                animator.SetBool("Idle", false);
+                animator.SetBool("Walking", true);
+            }
             rb2d.velocity = new Vector2(Mathf.Clamp(moveSpeed + acceleration * Time.unscaledDeltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
         else if (!facingRight && canMove)
         {
-            animator.SetBool("Idle", false);
-            animator.SetBool("Walking", true);
+            foreach (var animator in animators)
+            {
+                animator.SetBool("Idle", false);
+                animator.SetBool("Walking", true);
+            }
             rb2d.velocity = new Vector2(-Mathf.Clamp(moveSpeed + acceleration * Time.unscaledDeltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
 

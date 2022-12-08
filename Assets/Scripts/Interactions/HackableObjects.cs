@@ -44,6 +44,8 @@ public class HackableObjects : MonoBehaviour
                 try
                 {
                     hackingChargeSlider.value = value;
+                    if(!isHacked)
+                        DrainHackingStrength();
                 }
                 catch { }
             }
@@ -121,8 +123,12 @@ public class HackableObjects : MonoBehaviour
         else
         {
             //stop hack
-            isHacked = false;
-            onHackStoppedEvent.Invoke();
+            if (isHacked)
+            {
+                isHacked = false;
+                onHackStoppedEvent.Invoke();
+            }
+            //function called on rightclick powerdrain
             hackingPowerText.transform.parent.gameObject.SetActive(false);
         }
     }
