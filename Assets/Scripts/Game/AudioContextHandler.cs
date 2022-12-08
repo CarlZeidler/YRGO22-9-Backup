@@ -33,7 +33,7 @@ public class AudioContextHandler : MonoBehaviour
         }
     }
     private void Update()
-    {//TODO TRANSLATE DISTANCE/VOLUME VALUE TO BETWEEN 0.0001 & 1
+    {
         foreach (var hackable in dangerHackables)
         {
             float distance = (transform.position-hackable.transform.position).magnitude;
