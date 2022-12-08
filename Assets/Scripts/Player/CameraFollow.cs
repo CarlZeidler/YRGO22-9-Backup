@@ -92,7 +92,7 @@ public class CameraFollow : MonoBehaviour
         while (time < duration)
         {
             camRef.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             yield return null;
         }
         camRef.orthographicSize = endSize;
