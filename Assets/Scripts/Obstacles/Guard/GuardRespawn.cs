@@ -12,7 +12,6 @@ public class GuardRespawn : MonoBehaviour
     [SerializeField] private Collider2D physicsCollider;
     [SerializeField] private GuardMove guardMove;
     [SerializeField] private GuardBehaviour guardBehaviour;
-    [SerializeField] private GuardVision guardVision;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject visuals;
 
@@ -26,7 +25,6 @@ public class GuardRespawn : MonoBehaviour
         physicsCollider.enabled = enable;
         guardMove.enabled = enable;
         guardBehaviour.enabled = enable;
-        guardVision.enabled = enable;
         rb.isKinematic = !enable;
         if(!enable)
             rb.velocity = Vector2.zero;

@@ -15,6 +15,7 @@ public class HackableObjects : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI hackingPowerText;
     [SerializeField] private Slider hackingChargeSlider;
+    [SerializeField] private GameObject selectionCircle;
     protected GameObject originalState;
     public enum ObjectState
     {
@@ -68,8 +69,9 @@ public class HackableObjects : MonoBehaviour
     public void OnHackingModeHide()
     {
         onHackHideEvent.Invoke();
+        ToggleHackSelection(false);
         //if (!isHacked)
-          //  ResetHackPower();
+        //  ResetHackPower();
     }
     public void CommitHack()
     {
@@ -78,6 +80,7 @@ public class HackableObjects : MonoBehaviour
             onHackEvent.Invoke();
             DrainHackingStrength();
             isHacked = true;
+            ToggleHackSelection(false);
         }
     }
     public void AddHackingPower(int amount)
@@ -170,4 +173,13 @@ public class HackableObjects : MonoBehaviour
         }
     }
 
+    public void ToggleHackSelection(bool enabled)
+    {
+        if(enabled&&GameManager.instance.selectedHackable!=this)
+            GameManager.instance.ChangeSelectedHackable(this);
+        if(hackingStrength>0)
+            selectionCircle.SetActive(enabled);
+        else
+            selectionCircle.SetActive(false);
+    }
 }

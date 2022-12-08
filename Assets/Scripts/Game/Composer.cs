@@ -75,9 +75,12 @@ public class Composer : MonoBehaviour
     }
     void DangerDistance()
     {
-        float volume = Mathf.Clamp(((dangerDistance / maxDangerDistance) * 100) - 60,-80,0);
+        //float volume = Mathf.Clamp(((dangerDistance / maxDangerDistance) * 100) - 60,-80,0);
+        float change = dangerDistance / maxDangerDistance;
+        float volume = 1 * change;
+        volume = Mathf.Log10(volume) * 20;
         SetVolume(bass2, volume);
-        Debug.Log(volume);
+        //Debug.Log(volume);
     }
     //guard vision distance
     //amount of hackables

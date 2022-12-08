@@ -114,7 +114,7 @@ public class Switch : HackableObjects
     }
     public void ResetToggle()
     {
-        if(objectState == ObjectState.redUnPersistent)
+        if(objectState == ObjectState.redUnPersistent||objectState==ObjectState.greenSemiPersistent)
         {
             if (toggled)
             {

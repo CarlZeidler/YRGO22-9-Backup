@@ -20,6 +20,7 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
                 m2Click.Invoke();
         }
     }
+
     public void SetClickable(bool clickable)
     {
         this.clickable = clickable;

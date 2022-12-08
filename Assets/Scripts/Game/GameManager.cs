@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
+    public HackableObjects selectedHackable;
 
     private void Awake()
     {
@@ -76,6 +77,11 @@ public class GameManager : MonoBehaviour
             battery.Respawn();
         }
     }
-
+    public void ChangeSelectedHackable(HackableObjects newSelection)
+    {
+        if(selectedHackable != null)
+            selectedHackable.ToggleHackSelection(false);
+        selectedHackable = newSelection;
+    }
 
 }

@@ -39,8 +39,8 @@ public class AudioContextHandler : MonoBehaviour
             float distance = (transform.position-hackable.transform.position).magnitude;
             if (distance < composer.maxDangerDistance)
             {
-                Debug.Log(distance * -1 + 25);
-                composer.dangerDistance = distance * -1 + 25;
+               // Debug.Log(distance * -1 + 25);
+                composer.dangerDistance = distance * -1 + 25;               
             }
         }
     }

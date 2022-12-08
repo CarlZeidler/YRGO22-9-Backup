@@ -114,6 +114,7 @@ MonoBehaviour:
         m_CallState: 2
   hackingPowerText: {fileID: 2026277487543639898}
   hackingChargeSlider: {fileID: 1493322024866582859}
+  selectionCircle: {fileID: 0}
   linkedHackables: []
   hackerLines: []
   hackerLinePrefab: {fileID: 1435477427416221182, guid: edd2ceeb63a4c27428bf08b8e79ace83, type: 3}
