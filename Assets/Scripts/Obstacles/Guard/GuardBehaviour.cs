@@ -7,7 +7,7 @@ public class GuardBehaviour : HackableObjects
 {
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator[] animators = new Animator[2];
     [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
@@ -41,7 +41,10 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         canSee = false;
-        animator.SetTrigger("Shutdown");
+        foreach(var animator in animators)
+        {
+            animator.SetTrigger("Shutdown");
+        }
         //moveScript.SetCharacterState("shutdown");
     }
 
@@ -50,7 +53,10 @@ public class GuardBehaviour : HackableObjects
         //Restore functionality when the hacking time is over.
         canSee = true;
         moveScript.canMove = true;
-        animator.SetTrigger("Startup");
+        foreach (var animator in animators)
+        {
+            animator.SetTrigger("Startup");
+        }
     }
 
     public void OnPlayerEnter()
@@ -100,8 +106,10 @@ public class GuardBehaviour : HackableObjects
     private void Shoot()
     {
         moveScript.canMove = false;
-        animator.SetTrigger("Shoot");
-        
+        foreach (var animator in animators)
+        {
+            animator.SetTrigger("Shoot");
+        }
     }
 
     private void VisionConeVisibility()

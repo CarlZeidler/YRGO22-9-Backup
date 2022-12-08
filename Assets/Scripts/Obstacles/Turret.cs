@@ -8,13 +8,12 @@ public class Turret : HackableObjects
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
 
-    [SerializeField]private Animator animator;
+    [SerializeField]private Animator[] animators = new Animator[2];
     [SerializeField] private AudioSource audS;
     [SerializeField] private AudioClip shoot;
     [SerializeField] private Light2D detectionAreaLight;
     [SerializeField] private Color detectionColor,activeColor,inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
-
 
     private void Update()
     {
@@ -76,8 +75,11 @@ public class Turret : HackableObjects
     }
     private void Shoot()
     {
-        animator.speed = 2  ;
-        animator.SetTrigger("Shoot");
+        foreach (var animator in animators)
+        {
+            animator.speed = 2  ;
+            animator.SetTrigger("Shoot");
+        }
     }
     private void Death()
     {
@@ -90,14 +92,17 @@ public class Turret : HackableObjects
     }
     public void SetEnable(bool enable)
     {
-        animator.speed = 1;
-        if (enable)
+        foreach (var animator in animators)
         {
-            animator.SetTrigger("Bootup");
-        }
-        else
-        {
-            animator.SetTrigger("Shutdown");
+            animator.speed = 1;
+            if (enable)
+            {
+                animator.SetTrigger("Bootup");
+            }
+            else
+            {
+                animator.SetTrigger("Shutdown");
+            }
         }
     }
 }

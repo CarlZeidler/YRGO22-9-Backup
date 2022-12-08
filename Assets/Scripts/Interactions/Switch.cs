@@ -15,6 +15,7 @@ public class Switch : HackableObjects
     private bool toggled;
     [SerializeField] private bool useDiagonalLines;
     [SerializeField] private Transform[] customConnectionMiddleLinks;
+    [SerializeField] private SpriteRenderer normal, highlight;
 
     private void Start()
     {
@@ -80,12 +81,14 @@ public class Switch : HackableObjects
     {
         if (toggled)
         {
-            GetComponent<SpriteRenderer>().sprite = active;
+            normal.sprite = active;
+            highlight.sprite = active;
             GetComponentInChildren<Image>().sprite = active;
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = inactive;
+            normal.sprite = inactive;
+            highlight.sprite = inactive;
             GetComponentInChildren<Image>().sprite = inactive;
         }
         toggled = !toggled;
