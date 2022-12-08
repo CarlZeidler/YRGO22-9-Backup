@@ -13,7 +13,7 @@ public class EnterTransition : MonoBehaviour
     }
     private void Update()
     {
-        Invoke(nameof(Entered), 1f);
+        Invoke(nameof(Entered), 2f);
     }
 
     private void Entered()
