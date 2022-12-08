@@ -121,6 +121,7 @@ Material:
     - _DoubleSidedLighting: 0
     - _DstBlend: 10
     - _EmissionPower: 2
+    - _Emission_multiplier: 0
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
