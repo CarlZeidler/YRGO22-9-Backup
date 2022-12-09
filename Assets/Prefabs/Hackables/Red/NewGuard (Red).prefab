@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5372549}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.5372549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1977,7 +1977,6 @@ MonoBehaviour:
   physicsCollider: {fileID: 8114511208693651514}
   guardMove: {fileID: 8114511208693651515}
   guardBehaviour: {fileID: 8114511208693651516}
-  guardVision: {fileID: 0}
   rb: {fileID: 8114511208693651513}
   visuals: {fileID: 8114511208503013442}
 --- !u!198 &1701714110674681820

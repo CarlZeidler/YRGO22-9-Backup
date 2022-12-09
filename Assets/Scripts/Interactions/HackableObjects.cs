@@ -175,11 +175,15 @@ public class HackableObjects : MonoBehaviour
 
     public void ToggleHackSelection(bool enabled)
     {
-        if(enabled&&GameManager.instance.selectedHackable!=this)
-            GameManager.instance.ChangeSelectedHackable(this);
-        if(hackingStrength>0)
-            selectionCircle.SetActive(enabled);
-        else
-            selectionCircle.SetActive(false);
+        try
+        {
+            if (enabled && GameManager.instance.selectedHackable != this)
+                GameManager.instance.ChangeSelectedHackable(this);
+            if (hackingStrength > 0)
+                selectionCircle.SetActive(enabled);
+            else
+                selectionCircle.SetActive(false);
+        }
+        catch { }
     }
 }
