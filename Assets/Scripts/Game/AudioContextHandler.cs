@@ -11,6 +11,7 @@ public class AudioContextHandler : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(UpdateLists),.5f);
+        Invoke(nameof(EnableCollider), .5f);
     }
     public void UpdateLists()
     {
@@ -48,5 +49,24 @@ public class AudioContextHandler : MonoBehaviour
             // Debug.Log(distance * -1 + 25);
             composer.dangerDistance = distance * -1 + 25;               
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (safeHackables.Contains(collision.transform.root.GetComponentInChildren<HackableObjects>()))
+        {
+            composer.nearbyHackablesAmount++;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (safeHackables.Contains(collision.transform.root.GetComponentInChildren<HackableObjects>()))
+        {
+            composer.nearbyHackablesAmount--;
+        }
+    }
+    //make sure all items have been added to list before checking collisions
+    private void EnableCollider()
+    {
+        GetComponent<Collider2D>().enabled = true;
     }
 }

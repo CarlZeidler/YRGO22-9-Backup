@@ -14,7 +14,6 @@ public class AnimatedClickableObject : ClickableObject, IPointerEnterHandler, IP
     [HideInInspector] public bool mouseInRect = false;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("enter");
         if (mouseEnterAnim)
         {
             mouseInRect = true;
@@ -25,7 +24,6 @@ public class AnimatedClickableObject : ClickableObject, IPointerEnterHandler, IP
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("exit");
         if (mouseEnterAnim)
         {
             mouseExit.Invoke();

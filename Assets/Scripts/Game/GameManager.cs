@@ -12,6 +12,22 @@ public class GameManager : MonoBehaviour
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
     public HackableObjects selectedHackable;
 
+    private bool _somethingIsHacked;
+     [HideInInspector]public bool somethingIsHacked
+    {
+        get 
+        {
+            bool isHacking = false;
+            foreach (var hackable in hackableObjects)
+            {
+                if (hackable.isHacked)
+                    isHacking = true;
+            }
+            return isHacking;
+        }
+        private set { _somethingIsHacked = value; }
+    }
+
     private void Awake()
     {
         if (instance == null)

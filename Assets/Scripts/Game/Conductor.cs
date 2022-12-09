@@ -5,8 +5,6 @@ using UnityEngine;
 public class Conductor : MonoBehaviour
 {
 
-
-
     //get from soundplayer reference on maincamera
     private AudioSource musicSource;
 
@@ -20,6 +18,7 @@ public class Conductor : MonoBehaviour
 
     //current song pos in seconds
     private float songPosition;
+    private bool midTriggered = false;
 
     //current song pos in beats
     [SerializeField] private float songPositionInBeats;
@@ -65,5 +64,25 @@ public class Conductor : MonoBehaviour
         {
             nextOffBeat++;
         }
+        if (songPositionInBeats > nrOfSongBeats)
+        {
+            Start();
+            songPosition = 0;
+            songPositionInBeats = 0;
+            nextBeat = 0;
+            nextOffBeat = .5f;
+            NewLoop();
+        }
+        if (songPositionInBeats > nrOfSongBeats / 2&!midTriggered)
+            MidLoop();
+    }
+    void NewLoop()
+    {
+        GameManager.instance.composer.HackInProgress();
+    }
+    void MidLoop()
+    {
+        midTriggered = true;
+        GameManager.instance.composer.HackInProgress();
     }
 }

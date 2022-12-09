@@ -18,6 +18,13 @@ public class PlayerHack : MonoBehaviour
             Mathf.Clamp(value, 0, maxBatteryCharges);
             _batteryCharges = value;
             batteryChargeSlider.value = value;
+
+            //update music reference
+            try
+            {
+                GameManager.instance.composer.chargesSpent = maxBatteryCharges - value;
+            }
+            catch { }
         } 
     }
 

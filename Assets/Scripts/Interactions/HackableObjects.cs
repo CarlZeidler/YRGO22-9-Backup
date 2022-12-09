@@ -81,6 +81,12 @@ public class HackableObjects : MonoBehaviour
             DrainHackingStrength();
             isHacked = true;
             ToggleHackSelection(false);
+
+            try
+            {
+                GameManager.instance.composer.HackInProgress();
+            }
+            catch { }
         }
     }
     public void AddHackingPower(int amount)
@@ -130,6 +136,13 @@ public class HackableObjects : MonoBehaviour
             {
                 isHacked = false;
                 onHackStoppedEvent.Invoke();
+
+                //try
+                //{
+                //    GameManager.instance.composer.hackInProgress = false;
+                //}
+                //catch { }
+
             }
             //function called on rightclick powerdrain
             hackingPowerText.transform.parent.gameObject.SetActive(false);

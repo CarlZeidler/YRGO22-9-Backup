@@ -338,7 +338,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 9078545167367308989, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 001baca7f56575a428854012f443e82b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.271
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songBpm: 90
-  nrOfSongBeats: 64
+  nrOfSongBeats: 32
   songPositionInBeats: 0
   distanceFromBeat: 0
 --- !u!114 &8544668313197694372
@@ -1560,12 +1560,9 @@ MonoBehaviour:
   loop1: {fileID: 5272770510260078294}
   loop1_5: {fileID: 5272770510665455361}
   loop2: {fileID: 5272770509439730827}
-  _dangerDistance: 0
   maxDangerDistance: 25
-  _nearbyHackablesAmount: 0
-  _chargesLeft: 0
-  _hackervision: 0
-  _hackInProgress: 0
+  nearbyHackablesForMaxVolume: 10
+  maxCharges: 0
   fadeDuration: 0.25
 --- !u!1 &5272770510658786806
 GameObject:
@@ -2417,7 +2414,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 9078545167367308989, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0301f4d2adbaa5747b5ece851697ab76, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.271
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2895,6 +2892,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2076460767433093329}
   - component: {fileID: 986213922892818385}
+  - component: {fileID: 8160147088788574574}
+  - component: {fileID: 3692235538468770451}
   m_Layer: 0
   m_Name: ContextHandler
   m_TagString: Untagged
@@ -2932,3 +2931,40 @@ MonoBehaviour:
   dangerHackables: []
   safeHackables: []
   composer: {fileID: 8544668313197694372}
+--- !u!58 &8160147088788574574
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398964930542635489}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 20
+--- !u!50 &3692235538468770451
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398964930542635489}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

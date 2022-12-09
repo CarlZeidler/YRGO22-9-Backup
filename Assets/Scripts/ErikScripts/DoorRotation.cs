@@ -10,7 +10,6 @@ public class DoorRotation : HackableObjects
 
     public void OpenDoor(bool open) 
     {
-        Debug.Log(open);
         anim.speed = speed;
         if (open)
         {
