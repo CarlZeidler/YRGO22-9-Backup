@@ -52,7 +52,6 @@ public class PlayerHack : MonoBehaviour
     {
         if (!inHackingMode)
         {
-            GameManager.instance.CancelInvoke(nameof(GameManager.instance.HideHackables));
             GameManager.instance.RevealHackables(.015f);
             hackingUIAnim.SetBool("HackingMode", true);
             Time.timeScale = 0.1f;
@@ -60,7 +59,6 @@ public class PlayerHack : MonoBehaviour
         }
         else
         {
-            GameManager.instance.CancelInvoke(nameof(GameManager.instance.RevealHackables));
             GameManager.instance.HideHackables(0.015f);
             hackingUIAnim.SetBool("HackingMode", false);
             Time.timeScale = 1f;

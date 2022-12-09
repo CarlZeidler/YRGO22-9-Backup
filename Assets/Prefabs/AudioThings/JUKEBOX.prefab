@@ -466,7 +466,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 081bed9b08aa20049aafdb178790ed3e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1272,7 +1272,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9c33e8203dfeb914bbf99e48d6e01343, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1397,7 +1397,7 @@ AudioSource:
   m_GameObject: {fileID: 5272770510482660242}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
+  OutputAudioMixerGroup: {fileID: 5444555065269824290, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a69f34310e5cf9499d90a39ffaa961d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.271
@@ -1561,11 +1561,12 @@ MonoBehaviour:
   loop1_5: {fileID: 5272770510665455361}
   loop2: {fileID: 5272770509439730827}
   _dangerDistance: 0
-  maxDangerDistance: 0
+  maxDangerDistance: 25
   _nearbyHackablesAmount: 0
   _chargesLeft: 0
   _hackervision: 0
   _hackInProgress: 0
+  fadeDuration: 0.25
 --- !u!1 &5272770510658786806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2030,7 @@ AudioSource:
   m_GameObject: {fileID: 5272770510792740181}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
+  OutputAudioMixerGroup: {fileID: 5444555065269824290, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: c36a7717f20c4514e859cd9ee415b21e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -2160,7 +2161,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 11fea0c4e5a9c1a4e834e0d414975ddc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2541,7 +2542,7 @@ AudioSource:
   m_GameObject: {fileID: 5272770511082350357}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7840110773660218918, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
+  OutputAudioMixerGroup: {fileID: 5444555065269824290, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: d9f0deb5211a93841a0f772085471cff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -2930,4 +2931,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dangerHackables: []
   safeHackables: []
-  composer: {fileID: 0}
+  composer: {fileID: 8544668313197694372}

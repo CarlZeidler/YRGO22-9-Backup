@@ -1954,7 +1954,7 @@ MonoBehaviour:
   inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.22745098}
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 268
+    m_Bits: 2316
   visionCone: {fileID: 3642397064148397510}
   visionCollider: {fileID: 8632228703063946176}
   moveScript: {fileID: 8114511208693651515}

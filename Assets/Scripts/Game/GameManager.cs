@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     public GameObject player;
+    public Composer composer;
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
     public HackableObjects selectedHackable;
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<PlayerMove>().gameObject;
+        try
+        {
+            composer = FindObjectOfType<Composer>();
+        }
+        catch { }
     }
 
     public void RevealHackables(float delay)
@@ -33,12 +39,24 @@ public class GameManager : MonoBehaviour
         CancelInvoke(nameof(HideHackablesDelayed));
         CancelInvoke(nameof(RevealHackablesDelayed));
         Invoke(nameof(RevealHackablesDelayed), delay);
+
+        try
+        {
+            composer.hackervision = true;
+        }
+        catch { }
     }
     public void HideHackables(float delay)
     {
         CancelInvoke(nameof(HideHackablesDelayed));
         CancelInvoke(nameof(RevealHackablesDelayed));
         Invoke(nameof(HideHackablesDelayed), delay);
+
+        try
+        {
+            composer.hackervision = false;
+        }
+        catch { }
     }
     private void RevealHackablesDelayed()
     {

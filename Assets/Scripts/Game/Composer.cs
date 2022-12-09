@@ -17,6 +17,10 @@ public class Composer : MonoBehaviour
     public int _chargesLeft;
     public bool _hackervision;
     public bool _hackInProgress;
+    [Space(20)]
+    public float fadeDuration = 1;
+
+    private IEnumerator fader;
 
     public float dangerDistance
     {
@@ -36,12 +40,28 @@ public class Composer : MonoBehaviour
     public bool hackervision
     {
         get { return _hackervision; }
-        set { _hackervision = value; }
+        set { _hackervision = value;
+            float volume;
+            if (value)
+                volume = 0;
+            else
+                volume = -30;
+            float startVal = 0;
+            mixer.GetFloat("Synth1Volume", out startVal);
+            StopCoroutine(fader);
+            fader = ToggleHackingMode(startVal,volume, fadeDuration);
+            StartCoroutine(fader);
+            }
     }
     public bool hackInProgress
     {
         get { return _hackInProgress; }
         set { _hackInProgress = value; }
+    }
+
+    private void Start()
+    {
+        fader = ToggleHackingMode(-40,-40, fadeDuration);
     }
 
     public void SetVolume(AudioMixerGroup mixerGroup, float volume)
@@ -73,18 +93,30 @@ public class Composer : MonoBehaviour
         loop1_5.SetActive(!loop1_5.activeSelf);
         loop1.SetActive(!loop1.activeSelf);
     }
+
+    //guard vision distance
     void DangerDistance()
     {
-        //float volume = Mathf.Clamp(((dangerDistance / maxDangerDistance) * 100) - 60,-80,0);
         float change = dangerDistance / maxDangerDistance;
         float volume = 1 * change;
         volume = Mathf.Log10(volume) * 20;
         SetVolume(bass2, volume);
-        //Debug.Log(volume);
     }
-    //guard vision distance
-    //amount of hackables
+
     //hackervision
+    IEnumerator ToggleHackingMode(float startVal, float endVal, float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+            SetVolume(synth1, Mathf.Lerp(startVal, endVal, time / duration));
+            time += Time.unscaledDeltaTime;
+            duration += Time.unscaledDeltaTime/2;
+            yield return null;
+        }
+        SetVolume(synth1, endVal);
+    }
+    //amount of hackables
     //commit
     //battery spent
 
