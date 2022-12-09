@@ -20,7 +20,7 @@ public class Switch : HackableObjects
     private void Start()
     {
         UpdateHackableLinks();
-        ToggleVisualConnections();
+        ToggleVisualConnections(false);
 
 
         //hackable Start();
@@ -104,12 +104,12 @@ public class Switch : HackableObjects
             }
         }
     }
-    public void ToggleVisualConnections()
+    public void ToggleVisualConnections(bool enable)
     {
         foreach (var line in hackerLines)
         {
             //line.enabled = !line.enabled;
-            line.GetComponent<Renderer>().enabled = !line.GetComponent<Renderer>().enabled;
+            line.GetComponent<Renderer>().enabled = enable;
         }
     }
     public void ResetToggle()

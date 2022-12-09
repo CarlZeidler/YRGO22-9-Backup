@@ -6222,6 +6222,7 @@ GameObject:
   - component: {fileID: 6245161319289868188}
   - component: {fileID: 8224928313610662815}
   - component: {fileID: 8919775926512616149}
+  - component: {fileID: 3182361276640971696}
   m_Layer: 0
   m_Name: HackingUI
   m_TagString: Untagged
@@ -6333,6 +6334,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3182361276640971696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480894139506105208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da632c790af996e419203759ffaca977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  clip1: {fileID: 0}
 --- !u!1 &6070076905336941148
 GameObject:
   m_ObjectHideFlags: 0
@@ -11639,7 +11654,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: -1197073402
   m_Mesh: {fileID: 0}
-  m_InstanceId: 167764
+  m_InstanceId: 49858
 --- !u!1 &8585773368015882545
 GameObject:
   m_ObjectHideFlags: 0
