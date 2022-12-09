@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 2408883345811171419, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6138fcb6e8dcd2c4da8027017413fd27, type: 2}
     - target: {fileID: 2408883346006625408, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_IsActive
       value: 1

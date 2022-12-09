@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
@@ -19,6 +23,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 966882689
       objectReference: {fileID: 0}
+    - target: {fileID: 521011771496776469, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 13ffd3ff420a7ce44aacf7cea11ef734, type: 2}
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: triggerOnExit
       value: 1

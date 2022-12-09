@@ -113,7 +113,7 @@ TextureImporter:
         width: 239
         height: 221
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +134,7 @@ TextureImporter:
         width: 239
         height: 221
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +155,11 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: dee4d22196a92c2438450be6996e54d3, type: 3}
+      name: _EmissionMap
+    - texture: {fileID: 2800000, guid: fb1afdc12164991488b222df43b3d9dc, type: 3}
+      name: _NormalMap
     nameFileIdTable:
       Pressure plate_0: -346474400
       Pressure plate_1: 1231988918
