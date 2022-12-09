@@ -34,14 +34,19 @@ public class AudioContextHandler : MonoBehaviour
     }
     private void Update()
     {
+        float distance = composer.maxDangerDistance;
+
         foreach (var hackable in dangerHackables)
         {
-            float distance = (transform.position-hackable.transform.position).magnitude;
-            if (distance < composer.maxDangerDistance)
-            {
-               // Debug.Log(distance * -1 + 25);
-                composer.dangerDistance = distance * -1 + 25;               
-            }
+            float newDist = (transform.position - hackable.transform.position).magnitude;
+            if (newDist < distance)
+                distance = newDist;
+        }
+
+        if (distance < composer.maxDangerDistance)
+        {
+            // Debug.Log(distance * -1 + 25);
+            composer.dangerDistance = distance * -1 + 25;               
         }
     }
 }

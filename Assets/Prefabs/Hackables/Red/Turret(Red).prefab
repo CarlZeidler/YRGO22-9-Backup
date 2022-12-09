@@ -878,7 +878,7 @@ MonoBehaviour:
   inactiveColor: {r: 1, g: 0.6784314, b: 0, a: 0.27058825}
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 268
+    m_Bits: 2316
 --- !u!1 &3249169450834346200
 GameObject:
   m_ObjectHideFlags: 0
