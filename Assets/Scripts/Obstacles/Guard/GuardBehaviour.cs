@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,10 +16,16 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private Light2D visionCone;
     [SerializeField] private PolygonCollider2D visionCollider;
 
+    [SerializeField] private Transform topLeftRaycastReference;
+    [SerializeField] private Transform topRightRaycastReference;
+    [SerializeField] private Transform bottomLeftRaycastReference;
+    [SerializeField] private Transform bottomRightRaycastReference;
+
     public GuardMove moveScript;
     public GuardVision visionScript;
 
     private bool canSee;
+    private bool tooClose = false;
     private void Update()
     {
         if (pInRange)
@@ -36,17 +43,64 @@ public class GuardBehaviour : HackableObjects
             CancelInvoke(nameof(Death));
             CancelInvoke(nameof(Shoot));
         }
+
+        PlayerProximityCheck();
+    }
+
+    private void PlayerProximityCheck()
+    {
+        float minDist = 2f;
+        float dist = Vector3.Distance(GameManager.instance.player.transform.position, transform.position);
+        
+        if (dist < minDist && !moveScript.shutDown && !tooClose)
+        {
+            if (moveScript.facingRight)
+            {
+                if (GameManager.instance.player.transform.position.x < transform.position.x)
+                {
+                    Invoke(nameof(KillPlayer), 2f);
+                    tooClose = true;
+                }
+                else if (GameManager.instance.player.transform.position.x > transform.position.x)
+                {
+                    Invoke(nameof(KillPlayer), 0f);
+                    tooClose = true;
+                }
+            }
+            else if (!moveScript.facingRight)
+            {
+                if (GameManager.instance.player.transform.position.x > transform.position.x)
+                {
+                    Invoke(nameof(KillPlayer), 2f);
+                    tooClose = true;
+                }
+                else if (GameManager.instance.player.transform.position.x < transform.position.x)
+                {
+                    Invoke(nameof(KillPlayer), 0f);
+                    tooClose = true;
+                }
+            }
+        }
+        else if (dist > minDist && tooClose)
+        {
+            CancelInvoke(nameof(KillPlayer));
+            tooClose = false;
+            Debug.Log("Got away");
+        }
+        else if (moveScript.shutDown)
+            CancelInvoke(nameof(KillPlayer));
     }
 
     public void Shutdown()
     {
         moveScript.canMove = false;
+        moveScript.shutDown = true;
         canSee = false;
         foreach(var animator in animators)
         {
             animator.SetTrigger("Shutdown");
         }
-        //moveScript.SetCharacterState("shutdown");
+        visionCone.color = inactiveColor;
     }
 
     public void ReActivated()
@@ -54,10 +108,12 @@ public class GuardBehaviour : HackableObjects
         //Restore functionality when the hacking time is over.
         canSee = true;
         moveScript.canMove = true;
+        moveScript.shutDown = false;
         foreach (var animator in animators)
         {
             animator.SetTrigger("Startup");
         }
+        visionCone.color = activeColor;
     }
 
     public void OnPlayerEnter()
@@ -87,7 +143,7 @@ public class GuardBehaviour : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
-            detectionAreaSprite.color = detectionColor;
+            visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
 
@@ -104,6 +160,11 @@ public class GuardBehaviour : HackableObjects
         }
     }
 
+    private void KillPlayer()
+    {
+        GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
+    }
+
     private void Shoot()
     {
         moveScript.canMove = false;
@@ -113,30 +174,18 @@ public class GuardBehaviour : HackableObjects
         }
     }
 
-    private void VisionConeVisibility()
-    {
-        if (!canSee)
-        {
-            visionCone.color = inactiveColor;
-            visionCollider.enabled = false;
-        }
-        else
-        {
-            visionCone.color = activeColor;
-            visionCollider.enabled = true;
-        }
-    }
-
-    public void DisabledGuardParticles(bool disabled)
-    {
-
-        if (disabled)
-        {
-            disabledParticles.Play();
-        }
-        else
-        {
-            disabledParticles.Stop();
-        }
-    }
+    //private void VisionConeVisibility()
+    //{
+    //    if (!canSee)
+    //    {
+    //        visionCone.color = inactiveColor;   
+    //        visionCollider.enabled = false;
+    //        Debug.Log("Inactive color");
+    //    }
+    //    else
+    //    {
+    //        visionCone.color = activeColor;
+    //        visionCollider.enabled = true;
+    //    }
+    //}
 }

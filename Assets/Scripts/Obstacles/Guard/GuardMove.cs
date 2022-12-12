@@ -31,7 +31,7 @@ public class GuardMove : MonoBehaviour
     
     public bool shutDown = false;
 
-    private bool facingRight;
+    [HideInInspector] public bool facingRight;
     private float realPatrolTime;
     private float realHoldTimeLeft;
     private float realHoldTimeRight;
@@ -40,6 +40,7 @@ public class GuardMove : MonoBehaviour
     private float pivotTimeRight;
     private float pivotTimeLeft;
     private float counter;
+    [SerializeField] private bool stationary;
 
     private Vector3 targetAngle;
     private Vector3 currentAngle;
@@ -62,9 +63,12 @@ public class GuardMove : MonoBehaviour
 
     void Update()
     {
-        CheckPatrolTime();
-        Move();
-        EdgeCheck();
+        if (!stationary)
+        {
+            CheckPatrolTime();
+            Move();
+            EdgeCheck();
+        }
         FlipSprite();
         Holding();
     }
@@ -107,7 +111,7 @@ public class GuardMove : MonoBehaviour
 
     private void Holding()
     {
-        if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0)
+        if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0 && !shutDown)
         {
             canMove = false;
             foreach(var animator in animators)
@@ -158,7 +162,7 @@ public class GuardMove : MonoBehaviour
             realHoldTimeRight -= 1 * Time.deltaTime;
 
         }
-        else if (!facingRight && realPatrolTime <= 0 && realHoldTimeLeft > 0)
+        else if (!facingRight && realPatrolTime <= 0 && realHoldTimeLeft > 0 && !shutDown)
         {
             canMove = false;
             foreach(var animator in animators)
