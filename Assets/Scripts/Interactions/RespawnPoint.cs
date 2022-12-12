@@ -5,11 +5,11 @@ using UnityEngine;
 public class RespawnPoint : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
-    public Vector2 spawnPoint;
+    public Transform spawnpoint;
     public void SetSpawn()
     {
-        if (spawnPoint != null)
-            GameManager.instance.player.GetComponent<PlayerRespawn>().spawnPoint = spawnPoint;
+        if (spawnpoint != null)
+            GameManager.instance.player.GetComponent<PlayerRespawn>().spawnPoint = spawnpoint.position;
         else
             GameManager.instance.player.GetComponent<PlayerRespawn>().spawnPoint = transform.position;
 
