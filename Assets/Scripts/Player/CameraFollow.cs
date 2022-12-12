@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
 
     [SerializeField] private float hackermodeZoomMultiplier = 1;
     [SerializeField] private float hackermodeZoomSpeed = 1;
+    [SerializeField] private float forwardView = 1;
+    [SerializeField] private float verticalView = 1;
 
     Vector3 targetPosition;
     Vector3 mousePos;
@@ -40,7 +42,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            targetPosition = player.position;
+            targetPosition = player.position+(Vector3.right * Input.GetAxisRaw("Horizontal") * forwardView) + Vector3.up * player.GetComponent<Rigidbody2D>().velocity.normalized.y * verticalView;
             targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
             
             panning = false;
