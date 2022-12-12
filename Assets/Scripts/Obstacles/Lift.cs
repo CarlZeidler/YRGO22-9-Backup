@@ -56,7 +56,7 @@ public class Lift : HackableObjects
     public void SpawnPlatform()
     {
         //TODO spawn anim
-        LiftPlatform platform = Instantiate(liftPlatform, startPoint, Quaternion.identity, transform).GetComponent<LiftPlatform>();
+        LiftPlatform platform = Instantiate(liftPlatform, startPoint, startPointTransform.rotation, transform).GetComponent<LiftPlatform>();
         platforms.Add(platform);
         platform.target = endPoint;
         platform.speed = speed;
