@@ -157,3 +157,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+--- !u!1 &7799987771177370421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8957765946230433984, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+  m_PrefabInstance: {fileID: 1184305035577453557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018689740200023525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7799987771177370421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 8f94ee6700000000e72d83378175a13913e90cf949aa0061
+  m_ShapePath:
+  - {x: -1.0059967, y: -0.2908435, z: 0}
+  - {x: -1.1999512, y: -0.14478159, z: 0}
+  - {x: -1.1966095, y: 0.0966301, z: 0}
+  - {x: -0.9761505, y: 0.1678257, z: 0}
+  - {x: -0.97210693, y: 0.26661253, z: 0}
+  - {x: 0.95654297, y: 0.28211308, z: 0}
+  - {x: 1.0004578, y: 0.1534648, z: 0}
+  - {x: 1.1043243, y: 0.13482046, z: 0}
+  - {x: 1.1839905, y: 0.079865456, z: 0}
+  - {x: 1.1806183, y: -0.13807535, z: 0}
+  - {x: 1.010849, y: -0.29569006, z: 0}
+  m_ShapePathHash: -254538409
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 92064
