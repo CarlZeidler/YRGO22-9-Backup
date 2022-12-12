@@ -705,7 +705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3249169450781006574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.43, y: -4.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -713,6 +713,7 @@ Transform:
   - {fileID: 41483301009141250}
   - {fileID: 435380028017109314}
   - {fileID: 2194730462862308447}
+  - {fileID: 1036969428447066385}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -769,6 +770,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3249169450781006568}
+        m_TargetAssemblyTypeName: Turret, Assembly-CSharp
+        m_MethodName: DisabledTurretParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -807,6 +820,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3249169450781006568}
+        m_TargetAssemblyTypeName: Turret, Assembly-CSharp
+        m_MethodName: DisabledTurretParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   onHackRevealEvent:
     m_PersistentCalls:
@@ -870,8 +895,10 @@ MonoBehaviour:
   animators:
   - {fileID: 7150230740728993446}
   - {fileID: 4744679574099426610}
+  disabledParticles: {fileID: 2550718488292497881}
   audS: {fileID: 9213924687027309726}
   shoot: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
+  detect: {fileID: 8300000, guid: 02050df3fdd73b74094d509c0062a80a, type: 3}
   detectionAreaLight: {fileID: 3531282675876636181}
   detectionColor: {r: 1, g: 0.027406208, b: 0, a: 0.5803922}
   activeColor: {r: 1, g: 0.6766883, b: 0, a: 0.6039216}
@@ -1545,7 +1572,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.449
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2241,3 +2268,70 @@ Transform:
   m_Father: {fileID: 3249169450781006571}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4114248468668486542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3249169450781006571}
+    m_Modifications:
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847149624927692273, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+      propertyPath: m_Name
+      value: TurretSparksParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+--- !u!4 &1036969428447066385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3998265304712538783, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+  m_PrefabInstance: {fileID: 4114248468668486542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2550718488292497881 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1908760829241330263, guid: e3374bb1305659f4d8c8f209dca925c1, type: 3}
+  m_PrefabInstance: {fileID: 4114248468668486542}
+  m_PrefabAsset: {fileID: 0}

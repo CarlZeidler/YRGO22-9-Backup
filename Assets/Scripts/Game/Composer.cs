@@ -7,9 +7,10 @@ public class Composer : MonoBehaviour
 {
     public AudioMixer mixer;
     public AudioMixerGroup drums, bass1, bass2, chords, synth1, synth2, mel;
+    private List<AudioSource> sources = new List<AudioSource>();
     [Space(20)]
     [SerializeField] private GameObject loop1;
-    [SerializeField] private GameObject loop1_5, loop2;
+    [SerializeField] private GameObject loop1_5, loop2, drumFill;
     [Space(20)]
     private float _dangerDistance;
     public float maxDangerDistance;
@@ -21,6 +22,7 @@ public class Composer : MonoBehaviour
     private bool _hackInProgress;
     [Space(20)]
     public float fadeDuration = 1;
+    [Space(20)] int nextLoop = 2;
 
     private IEnumerator faderSynth1, faderMel;
 
@@ -74,6 +76,10 @@ public class Composer : MonoBehaviour
     void OnStart()
     {
         maxCharges = GameManager.instance.player.GetComponent<PlayerHack>().maxBatteryCharges;
+
+        sources.AddRange(loop1.GetComponentsInChildren<AudioSource>());
+        sources.AddRange(loop1_5.GetComponentsInChildren<AudioSource>());
+        sources.AddRange(loop2.GetComponentsInChildren<AudioSource>());
     }
 
     public void SetVolume(AudioMixerGroup mixerGroup, float volume)
@@ -101,9 +107,44 @@ public class Composer : MonoBehaviour
     }
     public void ChangeLoop()
     {
-        loop1.SetActive(!loop1.activeSelf);
-        loop1_5.SetActive(!loop1_5.activeSelf);
-        loop1.SetActive(!loop1.activeSelf);
+        drumFill.SetActive(false);
+        switch (nextLoop)
+        {
+            case 1:
+                GameManager.instance.conductor.nrOfSongBeats = 32;
+                loop1.SetActive(true);
+                nextLoop = 2;
+                break;
+            case 2:
+                GameManager.instance.conductor.nrOfSongBeats = 32;
+                loop1_5.SetActive(true);
+                nextLoop = 3;
+                break;
+            case 3:
+                GameManager.instance.conductor.nrOfSongBeats = 64;
+                loop2.SetActive(true);
+                nextLoop = 1;
+                break;
+            default:
+                break;
+        }
+    }
+    public void Stop()
+    {
+        //drumFill.SetActive(true);
+        loop1.SetActive(false);
+        loop1_5.SetActive(false);
+        loop2.SetActive(false);
+        //GameManager.instance.conductor.ResetLoop();
+        //GameManager.instance.conductor.nrOfSongBeats = 4;
+        //GameManager.instance.conductor.inFill = true;
+    }
+    public void Inverse()
+    {
+        foreach (var audioSource in sources)
+        {
+            audioSource.pitch = audioSource.pitch*-1;
+        }
     }
 
     //guard vision distance
@@ -147,7 +188,7 @@ public class Composer : MonoBehaviour
         SetVolume(synth2, volume);
     }
 
-    //commit //TODO FIXA MINDELAY OCH RESET NÄSTA LOOP
+    //commit
     void CommitHack(bool hacking)
     {
         float currentVolume = 0;

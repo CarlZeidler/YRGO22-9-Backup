@@ -470,6 +470,7 @@ Transform:
   - {fileID: 2073103300575813296}
   - {fileID: 7124825868210804435}
   - {fileID: 6402322869799134377}
+  - {fileID: 8060720829936066376}
   m_Father: {fileID: 5494843545008154703}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -502,12 +503,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2073103299968788864}
+        m_TargetAssemblyTypeName: DoorRotation, Assembly-CSharp
+        m_MethodName: HackedDoorParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2073103299968788864}
         m_TargetAssemblyTypeName: DoorRotation, Assembly-CSharp
         m_MethodName: OpenDoor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2073103299968788864}
+        m_TargetAssemblyTypeName: DoorRotation, Assembly-CSharp
+        m_MethodName: HackedDoorParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -576,6 +601,7 @@ MonoBehaviour:
   selectionCircle: {fileID: 1909545410472312694}
   speed: 1
   anim: {fileID: 3763584925073076753}
+  hackedParticles: {fileID: 4817892978357616512}
 --- !u!1 &2073103300575813311
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +741,7 @@ MonoBehaviour:
   - {x: 0.03676599, y: -0.4276852, z: 0}
   m_ShapePathHash: 961632148
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75428
+  m_InstanceId: 96250
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,3 +1902,70 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &8703849098044655970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2073103299968788867}
+    m_Modifications:
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146966024056953156, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+      propertyPath: m_Name
+      value: DoorSparksParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+--- !u!198 &4817892978357616512 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4185762156011386594, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+  m_PrefabInstance: {fileID: 8703849098044655970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8060720829936066376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1663840647521506858, guid: 088245d41e329ac458374a4ac45b74c6, type: 3}
+  m_PrefabInstance: {fileID: 8703849098044655970}
+  m_PrefabAsset: {fileID: 0}

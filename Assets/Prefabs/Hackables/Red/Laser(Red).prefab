@@ -404,6 +404,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1078251109020710511}
+        m_TargetAssemblyTypeName: Laser, Assembly-CSharp
+        m_MethodName: DisabledLaserParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -442,6 +454,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1078251109020710511}
+        m_TargetAssemblyTypeName: Laser, Assembly-CSharp
+        m_MethodName: DisabledLaserParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   onHackRevealEvent:
     m_PersistentCalls:
@@ -503,6 +527,7 @@ MonoBehaviour:
   StartPointRef: {fileID: 2408883345811171421}
   EndPointRef: {fileID: 2408883344228909429}
   laserSpark: {fileID: 2832872319164483189}
+  disabledParticles: {fileID: 5868616967315450192}
   ignorLayers:
     serializedVersion: 2
     m_Bits: 556
@@ -656,6 +681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4089113407913974292}
+  - {fileID: 8966793069108005272}
   m_Father: {fileID: 2408883346006625409}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6861,3 +6887,70 @@ RectTransform:
   m_AnchoredPosition: {x: -0.039993286, y: 0}
   m_SizeDelta: {x: 6.980011, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &7591488116113112391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2408883345811171418}
+    m_Modifications:
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994698298427194289, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+      propertyPath: m_Name
+      value: LaserSparksParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+--- !u!198 &5868616967315450192 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4047581790501573655, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+  m_PrefabInstance: {fileID: 7591488116113112391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8966793069108005272 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1525050053626655967, guid: e848d2a1aad75b04b9c40412d03076f4, type: 3}
+  m_PrefabInstance: {fileID: 7591488116113112391}
+  m_PrefabAsset: {fileID: 0}
