@@ -9,21 +9,14 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator[] animators = new Animator[2];
-    [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] private Light2D visionCone;
     [SerializeField] private PolygonCollider2D visionCollider;
 
-    [SerializeField] private Transform topLeftRaycastReference;
-    [SerializeField] private Transform topRightRaycastReference;
-    [SerializeField] private Transform bottomLeftRaycastReference;
-    [SerializeField] private Transform bottomRightRaycastReference;
-
     public GuardMove moveScript;
     public GuardVision visionScript;
 
-    private bool canSee;
     private bool tooClose = false;
     private void Update()
     {
@@ -84,7 +77,6 @@ public class GuardBehaviour : HackableObjects
         {
             CancelInvoke(nameof(KillPlayer));
             tooClose = false;
-            Debug.Log("Got away");
         }
         else if (moveScript.shutDown)
             CancelInvoke(nameof(KillPlayer));
@@ -94,24 +86,30 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         moveScript.shutDown = true;
-        canSee = false;
+        visionCone.color = inactiveColor;
+        pInRange = false;
         foreach(var animator in animators)
         {
             animator.SetTrigger("Shutdown");
         }
-        visionCone.color = inactiveColor;
     }
 
     public void ReActivated()
     {
-        //Restore functionality when the hacking time is over.
-        canSee = true;
-        moveScript.canMove = true;
-        moveScript.shutDown = false;
+        //Restore functionality when the hacking time is over
+       
         foreach (var animator in animators)
         {
             animator.SetTrigger("Startup");
         }
+
+        //The animator will trigger the ResumeBehavior function.
+    }
+
+    public void ResumeBehavior()
+    {
+        moveScript.canMove ^= true;
+        moveScript.shutDown ^= true;
         visionCone.color = activeColor;
     }
 
@@ -134,7 +132,7 @@ public class GuardBehaviour : HackableObjects
         visionCone.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
-        moveScript.canMove = true;
+        //moveScript.canMove = true;
     }
 
     public void TriggerExit()
@@ -145,7 +143,6 @@ public class GuardBehaviour : HackableObjects
             visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
-
         }
     }
 
@@ -170,20 +167,6 @@ public class GuardBehaviour : HackableObjects
         foreach (var animator in animators)
         {
             animator.SetTrigger("Shoot");
-        }
-    }
-
-    private void VisionConeVisibility()
-    {
-        if (!canSee)
-        {
-            visionCone.color = inactiveColor;
-            visionCollider.enabled = false;
-        }
-        else
-        {
-            visionCone.color = activeColor;
-            visionCollider.enabled = true;
         }
     }
 }

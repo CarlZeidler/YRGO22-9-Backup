@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: spine robot_Material
-  m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 86b5bd2fe01cd534eb9c78b69b9548da, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_VERTEX_ONLY
@@ -162,7 +162,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 56.715477, b: 439.71762, a: 1}
+    - _Color: {r: 0, g: 28.830072, b: 220.26176, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FixedNormal: {r: 0, g: 0, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

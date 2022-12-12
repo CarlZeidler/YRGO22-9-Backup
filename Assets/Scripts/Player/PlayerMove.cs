@@ -41,11 +41,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private GameObject IdleAnim, moveAnim;
 
     //for running noises
-    private AudioSource aud;
+    [SerializeField] private AudioSource audJump,audRun;
 
-    [Space]
-
-    public AudioClip walk, jump;
 
     [Space]
 
@@ -55,7 +52,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
        // ps = GetComponent<ParticleSystem>();
-        aud = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         //anim = GetComponentInChildren<Animator>();
         sr = GetComponent<SpriteRenderer>();
@@ -70,8 +66,10 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
-        IdleAnim.GetComponent<Renderer>().enabled = false;
-        moveAnim.SetActive(true);
+        if (IdleAnim.GetComponent<Renderer>().enabled && ((Mathf.Abs(speed) > 1f)||rb.velocity.y!=0))
+        {
+            ToggleIdleOff();
+        }
         if (canMove)
         {
             if ((Input.GetAxisRaw("Horizontal") > 0) && (speed < maxSpeed))
@@ -113,8 +111,8 @@ public class PlayerMove : MonoBehaviour
                     //sepaerate anim model on idle
                     if (!IdleAnim.GetComponent<Renderer>().enabled && Mathf.Abs(speed) < 1f && Mathf.Abs(rb.velocity.y) == 0)
                     {
-                        IdleAnim.GetComponent<Renderer>().enabled = true;
-                        moveAnim.SetActive(false);
+                        //IdleAnim.GetComponent<Renderer>().enabled = true;
+                        //moveAnim.GetComponent<Renderer>().enabled = false;
                     }
                 }
             }
@@ -131,11 +129,7 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 0;
                 //sepaerate anim model on idle
-                if (!IdleAnim.GetComponent<Renderer>().enabled && Mathf.Abs(speed) < 1f&&Mathf.Abs(rb.velocity.y)==0)
-                {
-                    IdleAnim.GetComponent<Renderer>().enabled = true;
-                    moveAnim.SetActive(false);
-                }
+                
             }
 
         }
@@ -172,9 +166,8 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetButtonDown("Jump") && Grounded())
             {
                 //play sound on jump btn
-                //aud.Stop();
-                //aud.clip = jump;
-                //aud.Play();
+                audJump.Play();
+                anim.SetTrigger("Jump");
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
@@ -193,6 +186,18 @@ public class PlayerMove : MonoBehaviour
         {
             _jumpDurationLeft = 0;
         }
+    }
+    public void ToggleIdleOn()
+    {   if(IdleAnim.GetComponent<Renderer>().enabled == false)
+        {
+            IdleAnim.GetComponent<Renderer>().enabled = true;
+            moveAnim.GetComponent<Renderer>().enabled = false;
+        }
+    }
+    public void ToggleIdleOff()
+    {
+        IdleAnim.GetComponent<Renderer>().enabled = false;
+        moveAnim.GetComponent<Renderer>().enabled = true;
     }
     private void Flipsprite(bool flip)
     {
@@ -235,7 +240,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (Grounded())
         {
-            aud.PlayOneShot(walk);
+            audRun.Play();
         }
     }
 }

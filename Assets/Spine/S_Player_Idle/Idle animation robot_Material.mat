@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle animation robot_Material
-  m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 86b5bd2fe01cd534eb9c78b69b9548da, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_VERTEX_ONLY
@@ -46,11 +46,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a9bfe03dbe53006429a279d78f178165, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4436250b9413b934d938a5d53f224a50, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -98,7 +98,7 @@ Material:
     - _Use8Neighbourhood: 1
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0, g: 46.180393, b: 383.49805, a: 1}
+    - _Color: {r: 0, g: 48.188236, b: 383.49805, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FixedNormal: {r: 0, g: 0, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
