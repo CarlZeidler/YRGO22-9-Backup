@@ -12,12 +12,16 @@ public class GuardMove : MonoBehaviour
     public float patrolTime;
     public float HoldTimeLeft;
     public float HoldTimeRight;
+    public bool stationary;
 
     [Header("Vision settings")]
     public float eyesPivotUpRight;
     public float eyesPivotDownRight;
     public float eyesPivotUpLeft;
     public float eyesPivotDownLeft;
+    public float stationaryPivotUp;
+    public float stationaryPivotDown;
+    public float stationaryPivotTime;
 
     [Header("Patrol start direction")]
     public bool startDirectionRight;
@@ -26,12 +30,9 @@ public class GuardMove : MonoBehaviour
     public GameObject visuals;
     public GameObject eyes;
 
-    [HideInInspector]
-    public bool canMove = true;
-    
-    public bool shutDown = false;
-
+    [HideInInspector] public bool canMove = true;
     [HideInInspector] public bool facingRight;
+    public bool shutDown = false;
     private float realPatrolTime;
     private float realHoldTimeLeft;
     private float realHoldTimeRight;
@@ -40,7 +41,7 @@ public class GuardMove : MonoBehaviour
     private float pivotTimeRight;
     private float pivotTimeLeft;
     private float counter;
-    [SerializeField] private bool stationary;
+    
 
     private Vector3 targetAngle;
     private Vector3 currentAngle;
@@ -68,9 +69,13 @@ public class GuardMove : MonoBehaviour
             CheckPatrolTime();
             Move();
             EdgeCheck();
+            Holding();
+        }
+        else if (stationary)
+        {
+            stationaryHolding();
         }
         FlipSprite();
-        Holding();
     }
 
     private void Setup()
@@ -211,6 +216,56 @@ public class GuardMove : MonoBehaviour
 
             counter += 1 * Time.deltaTime;
             realHoldTimeLeft -= 1 * Time.deltaTime;
+        }
+    }
+
+    private void stationaryHolding()
+    {
+        if (!shutDown)
+        {
+            foreach (var animator in animators)
+            {
+                animator.SetBool("Walking", false);
+                animator.SetBool("Idle", true);
+            }
+            //Steps through the selected angles to pivot the vision cone when the guard is at the right patrol apex.
+            if (counter <= stationaryPivotTime * 0.25)
+            {
+                currentAngle = eyes.transform.localEulerAngles;
+                targetAngle = new Vector3(0f, 0f, startAngle.z + stationaryPivotUp);
+
+                currentAngle = new Vector3(0f, 0f, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
+                eyes.transform.localEulerAngles = currentAngle;
+            }
+            else if (counter > stationaryPivotTime * 0.25 && counter <= pivotTimeRight * 0.5)
+            {
+                currentAngle = eyes.transform.localEulerAngles;
+                targetAngle = startAngle;
+
+                currentAngle = new Vector3(0f, 0f, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
+                eyes.transform.localEulerAngles = currentAngle;
+            }
+            else if (counter <= stationaryPivotTime * 0.75)
+            {
+                currentAngle = eyes.transform.localEulerAngles;
+                targetAngle = new Vector3(0f, 0f, startAngle.z - stationaryPivotDown);
+
+                currentAngle = new Vector3(0f, 0f, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
+                eyes.transform.localEulerAngles = currentAngle;
+            }
+            else if (counter < stationaryPivotTime)
+            {
+                currentAngle = eyes.transform.localEulerAngles;
+                targetAngle = startAngle;
+
+                currentAngle = new Vector3(0f, 0f, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime));
+                eyes.transform.localEulerAngles = currentAngle;
+            }
+            else
+            {
+                counter = 0f;
+            }
+            counter += 1 * Time.deltaTime;
         }
     }
 
