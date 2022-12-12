@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 873624996875898671}
   - component: {fileID: 4269434050367926628}
   - component: {fileID: 983779659617351951}
+  - component: {fileID: 1364711227752980640}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (walker1)
   m_TagString: Untagged
@@ -480,6 +481,19 @@ MonoBehaviour:
     layerMixModes: 01000000
     layerBlendModes: 01000000
   updateTiming: 1
+--- !u!114 &1364711227752980640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645057447447401300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114ec9a2b897f86478358977237169f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorsScript: {fileID: 8114511208693651516}
 --- !u!1 &676661980314452648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1893,6 @@ MonoBehaviour:
   animators:
   - {fileID: 4269434050367926628}
   - {fileID: 857784686918011196}
-  skeletonAnimation: {fileID: 0}
 --- !u!114 &8114511208693651516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,7 +2018,7 @@ MonoBehaviour:
   hackingPowerText: {fileID: 8114511209271081632}
   hackingChargeSlider: {fileID: 2314607564791738676}
   selectionCircle: {fileID: 5827992108479343137}
-  hackedParticles: {fileID: 0}
+  hackedParticles: {fileID: 6186728718554608130, guid: c1568595fec0c6043973d770b1956ca4, type: 3}
   killTime: 1
   pInRange: 0
   animators:
@@ -2014,7 +2027,7 @@ MonoBehaviour:
   detectionAreaSprite: {fileID: 0}
   detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0.48235294}
   activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0.53333336}
-  inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.22745098}
+  inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.043137256}
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 2316
