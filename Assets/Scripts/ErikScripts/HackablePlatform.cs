@@ -8,6 +8,7 @@ public class HackablePlatform : HackableObjects
 
     [SerializeField] private float speed = 1;
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem hackedParticles;
 
     private void Start()
     {
@@ -51,6 +52,19 @@ public class HackablePlatform : HackableObjects
         else
         {
             animator.SetTrigger("Deactivate");
+        }
+    }
+
+    public void HackedPlatformParticles(bool hacked)
+    {
+
+        if (hacked)
+        {
+            hackedParticles.Play();
+        }
+        else
+        {
+            hackedParticles.Stop();
         }
     }
 }

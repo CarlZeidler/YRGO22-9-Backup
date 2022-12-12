@@ -8,6 +8,7 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator[] animators = new Animator[2];
+    [SerializeField] private ParticleSystem disabledParticles;
     [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
@@ -123,6 +124,19 @@ public class GuardBehaviour : HackableObjects
         {
             visionCone.color = activeColor;
             visionCollider.enabled = true;
+        }
+    }
+
+    public void DisabledGuardParticles(bool disabled)
+    {
+
+        if (disabled)
+        {
+            disabledParticles.Play();
+        }
+        else
+        {
+            disabledParticles.Stop();
         }
     }
 }
