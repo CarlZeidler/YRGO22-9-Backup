@@ -128,8 +128,8 @@ TextureImporter:
     secondaryTextures:
     - texture: {fileID: 2800000, guid: 92e5231986bab7f459717d65d85af860, type: 3}
       name: _Emission
-    - texture: {fileID: 2800000, guid: a9bfe03dbe53006429a279d78f178165, type: 3}
-      name: _MaskTex
+    - texture: {fileID: 2800000, guid: 4436250b9413b934d938a5d53f224a50, type: 3}
+      name: _NormalMap
     nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
