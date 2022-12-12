@@ -898,6 +898,7 @@ MonoBehaviour:
   disabledParticles: {fileID: 2550718488292497881}
   audS: {fileID: 9213924687027309726}
   shoot: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
+  detect: {fileID: 8300000, guid: 02050df3fdd73b74094d509c0062a80a, type: 3}
   detectionAreaLight: {fileID: 3531282675876636181}
   detectionColor: {r: 1, g: 0.027406208, b: 0, a: 0.5803922}
   activeColor: {r: 1, g: 0.6766883, b: 0, a: 0.6039216}
@@ -1571,7 +1572,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.449
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

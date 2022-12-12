@@ -11,7 +11,7 @@ public class Turret : HackableObjects
     [SerializeField]private Animator[] animators = new Animator[2];
     [SerializeField] private ParticleSystem disabledParticles;
     [SerializeField] private AudioSource audS;
-    [SerializeField] private AudioClip shoot;
+    [SerializeField] private AudioClip shoot,detect;
     [SerializeField] private Light2D detectionAreaLight;
     [SerializeField] private Color detectionColor,activeColor,inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
@@ -48,6 +48,8 @@ public class Turret : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if(ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
+            audS.clip = detect;
+            audS.Play();
             detectionAreaLight.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
@@ -76,6 +78,7 @@ public class Turret : HackableObjects
     }
     private void Shoot()
     {
+        audS.clip = shoot;
         foreach (var animator in animators)
         {
             animator.speed = 2  ;
