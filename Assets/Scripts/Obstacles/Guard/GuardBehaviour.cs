@@ -10,21 +10,14 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator[] animators = new Animator[2];
     [SerializeField] private ParticleSystem disabledParticles;
-    [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] private Light2D visionCone;
     [SerializeField] private PolygonCollider2D visionCollider;
 
-    [SerializeField] private Transform topLeftRaycastReference;
-    [SerializeField] private Transform topRightRaycastReference;
-    [SerializeField] private Transform bottomLeftRaycastReference;
-    [SerializeField] private Transform bottomRightRaycastReference;
-
     public GuardMove moveScript;
     public GuardVision visionScript;
 
-    private bool canSee;
     private bool tooClose = false;
     private void Update()
     {
@@ -95,7 +88,6 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         moveScript.shutDown = true;
-        canSee = false;
         foreach(var animator in animators)
         {
             animator.SetTrigger("Shutdown");
@@ -105,8 +97,7 @@ public class GuardBehaviour : HackableObjects
 
     public void ReActivated()
     {
-        //Restore functionality when the hacking time is over.
-        canSee = true;
+        //Restore functionality when the hacking time is over
         moveScript.canMove = true;
         moveScript.shutDown = false;
         foreach (var animator in animators)
@@ -173,19 +164,4 @@ public class GuardBehaviour : HackableObjects
             animator.SetTrigger("Shoot");
         }
     }
-
-    //private void VisionConeVisibility()
-    //{
-    //    if (!canSee)
-    //    {
-    //        visionCone.color = inactiveColor;   
-    //        visionCollider.enabled = false;
-    //        Debug.Log("Inactive color");
-    //    }
-    //    else
-    //    {
-    //        visionCone.color = activeColor;
-    //        visionCollider.enabled = true;
-    //    }
-    //}
 }
