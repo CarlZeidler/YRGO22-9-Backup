@@ -1218,6 +1218,7 @@ GameObject:
   - component: {fileID: 6799284865438897944}
   - component: {fileID: 1831653859529043576}
   - component: {fileID: 1605312570917701747}
+  - component: {fileID: 9151559245513922784}
   m_Layer: 9
   m_Name: Points
   m_TagString: Untagged
@@ -1357,13 +1358,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5752800189212699237}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22e5f416eea80754e81d2cafa32bf4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animSpeed: 1
   diagonal: 0
+--- !u!114 &9151559245513922784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752800189212699237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a06a461f51d2b44fa1dd76b700f4878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lift: {fileID: 2570283617108011776}
+  line: {fileID: 1831653859529043576}
 --- !u!1 &6300406551271315057
 GameObject:
   m_ObjectHideFlags: 0

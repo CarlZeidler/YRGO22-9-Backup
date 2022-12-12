@@ -9,7 +9,7 @@ public class Lift : HackableObjects
     [SerializeField] private float platFormSpacing;
     private bool reversed = false;
 
-    [SerializeField] private Transform startPointTransform, endPointTransform;
+    [SerializeField] public Transform startPointTransform, endPointTransform;
     private Vector3 startPoint, endPoint;
     [SerializeField] private GameObject liftPlatform;
 
