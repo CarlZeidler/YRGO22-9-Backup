@@ -21,7 +21,7 @@ public class Conductor : MonoBehaviour
     private bool midTriggered = false;
 
     //current song pos in beats
-    [SerializeField] private float songPositionInBeats;
+    public float songPositionInBeats;
 
     private float dspSongTime;
     [HideInInspector] public float distanceFromBeat;
@@ -29,6 +29,7 @@ public class Conductor : MonoBehaviour
 
     private float nextBeat = 0;
     private float nextOffBeat = 0.5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,15 +67,19 @@ public class Conductor : MonoBehaviour
         }
         if (songPositionInBeats > nrOfSongBeats)
         {
-            Start();
-            songPosition = 0;
-            songPositionInBeats = 0;
-            nextBeat = 0;
-            nextOffBeat = .5f;
-            NewLoop();
+            ResetLoop();
         }
         if (songPositionInBeats > nrOfSongBeats / 2&!midTriggered)
             MidLoop();
+    }
+    public void ResetLoop()
+    {
+        Start();
+        songPosition = 0;
+        songPositionInBeats = 0;
+        nextBeat = 0;
+        nextOffBeat = .5f;
+        NewLoop();
     }
     void NewLoop()
     {

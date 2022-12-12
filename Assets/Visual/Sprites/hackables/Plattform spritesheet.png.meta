@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 888
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlatformSpritesheet0
+      name: Plattform spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 888
+        width: 3552
         height: 910
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -119,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59cedb642cc8cde4c954efde3e239649
-      internalID: 1673191116
+      spriteID: d4f21328f61514442a92e75be15432d1
+      internalID: -2104217630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlattformSpritesheet1
+      name: Plattform spritesheet_1
       rect:
         serializedVersion: 2
-        x: 888
+        x: 3552
         y: 0
-        width: 888
+        width: 3552
         height: 910
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8f3779dede4a53488b3cbdd38a2dfd7
-      internalID: -1757747241
+      spriteID: dbdbd903bfe73a84eaf2059f75365545
+      internalID: 1189521043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlattformSpritesheet2
+      name: Plattform spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1776
+        x: 7104
         y: 0
-        width: 888
+        width: 3552
         height: 910
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24bed9335ccdf454e9e83599363ad74f
-      internalID: -2132928950
+      spriteID: f7de841037c04f549902ea0657ebd0ef
+      internalID: -1793784912
       vertices: []
       indices: 
       edges: []
@@ -176,11 +176,15 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 9bf7ecca7fa59464b9a3fc500c4e4238, type: 3}
+      name: _NormalMap
+    - texture: {fileID: 2800000, guid: 125e4590179b5c549bd21771ab4555cc, type: 3}
+      name: _EmissionMap
     nameFileIdTable:
-      PlatformSpritesheet0: -1757747241
-      PlattformSpritesheet2: -2132928950
-      PlattformSpritesheet1: -2132928950
+      Plattform spritesheet_1: 1189521043
+      Plattform spritesheet_2: -1793784912
+      Plattform spritesheet_0: -2104217630
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

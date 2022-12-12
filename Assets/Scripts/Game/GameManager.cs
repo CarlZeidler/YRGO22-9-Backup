@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     public Composer composer;
+    public Conductor conductor;
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
     public HackableObjects selectedHackable;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         try
         {
             composer = FindObjectOfType<Composer>();
+            conductor = FindObjectOfType<Conductor>();
         }
         catch { }
     }

@@ -8,6 +8,7 @@ public class PlayerRespawn : MonoBehaviour
     public float spawnTime = 2f;
     public Vector3 spawnPoint;
     [SerializeField] private ParticleSystem travelParticles, deathParticles;
+    [SerializeField] private AudioSource deathSound;
     [SerializeField] private GameObject textObjectOnDeath;
 
     [Space(20)]
@@ -29,6 +30,9 @@ public class PlayerRespawn : MonoBehaviour
     }
     public void Respawn()
     {
+        deathSound.Play();
+        //GameManager.instance.composer.Stop();
+        GameManager.instance.composer.Inverse();
         //if die not triggered
         if (!textObjectOnDeath.activeSelf)
         {
@@ -99,6 +103,10 @@ public class PlayerRespawn : MonoBehaviour
             yield return null;
         }
         transform.position = spawnPoint;
+
+        GameManager.instance.composer.Stop();
+        GameManager.instance.composer.ChangeLoop();
+        GameManager.instance.composer.Inverse();
         Invoke(nameof(Spawn),spawnTime/5);
     }
 }
