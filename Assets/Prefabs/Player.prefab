@@ -5243,7 +5243,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1.5
   m_AngularDrag: 0
-  m_GravityScale: 4
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5266,8 +5266,8 @@ MonoBehaviour:
   Acceleration: 25
   Deceleration: 30
   canMove: 1
-  jumpforce: 10
-  jumpDurationLeft: 0.25
+  jumpforce: 25
+  jumpDurationLeft: 0.1
   anim: {fileID: 7880465968826435611}
   playerModel: {fileID: 2813728735723943310}
   sr: {fileID: 2292857639173056003}
