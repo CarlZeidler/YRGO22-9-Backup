@@ -66,8 +66,10 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
-        IdleAnim.GetComponent<Renderer>().enabled = false;
-        moveAnim.GetComponent<Renderer>().enabled = true;
+        if (IdleAnim.GetComponent<Renderer>().enabled && ((Mathf.Abs(speed) > 1f)||rb.velocity.y!=0))
+        {
+            ToggleIdleOff();
+        }
         if (canMove)
         {
             if ((Input.GetAxisRaw("Horizontal") > 0) && (speed < maxSpeed))
@@ -127,11 +129,7 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 0;
                 //sepaerate anim model on idle
-                if (!IdleAnim.GetComponent<Renderer>().enabled && Mathf.Abs(speed) < 1f&&Mathf.Abs(rb.velocity.y)==0)
-                {
-                    //IdleAnim.GetComponent<Renderer>().enabled = true;
-                    //moveAnim.GetComponent<Renderer>().enabled = false;
-                }
+                
             }
 
         }
@@ -162,7 +160,6 @@ public class PlayerMove : MonoBehaviour
         if (Grounded() & !Input.GetButton("Jump"))
         {
             _jumpDurationLeft = jumpDurationLeft;
-            anim.SetBool("Jump", false);
         }
         if (canMove)
         {
@@ -170,7 +167,7 @@ public class PlayerMove : MonoBehaviour
             {
                 //play sound on jump btn
                 audJump.Play();
-                anim.SetBool("Jump",true);
+                anim.SetTrigger("Jump");
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
@@ -188,8 +185,19 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             _jumpDurationLeft = 0;
-            anim.SetBool("Jump", false);
         }
+    }
+    public void ToggleIdleOn()
+    {   if(IdleAnim.GetComponent<Renderer>().enabled == false)
+        {
+            IdleAnim.GetComponent<Renderer>().enabled = true;
+            moveAnim.GetComponent<Renderer>().enabled = false;
+        }
+    }
+    public void ToggleIdleOff()
+    {
+        IdleAnim.GetComponent<Renderer>().enabled = false;
+        moveAnim.GetComponent<Renderer>().enabled = true;
     }
     private void Flipsprite(bool flip)
     {

@@ -5676,7 +5676,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 454363488212292700, guid: bcf4afeca4875574783ac3ad861f3ddd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 60a0fa2885cbd0144b54457dbc8341bf, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6056,8 +6056,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da632c790af996e419203759ffaca977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
+  source: {fileID: 5109854821464158513}
   clip1: {fileID: 0}
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2292857639173056006}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: ToggleIdleOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5285296629935134366
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +6540,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 0}
   clip1: {fileID: 0}
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6070076905336941148
 GameObject:
   m_ObjectHideFlags: 0
@@ -11959,7 +11977,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: -1197073402
   m_Mesh: {fileID: 0}
-  m_InstanceId: 309082
+  m_InstanceId: 366954
 --- !u!1 &8585773368015882545
 GameObject:
   m_ObjectHideFlags: 0
