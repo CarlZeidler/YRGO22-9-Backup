@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ManCannon : MonoBehaviour
 {
-    [SerializeField] private Rigidbody player;
-    [SerializeField] private Transform cannonPart;
+    public Rigidbody2D character;
+    public Transform shootingPart;
     public bool manualControl;
-    [Range(15, 100)] private float rotatingSpeed = 100f;
-    public float launchForce = 50f;
+    public float rotatingSpeed = 100f;
+    public float shotForce = 50f;
 
     private bool isShooting = false;
     private float backColliderDelay = 0.05f;
@@ -36,37 +36,35 @@ public class ManCannon : MonoBehaviour
     IEnumerator Shooting()
     {
 
-        player.transform.position = transform.position;
-        player.transform.rotation = cannonPart.rotation;
+        character.transform.position = transform.position;
+        character.transform.rotation = shootingPart.rotation;
 
-        player.AddForce(transform.forward * launchForce, ForceMode.VelocityChange);
+        character.AddForce(transform.forward * shotForce, ForceMode2D.Impulse);
 
-        player.transform.parent = GameObject.FindWithTag("Player").transform;
-        player.GetComponent<MeshRenderer>().enabled = true;
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        player.GetComponent<Collider>().enabled = false;
+        character.transform.parent = GameObject.FindWithTag("Player").transform;
+        character.GetComponent<MeshRenderer>().enabled = true;
+        character.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        character.GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(backColliderDelay);
 
-        player.GetComponent<Collider>().enabled = true;
+        character.GetComponent<Collider>().enabled = true;
 
         isShooting = false;
 
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            isShooting = true;
 
             other.gameObject.transform.parent = transform;
             other.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
             other.gameObject.transform.localRotation = Quaternion.identity;
-            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            other.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-
-            isShooting = true;
-
         }
 
         if (manualControl == true)
