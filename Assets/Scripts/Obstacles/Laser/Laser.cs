@@ -9,7 +9,6 @@ public class Laser : HackableObjects
     public GameObject EndPointRef;
     public GameObject laserSpark;
     private Animator thisAnimator;
-    [SerializeField] private ParticleSystem disabledParticles;
     private EdgeCollider2D laserCollider;
 
     private LineRenderer lineRenderer;
@@ -119,18 +118,5 @@ public class Laser : HackableObjects
         //isHacked = false;
         thisAnimator.SetTrigger("Active");
         isActive = true;
-    }
-
-    public void DisabledLaserParticles(bool disabled)
-    {
-
-        if (disabled)
-        {
-            disabledParticles.Play();
-        }
-        else
-        {
-            disabledParticles.Stop();
-        }
     }
 }

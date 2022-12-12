@@ -515,6 +515,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2073103299968788864}
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -533,6 +545,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2073103299968788864}
         m_TargetAssemblyTypeName: DoorRotation, Assembly-CSharp
         m_MethodName: HackedDoorParticles
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2073103299968788864}
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -599,9 +623,9 @@ MonoBehaviour:
   hackingPowerText: {fileID: 8728958731473639403}
   hackingChargeSlider: {fileID: 7840451298328022990}
   selectionCircle: {fileID: 1909545410472312694}
+  hackedParticles: {fileID: 4817892978357616512}
   speed: 1
   anim: {fileID: 3763584925073076753}
-  hackedParticles: {fileID: 4817892978357616512}
 --- !u!1 &2073103300575813311
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +765,7 @@ MonoBehaviour:
   - {x: 0.03676599, y: -0.4276852, z: 0}
   m_ShapePathHash: 961632148
   m_Mesh: {fileID: 0}
-  m_InstanceId: 96250
+  m_InstanceId: 53396
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0

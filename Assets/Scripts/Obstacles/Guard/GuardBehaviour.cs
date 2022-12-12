@@ -9,7 +9,7 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator[] animators = new Animator[2];
-    [SerializeField] private ParticleSystem disabledParticles;
+    [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] private Light2D visionCone;
@@ -162,6 +162,20 @@ public class GuardBehaviour : HackableObjects
         foreach (var animator in animators)
         {
             animator.SetTrigger("Shoot");
+        }
+    }
+
+    private void VisionConeVisibility()
+    {
+        if (!canSee)
+        {
+            visionCone.color = inactiveColor;
+            visionCollider.enabled = false;
+        }
+        else
+        {
+            visionCone.color = activeColor;
+            visionCollider.enabled = true;
         }
     }
 }

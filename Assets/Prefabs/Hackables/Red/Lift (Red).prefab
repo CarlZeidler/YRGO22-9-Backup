@@ -840,8 +840,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2570283617108011776}
-        m_TargetAssemblyTypeName: Lift, Assembly-CSharp
-        m_MethodName: HackedLiftParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -867,8 +867,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2570283617108011776}
-        m_TargetAssemblyTypeName: Lift, Assembly-CSharp
-        m_MethodName: HackedLiftParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -959,12 +959,12 @@ MonoBehaviour:
   hackingPowerText: {fileID: 6575765189732170622}
   hackingChargeSlider: {fileID: 4075818814172011548}
   selectionCircle: {fileID: 521689231114295391}
+  hackedParticles: {fileID: 1098891060677832519}
   speed: 5
   platFormSpacing: 1
   startPointTransform: {fileID: 2570283615693505298}
   endPointTransform: {fileID: 2570283616766571284}
   liftPlatform: {fileID: 7263101434657563365, guid: 6173c604c66b3ed47942fb873aa9dea0, type: 3}
-  hackedParticles: {fileID: 1098891060677832519}
   timer: 1
 --- !u!1 &4444149781751383834
 GameObject:

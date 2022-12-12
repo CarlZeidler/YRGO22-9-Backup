@@ -16,6 +16,7 @@ public class HackableObjects : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hackingPowerText;
     [SerializeField] private Slider hackingChargeSlider;
     [SerializeField] private GameObject selectionCircle;
+    [SerializeField] private ParticleSystem hackedParticles;
     protected GameObject originalState;
     public enum ObjectState
     {
@@ -198,5 +199,18 @@ public class HackableObjects : MonoBehaviour
                 selectionCircle.SetActive(false);
         }
         catch { }
+    }
+
+    public void HackedParticles(bool hacked)
+    {
+
+        if (hacked)
+        {
+            hackedParticles.Play();
+        }
+        else
+        {
+            hackedParticles.Stop();
+        }
     }
 }

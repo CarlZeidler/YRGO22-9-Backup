@@ -771,8 +771,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3249169450781006568}
-        m_TargetAssemblyTypeName: Turret, Assembly-CSharp
-        m_MethodName: DisabledTurretParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -822,8 +822,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 3249169450781006568}
-        m_TargetAssemblyTypeName: Turret, Assembly-CSharp
-        m_MethodName: DisabledTurretParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -890,12 +890,12 @@ MonoBehaviour:
   hackingPowerText: {fileID: 3249169450834346198}
   hackingChargeSlider: {fileID: 3885697151114435177}
   selectionCircle: {fileID: 5203236419745878304}
+  hackedParticles: {fileID: 2550718488292497881}
   killTime: 0.2
   pInRange: 0
   animators:
   - {fileID: 7150230740728993446}
   - {fileID: 4744679574099426610}
-  disabledParticles: {fileID: 2550718488292497881}
   audS: {fileID: 9213924687027309726}
   shoot: {fileID: 8300000, guid: ac5d66facce4cfe4498b453d0e806114, type: 3}
   detect: {fileID: 8300000, guid: 02050df3fdd73b74094d509c0062a80a, type: 3}

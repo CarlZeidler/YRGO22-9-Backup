@@ -12,7 +12,6 @@ public class Lift : HackableObjects
     [SerializeField] private Transform startPointTransform, endPointTransform;
     private Vector3 startPoint, endPoint;
     [SerializeField] private GameObject liftPlatform;
-    [SerializeField] private ParticleSystem hackedParticles;
 
     private List<LiftPlatform> platforms =  new List<LiftPlatform>();
     [SerializeField]private float timer = 1;
@@ -72,19 +71,6 @@ public class Lift : HackableObjects
         foreach (var platform in platforms)
         {
             platform.target = endPoint;
-        }
-    }
-
-    public void HackedLiftParticles(bool hacked)
-    {
-
-        if (hacked)
-        {
-            hackedParticles.Play();
-        }
-        else
-        {
-            hackedParticles.Stop();
         }
     }
 }

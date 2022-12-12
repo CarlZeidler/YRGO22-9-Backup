@@ -1030,8 +1030,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 5956182837412919658}
-        m_TargetAssemblyTypeName: HackablePlatform, Assembly-CSharp
-        m_MethodName: HackedPlatformParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1069,8 +1069,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5956182837412919658}
-        m_TargetAssemblyTypeName: HackablePlatform, Assembly-CSharp
-        m_MethodName: HackedPlatformParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1137,10 +1137,10 @@ MonoBehaviour:
   hackingPowerText: {fileID: 5956182836685728579}
   hackingChargeSlider: {fileID: 1109495392730462795}
   selectionCircle: {fileID: 2465284406015657247}
+  hackedParticles: {fileID: 8118391098370168802}
   solid: 0
   speed: 2
   animator: {fileID: 3518796654114784795}
-  hackedParticles: {fileID: 8118391098370168802}
 --- !u!251 &5956182837412919659
 PlatformEffector2D:
   m_ObjectHideFlags: 0
