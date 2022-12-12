@@ -9,7 +9,6 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private float killTime = 1f;
     [SerializeField] private bool pInRange = false;
     [SerializeField] private Animator[] animators = new Animator[2];
-    [SerializeField] private SpriteRenderer detectionAreaSprite;
     [SerializeField] private Color detectionColor, activeColor, inactiveColor;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] private Light2D visionCone;
@@ -78,7 +77,6 @@ public class GuardBehaviour : HackableObjects
         {
             CancelInvoke(nameof(KillPlayer));
             tooClose = false;
-            Debug.Log("Got away");
         }
         else if (moveScript.shutDown)
             CancelInvoke(nameof(KillPlayer));
@@ -88,22 +86,30 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         moveScript.shutDown = true;
+        visionCone.color = inactiveColor;
+        pInRange = false;
         foreach(var animator in animators)
         {
             animator.SetTrigger("Shutdown");
         }
-        visionCone.color = inactiveColor;
     }
 
     public void ReActivated()
     {
         //Restore functionality when the hacking time is over
-        moveScript.canMove = true;
-        moveScript.shutDown = false;
+       
         foreach (var animator in animators)
         {
             animator.SetTrigger("Startup");
         }
+
+        //The animator will trigger the ResumeBehavior function.
+    }
+
+    public void ResumeBehavior()
+    {
+        moveScript.canMove ^= true;
+        moveScript.shutDown ^= true;
         visionCone.color = activeColor;
     }
 
@@ -126,7 +132,7 @@ public class GuardBehaviour : HackableObjects
         visionCone.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
-        moveScript.canMove = true;
+        //moveScript.canMove = true;
     }
 
     public void TriggerExit()
@@ -137,7 +143,6 @@ public class GuardBehaviour : HackableObjects
             visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
-
         }
     }
 

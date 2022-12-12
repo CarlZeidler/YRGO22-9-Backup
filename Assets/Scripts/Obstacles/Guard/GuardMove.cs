@@ -55,7 +55,6 @@ public class GuardMove : MonoBehaviour
     [SerializeField] private Transform raycastRightSide;
 
     [SerializeField] private Animator[] animators = new Animator[2];
-    [SerializeField] private SkeletonAnimation skeletonAnimation;
 
     void Start()
     {
