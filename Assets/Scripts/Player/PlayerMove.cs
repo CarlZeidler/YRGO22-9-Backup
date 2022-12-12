@@ -41,11 +41,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private GameObject IdleAnim, moveAnim;
 
     //for running noises
-    private AudioSource aud;
+    [SerializeField] private AudioSource audJump,audRun;
 
-    [Space]
-
-    public AudioClip walk, jump;
 
     [Space]
 
@@ -55,7 +52,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
        // ps = GetComponent<ParticleSystem>();
-        aud = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         //anim = GetComponentInChildren<Animator>();
         sr = GetComponent<SpriteRenderer>();
@@ -173,9 +169,7 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetButtonDown("Jump") && Grounded())
             {
                 //play sound on jump btn
-                //aud.Stop();
-                //aud.clip = jump;
-                //aud.Play();
+                audJump.Play();
                 anim.SetBool("Jump",true);
             }
 
@@ -238,7 +232,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (Grounded())
         {
-            aud.PlayOneShot(walk);
+            audRun.Play();
         }
     }
 }
