@@ -164,18 +164,4 @@ public class GuardBehaviour : HackableObjects
             animator.SetTrigger("Shoot");
         }
     }
-
-    private void VisionConeVisibility()
-    {
-        if (!canSee)
-        {
-            visionCone.color = inactiveColor;
-            visionCollider.enabled = false;
-        }
-        else
-        {
-            visionCone.color = activeColor;
-            visionCollider.enabled = true;
-        }
-    }
 }
