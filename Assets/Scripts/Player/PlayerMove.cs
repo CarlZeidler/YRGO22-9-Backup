@@ -172,9 +172,9 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetButtonDown("Jump") && Grounded())
             {
                 //play sound on jump btn
-                aud.Stop();
-                aud.clip = jump;
-                aud.Play();
+                //aud.Stop();
+                //aud.clip = jump;
+                //aud.Play();
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
