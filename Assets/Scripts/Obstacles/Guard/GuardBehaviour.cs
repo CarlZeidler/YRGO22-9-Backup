@@ -15,15 +15,9 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] private Light2D visionCone;
     [SerializeField] private PolygonCollider2D visionCollider;
 
-    [SerializeField] private Transform topLeftRaycastReference;
-    [SerializeField] private Transform topRightRaycastReference;
-    [SerializeField] private Transform bottomLeftRaycastReference;
-    [SerializeField] private Transform bottomRightRaycastReference;
-
     public GuardMove moveScript;
     public GuardVision visionScript;
 
-    private bool canSee;
     private bool tooClose = false;
     private void Update()
     {
@@ -94,7 +88,6 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         moveScript.shutDown = true;
-        canSee = false;
         foreach(var animator in animators)
         {
             animator.SetTrigger("Shutdown");
@@ -104,8 +97,7 @@ public class GuardBehaviour : HackableObjects
 
     public void ReActivated()
     {
-        //Restore functionality when the hacking time is over.
-        canSee = true;
+        //Restore functionality when the hacking time is over
         moveScript.canMove = true;
         moveScript.shutDown = false;
         foreach (var animator in animators)
