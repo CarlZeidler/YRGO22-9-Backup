@@ -9,7 +9,6 @@ public class Turret : HackableObjects
     [SerializeField] private bool pInRange = false;
 
     [SerializeField]private Animator[] animators = new Animator[2];
-    [SerializeField] private ParticleSystem disabledParticles;
     [SerializeField] private AudioSource audS;
     [SerializeField] private AudioClip shoot;
     [SerializeField] private Light2D detectionAreaLight;
@@ -104,19 +103,6 @@ public class Turret : HackableObjects
             {
                 animator.SetTrigger("Shutdown");
             }
-        }
-    }
-
-    public void DisabledTurretParticles(bool disabled)
-    {
-        
-        if (disabled)
-        {
-            disabledParticles.Play();
-        }
-        else
-        {
-            disabledParticles.Stop();
         }
     }
 }

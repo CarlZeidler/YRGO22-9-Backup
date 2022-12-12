@@ -405,8 +405,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1078251109020710511}
-        m_TargetAssemblyTypeName: Laser, Assembly-CSharp
-        m_MethodName: DisabledLaserParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -456,8 +456,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1078251109020710511}
-        m_TargetAssemblyTypeName: Laser, Assembly-CSharp
-        m_MethodName: DisabledLaserParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -524,10 +524,10 @@ MonoBehaviour:
   hackingPowerText: {fileID: 3787264894214718789}
   hackingChargeSlider: {fileID: 2529709356653668098}
   selectionCircle: {fileID: 5937940812691466558}
+  hackedParticles: {fileID: 5868616967315450192}
   StartPointRef: {fileID: 2408883345811171421}
   EndPointRef: {fileID: 2408883344228909429}
   laserSpark: {fileID: 2832872319164483189}
-  disabledParticles: {fileID: 5868616967315450192}
   ignorLayers:
     serializedVersion: 2
     m_Bits: 556

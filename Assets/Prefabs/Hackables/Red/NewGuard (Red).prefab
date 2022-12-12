@@ -1873,8 +1873,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8114511208693651516}
-        m_TargetAssemblyTypeName: GuardBehaviour, Assembly-CSharp
-        m_MethodName: DisabledGuardParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1900,8 +1900,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8114511208693651516}
-        m_TargetAssemblyTypeName: GuardBehaviour, Assembly-CSharp
-        m_MethodName: DisabledGuardParticles
+        m_TargetAssemblyTypeName: HackableObjects, Assembly-CSharp
+        m_MethodName: HackedParticles
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1968,12 +1968,12 @@ MonoBehaviour:
   hackingPowerText: {fileID: 8114511209271081632}
   hackingChargeSlider: {fileID: 2314607564791738676}
   selectionCircle: {fileID: 5827992108479343137}
+  hackedParticles: {fileID: 7357548287882471170}
   killTime: 1
   pInRange: 0
   animators:
   - {fileID: 4269434050367926628}
   - {fileID: 857784686918011196}
-  disabledParticles: {fileID: 7357548287882471170}
   detectionAreaSprite: {fileID: 0}
   detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0.48235294}
   activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0.53333336}
