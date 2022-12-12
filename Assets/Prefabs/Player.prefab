@@ -5262,11 +5262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  maxSpeed: 15
-  Acceleration: 25
+  maxSpeed: 17
+  Acceleration: 35
   Deceleration: 30
   canMove: 1
-  jumpforce: 25
+  jumpforce: 20
   jumpDurationLeft: 0.1
   anim: {fileID: 7880465968826435611}
   playerModel: {fileID: 2813728735723943310}
