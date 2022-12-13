@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
             {
                 hackable.GetComponent<Switch>().ResetToggle();
             }
-            if (hackable.GetComponent<GuardRespawn>()&&hackable.objectState == HackableObjects.ObjectState.redUnPersistent)
+            if (hackable.GetComponent<GuardRespawn>())
             {
                 hackable.GetComponent<GuardRespawn>().Respawn();
             }
