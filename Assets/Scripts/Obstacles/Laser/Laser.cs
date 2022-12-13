@@ -87,7 +87,10 @@ public class Laser : HackableObjects
             if (ray.collider.CompareTag("Player"))
                 ray.collider.GetComponent<PlayerRespawn>().Die();
             else if (ray.collider.CompareTag("Enemy"))
+            {
+                if(ray.collider.GetComponent<GuardBehaviour>().objectState != ObjectState.bluePersistent)
                 ray.collider.GetComponent<GuardRespawn>().Respawn();
+            }
     }
 
     private void LaserStatus()
