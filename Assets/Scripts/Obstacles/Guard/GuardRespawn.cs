@@ -14,6 +14,8 @@ public class GuardRespawn : MonoBehaviour
     [SerializeField] private GuardBehaviour guardBehaviour;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject visuals;
+    [Space]
+    [SerializeField] private ParticleSystem deathParticles;
 
 
     private void Start()
@@ -29,6 +31,11 @@ public class GuardRespawn : MonoBehaviour
         if(!enable)
             rb.velocity = Vector2.zero;
         visuals.SetActive(enable);
+    }
+    public void Die()
+    {
+        EnableScripts(false);
+        deathParticles.Play();
     }
     public void Respawn()
     {
