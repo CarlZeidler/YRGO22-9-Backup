@@ -32,7 +32,11 @@ public class PlayerRespawn : MonoBehaviour
     {
         deathSound.Play();
         //GameManager.instance.composer.Stop();
-        GameManager.instance.composer.Inverse();
+        try
+        {
+            GameManager.instance.composer.Inverse();
+        }
+        catch { Debug.Log("Lägg på jukebox stupid"); }
         //if die not triggered
         if (!textObjectOnDeath.activeSelf)
         {
