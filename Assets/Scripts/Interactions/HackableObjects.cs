@@ -92,7 +92,7 @@ public class HackableObjects : MonoBehaviour
     }
     public void AddHackingPower(int amount)
     {
-        if (!isHacked)
+        //if (!isHacked)
         {
             if(amount > 0)
             {

@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &20451302754019395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8903525396350954832}
+  m_Layer: 8
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8903525396350954832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20451302754019395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3893566854812497694}
+  m_Father: {fileID: 8114511208693651512}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383205882703138894
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +219,8 @@ GameObject:
   - component: {fileID: 857784686918011196}
   - component: {fileID: 6088737503162588225}
   - component: {fileID: 1072314393027577153}
+  - component: {fileID: 412210817670457729}
+  - component: {fileID: 9118030493223263028}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (walker1) (1)
   m_TagString: Untagged
@@ -334,6 +368,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ogMat: {fileID: 2100000, guid: 15b82f166a9cd9f45a3796a89823cd5c, type: 2}
   replaceMat: {fileID: 2100000, guid: 468a05fc330b0254b94912e16b42ec3d, type: 2}
+--- !u!114 &412210817670457729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464480763646013596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da632c790af996e419203759ffaca977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  clip1: {fileID: 0}
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9118030493223263028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464480763646013596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114ec9a2b897f86478358977237169f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorsScript: {fileID: 8114511208693651516}
 --- !u!1 &645057447447401300
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +412,7 @@ GameObject:
   - component: {fileID: 4269434050367926628}
   - component: {fileID: 983779659617351951}
   - component: {fileID: 1364711227752980640}
+  - component: {fileID: 1287261173675747897}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (walker1)
   m_TagString: Untagged
@@ -494,6 +559,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorsScript: {fileID: 8114511208693651516}
+--- !u!114 &1287261173675747897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645057447447401300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da632c790af996e419203759ffaca977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  clip1: {fileID: 0}
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2780691494233611863}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &676661980314452648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624193004735065653}
   m_LocalRotation: {x: -0, y: -0, z: -0.29454082, w: 0.9556389}
-  m_LocalPosition: {x: 0.6849942, y: 1.3964264, z: -0.46500257}
+  m_LocalPosition: {x: 0.68499374, y: 1.3964264, z: -0.46500257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1448,6 +1542,134 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7649268300762995814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3893566854812497694}
+  - component: {fileID: 2780691494233611863}
+  m_Layer: 8
+  m_Name: Walk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3893566854812497694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649268300762995814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8903525396350954832}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2780691494233611863
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649268300762995814}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b9706b5240bf0fb4882c2adf5ac24179, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 35
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8114511208288416967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +2026,7 @@ Transform:
   - {fileID: 3466500641399993426}
   - {fileID: 8114511209218668438}
   - {fileID: 5411837942558640074}
+  - {fileID: 8903525396350954832}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2024,7 +2247,6 @@ MonoBehaviour:
   animators:
   - {fileID: 4269434050367926628}
   - {fileID: 857784686918011196}
-  detectionAreaSprite: {fileID: 0}
   detectionColor: {r: 0.9056604, g: 0.011961505, b: 0.011961505, a: 0.48235294}
   activeColor: {r: 0.7169812, g: 0.5699555, b: 0.10416517, a: 0.53333336}
   inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.043137256}
