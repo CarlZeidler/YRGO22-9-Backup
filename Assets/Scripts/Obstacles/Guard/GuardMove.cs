@@ -7,12 +7,14 @@ using Spine.Unity;
 public class GuardMove : MonoBehaviour
 {
     [Header("Guard patrol settings")]
-    [Range(1,5)]public float moveSpeed;
-    [Range(1,5)]public float maxSpeed;
+    [Range(1,10)] public float moveSpeed = 5f;
+    [Range(1, 10)] public float maxSpeed = 10f;
     public float patrolTime;
     public float HoldTimeLeft;
     public float HoldTimeRight;
     public bool stationary;
+    public bool ignoreRightLedge;
+    public bool ignoreLeftLedge;
 
     [Header("Vision settings")]
     public float eyesPivotUpRight;
@@ -315,10 +317,8 @@ public class GuardMove : MonoBehaviour
     {
         bool rayCastHit = false;
 
-        Debug.DrawRay(raycastFeetLeftReference.position, new Vector2(0f, -1f), Color.red);
-
-        if ((!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) && !facingRight) ||
-                (!Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) && facingRight) ||
+        if ((!Physics2D.Raycast(raycastFeetLeftReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) && !facingRight && !ignoreLeftLedge) ||
+                (!Physics2D.Raycast(raycastFeetRightReference.position, new Vector2(0f, -1f), 2f, LayerMask.GetMask("Ground")) && facingRight && !ignoreRightLedge) ||
                     (Physics2D.Raycast(raycastRightSide.position, new Vector2(0.5f, 0f), 1f, LayerMask.GetMask("Ground", "Obstacle")) && facingRight) ||
                         (Physics2D.Raycast(raycastLeftSide.position, new Vector2(-0.5f, 0f), 1f, LayerMask.GetMask("Ground", "Obstacle")) && !facingRight))
         {
