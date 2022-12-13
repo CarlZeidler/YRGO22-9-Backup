@@ -37,6 +37,17 @@ public class GuardBehaviour : HackableObjects
         }
 
         PlayerProximityCheck();
+        VisionConeColor();
+    }
+
+    private void VisionConeColor()
+    {
+        if (moveScript.shutDown)
+            visionCone.color = inactiveColor;
+        else if (moveScript.playerSeen)
+            visionCone.color = detectionColor;
+        else
+            visionCone.color = activeColor;
     }
 
     private void PlayerProximityCheck()
@@ -86,7 +97,7 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = false;
         moveScript.shutDown = true;
-        visionCone.color = inactiveColor;
+        moveScript.playerSeen = false;
         pInRange = false;
         foreach(var animator in animators)
         {
@@ -113,7 +124,6 @@ public class GuardBehaviour : HackableObjects
     {
         moveScript.canMove = true;
         moveScript.shutDown = false;
-        visionCone.color = activeColor;
         Debug.Log("Resumed");
     }
 
@@ -123,20 +133,18 @@ public class GuardBehaviour : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
-            visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Shoot();
-            moveScript.canMove = false;
+            moveScript.playerSeen = true;
         }
     }
 
     public void OnPlayerExit()
     {
         pInRange = false;
-        visionCone.color = activeColor;
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
-        //moveScript.canMove = true;
+        moveScript.playerSeen = false;
     }
 
     public void TriggerExit()
@@ -144,7 +152,6 @@ public class GuardBehaviour : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
-            visionCone.color = detectionColor;
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
         }
