@@ -83,13 +83,13 @@ public class Switch : HackableObjects
         {
             normal.sprite = active;
             highlight.sprite = active;
-            GetComponentInChildren<Image>().sprite = active;
+            //GetComponentInChildren<Image>().sprite = active;
         }
         else
         {
             normal.sprite = inactive;
             highlight.sprite = inactive;
-            GetComponentInChildren<Image>().sprite = inactive;
+            //GetComponentInChildren<Image>().sprite = inactive;
         }
         toggled = !toggled;
         foreach (var hackable in linkedHackables)
