@@ -32,6 +32,7 @@ public class GuardMove : MonoBehaviour
 
     [HideInInspector] public bool canMove = true;
     [HideInInspector] public bool facingRight;
+    [HideInInspector] public bool playerSeen = false;
     public bool shutDown = false;
     private float realPatrolTime;
     private float realHoldTimeLeft;
@@ -115,7 +116,7 @@ public class GuardMove : MonoBehaviour
 
     private void Holding()
     {
-        if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0 && !shutDown)
+        if (facingRight && realPatrolTime <= 0 && realHoldTimeRight > 0 && !shutDown && !playerSeen)
         {
             canMove = false;
             foreach(var animator in animators)
@@ -220,7 +221,7 @@ public class GuardMove : MonoBehaviour
 
     private void stationaryHolding()
     {
-        if (!shutDown)
+        if (!shutDown && !playerSeen)
         {
             foreach (var animator in animators)
             {
@@ -270,7 +271,7 @@ public class GuardMove : MonoBehaviour
 
     private void Move()
     {
-        if (facingRight && canMove)
+        if (facingRight && canMove && !playerSeen)
         {
             foreach(var animator in animators)
             {
@@ -279,7 +280,7 @@ public class GuardMove : MonoBehaviour
             }
             rb2d.velocity = new Vector2(Mathf.Clamp(moveSpeed + acceleration * Time.unscaledDeltaTime, 0, maxSpeed), rb2d.velocity.y);
         }
-        else if (!facingRight && canMove)
+        else if (!facingRight && canMove && !playerSeen)
         {
             foreach (var animator in animators)
             {
