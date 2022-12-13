@@ -116,9 +116,8 @@ public class Switch : HackableObjects
     {
         if(objectState == ObjectState.redUnPersistent||objectState==ObjectState.greenSemiPersistent)
         {
-            if (toggled)
+            if (toggled &! isHacked)
             {
-                toggled = false;
                 if (GetComponent<Interactable>())
                     GetComponent<Interactable>().linkedEvent.Invoke();
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HackablePlatform : HackableObjects
 {
@@ -11,9 +12,20 @@ public class HackablePlatform : HackableObjects
 
     private void Start()
     {
-        if (!solid)
+        if (solid)
         {
-            Toggle();
+            ActivatePlatform();
+            if (solid)
+            {
+                GetComponent<Collider2D>().enabled = true;
+                gameObject.layer = 6;
+            }
+            else
+            {
+                GetComponent<Collider2D>().enabled = false;
+                gameObject.layer = 9;
+            }
+
         }
 
         //hackable
@@ -28,6 +40,8 @@ public class HackablePlatform : HackableObjects
 
     public void Toggle()
     {
+        solid = !solid;
+        ActivatePlatform();
         if (solid)
         {
             GetComponent<Collider2D>().enabled = true;
@@ -38,13 +52,12 @@ public class HackablePlatform : HackableObjects
             GetComponent<Collider2D>().enabled = false;
             gameObject.layer = 9;
         }
-        solid = !solid;
     }
 
-    public void ActivatePlatform(bool activate)
+    public void ActivatePlatform()
     {
         animator.speed = speed;
-        if (activate)
+        if (solid)
         {
             animator.SetTrigger("Activate");
         }
