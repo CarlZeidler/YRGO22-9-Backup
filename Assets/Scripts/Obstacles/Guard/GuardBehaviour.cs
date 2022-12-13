@@ -92,6 +92,8 @@ public class GuardBehaviour : HackableObjects
         {
             animator.SetTrigger("Shutdown");
         }
+
+        Debug.Log("Shut down");
     }
 
     public void ReActivated()
@@ -104,13 +106,15 @@ public class GuardBehaviour : HackableObjects
         }
 
         //The animator will trigger the ResumeBehavior function.
+        Debug.Log("Reactivating");
     }
 
     public void ResumeBehavior()
     {
-        moveScript.canMove ^= true;
-        moveScript.shutDown ^= true;
+        moveScript.canMove = true;
+        moveScript.shutDown = false;
         visionCone.color = activeColor;
+        Debug.Log("Resumed");
     }
 
     public void OnPlayerEnter()

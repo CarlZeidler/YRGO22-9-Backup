@@ -51,7 +51,7 @@ public class SceneManagerScript : MonoBehaviour
         Invoke(nameof(FadeOutAnimation), delay - 1f);
     }
 
-    private void StartSpecificScene(int scene)
+    public void StartSpecificScene(int scene)
     {
         SceneManager.LoadScene(scene);
     }
