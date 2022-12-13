@@ -54,10 +54,34 @@ MonoBehaviour:
   objectState: 0
   onHackEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 18219014483173827}
+        m_TargetAssemblyTypeName: Switch, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHackStoppedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 18219014483173827}
+        m_TargetAssemblyTypeName: Switch, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHackRevealEvent:
     m_PersistentCalls:
       m_Calls:
@@ -115,13 +139,13 @@ MonoBehaviour:
   hackingPowerText: {fileID: 2026277487543639898}
   hackingChargeSlider: {fileID: 1493322024866582859}
   selectionCircle: {fileID: 0}
+  hackedParticles: {fileID: 0}
   linkedHackables: []
   hackerLines: []
   hackerLinePrefab: {fileID: 1435477427416221182, guid: edd2ceeb63a4c27428bf08b8e79ace83, type: 3}
   active: {fileID: 1111221173, guid: 5e3a2462afe1360448aaf525c5b15112, type: 3}
   inactive: {fileID: -1689852730, guid: 5e3a2462afe1360448aaf525c5b15112, type: 3}
-  lineBlue: {fileID: 2100000, guid: 36e5b5e697249e74c9bd856eb3a2bc44, type: 2}
-  lineRed: {fileID: 2100000, guid: 57c751cf708f2ac4c9a8e00ccbd11df2, type: 2}
+  lineMaterial: {fileID: 2100000, guid: 36e5b5e697249e74c9bd856eb3a2bc44, type: 2}
   useDiagonalLines: 0
   customConnectionMiddleLinks: []
   normal: {fileID: 8875429109209385495}

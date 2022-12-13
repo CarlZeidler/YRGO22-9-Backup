@@ -10,7 +10,7 @@ public class Switch : HackableObjects
     public List<HackerLineConnection> hackerLines;
     [SerializeField] private GameObject hackerLinePrefab;
     [SerializeField] private Sprite active, inactive;
-    [SerializeField] private Material lineBlue, lineRed;
+    [SerializeField] private Material lineMaterial;
 
     private bool toggled;
     [SerializeField] private bool useDiagonalLines;
@@ -70,11 +70,7 @@ public class Switch : HackableObjects
                 hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(positions);
             }
 
-            if (hackable.objectState == ObjectState.bluePersistent)
-                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineBlue;
-            else if(hackable.objectState == ObjectState.redUnPersistent)
-                hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineRed;
-            //TODO else green
+            hackerLines[linkedHackables.IndexOf(hackable)].GetComponent<Renderer>().material = lineMaterial;
         }
     }
     public void Toggle()

@@ -24,6 +24,10 @@ public class Laser : HackableObjects
 
     void Start()
     {
+        if (!isActive)
+        {
+            Invoke(nameof(ToggleHackState), 0.1f);
+        }
         //save own state if red spawn this on player respawn
         if (objectState == ObjectState.redUnPersistent)
         {

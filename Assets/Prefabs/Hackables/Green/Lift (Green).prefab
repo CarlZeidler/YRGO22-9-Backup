@@ -28,6 +28,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: liftPlatform
+      value: 
+      objectReference: {fileID: 2046631205305360349, guid: c6ff2333b4995b14e8b188a55758e820, type: 3}
+    - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}

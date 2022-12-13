@@ -1077,6 +1077,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
+      propertyPath: lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 57c751cf708f2ac4c9a8e00ccbd11df2, type: 2}
+    - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: selectionCircle
       value: 
       objectReference: {fileID: 1857483050026636972}
