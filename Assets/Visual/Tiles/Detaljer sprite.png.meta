@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +103,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Detaljer sprite_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1778
+        width: 337
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c027f00eaf38e954297ca0ab0b63dfd3
+      internalID: 1611650876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1792
+        width: 325
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68d1a7d40df7cd449784da7d67415e5
+      internalID: -438184821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_2
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1563
+        width: 845
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7ed208480d2034392396521b1a54c2
+      internalID: 750948231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1677
+        width: 782
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb0c6eaac434de4e82552ec0969fd88
+      internalID: 688348863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2902
+        y: 1567
+        width: 839
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830e00a1db595424cb38712d1f0529b2
+      internalID: 626416648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1353
+        width: 324
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d0d5e9460ae4c42a3674877d3cbbc5
+      internalID: 1180860330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 42
+        width: 159
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ab66dbdc098ae46921fabfe709d169
+      internalID: 363277634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_7
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 940
+        width: 839
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7dda103ffa09cf4daff7cc3907e79e4
+      internalID: 1220524027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 910
+        width: 843
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73d6de6161a10d47815266206966a97
+      internalID: 584482093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2995
+        y: 18
+        width: 668
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c8eb071588da7468747422558e2f9d
+      internalID: 1740823980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_10
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 427
+        width: 886
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a107e05f8632a458ddc831c92f979f
+      internalID: 986714841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 288
+        width: 917
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c08b17334f2b44919e2d2338245dd
+      internalID: -185648314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detaljer sprite_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 42
+        width: 1162
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8772dd279911f6e4aa66b20866af6426
+      internalID: 1336168093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +387,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Detaljer sprite_5: 1180860330
+      Detaljer sprite_12: 1336168093
+      Detaljer sprite_3: 688348863
+      Detaljer sprite_6: 363277634
+      Detaljer sprite_0: 1611650876
+      Detaljer sprite_7: 1220524027
+      Detaljer sprite_8: 584482093
+      Detaljer sprite_11: -185648314
+      Detaljer sprite_2: 750948231
+      Detaljer sprite_10: 986714841
+      Detaljer sprite_1: -438184821
+      Detaljer sprite_9: 1740823980
+      Detaljer sprite_4: 626416648
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
