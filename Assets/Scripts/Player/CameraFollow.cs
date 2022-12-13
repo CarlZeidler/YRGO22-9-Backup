@@ -42,7 +42,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            targetPosition = player.position+(Vector3.right * Input.GetAxisRaw("Horizontal") * forwardView) + Vector3.up * player.GetComponent<Rigidbody2D>().velocity.normalized.y * verticalView;
+            targetPosition = player.position+(Vector3.right * Input.GetAxis("Horizontal Camera") * forwardView) + Vector3.up * player.GetComponent<Rigidbody2D>().velocity.normalized.y * verticalView;
             targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
             
             panning = false;
