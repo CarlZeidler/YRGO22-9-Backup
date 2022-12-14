@@ -35,13 +35,13 @@ public class PlayerMove : MonoBehaviour
 
     //running fx
     //private ParticleSystem ps;
-    [SerializeField]private Animator anim;
+    [SerializeField]public Animator anim;
     [SerializeField] private Transform playerModel;
     [SerializeField]private SpriteRenderer sr;
     [SerializeField] private GameObject IdleAnim, moveAnim;
 
     //for running noises
-    [SerializeField] private AudioSource audJump,audRun;
+    [SerializeField] public AudioSource audJump,audRun;
 
 
     [Space]
