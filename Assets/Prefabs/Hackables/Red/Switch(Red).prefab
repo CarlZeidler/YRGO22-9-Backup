@@ -1636,6 +1636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AddNumberParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 3588979677610125710, guid: c57a570d05424e74fa41193bfb1def1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6315827604299530397, guid: c57a570d05424e74fa41193bfb1def1b, type: 3}
       propertyPath: prewarm
       value: 0

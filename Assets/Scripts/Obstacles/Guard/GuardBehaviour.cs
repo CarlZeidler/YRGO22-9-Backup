@@ -159,14 +159,14 @@ public class GuardBehaviour : HackableObjects
         RaycastHit2D ray = Physics2D.Raycast(transform.position, (GameManager.instance.player.transform.position - transform.position), Mathf.Infinity, ~ignoreLayer);
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
-            GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
+            GameManager.instance.player.GetComponent<PlayerRespawn>().Die();
 
         }
     }
 
     private void KillPlayer()
     {
-        GameManager.instance.player.GetComponent<PlayerRespawn>().Respawn();
+        GameManager.instance.player.GetComponent<PlayerRespawn>().Die();
     }
 
     private void Shoot()

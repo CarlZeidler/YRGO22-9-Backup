@@ -18,7 +18,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerMove pMove;
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private ShadowCaster2D shadowCaster;
+    //[SerializeField] private ShadowCaster2D shadowCaster;
 
 
     private void Update()
@@ -78,7 +78,7 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void EnableScripts(bool enable)
     {
-        shadowCaster.enabled = enable;
+        //shadowCaster.enabled = enable;
         interactionCollider.enabled = enable;
         physicsCollider.enabled = enable;
         pMove.canMove = enable;
