@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RED_Glow_Outline
-  m_Shader: {fileID: -6465566751694194690, guid: 3c302cd5a509de44ebc575474d77236a, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 86b5bd2fe01cd534eb9c78b69b9548da, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _SAMPLECORNER
@@ -92,10 +92,10 @@ Material:
     - _SAMPLECORNER: 1
     - _SPECULAR_IOR: 1.5
     - _SPECULAR_ROUGHNESS: 0
-    - _Thickness: 5
+    - _Thickness: 5.03
     m_Colors:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 11.181761, g: 2.283187, b: 2.283187, a: 1}
+    - _Color: {r: 3.9533494, g: 0.8279266, b: 0.8279266, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineGlow: {r: 1024, g: 120.7547, b: 120.7547, a: 1}

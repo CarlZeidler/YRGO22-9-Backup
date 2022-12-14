@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 496206308820568874, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1072314393027577153, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
       propertyPath: replaceMat
       value: 
@@ -66,6 +70,10 @@ PrefabInstance:
     - target: {fileID: 1701714110674681820, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
       propertyPath: ColorModule.gradient.minGradient.m_NumColorKeys
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854026778909133747, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4077781694478327517, guid: f3bf3178c4d72224cb4b44e24e3a0d5c, type: 3}
       propertyPath: m_Color.b
