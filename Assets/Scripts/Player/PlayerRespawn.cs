@@ -20,13 +20,21 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ShadowCaster2D shadowCaster;
 
+    public float respawnHold = 0f;
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 1f)
         {
             Respawn();
         }
+        else if (Input.GetKey(KeyCode.Tab))
+        {
+            respawnHold += 1 * Time.deltaTime;
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+            respawnHold = 0f;
     }
     public void Respawn()
     {
@@ -66,6 +74,7 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.ResetPickups();
         //energy
         pHack.ResetCharges();
+        
     }
     public void Die()
     {        
@@ -104,6 +113,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             transform.position = Vector3.Slerp(startPosition, spawnPoint, time / duration);
             time += Time.deltaTime;
+            respawnHold = 0f;
             yield return null;
         }
         transform.position = spawnPoint;
