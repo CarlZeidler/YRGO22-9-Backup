@@ -16,6 +16,7 @@ public class InvisibleTrigger : MonoBehaviour
     [SerializeField] private float repeatInterval;
     [SerializeField] private bool limitNumberOfRepeats;
     [SerializeField] private int numberOfRepeats;
+    [SerializeField] private bool stopRepeatingOnReassemble;
 
     [SerializeField] private enum typeOfTrigger { Single, Repeating };
 
@@ -28,9 +29,14 @@ public class InvisibleTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && resetOnReassemble)
+        if (Input.GetKeyDown(KeyCode.Tab) && resetOnReassemble)
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab) && stopRepeatingOnReassemble)
+        {
+            CancelInvoke(nameof(triggerEvent));
         }
     }
 
