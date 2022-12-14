@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: turretspine_blue
-  m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 85c99ce70aa12ba41aaa415143fe0032, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_VERTEX_ONLY
@@ -46,7 +46,15 @@ Material:
         m_Texture: {fileID: 2800000, guid: 49eff6cf27d222b49a693addd86c8293, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -78,19 +86,23 @@ Material:
     - _Hue: 0
     - _LightAffectsAdditive: 0
     - _Metallic: 0
+    - _Multiply_Glow: 10
     - _OutlineMipLevel: 0
     - _OutlineOpaqueAlpha: 1
     - _OutlineReferenceTexWidth: 1024
     - _OutlineSmoothness: 1
     - _OutlineWidth: 3
+    - _Outline_Color: 0
     - _RenderQueue: 0
     - _RimPower: 2
+    - _SAMPLECORNER: 0
     - _Saturation: 1
     - _ShadowAlphaCutoff: 0.1
     - _SrcBlend: 1
     - _StencilComp: 8
     - _StencilRef: 1
     - _StraightAlphaInput: 0
+    - _Thickness: 0
     - _ThresholdEnd: 0.25
     - _Use8Neighbourhood: 1
     - _ZWrite: 0
