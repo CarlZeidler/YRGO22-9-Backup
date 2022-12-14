@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5196649385193833146}
   - component: {fileID: 5721738027773344488}
   - component: {fileID: 7694693567336114745}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4654486130277726799}
   - component: {fileID: 5870103179557702642}
   - component: {fileID: 2055530118168811997}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5012,7 +5012,7 @@ GameObject:
   - component: {fileID: 2609808847895265134}
   - component: {fileID: 4041839448430139008}
   - component: {fileID: 5314457447433090109}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TextCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5065,7 +5065,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8600000, guid: d7c736fb3ad16fc47b8c0b46439452bf, type: 2}
   m_TargetDisplay: 0
@@ -5127,7 +5127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3082685794258275778}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: OutofBoundsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5162,7 +5162,7 @@ GameObject:
   - component: {fileID: 3624088415122498020}
   - component: {fileID: 8105274600148698234}
   - component: {fileID: 5491694713758912605}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
