@@ -7,6 +7,7 @@ using TMPro;
 
 public class HackableObjects : MonoBehaviour
 {
+    [SerializeField]private AudioSource select;
     public bool isHacked = false;
     public ObjectState objectState;
 
@@ -55,6 +56,7 @@ public class HackableObjects : MonoBehaviour
     }
     private void Start()
     {
+        Invoke(nameof(OnStart), .1f);
         //save own state if red spawn this on player respawn
         if(objectState == ObjectState.redUnPersistent)
         {
@@ -62,6 +64,10 @@ public class HackableObjects : MonoBehaviour
         }
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
+    }
+    void OnStart()
+    {
+        select = GameManager.instance.player.GetComponent<PlayerHack>().select;
     }
     public void OnHackingModeReveal()
     {
@@ -92,6 +98,13 @@ public class HackableObjects : MonoBehaviour
     }
     public void AddHackingPower(int amount)
     {
+        //sound
+        if(select == null)
+        {
+            OnStart();
+        }
+        select.Play();
+
         //if (!isHacked)
         {
             if(amount > 0)

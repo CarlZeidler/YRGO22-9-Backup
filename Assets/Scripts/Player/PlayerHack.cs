@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public class PlayerHack : MonoBehaviour
 {
+    [SerializeField] AudioSource hackerVision, commit;
+    public AudioSource select;
+
     public bool inHackingMode;
     public int maxBatteryCharges = 10;
     private int _batteryCharges = 10;
@@ -51,7 +54,10 @@ public class PlayerHack : MonoBehaviour
                 hackableObject.CommitHack();
             }
             if (inHackingMode)
+            {
                 ToggleHackingMode();
+                commit.Play();
+            }
         }    
 
     }
@@ -59,6 +65,7 @@ public class PlayerHack : MonoBehaviour
     {
         if (!inHackingMode)
         {
+            hackerVision.Play();
             GameManager.instance.RevealHackables(.015f);
             hackingUIAnim.SetBool("HackingMode", true);
             Time.timeScale = 0.1f;
