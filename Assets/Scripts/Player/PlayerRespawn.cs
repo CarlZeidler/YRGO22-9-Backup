@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -19,8 +20,9 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
     //[SerializeField] private ShadowCaster2D shadowCaster;
+    [SerializeField] private Slider reassembleSlider;
 
-    private float respawnHold = 0f;
+    [HideInInspector] public float respawnHold = 0f;
 
 
     private void Update()
@@ -35,6 +37,8 @@ public class PlayerRespawn : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Tab))
             respawnHold = 0f;
+
+        reassembleSlider.value = respawnHold;
     }
     public void Respawn()
     {
