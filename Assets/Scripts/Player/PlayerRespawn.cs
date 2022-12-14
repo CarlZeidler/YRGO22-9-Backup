@@ -33,7 +33,7 @@ public class PlayerRespawn : MonoBehaviour
             Respawn();
         }
 
-        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 1f)
+        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.4f)
         {
             Respawn();
         }
@@ -55,7 +55,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             GameManager.instance.composer.Inverse();
         }
-        catch { Debug.Log("Lägg på jukebox stupid"); }
+        catch { Debug.Log("Lï¿½gg pï¿½ jukebox stupid"); }
         //if die not triggered
         if (!textObjectOnDeath.activeSelf)
         {
@@ -85,7 +85,7 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.ResetPickups();
         //energy
         pHack.ResetCharges();
-        
+
     }
     public void Die()
     {

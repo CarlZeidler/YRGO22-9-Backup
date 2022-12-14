@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6088737503162588225}
   - component: {fileID: 1072314393027577153}
   - component: {fileID: 412210817670457729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spine Mecanim GameObject (walker1) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 983779659617351951}
   - component: {fileID: 1287261173675747897}
   - component: {fileID: 8743295438768569765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spine Mecanim GameObject (walker1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5982,7 +5982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624193004735065653}
   m_LocalRotation: {x: -0, y: -0, z: -0.29454082, w: 0.9556389}
-  m_LocalPosition: {x: 0.6849942, y: 1.3964264, z: -0.46500257}
+  m_LocalPosition: {x: 0.684994, y: 1.3964262, z: -0.46500257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
