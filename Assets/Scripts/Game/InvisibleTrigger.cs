@@ -21,6 +21,7 @@ public class InvisibleTrigger : MonoBehaviour
     [SerializeField] private enum typeOfTrigger { Single, Repeating };
 
     private int counter;
+    private float respawnHold;
 
     private void Start()
     {
@@ -29,15 +30,28 @@ public class InvisibleTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && resetOnReassemble)
+        if (Input.GetKey(KeyCode.Tab) && resetOnReassemble && respawnHold >= 1f)
         {
+            respawnHold = 0f;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.Tab) && stopRepeatingOnReassemble)
+        else if (Input.GetKey(KeyCode.Tab))
         {
+            respawnHold += 1 * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.Tab) && stopRepeatingOnReassemble && respawnHold >= 1f)
+        {
+            respawnHold = 0f;
             CancelInvoke(nameof(triggerEvent));
         }
+        else if (Input.GetKey(KeyCode.Tab))
+        {
+            respawnHold += 1 * Time.deltaTime;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+            respawnHold = 0f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

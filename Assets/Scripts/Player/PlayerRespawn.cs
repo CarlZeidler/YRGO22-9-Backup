@@ -20,7 +20,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     //[SerializeField] private ShadowCaster2D shadowCaster;
 
-    public float respawnHold = 0f;
+    private float respawnHold = 0f;
 
 
     private void Update()
