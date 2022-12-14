@@ -255,8 +255,8 @@ MonoBehaviour:
   colliderLayer: 
   colliderLayer2: 
   TriggerCollider: {fileID: 5851719571202382270}
-  useTag1: 0
-  useTag2: 0
+  useTag1: 1
+  useTag2: 1
   useLayer1: 0
   useLayer2: 0
   useTimer: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   timer: 0
   disableColliderOnTrigger: 0
   disableColliderOnTriggerExit: 0
-  triggerOnExit: 0
+  triggerOnExit: 1
   separateEventOnTriggerExit: 0
 --- !u!114 &8957765946230433985 stripped
 MonoBehaviour:

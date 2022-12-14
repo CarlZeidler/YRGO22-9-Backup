@@ -871,6 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44d091421d27314a8683f95a7d27cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
   isHacked: 0
   objectState: 1
   onHackEvent:

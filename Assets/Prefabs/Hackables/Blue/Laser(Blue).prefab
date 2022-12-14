@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.m_NumColorKeys
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3395100320973529584, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4266800367273825133, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Color.b
       value: 1

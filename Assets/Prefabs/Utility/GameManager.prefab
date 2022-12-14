@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  composer: {fileID: 0}
+  conductor: {fileID: 0}
   hackableObjects: []
+  batteries: []
+  selectedHackable: {fileID: 0}
 --- !u!114 &2130856821517376145
 MonoBehaviour:
   m_ObjectHideFlags: 0
