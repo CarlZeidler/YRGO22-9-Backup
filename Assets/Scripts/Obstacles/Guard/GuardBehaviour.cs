@@ -27,7 +27,7 @@ public class GuardBehaviour : HackableObjects
             {
                 visionCone.color = detectionColor;
                 Invoke(nameof(Death), killTime);
-                Invoke(nameof(Shoot), killTime - killTime / 8);
+                Invoke(nameof(Shoot), killTime - killTime / 4);
             }
         }
         else
@@ -103,8 +103,6 @@ public class GuardBehaviour : HackableObjects
         {
             animator.SetTrigger("Shutdown");
         }
-
-        Debug.Log("Shut down");
     }
 
     public void ReActivated()
@@ -116,15 +114,13 @@ public class GuardBehaviour : HackableObjects
             animator.SetTrigger("Startup");
         }
 
-        //The animator will trigger the ResumeBehavior function.
-        Debug.Log("Reactivating");
+        //The animator will trigger the ResumeBehavior function
     }
 
     public void ResumeBehavior()
     {
         moveScript.canMove = true;
         moveScript.shutDown = false;
-        Debug.Log("Resumed");
     }
 
     public void OnPlayerEnter()
@@ -134,7 +130,7 @@ public class GuardBehaviour : HackableObjects
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             Invoke(nameof(Death), killTime);
-            Shoot();
+            Invoke(nameof(Shoot), killTime - killTime / 8);
             moveScript.playerSeen = true;
         }
     }
@@ -145,6 +141,7 @@ public class GuardBehaviour : HackableObjects
         CancelInvoke(nameof(Death));
         CancelInvoke(nameof(Shoot));
         moveScript.playerSeen = false;
+        moveScript.canMove = true;
     }
 
     public void TriggerExit()
@@ -174,7 +171,6 @@ public class GuardBehaviour : HackableObjects
 
     private void Shoot()
     {
-        moveScript.canMove = false;
         foreach (var animator in animators)
         {
             animator.SetTrigger("Shoot");
