@@ -24,8 +24,8 @@ TagManager:
   - Obstacle
   - Background
   - Interactable
-  - 
-  - 
+  - PostProcess
+  - HackerView
   - 
   - 
   - 

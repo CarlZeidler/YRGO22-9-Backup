@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4713527933212236030
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 0
+  mode:
+    m_OverrideState: 0
+    m_Value: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 2
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+  clamp:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-3825431552820778487
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -43,7 +68,7 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   intensity:
     m_OverrideState: 1
     m_Value: 0.791
@@ -68,7 +93,7 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.21
+    m_Value: 0.23
   intensity:
     m_OverrideState: 1
     m_Value: 0.19
@@ -76,10 +101,10 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   clamp:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 65451.67
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0, g: 1, b: 0.28483605, a: 1}
   highQualityFiltering:
     m_OverrideState: 1
@@ -93,7 +118,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 12.42
 --- !u!114 &-169946465492116718
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,13 +134,13 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -2.11
+    m_Value: -0.9
   contrast:
-    m_OverrideState: 0
-    m_Value: 15.9
+    m_OverrideState: 1
+    m_Value: 11.5
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.7122642, g: 0.84964484, b: 1, a: 1}
+    m_Value: {r: 0.8198553, g: 0.97751975, b: 1.1486983, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: -7
@@ -143,6 +168,7 @@ MonoBehaviour:
   - {fileID: -3825431552820778487}
   - {fileID: 6711444486046071638}
   - {fileID: 32724019301091786}
+  - {fileID: -4713527933212236030}
 --- !u!114 &32724019301091786
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -177,7 +203,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.238
+    m_Value: 0.149
 --- !u!114 &6711444486046071638
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -472,7 +498,7 @@ MonoBehaviour:
     m_Value: 0.171
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.344
+    m_Value: 1
   rounded:
     m_OverrideState: 1
     m_Value: 0
