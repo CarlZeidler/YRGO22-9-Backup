@@ -23,10 +23,16 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Slider reassembleSlider;
 
     [HideInInspector] public float respawnHold = 0f;
+    private bool isDead = false;
 
 
     private void Update()
     {
+        if (isDead && Input.GetKeyDown(KeyCode.Tab))
+        {
+            Respawn();
+        }
+
         if (Input.GetKey(KeyCode.Tab) && respawnHold >= 1f)
         {
             Respawn();
@@ -42,6 +48,7 @@ public class PlayerRespawn : MonoBehaviour
     }
     public void Respawn()
     {
+        isDead = false;
         deathSound.Play();
         //GameManager.instance.composer.Stop();
         try
@@ -81,7 +88,8 @@ public class PlayerRespawn : MonoBehaviour
         
     }
     public void Die()
-    {        
+    {
+        isDead = true;
         //disable all relevant scripts
         EnableScripts(false);
 

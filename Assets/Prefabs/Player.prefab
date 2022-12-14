@@ -5320,6 +5320,8 @@ MonoBehaviour:
   pMove: {fileID: 2292857639173056006}
   pHack: {fileID: 3147997415736238188}
   rb: {fileID: 2292857639173056005}
+  reassembleSlider: {fileID: 0}
+  respawnHold: 0
 --- !u!1 &2416937136249323099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,7 +5544,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58668
+  m_InstanceId: 98438
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6158,7 +6160,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58548
+  m_InstanceId: 98328
 --- !u!1 &5209704850959813538
 GameObject:
   m_ObjectHideFlags: 0
@@ -11983,7 +11985,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F To Reassemble
+  m_text: Press Tab To Reassemble
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ea272f7b7ab96045ab6e205de994e9d, type: 2}
   m_sharedMaterial: {fileID: -3090492448142414598, guid: 4ea272f7b7ab96045ab6e205de994e9d, type: 2}
