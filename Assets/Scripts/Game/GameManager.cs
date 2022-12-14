@@ -102,7 +102,14 @@ public class GameManager : MonoBehaviour
             }
             if (hackable.GetComponent<GuardRespawn>())
             {
-                hackable.GetComponent<GuardRespawn>().Respawn();
+                if(hackable.GetComponent<GuardBehaviour>().objectState == HackableObjects.ObjectState.bluePersistent)
+                {
+                    if(hackable.GetComponent<GuardRespawn>().dead)
+                        hackable.GetComponent<GuardRespawn>().Respawn();
+                }
+                else
+                    hackable.GetComponent<GuardRespawn>().Respawn();
+
             }
         }
     }

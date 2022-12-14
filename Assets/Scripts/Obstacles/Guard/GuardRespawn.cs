@@ -17,6 +17,8 @@ public class GuardRespawn : MonoBehaviour
     [Space]
     [SerializeField] private ParticleSystem deathParticles;
 
+    [HideInInspector] public bool dead;
+
 
     private void Start()
     {
@@ -36,9 +38,11 @@ public class GuardRespawn : MonoBehaviour
     {
         EnableScripts(false);
         deathParticles.Play();
+        dead = true;
     }
     public void Respawn()
     {
+        dead = false;
         EnableScripts(false);
 
         var particles = travelParticles.main;
