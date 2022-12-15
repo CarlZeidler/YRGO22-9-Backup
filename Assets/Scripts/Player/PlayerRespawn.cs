@@ -39,7 +39,7 @@ public class PlayerRespawn : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Tab))
         {
-            respawnHold += 1 * Time.deltaTime;
+            respawnHold += 1 * Time.unscaledDeltaTime;
         }
         if (Input.GetKeyUp(KeyCode.Tab))
             respawnHold = 0f;

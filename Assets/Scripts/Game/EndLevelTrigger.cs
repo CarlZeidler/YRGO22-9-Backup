@@ -8,6 +8,10 @@ public class EndLevelTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player") && sceneManager.lastLevel)
+        {
+            sceneManager.StartSpecificSceneWithDelay(0);
+        }
         if (collision.CompareTag("Player"))
         {
             sceneManager.NextLevel();

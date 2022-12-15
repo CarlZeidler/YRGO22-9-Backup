@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level 2.unity
     guid: d3a7811858314d44c80938f40f52c7ba
+  - enabled: 1
+    path: Assets/Scenes/Levels/BaathPuzzle1.unity
+    guid: 54979998ffc87cf40b232849585037d2
   m_configObjects: {}

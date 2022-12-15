@@ -8,6 +8,7 @@ public class SceneManagerScript : MonoBehaviour
     [SerializeField] float delayUntilSceneTransition;
     [SerializeField] SpriteRenderer sprt;
     [SerializeField] private Animator transitionAnimator;
+    [SerializeField] public bool lastLevel;
 
     private int currentScene;
     private int sceneToLoad;
