@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2b4f3168037e940af642b09f594c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
   isHacked: 0
   objectState: 1
   onHackEvent:
@@ -789,7 +790,7 @@ MonoBehaviour:
   - {x: 0.03676599, y: -0.4276852, z: 0}
   m_ShapePathHash: 961632148
   m_Mesh: {fileID: 0}
-  m_InstanceId: 65798
+  m_InstanceId: 149102
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0
