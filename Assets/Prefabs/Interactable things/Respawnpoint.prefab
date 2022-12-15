@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 5189804984463818517}
-  spawnPoint: {x: 0, y: 0}
+  spawnpoint: {fileID: 0}
 --- !u!198 &5189804984463818517
 ParticleSystem:
   m_ObjectHideFlags: 0
