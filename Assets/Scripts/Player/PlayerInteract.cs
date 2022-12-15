@@ -6,11 +6,13 @@ using TMPro;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI highlightText;
+    private int nrOfInteractables = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Interactable>())
         {
+            nrOfInteractables++;
             highlightText.enabled = true;
             //TODO add som fx to interactable object to highlight which one it is
             collision.GetComponent<Interactable>().isInteractable = true;
@@ -22,7 +24,9 @@ public class PlayerInteract : MonoBehaviour
     {
         if (collision.GetComponent<Interactable>())
         {
-            highlightText.enabled = false;
+            nrOfInteractables--;
+            if(nrOfInteractables < 1)
+                highlightText.enabled = false;
             collision.GetComponent<Interactable>().isInteractable = false;
         }
     }
