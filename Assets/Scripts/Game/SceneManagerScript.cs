@@ -15,6 +15,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         sprt.enabled = false;
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        ResetTimeScale();
     }
 
     public void NextLevel()
@@ -44,7 +45,7 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
-    public void StartSpecificScene(int scene, float delay)
+    public void StartSpecificSceneWithDelay(int scene, float delay)
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
         Invoke(nameof(StartSpecificScene), delay);
@@ -59,5 +60,10 @@ public class SceneManagerScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ResetTimeScale()
+    {
+        Time.timeScale = 1f;
     }
 }
