@@ -1202,6 +1202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 740157939}
   clip1: {fileID: 8300000, guid: 7773df71fd117c64697dc59a83bf91dc, type: 3}
+  linkedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &740157939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2357,7 +2360,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1319150199}
   m_HandleRect: {fileID: 817284847}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -2461,7 +2464,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 12109805}
   m_HandleRect: {fileID: 2052079529}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -3590,7 +3593,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 2063469737}
   m_HandleRect: {fileID: 544667047}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
