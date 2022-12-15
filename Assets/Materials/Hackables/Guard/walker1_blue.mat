@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: walker1_blue
-  m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 85c99ce70aa12ba41aaa415143fe0032, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_VERTEX_ONLY
   - _COLOR_ADJUST
   - _FULLRANGE_HARD_RAMP
   - _USE8NEIGHBOURHOOD_ON
+  - _WINDQUALITY_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,12 +31,32 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ExtraTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 24f5efb9d55d2564ea916c5185d3660d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubsurfaceTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -53,30 +74,46 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
+    - _BillboardKwToggle: 0
+    - _BillboardShadowFade: 0.5
     - _BlendAmount: 0
     - _Brightness: 1
     - _Cull: 0
     - _CustomRenderQueue: 0
     - _Cutoff: 0.1
     - _DstBlend: 10
+    - _Glossiness: 0.5
     - _Hue: 0
+    - _HueVariationKwToggle: 0
+    - _Metallic: 0
+    - _Multiply_Glow: 100
+    - _NormalMapKwToggle: 0
     - _OutlineMipLevel: 0
     - _OutlineOpaqueAlpha: 1
     - _OutlineReferenceTexWidth: 1024
     - _OutlineSmoothness: 1
     - _OutlineWidth: 3
+    - _Outline_Color: 0
     - _RenderQueue: 0
+    - _SAMPLECORNER: 0
     - _Saturation: 1
     - _ShadowAlphaCutoff: 0.1
     - _SrcBlend: 1
     - _StencilComp: 8
     - _StencilRef: 1
     - _StraightAlphaInput: 0
+    - _SubsurfaceIndirect: 0.25
+    - _SubsurfaceKwToggle: 0
+    - _Thickness: 0
     - _ThresholdEnd: 0.25
+    - _TwoSided: 2
     - _Use8Neighbourhood: 1
+    - _WindQuality: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0, g: 0, b: 383.49805, a: 1}
+    - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
     - _OverlayColor: {r: 0.13333334, g: 0.73333335, b: 1, a: 1}
+    - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

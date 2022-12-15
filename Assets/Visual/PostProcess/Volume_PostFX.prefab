@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4091071814628891882}
   - component: {fileID: 4091071814628891877}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Volume_PostFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4568777653494279825}
   - component: {fileID: 4568777653494279824}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LightGlobal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -19,13 +20,20 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private PlayerHack pHack;
     [SerializeField] private Rigidbody2D rb;
     //[SerializeField] private ShadowCaster2D shadowCaster;
+    [SerializeField] private Slider reassembleSlider;
 
-    private float respawnHold = 0f;
+    [HideInInspector] public float respawnHold = 0f;
+    private bool isDead = false;
 
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 1f)
+        if (isDead && Input.GetKeyDown(KeyCode.Tab))
+        {
+            Respawn();
+        }
+
+        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.4f)
         {
             Respawn();
         }
@@ -35,16 +43,19 @@ public class PlayerRespawn : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Tab))
             respawnHold = 0f;
+
+        reassembleSlider.value = respawnHold;
     }
     public void Respawn()
     {
+        isDead = false;
         deathSound.Play();
         //GameManager.instance.composer.Stop();
         try
         {
             GameManager.instance.composer.Inverse();
         }
-        catch { Debug.Log("Lägg på jukebox stupid"); }
+        catch { Debug.Log("Lï¿½gg pï¿½ jukebox stupid"); }
         //if die not triggered
         if (!textObjectOnDeath.activeSelf)
         {
@@ -74,10 +85,11 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.ResetPickups();
         //energy
         pHack.ResetCharges();
-        
+
     }
     public void Die()
-    {        
+    {
+        isDead = true;
         //disable all relevant scripts
         EnableScripts(false);
 
