@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    [SerializeField] float DelayUntilSceneTransition;
+    [SerializeField] float delayUntilSceneTransition;
     [SerializeField] SpriteRenderer sprt;
     [SerializeField] private Animator transitionAnimator;
-    
+
     private int currentScene;
+    private int sceneToLoad;
+    private float counter = 0;
 
     void Start()
     {
@@ -20,8 +22,8 @@ public class SceneManagerScript : MonoBehaviour
 
     public void NextLevel()
     {
-        Invoke(nameof(OpenScene), DelayUntilSceneTransition);
-        Invoke(nameof(FadeOutAnimation), DelayUntilSceneTransition - 1f);
+        Invoke(nameof(OpenScene), delayUntilSceneTransition);
+        Invoke(nameof(FadeOutAnimation), delayUntilSceneTransition - 1f);
     }
 
     private void OpenScene()
@@ -29,32 +31,22 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(currentScene + 1);
     }
 
-    private void FadeOutAnimation()
+    public void FadeOutAnimation()
     {
         transitionAnimator.SetTrigger("TriggerTransition");
     }
 
-    public void StartGame()
+    public void StartSpecificSceneWithDelay(int scene)
     {
-        Invoke(nameof(StartGameLoadScene), DelayUntilSceneTransition);
+        sceneToLoad = scene;
         FadeOutAnimation();
+        Invoke(nameof(StartSpecificScene), 1f);
     }
 
-    private void StartGameLoadScene()
+    public void StartSpecificScene()
     {
-        SceneManager.LoadScene(4);
-    }
 
-    public void StartSpecificSceneWithDelay(int scene, float delay)
-    {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        Invoke(nameof(StartSpecificScene), delay);
-        Invoke(nameof(FadeOutAnimation), delay - 1f);
-    }
-
-    public void StartSpecificScene(int scene)
-    {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public void QuitGame()
