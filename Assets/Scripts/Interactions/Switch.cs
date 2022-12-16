@@ -97,6 +97,7 @@ public class Switch : HackableObjects
             catch
             {
                 Debug.Log("Missing hackable links");
+                Debug.Log(gameObject);
             }
         }
     }
