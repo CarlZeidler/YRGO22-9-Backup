@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761686526533904061, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_InstanceId
-      value: -68980
+      value: -48494
       objectReference: {fileID: 0}
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: objectState
@@ -26,6 +26,22 @@ PrefabInstance:
     - target: {fileID: 2073103299968788864, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073103300575813310, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073103300575813310, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.917519
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073103300575813310, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073103300575813310, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.033056572
       objectReference: {fileID: 0}
     - target: {fileID: 3900360179486666901, guid: 72f4c5180866e414fb9b7888a6f90de7, type: 3}
       propertyPath: m_SizeDelta.x
