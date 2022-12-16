@@ -5131,6 +5131,7 @@ GameObject:
   - component: {fileID: 2292857639173056006}
   - component: {fileID: 3147997415736238188}
   - component: {fileID: 8176833397558412260}
+  - component: {fileID: 4128778986782740559}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -5220,7 +5221,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2292857639173056025}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 4d5aac9c4c6da5f4daee4b36b057b76f, type: 2}
+  m_Material: {fileID: 6200000, guid: 9eb97cdb531ef4c479df2b77ef81facf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5322,6 +5323,22 @@ MonoBehaviour:
   rb: {fileID: 2292857639173056005}
   reassembleSlider: {fileID: 1777021509899582360}
   respawnHold: 0
+--- !u!70 &4128778986782740559
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292857639173056025}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 4d5aac9c4c6da5f4daee4b36b057b76f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.31}
+  m_Size: {x: 1.85, y: 1}
+  m_Direction: 0
 --- !u!1 &2416937136249323099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,7 +5563,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 227016
+  m_InstanceId: 203476
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,7 +6179,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 226902
+  m_InstanceId: 203362
 --- !u!1 &5209704850959813538
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,7 +7041,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.9000014, y: -25.344997}
   m_SizeDelta: {x: -3.799997, y: 14.729996}
   m_Pivot: {x: 0.5, y: 0.5}

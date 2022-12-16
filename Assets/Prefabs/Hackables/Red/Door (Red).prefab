@@ -747,7 +747,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2073103300575813311}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9eb97cdb531ef4c479df2b77ef81facf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -790,7 +790,7 @@ MonoBehaviour:
   - {x: 0.03676599, y: -0.4276852, z: 0}
   m_ShapePathHash: 961632148
   m_Mesh: {fileID: 0}
-  m_InstanceId: 149102
+  m_InstanceId: 160626
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1233,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8466903938088242860
