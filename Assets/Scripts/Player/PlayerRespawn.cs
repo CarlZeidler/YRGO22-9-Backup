@@ -14,7 +14,7 @@ public class PlayerRespawn : MonoBehaviour
 
     [Space(20)]
     //scripts to disable
-    [SerializeField] private Collider2D interactionCollider, physicsCollider;
+    [SerializeField] private Collider2D interactionCollider, physicsCollider, physicscollider2;
     [SerializeField] private GameObject playerVisuals;
     [SerializeField] private PlayerMove pMove;
     [SerializeField] private PlayerHack pHack;
@@ -23,7 +23,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Slider reassembleSlider;
 
     [HideInInspector] public float respawnHold = 0f;
-    private bool isDead = false;
+    public bool isDead = false;
 
 
     private void Update()

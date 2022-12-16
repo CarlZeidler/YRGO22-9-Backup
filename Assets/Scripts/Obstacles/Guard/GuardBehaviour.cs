@@ -13,6 +13,7 @@ public class GuardBehaviour : HackableObjects
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] private Light2D visionCone;
     [SerializeField] private PolygonCollider2D visionCollider;
+    [SerializeField] AudioSource detect, lose, killed;
 
     public GuardMove moveScript;
     public GuardVision visionScript;
@@ -132,6 +133,7 @@ public class GuardBehaviour : HackableObjects
             Invoke(nameof(Death), killTime);
             Invoke(nameof(Shoot), killTime - killTime / 8);
             moveScript.playerSeen = true;
+            detect.Play();
         }
     }
 
@@ -142,6 +144,11 @@ public class GuardBehaviour : HackableObjects
         CancelInvoke(nameof(Shoot));
         moveScript.playerSeen = false;
         moveScript.canMove = true;
+        if (!GameManager.instance.player.GetComponent<PlayerRespawn>().isDead)
+        {
+            detect.Stop();
+            lose.Play();
+        }
     }
 
     public void TriggerExit()
@@ -160,13 +167,16 @@ public class GuardBehaviour : HackableObjects
         if (ray.collider.gameObject.layer == GameManager.instance.player.layer && pInRange)
         {
             GameManager.instance.player.GetComponent<PlayerRespawn>().Die();
-
+            detect.Stop();
+            Invoke(nameof(killed.Play),.5f);
         }
     }
 
     private void KillPlayer()
     {
         GameManager.instance.player.GetComponent<PlayerRespawn>().Die();
+        detect.Stop();
+        killed.Play();
     }
 
     private void Shoot()
