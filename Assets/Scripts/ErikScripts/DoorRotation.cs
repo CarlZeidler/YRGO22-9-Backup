@@ -6,9 +6,11 @@ public class DoorRotation : HackableObjects
 {
     [SerializeField] private float speed = 1;
     [SerializeField] private Animator anim;
+    [SerializeField] AudioSource open;
 
     public void OpenDoor(bool open) 
     {
+        this.open.Play();
         anim.speed = speed;
         if (open)
         {

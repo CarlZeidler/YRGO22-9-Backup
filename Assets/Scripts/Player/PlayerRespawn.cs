@@ -9,7 +9,7 @@ public class PlayerRespawn : MonoBehaviour
     public float spawnTime = 2f;
     public Vector3 spawnPoint;
     [SerializeField] private ParticleSystem travelParticles, deathParticles;
-    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource rewindSound,explosionSound;
     [SerializeField] private GameObject textObjectOnDeath;
 
     [Space(20)]
@@ -49,7 +49,7 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         isDead = false;
-        deathSound.Play();
+        rewindSound.Play();
         //GameManager.instance.composer.Stop();
         try
         {
@@ -94,6 +94,7 @@ public class PlayerRespawn : MonoBehaviour
         EnableScripts(false);
 
         deathParticles.Play();
+        explosionSound.Play();
 
         textObjectOnDeath.SetActive(true);
     }
