@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NEUTRAL_Glow_Outline
+  m_Name: RespawnerMaterial
   m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -96,7 +96,7 @@ Material:
     - _Thickness: 11.54
     m_Colors:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 59.11923, b: 77.87429, a: 1}
+    - _Color: {r: 0, g: 384.15784, b: 506.0286, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineGlow: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
