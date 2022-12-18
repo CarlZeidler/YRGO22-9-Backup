@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RED_Glow_Outline
-  m_Shader: {fileID: -6465566751694194690, guid: 3c302cd5a509de44ebc575474d77236a, type: 3}
+  m_Name: MonitorMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 96d96df80f9851541a9985302da7eede, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _SAMPLECORNER
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,35 +20,23 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Layer_30BBC707:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_C6D57560:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _BASE_COLOR_MAP:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EMISSION_COLOR_MAP:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _METALNESS_MAP:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8600000, guid: 983b8d6480782aa4389be0fd98fdc26a, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NORMAL_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -57,15 +44,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SPECULAR_COLOR_MAP:
-        m_Texture: {fileID: 0}
+    - _SampleTexture2D_2bd2f372167a42c5bdf8a8bed7516eeb_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5d26005b1b1589b419ca60c9ae520518, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SPECULAR_IOR_MAP:
-        m_Texture: {fileID: 0}
+    - _SampleTexture2D_b5cc2590b24e4be5a8d02541c4b69832_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5d26005b1b1589b419ca60c9ae520518, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SPECULAR_ROUGHNESS_MAP:
+    - _SampleTexture2D_d6e12b82e321494b89fc4de79cb1216e_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 08eb93f29ad8c9f4480daf8e22c7dac4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_Array:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -84,21 +75,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Glow_Multiply: 0.55
-    - _METALNESS: 0
-    - _Outline_Color: 5.4
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    - _SAMPLECORNER: 1
-    - _SPECULAR_IOR: 1.5
-    - _SPECULAR_ROUGHNESS: 0
-    - _Thickness: 6.09
+    - _Texture_Scaling: 0.04
     m_Colors:
-    - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1.4980392, g: 0.3137255, b: 0.3137255, a: 1}
-    - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineGlow: {r: 1024, g: 120.7547, b: 120.7547, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
