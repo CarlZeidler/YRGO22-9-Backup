@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: turretspine2_Material
+  m_Name: OG_Blue
   m_Shader: {fileID: -6465566751694194690, guid: b32da9fb83dc2cb48bbf802dc0cc8c62, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -110,7 +110,7 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 80.663826, g: 80.663826, b: 80.663826, a: 1}
+    - _Color: {r: 0, g: 0, b: 80.663826, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FixedNormal: {r: 0, g: 0, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
