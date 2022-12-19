@@ -8,6 +8,7 @@ public class PlayerHack : MonoBehaviour
 {
     [SerializeField] AudioSource hackerVision, commit;
     public AudioSource select;
+    [SerializeField]private PostProcessToggler processToggler;
 
     public bool inHackingMode;
     public int maxBatteryCharges = 10;
@@ -39,6 +40,12 @@ public class PlayerHack : MonoBehaviour
         //default values on slider
         batteryChargeSlider.maxValue = batteryCharges;
         batteryChargeSlider.value = batteryCharges;
+
+        Invoke(nameof(OnStart), 0.1f);
+    }
+    void OnStart()
+    {
+        processToggler = Camera.main.GetComponent<PostProcessToggler>();
     }
 
     private void Update()
@@ -70,12 +77,16 @@ public class PlayerHack : MonoBehaviour
             hackingUIAnim.SetBool("HackingMode", true);
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = Time.timeScale * .02f;
+
+            processToggler.ToggleHackerFX(true);
         }
         else
         {
             GameManager.instance.HideHackables(0.015f);
             hackingUIAnim.SetBool("HackingMode", false);
             Time.timeScale = 1f;
+
+            processToggler.ToggleHackerFX(false);
         }
         inHackingMode = !inHackingMode;
     }
