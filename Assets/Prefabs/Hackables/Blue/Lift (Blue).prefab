@@ -28,6 +28,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d38451e6d169c964e83add9820da28e6, type: 2}
     - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
       propertyPath: objectState
       value: 0
       objectReference: {fileID: 0}
@@ -35,6 +39,10 @@ PrefabInstance:
       propertyPath: liftPlatform
       value: 
       objectReference: {fileID: 7263101434657563365, guid: 299f13efecfcbbd43be3e78d4b0d974f, type: 3}
+    - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
+      propertyPath: platFormSpacing
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2570283617108011776, guid: 99bfa358fae70b545875219367918ec3, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0

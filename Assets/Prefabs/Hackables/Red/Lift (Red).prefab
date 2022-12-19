@@ -1010,8 +1010,8 @@ MonoBehaviour:
   hackingChargeSlider: {fileID: 4075818814172011548}
   selectionCircle: {fileID: 521689231114295391}
   hackedParticles: {fileID: 1098891060677832519}
-  speed: 5
-  platFormSpacing: 1
+  speed: 10
+  platFormSpacing: 2
   startPointTransform: {fileID: 2570283615693505298}
   endPointTransform: {fileID: 2570283616766571284}
   liftPlatform: {fileID: 7263101434657563365, guid: 6173c604c66b3ed47942fb873aa9dea0, type: 3}
@@ -1647,7 +1647,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &1586421130804780058
