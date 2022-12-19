@@ -5266,7 +5266,7 @@ MonoBehaviour:
   Deceleration: 30
   canMove: 1
   jumpforce: 20
-  jumpDurationLeft: 0.1
+  jumpDurationLeft: 0.2
   anim: {fileID: 7880465968826435611}
   playerModel: {fileID: 2813728735723943310}
   sr: {fileID: 2292857639173056003}
@@ -5277,7 +5277,7 @@ MonoBehaviour:
   feet: {fileID: 2292857638782902152}
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!114 &3147997415736238188
 MonoBehaviour:
   m_ObjectHideFlags: 0

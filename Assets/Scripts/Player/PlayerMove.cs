@@ -66,7 +66,7 @@ public class PlayerMove : MonoBehaviour
     {
         //for turning faster
         float accelerationScale = 1;
-        if (IdleAnim.GetComponent<Renderer>().enabled && ((Mathf.Abs(speed) > 1f)||rb.velocity.y<-10f)&)
+        if (IdleAnim.GetComponent<Renderer>().enabled && ((Mathf.Abs(speed) > 1f)||Mathf.Abs(rb.velocity.y)>10f))
         {
             ToggleIdleOff();
         }
