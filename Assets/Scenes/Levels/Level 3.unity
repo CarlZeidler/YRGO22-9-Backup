@@ -16340,6 +16340,10 @@ PrefabInstance:
       propertyPath: m_InstanceId
       value: -14464
       objectReference: {fileID: 0}
+    - target: {fileID: 3946998790472380524, guid: 58761939a10b1f64b8e4b124d746d982, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4976721922009844720, guid: 58761939a10b1f64b8e4b124d746d982, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20519,6 +20523,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7097307882741004215, guid: deea95a25fe31044090785671a7cf4ac, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8011583023417658396, guid: deea95a25fe31044090785671a7cf4ac, type: 3}
       propertyPath: m_Name
       value: AmbientLight
