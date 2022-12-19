@@ -6368,8 +6368,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624193004735065653}
-  m_LocalRotation: {x: -0, y: -0, z: -0.29454082, w: 0.9556389}
-  m_LocalPosition: {x: 0.6849942, y: 1.3964264, z: -0.46500257}
+  m_LocalRotation: {x: -0.000000012874788, y: 0.000000041772303, z: -0.29454082, w: 0.9556389}
+  m_LocalPosition: {x: 0.68499756, y: 1.3964233, z: -0.46500397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12324,7 +12324,7 @@ MonoBehaviour:
   inactiveColor: {r: 0.7176471, g: 0.5686275, b: 0.105882354, a: 0.043137256}
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 2316
+    m_Bits: 2828
   visionCone: {fileID: 3642397064148397510}
   visionCollider: {fileID: 8632228703063946176}
   detect: {fileID: 8723176206997629294}

@@ -8,7 +8,7 @@ public class AnimatorFunctions : MonoBehaviour
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip clip1;
 
-    [SerializeField] UnityEvent linkedEvent;
+    [SerializeField] UnityEvent linkedEvent, linkedEvent2;
 
     public void PlaySound()
     {
@@ -23,5 +23,9 @@ public class AnimatorFunctions : MonoBehaviour
     public void InvokeEvent()
     {
         linkedEvent.Invoke();
+    }
+    public void InvokeEvent2()
+    {
+        linkedEvent2.Invoke();
     }
 }

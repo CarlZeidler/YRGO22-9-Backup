@@ -21,6 +21,7 @@ public class Lift : HackableObjects
         //sets references from inspector so they can be changed easier
         startPoint = startPointTransform.position;
         endPoint = endPointTransform.position;
+        timer = platFormSpacing;
 
         //HackableObject.Start();
         //save own state if red spawn this on player respawn
@@ -45,7 +46,7 @@ public class Lift : HackableObjects
         }
         else
         {
-            if (timer >= 1)
+            if (timer >= platFormSpacing)
             {
                 SpawnPlatform();
                 timer = 0;

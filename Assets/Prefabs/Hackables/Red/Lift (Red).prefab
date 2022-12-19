@@ -1011,7 +1011,7 @@ MonoBehaviour:
   selectionCircle: {fileID: 521689231114295391}
   hackedParticles: {fileID: 1098891060677832519}
   speed: 10
-  platFormSpacing: 2
+  platFormSpacing: 1
   startPointTransform: {fileID: 2570283615693505298}
   endPointTransform: {fileID: 2570283616766571284}
   liftPlatform: {fileID: 7263101434657563365, guid: 6173c604c66b3ed47942fb873aa9dea0, type: 3}
