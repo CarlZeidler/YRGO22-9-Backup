@@ -5380,7 +5380,7 @@ GameObject:
   - component: {fileID: 8588880062658840670}
   - component: {fileID: 7809700997073569316}
   - component: {fileID: 7411272545268458668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spine Mecanim GameObject (Idle animation robot)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5551,7 +5551,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 164010
+  m_InstanceId: 98832
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5824,7 +5824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4545541303710620807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5858,8 +5858,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1165643345984075850}
   - component: {fileID: 4129257553573358552}
-  - component: {fileID: 3639086447808801266}
   - component: {fileID: 8199732913959138101}
+  - component: {fileID: 3946998790472380524}
   m_Layer: 0
   m_Name: Image
   m_TagString: HackingModeOverlay
@@ -5895,36 +5895,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4026596256172639905}
   m_CullTransparentMesh: 1
---- !u!114 &3639086447808801266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4026596256172639905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.36797017, g: 0.7169812, b: 0.33481666, a: 0.27058825}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!61 &8199732913959138101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5951,6 +5921,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3946998790472380524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026596256172639905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 8d29499149663544fad4c7fbf984a938, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8600000, guid: d610df332cffdf94bbd8776671cc6e89, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &4128925674691436698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,7 +5963,7 @@ GameObject:
   - component: {fileID: 4403827659167237837}
   - component: {fileID: 4568935985553215129}
   - component: {fileID: 2612313543548270282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spine Mecanim GameObject (spine robot)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6128,6 +6125,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  linkedEvent2:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2612313543548270282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6167,7 +6167,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 163884
+  m_InstanceId: 98706
 --- !u!1 &4196713895922657638
 GameObject:
   m_ObjectHideFlags: 0
@@ -6814,7 +6814,7 @@ GameObject:
   - component: {fileID: 8224928313610662815}
   - component: {fileID: 8919775926512616149}
   - component: {fileID: 3182361276640971696}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HackingUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6853,7 +6853,7 @@ Canvas:
   m_GameObject: {fileID: 5480894139506105208}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -6940,6 +6940,9 @@ MonoBehaviour:
   source: {fileID: 0}
   clip1: {fileID: 0}
   linkedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  linkedEvent2:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6070076905336941148
