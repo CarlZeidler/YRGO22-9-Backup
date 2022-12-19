@@ -5551,7 +5551,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 471072
+  m_InstanceId: 164010
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,7 +6167,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 470946
+  m_InstanceId: 163884
 --- !u!1 &4196713895922657638
 GameObject:
   m_ObjectHideFlags: 0
@@ -7319,8 +7319,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -116594413
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
