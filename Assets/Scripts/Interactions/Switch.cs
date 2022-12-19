@@ -15,7 +15,9 @@ public class Switch : HackableObjects
     private bool toggled;
     [SerializeField] private bool useDiagonalLines;
     [SerializeField] private Transform[] customConnectionMiddleLinks;
+    [Space(20)]
     [SerializeField] private SpriteRenderer normal, highlight;
+    [SerializeField] private AudioSource toggle;
 
     private void Start()
     {
@@ -75,6 +77,7 @@ public class Switch : HackableObjects
     }
     public void Toggle()
     {
+        toggle.Play();
         if (toggled)
         {
             normal.sprite = active;

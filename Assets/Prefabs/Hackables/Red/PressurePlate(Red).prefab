@@ -82,7 +82,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &7943642371512520117
@@ -990,7 +990,7 @@ RectTransform:
   m_Children:
   - {fileID: 4756046566811142137}
   m_Father: {fileID: 7799987771177370419}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1102,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 13ffd3ff420a7ce44aacf7cea11ef734, type: 2}
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: useTag1
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1096891354637491545, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: useTag2
@@ -1127,6 +1127,10 @@ PrefabInstance:
     - target: {fileID: 2547276461605048389, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499359285084361950, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7720390379669064689, guid: eaea406e635d83246818b3c0d65ea0f1, type: 3}
       propertyPath: m_IsActive
@@ -1486,7 +1490,7 @@ MonoBehaviour:
   - {x: 1.010849, y: -0.29569006, z: 0}
   m_ShapePathHash: -254538409
   m_Mesh: {fileID: 0}
-  m_InstanceId: 209824
+  m_InstanceId: 392224
 --- !u!1001 &5080205610750723598
 PrefabInstance:
   m_ObjectHideFlags: 0
