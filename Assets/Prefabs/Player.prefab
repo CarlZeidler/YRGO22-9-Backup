@@ -5261,11 +5261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b482b21d9fc238a4192637ccd7c8366e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 17
-  Acceleration: 35
+  maxSpeed: 18
+  Acceleration: 60
   Deceleration: 30
   canMove: 1
-  jumpforce: 20
+  jumpforce: 22
   jumpDurationLeft: 0.2
   anim: {fileID: 7880465968826435611}
   playerModel: {fileID: 2813728735723943310}
