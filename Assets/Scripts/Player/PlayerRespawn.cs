@@ -79,7 +79,11 @@ public class PlayerRespawn : MonoBehaviour
 
         //DISABLE HACKINGMODE
         if (pHack.inHackingMode)
-            pHack.ToggleHackingMode();
+        {
+            pHack.ToggleHackingMode();            
+        }
+            pHack.somethingIsHacked = 0;
+            pHack.ToggleHackingUIRespawn();
         //RESETHACKSTATES
         GameManager.instance.ResetHackables();
         GameManager.instance.ResetPickups();

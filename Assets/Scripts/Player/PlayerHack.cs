@@ -33,7 +33,9 @@ public class PlayerHack : MonoBehaviour
     }
 
     [SerializeField] private Animator hackingUIAnim;
+    [SerializeField] private Animator hackingControlsAnim;
     [SerializeField] private Slider batteryChargeSlider;
+    [HideInInspector] public int somethingIsHacked = 0;
 
     private void Start()
     {
@@ -56,6 +58,8 @@ public class PlayerHack : MonoBehaviour
         }
         if (Input.GetButtonDown("CommitHack"))
         {
+            hackingControlsAnim.SetBool("HackingMode", false);
+            somethingIsHacked = 0;
             foreach (var hackableObject in GameManager.instance.hackableObjects)
             {
                 hackableObject.CommitHack();
@@ -75,6 +79,7 @@ public class PlayerHack : MonoBehaviour
             hackerVision.Play();
             GameManager.instance.RevealHackables(.015f);
             hackingUIAnim.SetBool("HackingMode", true);
+            hackingControlsAnim.SetBool("HackingMode", true);
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = Time.timeScale * .02f;
 
@@ -84,12 +89,29 @@ public class PlayerHack : MonoBehaviour
         {
             GameManager.instance.HideHackables(0.015f);
             hackingUIAnim.SetBool("HackingMode", false);
+            foreach (var hackableObject in GameManager.instance.hackableObjects)
+            {
+                if (hackableObject.hackingStrength != 0)
+                {
+                    somethingIsHacked++;
+                    break;
+                }
+            }
+            if (somethingIsHacked == 0)
+            {
+                hackingControlsAnim.SetBool("HackingMode", false);
+            }
             Time.timeScale = 1f;
-
             processToggler.ToggleHackerFX(false);
         }
         inHackingMode = !inHackingMode;
     }
+
+    public void ToggleHackingUIRespawn()
+    {
+        hackingControlsAnim.SetBool("HackingMode", false);
+    }
+
     public void DrainCharge(int amount)
     {
         batteryCharges -= amount;
