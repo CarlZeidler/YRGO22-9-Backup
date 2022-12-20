@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8618638143366564739}
   - component: {fileID: 1951387037366373770}
   - component: {fileID: 5105951533067289494}
+  - component: {fileID: 2683363155230713962}
   m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
@@ -79,6 +80,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2683363155230713962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277499043455830721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &398430123938398058
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,7 +932,7 @@ MonoBehaviour:
   - {x: 0.03676599, y: -0.4276852, z: 0}
   m_ShapePathHash: 961632148
   m_Mesh: {fileID: 0}
-  m_InstanceId: 276348
+  m_InstanceId: 866314
 --- !u!1 &2110416412329231673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1375,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8466903938088242860
