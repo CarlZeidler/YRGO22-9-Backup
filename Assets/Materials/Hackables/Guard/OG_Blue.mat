@@ -63,6 +63,6 @@ Material:
     - _ThresholdEnd: 0.25
     - _Use8Neighbourhood: 1
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 222.36703, a: 0}
+    - _Color: {r: 0, g: 10.039216, b: 512, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []

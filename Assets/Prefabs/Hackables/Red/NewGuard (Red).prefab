@@ -515,6 +515,9 @@ MonoBehaviour:
   linkedEvent:
     m_PersistentCalls:
       m_Calls: []
+  linkedEvent2:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &645057447447401300
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +533,7 @@ GameObject:
   - component: {fileID: 983779659617351951}
   - component: {fileID: 1287261173675747897}
   - component: {fileID: 8743295438768569765}
+  - component: {fileID: 4180895428531825275}
   m_Layer: 8
   m_Name: Spine Mecanim GameObject (walker1)
   m_TagString: Untagged
@@ -692,6 +696,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  linkedEvent2:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8743295438768569765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +712,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorsScript: {fileID: 8114511208693651516}
+--- !u!114 &4180895428531825275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645057447447401300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14caaf524a2b1cf4f96b57720583ded7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ogMat: {fileID: 2100000, guid: 15b82f166a9cd9f45a3796a89823cd5c, type: 2}
+  replaceMat: {fileID: 2100000, guid: da17323c65970c745ad8c1e66d919a93, type: 2}
 --- !u!1 &676661980314452648
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,7 +6301,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &9202713775474145834
@@ -6368,8 +6389,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624193004735065653}
-  m_LocalRotation: {x: -0.000000012874788, y: 0.000000041772303, z: -0.29454082, w: 0.9556389}
-  m_LocalPosition: {x: 0.68499756, y: 1.3964233, z: -0.46500397}
+  m_LocalRotation: {x: -0, y: -0, z: -0.29454082, w: 0.9556389}
+  m_LocalPosition: {x: 0.6849942, y: 1.3964264, z: -0.46500257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
