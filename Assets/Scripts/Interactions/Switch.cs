@@ -19,6 +19,8 @@ public class Switch : HackableObjects
     [SerializeField] private SpriteRenderer normal, highlight;
     [SerializeField] private AudioSource toggle;
 
+
+    [SerializeField] public float lineOffset;
     private void Start()
     {
         UpdateHackableLinks();
@@ -66,7 +68,17 @@ public class Switch : HackableObjects
             else
             {
                 //startpoint, 90 degree midpoint, endpoint
-                Vector3[] positions = new Vector3[] { transform.position, new Vector3(transform.position.x, hackable.transform.position.y, 0), hackable.transform.position };
+                float X, Y;
+                if (transform.position.x > hackable.transform.position.x)
+                    X = -lineOffset;
+                else
+                    X = lineOffset;
+                if (transform.position.y > hackable.transform.position.y)
+                    Y = lineOffset;
+                else
+                    Y = -lineOffset;
+
+                Vector3[] positions = new Vector3[] { transform.position, new Vector3(transform.position.x+X, hackable.transform.position.y+Y, 0), hackable.transform.position };
 
                 hackerLines[linkedHackables.IndexOf(hackable)].diagonal = useDiagonalLines;
                 hackerLines[linkedHackables.IndexOf(hackable)].UpdateLine(positions);
@@ -106,6 +118,7 @@ public class Switch : HackableObjects
     }
     public void ToggleVisualConnections(bool enable)
     {
+        UpdateHackableLinks();
         foreach (var line in hackerLines)
         {
             //line.enabled = !line.enabled;
