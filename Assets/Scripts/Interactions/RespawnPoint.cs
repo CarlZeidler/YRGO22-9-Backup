@@ -14,5 +14,6 @@ public class RespawnPoint : MonoBehaviour
             GameManager.instance.player.GetComponent<PlayerRespawn>().spawnPoint = transform.position;
 
         particles.Play();
+        GameManager.instance.player.GetComponent<PlayerHack>().ResetCharges();
     }
 }
