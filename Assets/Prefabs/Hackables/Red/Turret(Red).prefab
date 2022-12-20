@@ -858,7 +858,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &4323946477264692491
@@ -2354,6 +2354,7 @@ GameObject:
   - component: {fileID: 7150230740728993446}
   - component: {fileID: 5297984552819995936}
   - component: {fileID: 4683909549844778980}
+  - component: {fileID: 9061714233569980256}
   m_Layer: 8
   m_Name: Spine Mecanim GameObject (turretspine2)
   m_TagString: Untagged
@@ -2543,6 +2544,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &9061714233569980256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281139810369151617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14caaf524a2b1cf4f96b57720583ded7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ogMat: {fileID: 2100000, guid: 94e28cf9001905649983cf72c5b2eea4, type: 2}
+  replaceMat: {fileID: 2100000, guid: 3916b56d90142f045817b03e510fa9f3, type: 2}
 --- !u!1 &7657513980536519330
 GameObject:
   m_ObjectHideFlags: 0
