@@ -70,8 +70,11 @@ public class PlayerHack : MonoBehaviour
             }
             if (inHackingMode)
             {
-                ToggleHackingMode();
-                commit.Play();
+                if (GameManager.instance.somethingIsHacked)
+                {
+                    ToggleHackingMode();
+                    commit.Play();
+                }
             }
         }    
 

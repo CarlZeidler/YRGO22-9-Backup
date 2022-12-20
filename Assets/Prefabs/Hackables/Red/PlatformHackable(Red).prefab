@@ -561,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23ce72552dc7b94c9453717dd30092f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
   isHacked: 0
   objectState: 1
   onHackEvent:
@@ -674,10 +675,10 @@ MonoBehaviour:
   hackingPowerText: {fileID: 1187594568188143443}
   hackingChargeSlider: {fileID: 5599674603917440603}
   selectionCircle: {fileID: 0}
+  hackedParticles: {fileID: 0}
   solid: 1
   speed: 2
   animator: {fileID: 0}
-  disabledParticles: {fileID: 1620538684856569088}
 --- !u!251 &1187594568936306043
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -918,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &622003809963518141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1099,6 +1100,7 @@ GameObject:
   - component: {fileID: 6011508282631019513}
   - component: {fileID: 7940044795833369068}
   - component: {fileID: 5680780560475615330}
+  - component: {fileID: 3954609207981716686}
   m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
@@ -1126,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0, y: 3.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7940044795833369068
@@ -1167,6 +1169,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3954609207981716686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899192784375284882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7063028730823549828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,11 +1411,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441b7ca2d656e4e4c888de9b0ffcea8d, type: 3}
---- !u!198 &1620538684856569088 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1895527799109195967, guid: 441b7ca2d656e4e4c888de9b0ffcea8d, type: 3}
-  m_PrefabInstance: {fileID: 879058603803121087}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4286505012643982792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3985600722597902455, guid: 441b7ca2d656e4e4c888de9b0ffcea8d, type: 3}

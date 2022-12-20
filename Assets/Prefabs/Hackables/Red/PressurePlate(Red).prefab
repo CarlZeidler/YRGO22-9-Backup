@@ -82,7 +82,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1627433545
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &7943642371512520117
@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 7745065849561676250}
   - component: {fileID: 192136233565644915}
   - component: {fileID: 7303953746690113892}
+  - component: {fileID: 6360447692598412102}
   m_Layer: 6
   m_Name: UICharge
   m_TagString: Untagged
@@ -698,6 +699,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6360447692598412102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662609965616285129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4725591262755412580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1503,7 @@ MonoBehaviour:
   - {x: 1.010849, y: -0.29569006, z: 0}
   m_ShapePathHash: -254538409
   m_Mesh: {fileID: 0}
-  m_InstanceId: 392224
+  m_InstanceId: 862938
 --- !u!1001 &5080205610750723598
 PrefabInstance:
   m_ObjectHideFlags: 0
