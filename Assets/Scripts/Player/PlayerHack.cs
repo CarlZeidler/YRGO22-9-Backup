@@ -23,6 +23,7 @@ public class PlayerHack : MonoBehaviour
             _batteryCharges = value;
             batteryChargeSlider.value = value;
 
+
             //update music reference
             try
             {
@@ -58,6 +59,9 @@ public class PlayerHack : MonoBehaviour
         }
         if (Input.GetButtonDown("CommitHack"))
         {
+            //reference to how much bettery will be used
+            GameManager.instance.preparedCharge = 0;
+
             hackingControlsAnim.SetBool("HackingMode", false);
             somethingIsHacked = 0;
             foreach (var hackableObject in GameManager.instance.hackableObjects)
@@ -79,7 +83,10 @@ public class PlayerHack : MonoBehaviour
             hackerVision.Play();
             GameManager.instance.RevealHackables(.015f);
             hackingUIAnim.SetBool("HackingMode", true);
-            hackingControlsAnim.SetBool("HackingMode", true);
+
+            if (GameManager.instance.preparedCharge > 0)
+                hackingControlsAnim.SetBool("HackingMode", true);
+
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = Time.timeScale * .02f;
 
@@ -115,6 +122,11 @@ public class PlayerHack : MonoBehaviour
     public void DrainCharge(int amount)
     {
         batteryCharges -= amount;
+
+        if (GameManager.instance.preparedCharge > 0)
+            hackingControlsAnim.SetBool("HackingMode", true);
+        else
+            hackingControlsAnim.SetBool("HackingMode", false);
     }
     public void ResetCharges()
     {

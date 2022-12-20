@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
     public HackableObjects selectedHackable;
+    public int preparedCharge;
 
     [SerializeField]public Camera overlayCam;
     public GameObject postFx1, postFX2;

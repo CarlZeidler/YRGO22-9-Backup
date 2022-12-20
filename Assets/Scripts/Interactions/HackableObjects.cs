@@ -98,6 +98,7 @@ public class HackableObjects : MonoBehaviour
     }
     public void AddHackingPower(int amount)
     {
+        GameManager.instance.preparedCharge += amount;
         //sound
         if(select == null)
         {

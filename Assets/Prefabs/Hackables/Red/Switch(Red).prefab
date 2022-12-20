@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 3772493627082550508}
   - component: {fileID: 3025129899412255983}
   - component: {fileID: 9037779468387303047}
+  - component: {fileID: 6170994483696653993}
   m_Layer: 6
   m_Name: UICharge
   m_TagString: Untagged
@@ -454,6 +455,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6170994483696653993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681894367163673705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4800586981477580295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1203,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 3681894367163673705}
+      objectReference: {fileID: 7684232294920288116}
     - target: {fileID: 18219014483173827, guid: bdd4df0cb40d3a748964efc31c8ad2ad, type: 3}
       propertyPath: onHackHideEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
