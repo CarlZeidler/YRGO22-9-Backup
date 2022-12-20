@@ -97,6 +97,8 @@ public class PlayerRespawn : MonoBehaviour
         explosionSound.Play();
 
         textObjectOnDeath.SetActive(true);
+        Camera.main.GetComponent<Screenshake>().start = true;
+        Camera.main.GetComponent<CameraFollow>().enabled = false;
     }
     private void EnableScripts(bool enable)
     {

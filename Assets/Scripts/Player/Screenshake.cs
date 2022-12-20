@@ -26,5 +26,6 @@ public class Screenshake : MonoBehaviour {
         }
 
         transform.position = startPosition;
+        GetComponent<CameraFollow>().enabled = true;
       }
   }
