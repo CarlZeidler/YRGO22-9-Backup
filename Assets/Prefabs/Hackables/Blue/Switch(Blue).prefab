@@ -153,6 +153,7 @@ MonoBehaviour:
   normal: {fileID: 8875429109209385495}
   highlight: {fileID: 880979415141516908}
   toggle: {fileID: 3185032952922864944}
+  lineOffset: 0.5
 --- !u!212 &8875429109209385495
 SpriteRenderer:
   m_ObjectHideFlags: 0
