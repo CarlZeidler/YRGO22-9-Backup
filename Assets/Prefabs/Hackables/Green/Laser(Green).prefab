@@ -63,6 +63,14 @@ PrefabInstance:
       propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2390579049255754456, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390579049255754456, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2408883344697041460, guid: 6675b975a3fc7f740989d91a061e42a4, type: 3}
       propertyPath: m_Color.b
       value: 1
