@@ -63,6 +63,14 @@ PrefabInstance:
       propertyPath: objectState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5956182837412919658, guid: 97f221b698a7c144cb9a57984da1334d, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956182837412919658, guid: 97f221b698a7c144cb9a57984da1334d, type: 3}
+      propertyPath: onHackRevealEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6294660255333786857, guid: 97f221b698a7c144cb9a57984da1334d, type: 3}
       propertyPath: m_Mesh
       value: 
