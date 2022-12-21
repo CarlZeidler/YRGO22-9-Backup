@@ -22,6 +22,7 @@ public class InvisibleTrigger : MonoBehaviour
 
     private int counter;
     private float respawnHold;
+    private PlayerRespawn respawnScript;
 
     private void Start()
     {
@@ -30,7 +31,17 @@ public class InvisibleTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab) && resetOnReassemble && respawnHold >= 1f)
+        if (Input.GetKey(KeyCode.Tab) && GameManager.instance.player.GetComponent<PlayerRespawn>().isDead && resetOnReassemble)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (Input.GetKey(KeyCode.Tab) && GameManager.instance.player.GetComponent<PlayerRespawn>().isDead && stopRepeatingOnReassemble)
+        {
+            CancelInvoke(nameof(triggerEvent));
+        }
+
+        if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.5f)
         {
             respawnHold = 0f;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
@@ -40,7 +51,7 @@ public class InvisibleTrigger : MonoBehaviour
             respawnHold += 1 * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.Tab) && stopRepeatingOnReassemble && respawnHold >= 1f)
+        if (Input.GetKey(KeyCode.Tab) && stopRepeatingOnReassemble && respawnHold >= 0.5f)
         {
             respawnHold = 0f;
             CancelInvoke(nameof(triggerEvent));
