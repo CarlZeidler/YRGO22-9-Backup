@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: 9101546881215384902}
+  m_RendererFeatureMap: 464d6899aa304f7e
   m_UseNativeRenderPass: 0
-  m_TransparencySortMode: 0
-  m_TransparencySortAxis: {x: 0, y: 1, z: 0}
+  m_TransparencySortMode: 3
+  m_TransparencySortAxis: {x: 0, y: 0, z: 1}
   m_HDREmulationScale: 1
   m_LightRenderTextureScale: 1
   m_LightBlendStyles:
@@ -26,7 +27,7 @@ MonoBehaviour:
     maskTextureChannel: 0
     blendMode: 1
   - name: Additive
-    maskTextureChannel: 0
+    maskTextureChannel: 1
     blendMode: 0
   - name: Multiply with Mask
     maskTextureChannel: 1
@@ -37,7 +38,7 @@ MonoBehaviour:
   m_UseDepthStencilBuffer: 1
   m_UseCameraSortingLayersTexture: 1
   m_CameraSortingLayersTextureBound: 1627433545
-  m_CameraSortingLayerDownsamplingMethod: 0
+  m_CameraSortingLayerDownsamplingMethod: 1
   m_MaxLightRenderTextureCount: 16
   m_MaxShadowRenderTextureCount: 1
   m_ShapeLightShader: {fileID: 4800000, guid: d79e1c784eaf80c4585c0be7391f757a, type: 3}
@@ -87,3 +88,30 @@ MonoBehaviour:
     _renderingLayerMask: 1
   _renderPassEvent: 500
   _shaderPassNames: []
+--- !u!114 &9101546881215384902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7cd1931dd95a34481383cdf1af7f04, type: 3}
+  m_Name: Blit
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    Event: 550
+    blitMaterial: {fileID: 2100000, guid: 65dd59bae6ff13e49ac2173384cfb1a1, type: 2}
+    blitMaterialPassIndex: 0
+    setInverseViewMatrix: 0
+    requireDepthNormals: 0
+    srcType: 0
+    srcTextureId: _CameraColorTexture
+    srcTextureObject: {fileID: 0}
+    dstType: 2
+    dstTextureId: _BlitPassTexture
+    dstTextureObject: {fileID: 8600000, guid: 13a1eaab6a4294344ac7d8cb0d873c91, type: 2}
+    overrideGraphicsFormat: 0
+    graphicsFormat: 8
