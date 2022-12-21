@@ -24,11 +24,6 @@ public class Lift : HackableObjects
         timer = platFormSpacing;
 
         //HackableObject.Start();
-        //save own state if red spawn this on player respawn
-        if (objectState == ObjectState.redUnPersistent)
-        {
-            originalState = gameObject;
-        }
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
     }

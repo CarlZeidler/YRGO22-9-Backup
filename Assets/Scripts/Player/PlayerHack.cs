@@ -59,22 +59,23 @@ public class PlayerHack : MonoBehaviour
         }
         if (Input.GetButtonDown("CommitHack"))
         {
+
+            if (GameManager.instance.preparedCharge >0)
+            {
+                commit.Play();
+            }
+
             //reference to how much bettery will be used
             GameManager.instance.preparedCharge = 0;
 
             hackingControlsAnim.SetBool("HackingMode", false);
-            somethingIsHacked = 0;
             foreach (var hackableObject in GameManager.instance.hackableObjects)
             {
                 hackableObject.CommitHack();
             }
             if (inHackingMode)
             {
-                if (GameManager.instance.somethingIsHacked)
-                {
-                    ToggleHackingMode();
-                    commit.Play();
-                }
+                ToggleHackingMode();
             }
         }    
 
@@ -99,18 +100,6 @@ public class PlayerHack : MonoBehaviour
         {
             GameManager.instance.HideHackables(0.015f);
             hackingUIAnim.SetBool("HackingMode", false);
-            foreach (var hackableObject in GameManager.instance.hackableObjects)
-            {
-                if (hackableObject.hackingStrength != 0)
-                {
-                    somethingIsHacked++;
-                    break;
-                }
-            }
-            if (somethingIsHacked == 0)
-            {
-                hackingControlsAnim.SetBool("HackingMode", false);
-            }
             Time.timeScale = 1f;
             processToggler.ToggleHackerFX(false);
         }
