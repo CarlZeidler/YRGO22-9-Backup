@@ -5493,7 +5493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 18
   Acceleration: 60
-  Deceleration: 30
+  Deceleration: 80
   canMove: 1
   jumpforce: 22
   jumpDurationLeft: 0.2
@@ -5784,7 +5784,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 752822
+  m_InstanceId: 453150
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6572,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 752650
+  m_InstanceId: 452978
 --- !u!1 &4196713895922657638
 GameObject:
   m_ObjectHideFlags: 0
