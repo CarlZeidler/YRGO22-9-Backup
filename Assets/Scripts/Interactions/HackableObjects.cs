@@ -18,7 +18,6 @@ public class HackableObjects : MonoBehaviour
     [SerializeField] private Slider hackingChargeSlider;
     [SerializeField] private GameObject selectionCircle;
     [SerializeField] private ParticleSystem hackedParticles;
-    protected GameObject originalState;
     public enum ObjectState
     {
         bluePersistent, redUnPersistent, greenSemiPersistent
@@ -57,11 +56,6 @@ public class HackableObjects : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(OnStart), .1f);
-        //save own state if red spawn this on player respawn
-        if(objectState == ObjectState.redUnPersistent)
-        {
-            originalState = gameObject;
-        }
         //add to manager list
         GameManager.instance.hackableObjects.Add(this);
     }
@@ -98,7 +92,7 @@ public class HackableObjects : MonoBehaviour
     }
     public void AddHackingPower(int amount)
     {
-        GameManager.instance.preparedCharge += amount;
+        
         //sound
         if(select == null)
         {
@@ -113,6 +107,7 @@ public class HackableObjects : MonoBehaviour
                 if(GameManager.instance.player.GetComponent<PlayerHack>().batteryCharges > 0)
                 {
                     hackingStrength += amount;
+                    GameManager.instance.preparedCharge += amount;
                     GameManager.instance.player.GetComponent<PlayerHack>().DrainCharge(amount);
                 }
                 else
@@ -120,11 +115,12 @@ public class HackableObjects : MonoBehaviour
                     //show error msg
                 }
             }
-            else
+            else if (!isHacked)
             {
                 if (hackingStrength>0 && GameManager.instance.player.GetComponent<PlayerHack>().batteryCharges < 10)
                 {
                     hackingStrength += amount;
+                    GameManager.instance.preparedCharge += amount;
                     GameManager.instance.player.GetComponent<PlayerHack>().DrainCharge(amount);
                 }
             }
