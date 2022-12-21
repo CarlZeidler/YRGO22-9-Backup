@@ -180,3 +180,4 @@ MonoBehaviour:
   repeatInterval: 0
   limitNumberOfRepeats: 0
   numberOfRepeats: 0
+  stopRepeatingOnReassemble: 0
