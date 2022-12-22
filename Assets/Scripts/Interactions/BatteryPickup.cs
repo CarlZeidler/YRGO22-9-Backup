@@ -6,6 +6,11 @@ public class BatteryPickup : MonoBehaviour
 {
     public int charge=5;
 
+    public void Start()
+    {
+        //add to manager list
+        GameManager.instance.batteries.Add(this);
+    }
     public void AddCharge()
     {
         GameManager.instance.player.GetComponent<PlayerHack>().DrainCharge(-charge);
