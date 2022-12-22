@@ -7694,7 +7694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 360817972583452462, guid: fb26efc2fe0db894cb0c0256c21d99f9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 360817972583452463, guid: fb26efc2fe0db894cb0c0256c21d99f9, type: 3}
       propertyPath: m_RootOrder
@@ -7739,6 +7739,10 @@ PrefabInstance:
     - target: {fileID: 360817972583452463, guid: fb26efc2fe0db894cb0c0256c21d99f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888557665293214014, guid: fb26efc2fe0db894cb0c0256c21d99f9, type: 3}
+      propertyPath: delayUntilSceneTransition
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb26efc2fe0db894cb0c0256c21d99f9, type: 3}
