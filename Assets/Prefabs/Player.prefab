@@ -5557,6 +5557,7 @@ MonoBehaviour:
   pHack: {fileID: 3147997415736238188}
   rb: {fileID: 2292857639173056005}
   reassembleSlider: {fileID: 1777021509899582360}
+  reassembleCanvas: {fileID: 1777021509131855793}
   respawnHold: 0
   isDead: 0
 --- !u!1 &2416937136249323099
@@ -5784,7 +5785,7 @@ MonoBehaviour:
   - {x: -0.54568434, y: -0.13942528, z: 0}
   m_ShapePathHash: -1309106399
   m_Mesh: {fileID: 0}
-  m_InstanceId: 136042
+  m_InstanceId: 997208
 --- !u!1 &3334157685320845485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6573,7 @@ MonoBehaviour:
   - {x: -0.42190433, y: -0.16154754, z: 0}
   m_ShapePathHash: 238438438
   m_Mesh: {fileID: 0}
-  m_InstanceId: 135870
+  m_InstanceId: 997020
 --- !u!1 &4196713895922657638
 GameObject:
   m_ObjectHideFlags: 0
@@ -14081,6 +14082,11 @@ PrefabInstance:
 --- !u!224 &1777021509131855789 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4599627137176221140, guid: 87c78487a71602a4eb18f9c519bd7890, type: 3}
+  m_PrefabInstance: {fileID: 2845174521544757881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1777021509131855793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4599627137176221128, guid: 87c78487a71602a4eb18f9c519bd7890, type: 3}
   m_PrefabInstance: {fileID: 2845174521544757881}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1777021509899582360 stripped

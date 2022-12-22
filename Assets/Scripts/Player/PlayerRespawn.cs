@@ -21,6 +21,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     //[SerializeField] private ShadowCaster2D shadowCaster;
     [SerializeField] private Slider reassembleSlider;
+    [SerializeField] private GameObject reassembleCanvas;
 
     [HideInInspector] public float respawnHold = 0f;
     public bool isDead = false;
@@ -31,11 +32,13 @@ public class PlayerRespawn : MonoBehaviour
         if (isDead && Input.GetKeyDown(KeyCode.Tab))
         {
             Respawn();
+            reassembleCanvas.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.4f)
         {
             Respawn();
+            reassembleCanvas.SetActive(false);
         }
         else if (Input.GetKey(KeyCode.Tab))
         {
@@ -123,6 +126,8 @@ public class PlayerRespawn : MonoBehaviour
         //stop particles
         travelParticles.Stop();
         //travelParticles.enableEmission = false;
+
+        reassembleCanvas.SetActive(true);
     }
     private IEnumerator TravelToSpawnPoint(float duration)
     {
@@ -141,5 +146,6 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.composer.ChangeLoop();
         GameManager.instance.composer.Inverse();
         Invoke(nameof(Spawn),spawnTime/5);
+        
     }
 }
