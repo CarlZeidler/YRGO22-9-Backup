@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,18 +103,262 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sprite detaljer 2_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1938
+        width: 1237
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e070a5b66a0ec499da2364fd76ae7c
+      internalID: 1842757761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_1
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 1624
+        width: 477
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4d2710fd0e60848bc6f9cfd701336f
+      internalID: -922522921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1627
+        width: 1236
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e950e3d16f33e74fb2d1f98955e3742
+      internalID: -471185489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 326
+        width: 183
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c528ef5528245d6469ae450f0505b769
+      internalID: -558022512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 327
+        width: 181
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4d70d20f8a60e4592b076f344e8998
+      internalID: -1185207613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_5
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 336
+        width: 156
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02534c7816872de44ae91c91a64c975e
+      internalID: 2124723263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_6
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 1412
+        width: 737
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7f79e872fa60b4b81dfce43e45d693
+      internalID: 1007278620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_7
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1194
+        width: 664
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928133b6076a0d14594025f066e01c7e
+      internalID: -1064975038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_8
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 45
+        width: 523
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac33877a5cb9d0a4d97d322c1b9c929e
+      internalID: -553289793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_9
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 339
+        width: 491
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5cffb928a479f42a62c28a3f9de967
+      internalID: -335423150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite detaljer 2_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 70
+        width: 1236
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8470f86128ad74db53b5370ab9bfc1
+      internalID: -1058536198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
-    nameFileIdTable: {}
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: ac7617849e8fd9948bb9caf475a621a7, type: 3}
+      name: _EmissionMap
+    nameFileIdTable:
+      sprite detaljer 2_5: 2124723263
+      sprite detaljer 2_3: -558022512
+      sprite detaljer 2_1: -922522921
+      sprite detaljer 2_2: -471185489
+      sprite detaljer 2_6: 1007278620
+      sprite detaljer 2_8: -553289793
+      sprite detaljer 2_10: -1058536198
+      sprite detaljer 2_4: -1185207613
+      sprite detaljer 2_7: -1064975038
+      sprite detaljer 2_0: 1842757761
+      sprite detaljer 2_9: -335423150
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
