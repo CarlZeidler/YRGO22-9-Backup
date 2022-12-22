@@ -226,7 +226,14 @@ public class Composer : MonoBehaviour
         }
         SetVolume(mel, endVal);
     }
-
+    public void ResetVolume()
+    {
+        SetVolume(bass2, -80);
+        SetVolume(synth1, -80);
+        SetVolume(synth2, -80);
+        SetVolume(chords, -80);
+        SetVolume(mel, -80);
+    }
     //record scartch and fade out rewind on death & respawn
     //trigger progression on reassemble
 }

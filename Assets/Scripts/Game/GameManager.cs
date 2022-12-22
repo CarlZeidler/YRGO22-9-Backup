@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
         }
         private set { _somethingIsHacked = value; }
     }
+    public struct Stats
+    {
+        public float time;
+        public int batterySpent, nrOfHacks, nrOfRespawns;
+    }
+    public Stats stats;
 
     private void Awake()
     {
@@ -47,11 +53,16 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        player = FindObjectOfType<PlayerMove>().gameObject;
+        try
+        {
+            player = FindObjectOfType<PlayerMove>().gameObject;
+        }
+        catch { }
         try
         {
             composer = FindObjectOfType<Composer>();
             conductor = FindObjectOfType<Conductor>();
+            composer.ResetVolume();
         }
         catch { }
     }
@@ -130,5 +141,25 @@ public class GameManager : MonoBehaviour
             selectedHackable.ToggleHackSelection(false);
         selectedHackable = newSelection;
     }
-
+    public void ResetStats()
+    {
+        stats.batterySpent = 0;
+        stats.nrOfHacks = 0;
+        stats.nrOfRespawns = 0;
+        stats.time = 0;
+    }
+    public void SaveStats()
+    {
+        PlayerPrefs.SetFloat("time", stats.time);
+        PlayerPrefs.SetInt("battery", stats.batterySpent);
+        PlayerPrefs.SetInt("respawns", stats.nrOfRespawns);
+        PlayerPrefs.SetInt("hacks", stats.nrOfHacks);
+    }
+    public void ReadStats()
+    {
+        stats.time=PlayerPrefs.GetFloat("time");
+        stats.batterySpent = PlayerPrefs.GetInt("battery");
+        stats.nrOfRespawns = PlayerPrefs.GetInt("respawns");
+        stats.nrOfHacks = PlayerPrefs.GetInt("hacks");
+    }
 }
