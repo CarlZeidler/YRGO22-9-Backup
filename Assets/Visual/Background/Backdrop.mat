@@ -64,9 +64,9 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _Contrast: 0.66
+    - _Contrast: 1.53
     - _EnableExternalAlpha: 0
-    - _Exposure: 1.12
+    - _Exposure: 0.73
     - _Float: 0
     - _QueueControl: 0
     - _QueueOffset: 0
