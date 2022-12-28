@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 5956182837412919659}
   - component: {fileID: 5956182837412919656}
   - component: {fileID: 3518796654114784795}
+  - component: {fileID: 8145865475957562323}
   m_Layer: 9
   m_Name: AnimatedPlatform(Red)
   m_TagString: Obstacle
@@ -1221,6 +1222,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8145865475957562323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956182837412919652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 8f94ee6700000000e72d83378175a13913e90cf9ff1bb187dd84e15249aa0061
+  m_ShapePath:
+  - {x: -2, y: -0.5126953, z: 0}
+  - {x: -2, y: 0.5126953, z: 0}
+  - {x: 2, y: 0.5126953, z: 0}
+  - {x: 2, y: -0.5126953, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -777730
 --- !u!1 &5956182837647737816
 GameObject:
   m_ObjectHideFlags: 0
