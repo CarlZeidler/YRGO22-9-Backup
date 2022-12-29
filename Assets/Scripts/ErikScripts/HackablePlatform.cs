@@ -13,7 +13,6 @@ public class HackablePlatform : HackableObjects
 
     private void Start()
     {
-        //GetComponent<ShadowCaster2D>().castsShadows = false;
         if (solid)
         {
             ActivatePlatform();

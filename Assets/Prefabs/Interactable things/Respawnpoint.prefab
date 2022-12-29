@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 5189804984463818517}
+  respawnLight: {fileID: 8797532431671674553}
   spawnpoint: {fileID: 0}
 --- !u!198 &5189804984463818517
 ParticleSystem:
@@ -5010,7 +5011,7 @@ MonoBehaviour:
   - {x: 1.2120457, y: 2.4221153, z: 0}
   m_ShapePathHash: 1098948677
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35392
+  m_InstanceId: -286694
 --- !u!1 &8797532431671674553
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,7 +5028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3403602400551705251
 Transform:
   m_ObjectHideFlags: 0
