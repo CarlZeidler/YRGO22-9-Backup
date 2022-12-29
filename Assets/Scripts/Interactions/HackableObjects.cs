@@ -78,6 +78,8 @@ public class HackableObjects : MonoBehaviour
     {
         if (!isHacked&&hackingStrength>0)
         {
+            GameManager.instance.stats.nrOfHacks++;
+            GameManager.instance.stats.batterySpent += hackingStrength;
             onHackEvent.Invoke();
             DrainHackingStrength();
             isHacked = true;
