@@ -12,8 +12,8 @@ public class JumpPad : MonoBehaviour
         {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 
             PlayerMove pmove = collision.gameObject.GetComponent<PlayerMove>();
 
@@ -21,6 +21,16 @@ public class JumpPad : MonoBehaviour
             pmove.audJump.Play();
             pmove.RestJumpDuration();
             pmove.bonusJump = true;
+            pmove.canMove = false;
+            pmove.disableGroundcheck = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerMove pmove = collision.gameObject.GetComponent<PlayerMove>();
+            pmove.disableGroundcheck = false;
         }
     }
 }

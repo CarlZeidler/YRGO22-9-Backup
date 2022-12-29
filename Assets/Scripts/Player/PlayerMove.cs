@@ -20,9 +20,12 @@ public class PlayerMove : MonoBehaviour
     public float Acceleration = 5;
     public float Deceleration = 5;
 
+    private float overWriteSpeed;
+
     private bool animspeedLocked = false;
     [HideInInspector] public bool canMove = true;
     public bool bonusJump;
+    public bool disableGroundcheck;
 
     [Space]
 
@@ -111,22 +114,32 @@ public class PlayerMove : MonoBehaviour
             }
 
         }
-        else
+        //else
+        //{
+        //    //deccelerate on no input
+        //    if (speed > Deceleration * Time.deltaTime)
+        //        speed = speed - Deceleration * Time.deltaTime;
+        //    else if (speed < -Deceleration * Time.deltaTime)
+        //        speed = speed + Deceleration * Time.deltaTime;
+        //    else
+        //    {
+        //        speed = 0;
+        //        //sepaerate anim model on idle
+
+        //    }
+
+        //}
+        if (canMove)
         {
-            //deccelerate on no input
-            if (speed > Deceleration * Time.deltaTime)
-                speed = speed - Deceleration * Time.deltaTime;
-            else if (speed < -Deceleration * Time.deltaTime)
-                speed = speed + Deceleration * Time.deltaTime;
+            if(overWriteSpeed ==0)
+                rb.velocity = new Vector2(speed, rb.velocity.y);
             else
             {
-                speed = 0;
-                //sepaerate anim model on idle
-                
+                speed = overWriteSpeed;
+                overWriteSpeed = 0;
             }
 
         }
-        rb.velocity = new Vector2(speed, rb.velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         //anim.speed = rb.velocity.magnitude;
         anim.SetFloat("VerticalSpeed", Mathf.Abs(rb.velocity.y));
@@ -156,12 +169,12 @@ public class PlayerMove : MonoBehaviour
         }
         if (canMove)
         {
-            if (Input.GetButtonDown("Jump") && (Grounded()||bonusJump))
+            if (Input.GetButtonDown("Jump") && (Grounded()))
             {
                 //play sound on jump btn
                 audJump.Play();
                 anim.SetTrigger("Jump");
-                bonusJump = false;
+
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
@@ -174,6 +187,12 @@ public class PlayerMove : MonoBehaviour
             {
                 _jumpDurationLeft -= Time.deltaTime;
             }
+        }
+        else if (Input.GetButtonDown("Jump")&& bonusJump)
+        {
+            overWriteSpeed = rb.velocity.x;
+            bonusJump = false;
+            canMove = true;
         }
 
         if (Input.GetButtonUp("Jump"))
@@ -221,8 +240,21 @@ public class PlayerMove : MonoBehaviour
     }
     private bool Grounded()
     {
-        if (Physics2D.OverlapCircle(feet.position, 0.2f, ground))
-            return true;
+        if (!disableGroundcheck)
+        {
+            if (Physics2D.OverlapCircle(feet.position, 0.2f, ground))
+            {
+                if (bonusJump & !canMove)
+                {
+                    bonusJump = false;
+                    canMove = true;
+                }
+                return true;
+
+            }
+            else
+                return false;
+        }
         else
             return false;
     }
