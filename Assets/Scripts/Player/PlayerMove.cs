@@ -167,6 +167,8 @@ public class PlayerMove : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump")&& bonusJump)
         {
+            audJump.Play();
+            anim.SetTrigger("Jump");
             overWriteSpeed = rb.velocity.x;
             bonusJump = false;
             canMove = true;

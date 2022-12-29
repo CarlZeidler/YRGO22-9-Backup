@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public HackableObjects selectedHackable;
     public int preparedCharge;
 
+    public bool timerActive;
+
     [SerializeField]public Camera overlayCam;
     public GameObject postFx1, postFX2;
 
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
     {
         public float time;
         public int batterySpent, nrOfHacks, nrOfRespawns;
+
+        public bool updateTimer;
     }
     public Stats stats;
 
@@ -45,20 +49,35 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);
+            if (transform.root != null)
+                transform.parent = null;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
+            stats.batterySpent = GameManager.instance.stats.batterySpent;
+            stats.nrOfHacks = GameManager.instance.stats.nrOfHacks;
+            stats.nrOfRespawns = GameManager.instance.stats.nrOfRespawns;
+            stats.time = GameManager.instance.stats.time;
+
+            stats.updateTimer = instance.stats.updateTimer;
+            instance.hackableObjects.Clear();
+            instance.batteries.Clear();
+            instance.respawnPoints.Clear();
+
+            instance.Start();
+
             Destroy(gameObject);
         }
     }
     private void Start()
     {
-        try
-        {
-            player = FindObjectOfType<PlayerMove>().gameObject;
-        }
-        catch { }
+        if (!player)
+            try
+            {
+                player = FindObjectOfType<PlayerMove>().gameObject;
+            }
+            catch { }
         try
         {
             composer = FindObjectOfType<Composer>();
@@ -66,6 +85,16 @@ public class GameManager : MonoBehaviour
             composer.ResetVolume();
         }
         catch { }
+    }
+    private void Update()
+    {
+        if(timerActive)
+            stats.time += Time.deltaTime;
+    }
+    public void ActiveTimer(bool enabled)
+    {
+        stats.time = 0;
+        timerActive = enabled;
     }
 
     public void RevealHackables(float delay)

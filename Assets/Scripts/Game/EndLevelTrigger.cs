@@ -11,8 +11,9 @@ public class EndLevelTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && sceneManager.lastLevel)
         {
             sceneManager.StartSpecificSceneWithDelay(0);
+            GameManager.instance.stats.updateTimer = true;
         }
-        if (collision.CompareTag("Player"))
+        else if (collision.CompareTag("Player"))
         {
             sceneManager.NextLevel();
         }
