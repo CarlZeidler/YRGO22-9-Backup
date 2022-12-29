@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Conductor conductor;
     public List<HackableObjects> hackableObjects = new List<HackableObjects>();
     public List<BatteryPickup> batteries = new List<BatteryPickup>();
+    public List<RespawnPoint> respawnPoints = new List<RespawnPoint>();
     public HackableObjects selectedHackable;
     public int preparedCharge;
 
@@ -161,5 +162,13 @@ public class GameManager : MonoBehaviour
         stats.batterySpent = PlayerPrefs.GetInt("battery");
         stats.nrOfRespawns = PlayerPrefs.GetInt("respawns");
         stats.nrOfHacks = PlayerPrefs.GetInt("hacks");
+    }
+
+    public void TurnOffRespawnLights()
+    {
+        foreach (var respawn in respawnPoints)
+        {
+            respawn.TurnOffLight();
+        }
     }
 }
