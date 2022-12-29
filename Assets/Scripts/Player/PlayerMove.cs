@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     private bool animspeedLocked = false;
     [HideInInspector] public bool canMove = true;
+    public bool bonusJump;
 
     [Space]
 
@@ -34,7 +35,6 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb;
 
     //running fx
-    //private ParticleSystem ps;
     [SerializeField]public Animator anim;
     [SerializeField] private Transform playerModel;
     [SerializeField]private SpriteRenderer sr;
@@ -51,9 +51,7 @@ public class PlayerMove : MonoBehaviour
     
     void Start()
     {
-       // ps = GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
-        //anim = GetComponentInChildren<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -158,11 +156,12 @@ public class PlayerMove : MonoBehaviour
         }
         if (canMove)
         {
-            if (Input.GetButtonDown("Jump") && Grounded())
+            if (Input.GetButtonDown("Jump") && (Grounded()||bonusJump))
             {
                 //play sound on jump btn
                 audJump.Play();
                 anim.SetTrigger("Jump");
+                bonusJump = false;
             }
 
             if (Input.GetButton("Jump") && _jumpDurationLeft > 0)
@@ -181,6 +180,10 @@ public class PlayerMove : MonoBehaviour
         {
             _jumpDurationLeft = 0;
         }
+    }
+    public void RestJumpDuration()
+    {
+        _jumpDurationLeft = jumpDurationLeft;
     }
     public void ToggleIdleOn()
     {   
