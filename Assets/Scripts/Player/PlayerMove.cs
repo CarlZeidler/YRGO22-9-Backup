@@ -112,23 +112,7 @@ public class PlayerMove : MonoBehaviour
                     //sepaerate anim model on idle
                 }
             }
-
         }
-        //else
-        //{
-        //    //deccelerate on no input
-        //    if (speed > Deceleration * Time.deltaTime)
-        //        speed = speed - Deceleration * Time.deltaTime;
-        //    else if (speed < -Deceleration * Time.deltaTime)
-        //        speed = speed + Deceleration * Time.deltaTime;
-        //    else
-        //    {
-        //        speed = 0;
-        //        //sepaerate anim model on idle
-
-        //    }
-
-        //}
         if (canMove)
         {
             if(overWriteSpeed ==0)
@@ -141,23 +125,16 @@ public class PlayerMove : MonoBehaviour
 
         }
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        //anim.speed = rb.velocity.magnitude;
         anim.SetFloat("VerticalSpeed", Mathf.Abs(rb.velocity.y));
 
         //when run, play particles and increase animation speed
         if(rb.velocity.magnitude > 0.5f)
         {
-            //if (!ps.isPlaying && Grounded())
-            //    ps.Play();
-            //else if (!Grounded())
-            //    ps.Stop();
             if (!animspeedLocked&&Grounded())
                 anim.speed = Mathf.Clamp(rb.velocity.magnitude, 0.25f, 2.5f);
         }
         else
         {
-            //if(ps.isPlaying)
-            //    ps.Stop();
             anim.speed = 1;
         }
     }
@@ -222,17 +199,12 @@ public class PlayerMove : MonoBehaviour
         //anim.SetBool("Flipped", flip);
         if (flip)
         {
-            //sprite flipX is still used for checking flipstate
-            //var pshape = ps.shape;
-            //pshape.rotation = new Vector3(pshape.rotation.x, -45, pshape.rotation.z);
             sr.flipX = false;
             playerModel.eulerAngles = Vector3.zero;
             IdleAnim.transform.eulerAngles = Vector3.zero;
         }
         else
         {
-            //var pshape = ps.shape;
-            //pshape.rotation = new Vector3(pshape.rotation.x, 135, pshape.rotation.z);
             sr.flipX = true;
             playerModel.eulerAngles = new Vector3(0, 180, 0);
             IdleAnim.transform.eulerAngles = new Vector3(0, 180, 0);
@@ -250,7 +222,6 @@ public class PlayerMove : MonoBehaviour
                     canMove = true;
                 }
                 return true;
-
             }
             else
                 return false;

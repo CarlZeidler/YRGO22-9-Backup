@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     [SerializeField] [Range(15, 200)] private float jumpForce;
+    public bool disableMovement;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,7 +22,8 @@ public class JumpPad : MonoBehaviour
             pmove.audJump.Play();
             pmove.RestJumpDuration();
             pmove.bonusJump = true;
-            pmove.canMove = false;
+            if(disableMovement)
+                pmove.canMove = false;
             pmove.disableGroundcheck = true;
         }
     }
