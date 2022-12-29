@@ -11,6 +11,9 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private ParticleSystem travelParticles, deathParticles;
     [SerializeField] private AudioSource rewindSound,explosionSound;
     [SerializeField] private GameObject textObjectOnDeath;
+    [SerializeField] private GameObject deathLight;
+    [SerializeField] private GameObject travelLight;
+    [SerializeField] private Animator deathLightAnimation;
 
     [Space(20)]
     //scripts to disable
@@ -26,6 +29,11 @@ public class PlayerRespawn : MonoBehaviour
     [HideInInspector] public float respawnHold = 0f;
     public bool isDead = false;
 
+    private void Start()
+    {
+        DeathLightDeactivate();
+        travelLight.SetActive(false);
+    }
 
     private void Update()
     {
@@ -78,6 +86,7 @@ public class PlayerRespawn : MonoBehaviour
         var particles = travelParticles.main;
         particles.simulationSpeed = Mathf.Pow(spawnTime, -1);
         travelParticles.Play();
+        travelLight.SetActive(true);
         //lerp pos to spawnpoint then enable scripts
         StartCoroutine(TravelToSpawnPoint(spawnTime));
 
@@ -94,6 +103,8 @@ public class PlayerRespawn : MonoBehaviour
         //energy
         pHack.ResetCharges();
 
+        DeathLight();
+
     }
     public void Die()
     {
@@ -103,6 +114,8 @@ public class PlayerRespawn : MonoBehaviour
 
         deathParticles.Play();
         explosionSound.Play();
+        deathLight.SetActive(true);
+        DeathLight();
 
         textObjectOnDeath.SetActive(true);
         Camera.main.GetComponent<Screenshake>().start = true;
@@ -126,6 +139,8 @@ public class PlayerRespawn : MonoBehaviour
 
         //stop particles
         travelParticles.Stop();
+        travelLight.SetActive(false);
+        deathLight.SetActive(false);
         //travelParticles.enableEmission = false;
 
         reassembleCanvas.SetActive(true);
@@ -148,5 +163,22 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.composer.Inverse();
         Invoke(nameof(Spawn),spawnTime/5);
         
+    }
+
+    private void DeathLightDeactivate()
+    {
+        deathLight.SetActive(false);
+    }
+
+    private void DeathLight()
+    {
+        if (isDead == true)
+        {
+            deathLightAnimation.SetTrigger("Dead");
+        }
+        else
+        {
+            deathLightAnimation.SetTrigger("Alive");
+        }
     }
 }
