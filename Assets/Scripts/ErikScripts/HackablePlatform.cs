@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 public class HackablePlatform : HackableObjects
 {
@@ -12,6 +13,7 @@ public class HackablePlatform : HackableObjects
 
     private void Start()
     {
+        //GetComponent<ShadowCaster2D>().castsShadows = false;
         if (solid)
         {
             ActivatePlatform();
@@ -60,5 +62,10 @@ public class HackablePlatform : HackableObjects
         {
             animator.SetTrigger("Deactivate");
         }
+    }
+
+    public void ToggleShadows()
+    {
+
     }
 }
