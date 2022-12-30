@@ -88,8 +88,15 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(timerActive)
+        if (timerActive&&player)
+        {
             stats.time += Time.deltaTime;
+            try
+            {
+                player.GetComponent<PlayerMove>().timerText.text = SecondsToTime(stats.time).ToString();
+            }
+            catch { }
+        }
     }
     public void ActiveTimer(bool enabled)
     {
@@ -199,5 +206,18 @@ public class GameManager : MonoBehaviour
         {
             respawn.TurnOffLight();
         }
+    }
+
+    public string SecondsToTime(float seconds)
+    {
+        System.TimeSpan t = System.TimeSpan.FromSeconds(seconds);
+
+        string answer = string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D3}ms",
+                        t.Hours,
+                        t.Minutes,
+                        t.Seconds,
+                        t.Milliseconds);
+
+        return answer;
     }
 }
