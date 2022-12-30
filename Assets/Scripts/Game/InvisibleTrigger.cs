@@ -70,11 +70,13 @@ public class InvisibleTrigger : MonoBehaviour
         if (triggerType == typeOfTrigger.Repeating && other.CompareTag("Player"))
         {
             InvokeRepeating(nameof(triggerEvent), startTime, repeatInterval);
-            if (oneTimeUse)
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
-        else if (other.CompareTag("Player") && oneTimeUse)
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && oneTimeUse)
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void triggerEvent()
