@@ -76,7 +76,7 @@ public class HighscoreManager : MonoBehaviour
             highscoreTexts[i].text = highscoreNames + " " + highscores[i].ToString();
         }
     }
-    string SecondsToTime(float seconds)
+    public string SecondsToTime(float seconds)
     {
         TimeSpan t = TimeSpan.FromSeconds(seconds);
 

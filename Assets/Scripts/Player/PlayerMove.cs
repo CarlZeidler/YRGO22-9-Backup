@@ -51,6 +51,9 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private Transform feet;
     public LayerMask ground;
+
+    [Space]
+    public TMPro.TextMeshProUGUI timerText;
     
     void Start()
     {
