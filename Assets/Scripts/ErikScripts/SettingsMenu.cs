@@ -17,6 +17,12 @@ public class SettingsMenu : MonoBehaviour
             GameObject.Find("MasterVolumeSlider").GetComponentInChildren<Slider>().value = PlayerPrefs.GetFloat("masterVolume");
             GameObject.Find("MusicVolumeSlider").GetComponentInChildren<Slider>().value = PlayerPrefs.GetFloat("musicVolume");
             GameObject.Find("SfxVolumeSlider").GetComponentInChildren<Slider>().value = PlayerPrefs.GetFloat("sfxVolume");
+
+            int ison = PlayerPrefs.GetInt("ShowTimer");
+            if (ison>0)
+                GameObject.Find("SpeedRunTimer").GetComponent<Toggle>().isOn = true;
+            else
+                GameObject.Find("SpeedRunTimer").GetComponent<Toggle>().isOn = false;
         }
         catch { }
         audioMixer.SetFloat("masterVolume", (PlayerPrefs.GetFloat("masterVolume")));
@@ -47,5 +53,18 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+    public void ShowSpeedrunTimer(bool show)
+    {
+        if (show)
+            PlayerPrefs.SetInt("ShowTimer", 1);
+        else
+            PlayerPrefs.SetInt("ShowTimer", 0);
+
+        try
+        {
+            GameManager.instance.player.GetComponent<PlayerMove>().timerText.enabled = show;
+        }
+        catch { }
     }
 }

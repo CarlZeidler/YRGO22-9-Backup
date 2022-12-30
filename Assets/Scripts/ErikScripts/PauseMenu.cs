@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
+        GameManager.instance.stats.time = 0;
     }
 
     public void RestartScene()

@@ -59,6 +59,13 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        if (PlayerPrefs.GetInt("ShowTimer") > 0)
+        {
+            timerText.enabled = true;
+        }
+        else
+            timerText.enabled = false;
     }
 
     void Update()
