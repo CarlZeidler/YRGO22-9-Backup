@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
     bool panning;
 
     [SerializeField] private float hackermodeZoomMultiplier = 1;
-    [SerializeField] private float hackermodeZoomSpeed = 1;
+    [SerializeField] private float zoomSpeed = 1;
     [SerializeField] private float forwardView = 1;
     [SerializeField] private float verticalView = 1;
 
@@ -28,7 +28,7 @@ public class CameraFollow : MonoBehaviour
         size = GetComponent<Camera>().orthographicSize;
         pHack = player.GetComponent<PlayerHack>();
         camRef = GetComponent<Camera>();
-        ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, hackermodeZoomSpeed);
+        ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, zoomSpeed);
     }
 
     void Update()
@@ -76,15 +76,19 @@ public class CameraFollow : MonoBehaviour
         if (pHack.inHackingMode)
         {
             StopCoroutine(ienHolder);
-            ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, hackermodeZoomSpeed);
+            ienHolder = LerpOrthSize(size * hackermodeZoomMultiplier, zoomSpeed);
             StartCoroutine(ienHolder);
         }
         else
         {
             StopCoroutine(ienHolder);
-            ienHolder = LerpOrthSize(size, hackermodeZoomSpeed);
+            ienHolder = LerpOrthSize(size, zoomSpeed);
             StartCoroutine(ienHolder);
         }
+    }
+    public void LerpCamZoom(float orthSize)
+    {
+        StartCoroutine(LerpOrthSize(orthSize, zoomSpeed));
     }
     IEnumerator LerpOrthSize(float endSize, float duration)
     {
