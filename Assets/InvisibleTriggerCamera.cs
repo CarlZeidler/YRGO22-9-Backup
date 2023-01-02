@@ -15,7 +15,6 @@ public class InvisibleTriggerCamera : MonoBehaviour
     [SerializeField] private float duration;
 
     private float respawnHold;
-    private PlayerRespawn respawnScript;
     private CameraFollow cameraScript;
     private Camera mainCamera;
     private Vector3 cameraEndPos;
@@ -33,13 +32,13 @@ public class InvisibleTriggerCamera : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Tab) && GameManager.instance.player.GetComponent<PlayerRespawn>().isDead)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            cameraScript.lockPosition = false;
         }
 
         if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.5f)
         {
             respawnHold = 0f;
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            cameraScript.lockPosition = false;
         }
         else if (Input.GetKey(KeyCode.Tab))
         {
