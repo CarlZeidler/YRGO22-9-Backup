@@ -71,18 +71,21 @@ public class InvisibleTrigger : MonoBehaviour
         {
             InvokeRepeating(nameof(triggerEvent), startTime, repeatInterval);
         }
+        if (other.CompareTag("Player") && oneTimeUse)
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && oneTimeUse)
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    {        
+
     }
 
     private void triggerEvent()
     {
         if (!limitNumberOfRepeats)
+        {
             eventScript.linkedEvent.Invoke();
+        }
         else if (limitNumberOfRepeats && counter <= numberOfRepeats)
         {
             eventScript.linkedEvent.Invoke();
@@ -93,5 +96,14 @@ public class InvisibleTrigger : MonoBehaviour
             CancelInvoke(nameof(triggerEvent));
             counter = 0;
         }
-    } 
+    }
+
+    public void RemoteTrigger()
+    {
+        //This function is for triggering several other hackables by using one hackable.
+        //Ensure this trigger is not placed in a place where the player can collide with it, or turn the collider off.
+
+        eventScript.linkedEvent.Invoke();
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    }
 }
