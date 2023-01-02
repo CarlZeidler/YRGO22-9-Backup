@@ -8,7 +8,8 @@ public class InvisibleTriggerCamera : MonoBehaviour
     [SerializeField] private SpriteRenderer sprt;
     [SerializeField] private EventTrigger eventScript;
     [SerializeField] private Transform cameraLockPos;
-    [SerializeField] private Canvas parallaxCanvas;
+    [SerializeField] private Camera overLayCamera;
+    [SerializeField] private InvisibleTriggerCamera zoomOutObject;
     [Space]
     [SerializeField] private typeOfTrigger triggerType;
     [SerializeField] private float endSize;
@@ -33,12 +34,20 @@ public class InvisibleTriggerCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab) && GameManager.instance.player.GetComponent<PlayerRespawn>().isDead)
         {
             cameraScript.lockPosition = false;
+            cameraScript.ToggleCamZoom();
+            Invoke(nameof(OverlayCameraBackToNormal), duration);
+            if (zoomOutObject != null)
+                zoomOutObject.StopAllCoroutines();
         }
 
         if (Input.GetKey(KeyCode.Tab) && respawnHold >= 0.5f)
         {
             respawnHold = 0f;
             cameraScript.lockPosition = false;
+            cameraScript.ToggleCamZoom();
+            Invoke(nameof(OverlayCameraBackToNormal), duration);
+            if (zoomOutObject != null)
+                zoomOutObject.StopAllCoroutines();
         }
         else if (Input.GetKey(KeyCode.Tab))
         {
@@ -60,15 +69,16 @@ public class InvisibleTriggerCamera : MonoBehaviour
         if (triggerType == typeOfTrigger.FixedPosition)
         {
             cameraScript.lockPosition = true;
-            parallaxCanvas.renderMode = RenderMode.ScreenSpaceCamera;
             StartCoroutine(LockCameraPos(cameraEndPos, endSize, duration));
         }
 
         if (triggerType == typeOfTrigger.BackToNormal)
         {
             cameraScript.lockPosition = false;
-            parallaxCanvas.renderMode = RenderMode.WorldSpace;
             cameraScript.ToggleCamZoom();
+            Invoke(nameof(OverlayCameraBackToNormal), duration);
+            if (zoomOutObject != null)
+                zoomOutObject.StopAllCoroutines();
         }
     }
 
@@ -81,10 +91,16 @@ public class InvisibleTriggerCamera : MonoBehaviour
         while (time < duration)
         {
             mainCamera.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
+            overLayCamera.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
             mainCamera.transform.position = Vector3.Lerp(startPos, endPos, time / duration);
             time += Time.unscaledDeltaTime;
             yield return null;
         }
         mainCamera.orthographicSize = endSize;
+    }
+
+    private void OverlayCameraBackToNormal()
+    {
+        overLayCamera.orthographicSize = mainCamera.orthographicSize;
     }
 }
