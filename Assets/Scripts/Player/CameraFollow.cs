@@ -22,6 +22,8 @@ public class CameraFollow : MonoBehaviour
     private PlayerHack pHack;
     private IEnumerator ienHolder;
 
+    public bool lockPosition = false;
+
     void Start()
     {
         player = GameManager.instance.player.transform;
@@ -33,43 +35,45 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-       
-
-        if (Input.GetButton("CameraPan"))
+        if (!lockPosition)
         {
-            targetPosition = (Camera.main.ScreenToWorldPoint(mousePos)/2)+player.position/2;
-            panning = true;
-        }
-        else
-        {
-            targetPosition = player.position+(Vector3.right * Input.GetAxis("Horizontal Camera") * forwardView) + Vector3.up * player.GetComponent<Rigidbody2D>().velocity.normalized.y * verticalView;
-            targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
+            if (Input.GetButton("CameraPan"))
+            {
+                targetPosition = (Camera.main.ScreenToWorldPoint(mousePos)/2)+player.position/2;
+                panning = true;
+            }
+            else
+            {
+                targetPosition = player.position+(Vector3.right * Input.GetAxis("Horizontal Camera") * forwardView) + Vector3.up * player.GetComponent<Rigidbody2D>().velocity.normalized.y * verticalView;
+                targetPosition += Vector3.up * GetComponent<Camera>().orthographicSize/4;
             
-            panning = false;
-        }
+                panning = false;
+            }
        
-
-
-        if (Input.GetButtonDown("ToggleHackingMode"))
-        {
-            ToggleCamZoom();
+            if (Input.GetButtonDown("ToggleHackingMode"))
+            {
+                ToggleCamZoom();
+            }
         }
     }
+
     private void FixedUpdate()
     {
-        //some magic numbers that set position towards mouseposition
-        mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
+        if (!lockPosition)
+        {
+            //some magic numbers that set position towards mouseposition
+            mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
 
-        //position to move to
-        Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.unscaledDeltaTime);
-        position = new Vector3(position.x, position.y, -10);
+            //position to move to
+            Vector3 position = Vector2.Lerp(transform.position, targetPosition, lerpSpeed * Time.unscaledDeltaTime);
+            position = new Vector3(position.x, position.y, -10);
 
-        //smoother follow when not panning camera
-        if ((transform.position - targetPosition).magnitude > 30 & !panning)
-            transform.position = position;
-        else
-            transform.position = position;
-
+            //smoother follow when not panning camera
+            if ((transform.position - targetPosition).magnitude > 30 & !panning)
+                transform.position = position;
+            else
+                transform.position = position;
+        }
     }
     public void ToggleCamZoom()
     {
