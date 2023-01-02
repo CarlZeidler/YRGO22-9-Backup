@@ -7,6 +7,7 @@ public class LiftConnection : MonoBehaviour
 {
     [SerializeField] Lift lift;
     [SerializeField] LineRenderer line;
+    [SerializeField] LineRenderer overlayLine;
     private void Awake()
     {
         lift = GetComponentInParent<Lift>();
@@ -20,5 +21,8 @@ public class LiftConnection : MonoBehaviour
     {
         line.SetPosition(0, lift.startPointTransform.localPosition);
         line.SetPosition(1, lift.endPointTransform.localPosition);
+
+        overlayLine.SetPosition(0, lift.startPointTransform.localPosition);
+        overlayLine.SetPosition(1, lift.endPointTransform.localPosition);
     }
 }
