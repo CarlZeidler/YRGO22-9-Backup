@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5849265135034206217}
   - component: {fileID: 159452784686422818}
   - component: {fileID: 4185389575595998242}
+  - component: {fileID: 4990873199078864199}
   m_Layer: 6
   m_Name: UICharge
   m_TagString: Untagged
@@ -92,6 +93,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4990873199078864199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309646308691942566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339062eae02025c40a8fee1ba6c85017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 10
+  yOffset: 20
 --- !u!1 &589776466978599556
 GameObject:
   m_ObjectHideFlags: 0
