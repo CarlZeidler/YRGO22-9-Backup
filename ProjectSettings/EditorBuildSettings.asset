@@ -37,5 +37,5 @@ EditorBuildSettings:
     guid: cdd477b22544db247996ec776d582a1b
   - enabled: 1
     path: Assets/Scenes/GameOutroScene.unity
-    guid: 5abab2de8c720d2488b3a0f004077975
+    guid: cbabf0e839fd0f24ba197106b7c452fb
   m_configObjects: {}
