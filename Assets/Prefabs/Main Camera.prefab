@@ -519,9 +519,10 @@ MonoBehaviour:
   lerpSpeed: 5
   maxScreenPoint: 0.9
   hackermodeZoomMultiplier: 1
-  hackermodeZoomSpeed: 0.025
+  zoomSpeed: 1
   forwardView: 10
   verticalView: 0
+  lockPosition: 0
 --- !u!114 &6333666630596049779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,6 +885,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6333666630596049789}
     m_Modifications:
+    - target: {fileID: 839219855766529067, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 6333666630596049788}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839219855766529068, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 839219855924247536, guid: 888d5e35e4c475a41a8b7dd42b296ee6, type: 3}
       propertyPath: m_Name
       value: BackgroundRenderer
