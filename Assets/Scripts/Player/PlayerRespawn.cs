@@ -62,6 +62,7 @@ public class PlayerRespawn : MonoBehaviour
         GameManager.instance.stats.nrOfRespawns++;
         isDead = false;
         rewindSound.Play();
+        pMove.bonusJump = false;
         //GameManager.instance.composer.Stop();
         try
         {

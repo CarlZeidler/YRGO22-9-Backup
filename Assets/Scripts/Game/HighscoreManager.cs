@@ -9,7 +9,7 @@ public class HighscoreManager : MonoBehaviour
     public int[] highscores;
     public string[] highscoreNames;
 
-    public string name = "Player";
+    public string pname = "Player";
 
     [SerializeField] private string bestTime, highscoreStringName;
 
@@ -35,7 +35,7 @@ public class HighscoreManager : MonoBehaviour
             if (score > highscores[i])
             {
                 PlayerPrefs.SetFloat(bestTime + i.ToString(), score);
-                PlayerPrefs.SetString(highscoreStringName + i.ToString(), name);
+                PlayerPrefs.SetString(highscoreStringName + i.ToString(), pname);
             }
         }
     }
@@ -67,7 +67,7 @@ public class HighscoreManager : MonoBehaviour
     }
     public void SetName(string name)
     {
-        this.name = name;
+        this.pname = name;
     }
     public void WriteScores()
     {
