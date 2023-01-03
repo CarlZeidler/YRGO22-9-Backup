@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7186202097955424894}
   - component: {fileID: 439920589782701670}
   - component: {fileID: 1924854560835299124}
+  - component: {fileID: 5512543232669303213}
   m_Layer: 9
   m_Name: Sprite + Collider
   m_TagString: Untagged
@@ -144,6 +145,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb262de124015404a9d20925c76019a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5512543232669303213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554798516192258389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 8f94ee6700000000e72d83378175a13913e90cf9ff1bb187dd84e15249aa0061
+  m_ShapePath:
+  - {x: -5.6776466, y: 0.04127031, z: 0}
+  - {x: -5.700291, y: 0.5891024, z: 0}
+  - {x: -5.792103, y: 0.7021016, z: 0}
+  - {x: -5.7779775, y: 1.2176598, z: 0}
+  - {x: -5.6747484, y: 1.4024969, z: 0}
+  - {x: -5.565605, y: 1.5013672, z: 0}
+  - {x: 5.4942217, y: 1.5089703, z: 0}
+  - {x: 5.6207457, y: 1.4114203, z: 0}
+  - {x: 5.615494, y: 0.0205144, z: 0}
+  - {x: 4.189056, y: -0.028643716, z: 0}
+  - {x: 3.9998803, y: -0.18944219, z: 0}
+  - {x: 0.3221968, y: -0.23367035, z: 0}
+  - {x: -0.03778674, y: -0.6677682, z: 0}
+  - {x: -0.34483138, y: -0.26543355, z: 0}
+  - {x: -4.0778756, y: -0.19890107, z: 0}
+  - {x: -4.210298, y: 0.04702595, z: 0}
+  m_ShapePathHash: 218059379
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 476980
 --- !u!1 &7263101434657563365
 GameObject:
   m_ObjectHideFlags: 0
