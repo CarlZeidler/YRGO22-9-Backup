@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 192136233565644915}
   - component: {fileID: 7303953746690113892}
   - component: {fileID: 6360447692598412102}
+  - component: {fileID: 3314193762156851107}
   m_Layer: 6
   m_Name: UICharge
   m_TagString: Untagged
@@ -711,6 +712,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3461d16dff7d364abc1b9cc1b496163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3314193762156851107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662609965616285129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339062eae02025c40a8fee1ba6c85017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 10
+  yOffset: 20
 --- !u!1 &4725591262755412580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1518,7 @@ MonoBehaviour:
   - {x: 1.010849, y: -0.29569006, z: 0}
   m_ShapePathHash: -254538409
   m_Mesh: {fileID: 0}
-  m_InstanceId: 862938
+  m_InstanceId: 532292
 --- !u!1001 &5080205610750723598
 PrefabInstance:
   m_ObjectHideFlags: 0

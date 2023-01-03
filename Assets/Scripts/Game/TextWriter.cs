@@ -58,6 +58,7 @@ public class TextWriter : MonoBehaviour
 
             i++;
         }
+        canContinue = true;
     }
 
     private void NextSentance()
