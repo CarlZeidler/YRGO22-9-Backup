@@ -1866,7 +1866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[4]
-      value: '*Sytem destabilizing*'
+      value: '*System destabilizing*'
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
