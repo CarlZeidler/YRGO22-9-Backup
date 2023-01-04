@@ -6,39 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/In use/Menus and transitions/MainMenu.unity
     guid: 5d6f818a582fa6440bcdf952bb7814f7
   - enabled: 1
-    path: Assets/Scenes/GameIntroScene.unity
+    path: Assets/Scenes/In use/Menus and transitions/GameIntroScene.unity
     guid: cdd477b22544db247996ec776d582a1b
   - enabled: 1
-    path: Assets/Scenes/Levels/Tutorial.unity
+    path: Assets/Scenes/In use/Levels/Tutorial.unity
     guid: 2b65a40e79ef8ec4f85233e2842faa97
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
+    path: Assets/Scenes/In use/Levels/Level 1.unity
     guid: ca17da8605fe4a84c89df8bc444fdfa2
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 3.unity
+    path: Assets/Scenes/In use/Levels/Level 2.unity
     guid: 169a6d1771c641841911d5656c039308
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 2.unity
+    path: Assets/Scenes/In use/Levels/Level 3.unity
     guid: d3a7811858314d44c80938f40f52c7ba
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 2Sean.unity
+    path: Assets/Scenes/In use/Levels/Level 4.unity
     guid: b42985062973f0443875a56726cefa8a
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 4.unity
+    path: Assets/Scenes/In use/Levels/Level 5.unity
     guid: a6ae8093426664942965e17f3256734a
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 5.unity
+    path: Assets/Scenes/In use/Levels/Level 6.unity
     guid: 4cfc4ef910cfc264297e45c1173eadf3
   - enabled: 1
-    path: Assets/Scenes/Levels/BaathPuzzle1.unity
+    path: Assets/Scenes/In use/Levels/Level 7.unity
     guid: 54979998ffc87cf40b232849585037d2
   - enabled: 1
-    path: Assets/Scenes/EndingSequence.unity
+    path: Assets/Scenes/In use/Levels/EndingSequence.unity
     guid: 6667ac2a313cccb4d8eeb06ec53ca0e2
   - enabled: 1
-    path: Assets/Scenes/GameOutroScene.unity
+    path: Assets/Scenes/In use/Menus and transitions/GameOutroScene.unity
     guid: cbabf0e839fd0f24ba197106b7c452fb
   m_configObjects: {}
