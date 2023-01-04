@@ -12,12 +12,14 @@ public class Switch : HackableObjects
     [SerializeField] private Sprite active, inactive;
     [SerializeField] private Material lineMaterial;
 
-    private bool toggled;
+    [SerializeField] public bool toggled;
     [SerializeField] private bool useDiagonalLines;
     [SerializeField] private Transform[] customConnectionMiddleLinks;
     [Space(20)]
     [SerializeField] private SpriteRenderer normal, highlight;
     [SerializeField] private AudioSource toggle;
+
+    public bool connectedToOther;
 
 
     [SerializeField] public float lineOffset;
@@ -43,6 +45,9 @@ public class Switch : HackableObjects
         //spawn new hacker line and set connection points to linked hackable
         foreach (var hackable in linkedHackables)
         {
+            if(hackable.GetComponent<Switch>())
+                hackable.GetComponent<Switch>().connectedToOther = true;
+
             hackerLines.Add(Instantiate(hackerLinePrefab, transform).GetComponent<HackerLineConnection>());
             if(customConnectionMiddleLinks.Length > 0)
             {
