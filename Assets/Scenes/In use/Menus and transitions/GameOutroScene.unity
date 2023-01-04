@@ -226,7 +226,7 @@ RectTransform:
   m_GameObject: {fileID: 172220566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.09, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719744173}
@@ -234,8 +234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 0, y: -89.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172220568
 MonoBehaviour:
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7db7878c9def4445b1048d40529886a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc944edfac1994147821bf1502bb405e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1426,23 +1426,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[0]
-      value: '*Insert story text here* '
+      value: local_user has disconnected
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[1]
-      value: This is a drill
+      value: MAX.daemon has been retrived
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[2]
-      value: I repeat, this is a drill
+      value: data retrieval sucessful
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[3]
-      value: These results are not final
+      value: verifying data.........data verified
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[4]
-      value: '*Sytem destabilizing*'
+      value: request successful
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
+      propertyPath: sentances.Array.data[5]
+      value: 'sending data......sent '
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
