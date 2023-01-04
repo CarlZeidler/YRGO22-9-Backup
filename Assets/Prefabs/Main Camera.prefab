@@ -522,6 +522,8 @@ MonoBehaviour:
   zoomSpeed: 1
   forwardView: 10
   verticalView: 0
+  camRef: {fileID: 6333666630596049788}
+  overlaycam: {fileID: 5391428851095400763}
   lockPosition: 0
 --- !u!114 &6333666630596049779
 MonoBehaviour:
