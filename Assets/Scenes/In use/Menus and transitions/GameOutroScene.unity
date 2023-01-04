@@ -1532,6 +1532,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6032397656858980313, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 304
+      objectReference: {fileID: 0}
     - target: {fileID: 7765612047667617100, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: m_Name
       value: TextWriter2
