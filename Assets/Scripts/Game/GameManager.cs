@@ -150,7 +150,8 @@ public class GameManager : MonoBehaviour
             hackable.ResetOnRespawn();
             if (hackable.GetComponent<Switch>())
             {
-                hackable.GetComponent<Switch>().ResetToggle();
+                if(!hackable.GetComponent<Switch>().connectedToOther)
+                    hackable.GetComponent<Switch>().ResetToggle();
             }
             if (hackable.GetComponent<GuardRespawn>())
             {
