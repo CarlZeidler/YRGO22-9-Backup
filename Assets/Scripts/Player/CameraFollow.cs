@@ -52,7 +52,7 @@ public class CameraFollow : MonoBehaviour
        
             if (Input.GetButtonDown("ToggleHackingMode"))
             {
-                ToggleCamZoom();
+                //ToggleCamZoom();
             }
         }
     }
@@ -106,5 +106,9 @@ public class CameraFollow : MonoBehaviour
             yield return null;
         }
         camRef.orthographicSize = endSize;
+    }
+    public void DefaultZoomLerp(float orthSize)
+    {
+        StartCoroutine(LerpOrthSize(orthSize, zoomSpeed));
     }
 }
