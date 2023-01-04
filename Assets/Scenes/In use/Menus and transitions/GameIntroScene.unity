@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dccf3ac009ca50e4fa27f25bf9ee2d9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24c18c66deaf1dd4485803261df1fe68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1426,23 +1426,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[0]
-      value: '*Insert story text here* '
+      value: At [14:00] local_user received mission...
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[1]
-      value: This is a drill
+      value: local_user@network:2588 "retrieve data from remote_net-gamma"
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[2]
-      value: I repeat, this is a drill
+      value: MAX.daemon has been supplied by contractor
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[3]
-      value: These results are not final
+      value: '*initiating breach*'
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[4]
-      value: '*Sytem destabilizing*'
+      value: '*deploying daemon................'
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
