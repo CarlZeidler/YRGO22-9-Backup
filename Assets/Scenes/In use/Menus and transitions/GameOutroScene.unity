@@ -1426,23 +1426,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[0]
-      value: '*Insert story text here* '
+      value: local_user has disconnected
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[1]
-      value: This is a drill
+      value: MAX.daemon has been retrived
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[2]
-      value: I repeat, this is a drill
+      value: data retrieval sucessful
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[3]
-      value: These results are not final
+      value: verifying data.........data verified
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: sentances.Array.data[4]
-      value: '*Sytem destabilizing*'
+      value: request successful
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
+      propertyPath: sentances.Array.data[5]
+      value: 'sending data......sent '
       objectReference: {fileID: 0}
     - target: {fileID: 4071321999098041640, guid: 97cea83631cf37146bf6d81a48e45b38, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
