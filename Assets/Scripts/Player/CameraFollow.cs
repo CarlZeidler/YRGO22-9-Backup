@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
 
     Vector3 targetPosition;
     Vector3 mousePos;
-    private Camera camRef;
+    [SerializeField]private Camera camRef, overlaycam;
     private PlayerHack pHack;
     private IEnumerator ienHolder;
 
@@ -102,10 +102,12 @@ public class CameraFollow : MonoBehaviour
         while (time < duration)
         {
             camRef.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
+            overlaycam.orthographicSize = Mathf.Lerp(startSize, endSize, time / duration);
             time += Time.unscaledDeltaTime;
             yield return null;
         }
         camRef.orthographicSize = endSize;
+        overlaycam.orthographicSize = endSize;
     }
     public void DefaultZoomLerp(float orthSize)
     {
